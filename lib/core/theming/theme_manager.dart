@@ -1,34 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 
-
 ThemeData get appTheme => ThemeData(
-      scaffoldBackgroundColor: ColorsManager.darkBlue,
+      scaffoldBackgroundColor: ColorsManager.backgroundColor,
       useMaterial3: true,
+      primaryColor: ColorsManager.primary,
       appBarTheme: const AppBarTheme(
-        backgroundColor: ColorsManager.darkBlue,
-        iconTheme: IconThemeData(color: ColorsManager.darkBlue),
+        backgroundColor: ColorsManager.white,
+        iconTheme: IconThemeData(color: ColorsManager.primary),
       ),
       // App bar background color),
       textSelectionTheme:
-          const TextSelectionThemeData(cursorColor: ColorsManager.darkBlue),
-      textTheme: const TextTheme(
-        labelLarge: TextStyle(color: Color(0xff121318)),
-        labelMedium: TextStyle(color: Color(0xff121318)),
-        labelSmall: TextStyle(color: Color(0xff121318)),
-        bodyLarge: TextStyle(color: Color(0xff121318)),
-        bodyMedium: TextStyle(color: Color(0xff121318)),
-        bodySmall: TextStyle(color: Color(0xff121318)),
-        displayLarge: TextStyle(color: Color(0xff121318)),
-        displayMedium: TextStyle(color: Color(0xff121318)),
-        displaySmall: TextStyle(color: Color(0xff121318)),
-        headlineLarge: TextStyle(color: Color(0xff121318)),
-        headlineMedium: TextStyle(color: Color(0xff121318)),
-        headlineSmall: TextStyle(color: Color(0xff121318)),
-        titleLarge: TextStyle(color: Color(0xff121318)),
-        titleMedium: TextStyle(color: Color(0xff121318)),
-        titleSmall: TextStyle(color: Color(0xff121318)),
+          const TextSelectionThemeData(cursorColor: ColorsManager.primary),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          
+            foregroundColor:
+                MaterialStateProperty.all<Color>(ColorsManager.white),
+            backgroundColor:
+                MaterialStateProperty.all<Color>(ColorsManager.primary)),
       ),
+    );
       // inputDecorationTheme: InputDecorationTheme(
       //     isDense: true,
       //     contentPadding: EdgeInsets.symmetric(
@@ -56,15 +48,8 @@ ThemeData get appTheme => ThemeData(
       //   unselectedItemColor:
       //       ColorsManager.grey500, // Navigation bar background color
       // ),
-      // elevatedButtonTheme: ElevatedButtonThemeData(
-      //
-      //   style: ButtonStyle(
-      //       foregroundColor:
-      //           MaterialStateProperty.all<Color>(ColorsManager.white),
-      //       backgroundColor:
-      //           MaterialStateProperty.all<Color>(ColorsManager.primary)),
-      // ),
-    );
+      
+    
 
 // ThemeData get darkThemeColor => ThemeData.dark(useMaterial3: true).copyWith(
 //       scaffoldBackgroundColor: ColorsManager.blackBackground,

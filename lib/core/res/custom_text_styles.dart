@@ -41,3 +41,5 @@ TextStyle getBoldStyle({double fontSize = 12, Color? color, double? height}) {
 TextStyle getSemiBoldStyle({double fontSize = 12, Color? color, double? height}) {
   return _getTextStyle(fontSize, FontWeightManager.semiBold, color, height);
 }
+//extra bold style
+
