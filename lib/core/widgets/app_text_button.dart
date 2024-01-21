@@ -31,6 +31,7 @@ class AppTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0),
         backgroundColor: MaterialStatePropertyAll(
           backgroundColor ?? ColorsManager.primary,
         ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/constants/values.dart';
+import 'package:flutter_complete_project/core/navigator/named_routes.dart';
+import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/navigator/route_generator.dart';
-import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
-import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/features/choose_language/logic/cubit/choose_language_cubit.dart';
 import 'package:flutter_complete_project/features/choose_language/presentation/widgets/app_language_item.dart';
@@ -17,6 +17,12 @@ class AppLanguageChoices extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ChooseLanguageCubit, ChooseLanguageState>(
       listener: (context, state) {},
+      //build when
+
+      buildWhen: (previous, current) =>
+          current == ChooseLanguageState.changeSelectedLanguageLoaded() ||
+          current == ChooseLanguageState.changeSelectedLanguageLoading(),
+
       builder: (context, state) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,7 +36,12 @@ class AppLanguageChoices extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return AppLanguageItem(
                       language: appLanguages[index],
-                      isSelected: state.whenOrNull(
+                      isSelected: state.maybeWhen(
+                        orElse: () => false,
+                        changeSelectedLanguageLoading: () =>
+                            appLanguages[index] ==
+                            RouterGenerator
+                                .chooseLanguageCubit.selectedLanguage,
                         changeSelectedLanguageLoaded: () =>
                             appLanguages[index] ==
                             RouterGenerator
@@ -53,6 +64,7 @@ class AppLanguageChoices extends StatelessWidget {
                   RouterGenerator.chooseLanguageCubit.selectedLanguage != null,
               child: AppTextButton(
                 buttonText: S.current.continueToNext,
+                onPressed: () => Go.offAllNamed(NamedRoutes.onBoarding),
               ),
             ),
           ],

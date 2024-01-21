@@ -26,6 +26,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "chooseAppLanguage":
             MessageLookupByLibrary.simpleMessage("قم بإختيار لغة التطبيق"),
         "continueToNext": MessageLookupByLibrary.simpleMessage("متابعة"),
-        "english": MessageLookupByLibrary.simpleMessage("English")
+        "english": MessageLookupByLibrary.simpleMessage("English"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "skip": MessageLookupByLibrary.simpleMessage("تخطي")
       };
 }

@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 enum NamedRoutes {
   splash('/'),
   chooseAppLanguage('/chooseAppLanguage'),
+  //onBoarding
+  onBoarding('/onBoarding'),
+  //login
+  login('/login'),
   ;
 
   final String routeName;
