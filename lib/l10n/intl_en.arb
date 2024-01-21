@@ -2,5 +2,8 @@
     "chooseAppLanguage": "Choose your language",
     "arabic": "Arabic",
     "english": "English",
-    "continueToNext" : "Continue"
+    "continueToNext" : "Continue",
+    "next": "Next",
+    "skip" : "Skip",
+    "login" : "Login"
 }

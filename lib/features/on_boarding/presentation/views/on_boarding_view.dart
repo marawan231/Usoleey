@@ -19,18 +19,24 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 16.h),
-        child: Column(
-          children: [
-            Text('',
-                textAlign: TextAlign.center),
-            Expanded(child: BuildPageView(pageController: pageController)),
-            MyPageIndicator(boardController: pageController),
-          ],
+        body: Padding(
+          padding: EdgeInsetsDirectional.only(top: 150.sp),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              // Text('', textAlign: TextAlign.center),
+              Container(
+                  height: 200.sp,
+                  width: double.infinity,
+                  child: BuildPageView(pageController: pageController)),
+              // 24.verticalSpace,
+              74.verticalSpace,
+              MyPageIndicator(boardController: pageController),
+            ],
+          ),
         ),
-      ),
-      bottomNavigationBar: const BuildButtons(),
-    );
+        bottomNavigationBar: BuildButtons(
+          boardController: pageController,
+        ));
   }
 }

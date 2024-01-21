@@ -2,7 +2,7 @@
 
 const String imagePath = "assets/images";
 // const String svgPath = "assets/svg";
-const String imageSVGPath = "assets/images/svg";
+const String imageSVGPath = "assets/svgs";
 const String imagePngPath = "assets/images/png";
 const String imageTempPath = "assets/temp";
 
@@ -11,4 +11,10 @@ class AssetsManager {
   static const String homeProfileTemp = "$imageTempPath/home_profile_temp.jpg";
   //app logo
   static const String appLogo = "$imagePath/app_logo.png";
+
+  //onBoarding
+  static const String backgroundShape = "$imageSVGPath/background_shape.svg";
+  static const String onBoarding1 = "$imageSVGPath/on_boarding1.svg";
+  static const String onBoarding2 = "$imageSVGPath/on_boarding2.svg";
+  static const String onBoarding3 = "$imageSVGPath/on_boarding3.svg";
 }

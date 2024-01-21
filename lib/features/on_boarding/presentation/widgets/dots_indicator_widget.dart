@@ -12,12 +12,12 @@ class MyPageIndicator extends StatelessWidget {
       controller: boardController,
       count: lenght ?? onBoardingItems.length,
       effect: ExpandingDotsEffect(
-          expansionFactor: 2.w,
-          spacing: 2.w,
-          radius: 2.r,
-          dotWidth: 6.w,
-          dotHeight: 4.h,
-          dotColor: ColorsManager.primary.withOpacity(.5),
+          expansionFactor: 4.w,
+          spacing: 7.sp,
+          radius: 50.r,
+          dotWidth: 6.sp,
+          dotHeight: 6.sp,
+          dotColor: ColorsManager.grey,
           activeDotColor: ColorsManager.primary),
     );
   }
