@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
         minTextAdapt: true,
         builder: (context, state) {
           return MaterialApp(
-              locale: Locale('en'),
+              locale: Locale('ar'),
               localizationsDelegates: const [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,

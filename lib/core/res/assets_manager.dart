@@ -17,4 +17,6 @@ class AssetsManager {
   static const String onBoarding1 = "$imageSVGPath/on_boarding1.svg";
   static const String onBoarding2 = "$imageSVGPath/on_boarding2.svg";
   static const String onBoarding3 = "$imageSVGPath/on_boarding3.svg";
+  //login
+  static const String loginBackground = "$imagePath/login_banner.png";
 }
