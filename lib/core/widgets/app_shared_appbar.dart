@@ -12,32 +12,33 @@ class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   _buildTitle() {
     return Padding(
-      padding: EdgeInsetsDirectional.only(start: 24.sp, top: 56.sp),
-      child: Text('فواتيري',
+      padding: EdgeInsetsDirectional.only(end: 24.sp),
+      child: Text(title ?? '',
           style: getBoldStyle(
             color: Colors.black,
-            fontSize: 22.sp,
+            fontSize: 16.sp,
           )),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height ?? 109.sp,
-      decoration: BoxDecoration(
-        color: ColorsManager.white,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(32),
-          bottomRight: Radius.circular(30),
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: AppBar(
+        centerTitle: true,
+        actions: [
+          _buildTitle(),
+        ],
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(16.r),
+          ),
         ),
       ),
-      child: _buildTitle(),
-      // actions: _buildActions(),
-      // leading: _buildLeading(),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(height ?? 109.sp);
+  Size get preferredSize => Size.fromHeight(height ?? 56.sp);
 }

@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "tickets": MessageLookupByLibrary.simpleMessage("تذاكري")

@@ -6,6 +6,7 @@ import 'package:flutter_complete_project/features/choose_language/presentation/s
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/layout_view.dart';
 import 'package:flutter_complete_project/features/login/presentation/screens/login_view.dart';
+import 'package:flutter_complete_project/features/notifications/presentation/screens/notifications_view.dart';
 import 'package:flutter_complete_project/features/on_boarding/logic/cubit/onboarding_cubit.dart';
 import 'package:flutter_complete_project/features/on_boarding/presentation/views/on_boarding_views_imports.dart';
 import 'package:flutter_complete_project/features/splash/presentation/screen/splash_screen.dart';
@@ -57,7 +58,7 @@ class RouterGenerator {
         return _pageRouter.build(const HomeScreen(), settings: settings);
       //notifications
       case NamedRoutes.notifications:
-        return _pageRouter.build(const HomeScreen(), settings: settings);
+        return _pageRouter.build(const NotificationsView(), settings: settings);
     }
   }
 }

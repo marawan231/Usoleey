@@ -5,7 +5,19 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
+import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+final List<Widget> layoutScreens = [
+  //   const TransactionHistoryView(),
+  const HomeScreen(),
+  const HomeScreen(),
+
+  const HomeScreen(),
+  const HomeScreen(),
+
+  // const ProfileView(),
+];
 
 class LayoutView extends StatefulWidget {
   const LayoutView({super.key});
@@ -41,8 +53,8 @@ class _LayoutViewState extends State<LayoutView> {
         decoration: BoxDecoration(
           color: ColorsManager.white,
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(32),
-            bottomRight: Radius.circular(30),
+            bottomLeft: Radius.circular(32.r),
+            bottomRight: Radius.circular(32.r),
           ),
         ),
         child: _buildTitle(),

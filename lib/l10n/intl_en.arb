@@ -11,5 +11,6 @@
     "main"      : "Main",
 "bills"  :  "my bills",
 "tickets"  :  "my tickets",
-"more" :  "more"
+"more" :  "more",
+"notifications" :  "notifications"
 }

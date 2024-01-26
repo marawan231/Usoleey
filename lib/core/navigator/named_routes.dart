@@ -21,13 +21,4 @@ enum NamedRoutes {
   const NamedRoutes(this.routeName);
 }
 
-final List<Widget> layoutScreens = [
-  //   const TransactionHistoryView(),
-  const HomeScreen(),
-  const HomeScreen(),
 
-  const HomeScreen(),
-  const HomeScreen(),
-
-  // const ProfileView(),
-];

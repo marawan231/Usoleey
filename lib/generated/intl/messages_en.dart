@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "main": MessageLookupByLibrary.simpleMessage("Main"),
         "more": MessageLookupByLibrary.simpleMessage("more"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "notifications": MessageLookupByLibrary.simpleMessage("notifications"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "tickets": MessageLookupByLibrary.simpleMessage("my tickets")
