@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/navigator/named_routes.dart';
+import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/core/widgets/app_custom_text_form_field.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
+import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -50,16 +53,23 @@ class LoginView extends StatelessWidget {
   }
 
   _buildBody(BuildContext context) {
-    return Padding(
-      padding: EdgeInsetsDirectional.only(start: 24.sp, end: 24.sp, top: 24.sp),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildHeader(),
-          _buildForm(context),
-          _buildFooter(),
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding:
+            EdgeInsetsDirectional.only(start: 24.sp, end: 24.sp, top: 24.sp),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildHeader(),
+            32.verticalSpace,
+            _buildPhoneForm(context),
+            32.verticalSpace,
+            _buildPasswordForm(context),
+            32.verticalSpace,
+            _buildFooter(),
+          ],
+        ),
       ),
     );
   }
@@ -70,7 +80,7 @@ class LoginView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'تسجيل الدخول / إنشاء حساب',
+          S.current.login,
           style: getBoldStyle(
             fontSize: 24.sp,
             color: ColorsManager.black,
@@ -78,7 +88,7 @@ class LoginView extends StatelessWidget {
         ),
         8.verticalSpace,
         Text(
-          'قم بإدخال رقم الجوال وسيتم إرسال رمز التحقق في رسالة نصية إذا كان هذا اول تسجيل دخول لك',
+          S.current.enterYourMobileNumber,
           textAlign: TextAlign.start,
           style: getRegularStyle(
             fontSize: 14.sp,
@@ -89,45 +99,67 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  _buildForm(BuildContext context) {
-    return Form(
-        child: Column(children: [
-      TextFormField(
-        onTapOutside: (event) => FocusScope.of(context).unfocus(),
-        keyboardType: TextInputType.phone,
-        decoration: InputDecoration(
-          hintText: 'رقم الجوال',
-          hintStyle: getRegularStyle(
-            fontSize: 14.sp,
-            color: ColorsManager.greyLight,
+  _buildPhoneForm(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 5,
+            child: AppCustomTextFormField(hintText: '05xxxxxxx33'),
           ),
-          prefixIcon: Icon(Icons.phone),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(
-              color: ColorsManager.greyLight,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(
-              color: ColorsManager.greyLight,
-            ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(
-              color: ColorsManager.greyLight,
-            ),
+          8.horizontalSpace,
+          Expanded(flex: 1, child: _buildNumberPrefix()),
+        ],
+      ),
+    );
+  }
+
+  _buildPasswordForm(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          // flex: 5,
+          child: AppCustomTextFormField(
+            hintText: S.current.password,
+            obscureText: true,
           ),
         ),
+        // 8.horizontalSpace,
+        // Expanded(flex: 1, child: _buildNumberPrefix()),
+      ],
+    );
+  }
+
+  Widget _buildNumberPrefix() {
+    return Container(
+      width: 63.sp,
+      height: 56.sp,
+      // padding: EdgeInsets.all(8.r),
+      decoration: BoxDecoration(
+        color: ColorsManager.greyLighter,
+        borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(
+          width: 1.sp,
+          color: ColorsManager.grey,
+        ),
       ),
-    ]));
+      child: Center(
+        child: Text(
+          '90+',
+          style:
+              getRegularStyle(fontSize: 14.sp, color: ColorsManager.greyLight),
+        ),
+      ),
+    );
   }
 
   _buildFooter() {
     return AppTextButton(
-      buttonText: 'Nexr',
+      buttonText: S.current.next,
+      onPressed: () {
+        Go.offAllNamed(NamedRoutes.layout);
+      },
     );
   }
 }

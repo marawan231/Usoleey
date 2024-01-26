@@ -119,6 +119,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter your mobile number`
+  String get enterYourMobileNumber {
+    return Intl.message(
+      'Enter your mobile number',
+      name: 'enterYourMobileNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main`
+  String get main {
+    return Intl.message(
+      'Main',
+      name: 'main',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `my bills`
+  String get bills {
+    return Intl.message(
+      'my bills',
+      name: 'bills',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `my tickets`
+  String get tickets {
+    return Intl.message(
+      'my tickets',
+      name: 'tickets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `more`
+  String get more {
+    return Intl.message(
+      'more',
+      name: 'more',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

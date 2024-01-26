@@ -5,5 +5,12 @@
 "continueToNext" : "متابعة",
 "next" : "التالي",
 "skip" : "تخطي",
-"login" : "تسجيل الدخول"
+"login" : "تسجيل الدخول",
+"enterYourMobileNumber" : "أدخل رقم الجوال",
+"password" : "كلمة المرور",
+"main"      : "الرئيسية",
+"bills"  : "فواتيري",
+"tickets"  :  "تذاكري",
+"more"    : "المزيد"
+
 }
