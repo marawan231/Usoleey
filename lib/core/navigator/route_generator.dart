@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/features/choose_language/logic/cubit/choose_language_cubit.dart';
 import 'package:flutter_complete_project/features/choose_language/presentation/screen/choose_app_language_view.dart';
+import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
+import 'package:flutter_complete_project/features/home/presentation/screens/layout_view.dart';
 import 'package:flutter_complete_project/features/login/presentation/screens/login_view.dart';
 import 'package:flutter_complete_project/features/on_boarding/logic/cubit/onboarding_cubit.dart';
 import 'package:flutter_complete_project/features/on_boarding/presentation/views/on_boarding_views_imports.dart';
@@ -47,6 +49,15 @@ class RouterGenerator {
       //login
       case NamedRoutes.login:
         return _pageRouter.build(const LoginView(), settings: settings);
+      //layout
+      case NamedRoutes.layout:
+        return _pageRouter.build(const LayoutView(), settings: settings);
+      //home
+      case NamedRoutes.home:
+        return _pageRouter.build(const HomeScreen(), settings: settings);
+      //notifications
+      case NamedRoutes.notifications:
+        return _pageRouter.build(const HomeScreen(), settings: settings);
     }
   }
 }

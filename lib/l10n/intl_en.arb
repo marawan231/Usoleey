@@ -5,5 +5,11 @@
     "continueToNext" : "Continue",
     "next": "Next",
     "skip" : "Skip",
-    "login" : "Login"
+    "login" : "Login",
+    "enterYourMobileNumber" : "Enter your mobile number",
+    "password" : "Password",
+    "main"      : "Main",
+"bills"  :  "my bills",
+"tickets"  :  "my tickets",
+"more" :  "more"
 }

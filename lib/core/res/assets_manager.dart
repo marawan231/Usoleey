@@ -19,4 +19,9 @@ class AssetsManager {
   static const String onBoarding3 = "$imageSVGPath/on_boarding3.svg";
   //login
   static const String loginBackground = "$imagePath/login_banner.png";
+  //navbar home
+  static const String navbarHome = "$imageSVGPath/navbar_home.svg";
+  static const String navbarFwateer = "$imageSVGPath/navbar_fwateer.svg";
+  static const String navbarTickets = "$imageSVGPath/navbar_tickets.svg";
+  static const String navbarMore = "$imageSVGPath/navbar_more.svg";
 }

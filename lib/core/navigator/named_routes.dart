@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 
 enum NamedRoutes {
   splash('/'),
@@ -7,6 +8,12 @@ enum NamedRoutes {
   onBoarding('/onBoarding'),
   //login
   login('/login'),
+  //layout
+  layout('/layout'),
+  //home
+  home('/home'),
+  //notifications
+  notifications('/notifications'),
   ;
 
   final String routeName;
@@ -16,6 +23,11 @@ enum NamedRoutes {
 
 final List<Widget> layoutScreens = [
   //   const TransactionHistoryView(),
-  // const HomeView(),
+  const HomeScreen(),
+  const HomeScreen(),
+
+  const HomeScreen(),
+  const HomeScreen(),
+
   // const ProfileView(),
 ];
