@@ -11,5 +11,30 @@
     "main"      : "Main",
 "bills"  :  "my bills",
 "tickets"  :  "my tickets",
-"more" :  "more"
+"more" :  "more",
+"notifications" :  "notifications",
+"accountInfo" :  "account info",
+"offers" :  "offers",
+"language" :  "language",
+"rateApp" :  "rate application",
+"helpAndSupport" :  "help and support",
+"aboutApp" :  "about application",
+"termsAndConditions" :  "terms and conditions",
+"logout" :  "logout",
+"changeImage" :  "change image",
+"userName" : "user name",
+"email" : "email",
+"mobileNumber" : "mobile number",
+"change" : "change",
+"contactUsWithMobile" : "contact us with mobile",
+"contactUsWithEmial" : "contact us with email",
+"SendUsUsingApp" : "send us using app",
+"areYouWantToLogout" : "are you want to logout from the app",
+"exit" : "exit",
+"cancel" : "cancel",
+"yes" : "yes",
+"no" : "no"
+
+
+
 }

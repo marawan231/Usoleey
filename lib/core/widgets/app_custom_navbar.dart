@@ -5,7 +5,7 @@ import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-int selectedTab = 1;
+int selectedTab = 0;
 
 class CustomNavigationBar extends StatefulWidget {
   final void Function(int)? onTap;

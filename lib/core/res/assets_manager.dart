@@ -9,6 +9,8 @@ const String imageTempPath = "assets/temp";
 class AssetsManager {
   //create temp
   static const String homeProfileTemp = "$imageTempPath/home_profile_temp.jpg";
+  //temp building
+  static const String tempBuilding = "$imageTempPath/temp_building.png";
   //app logo
   static const String appLogo = "$imagePath/app_logo.png";
 
@@ -24,4 +26,23 @@ class AssetsManager {
   static const String navbarFwateer = "$imageSVGPath/navbar_fwateer.svg";
   static const String navbarTickets = "$imageSVGPath/navbar_tickets.svg";
   static const String navbarMore = "$imageSVGPath/navbar_more.svg";
+  //more view
+  //bell
+  static const String bell = "$imageSVGPath/bell.svg";
+  //book-open
+  static const String bookOpen = "$imageSVGPath/book-open.svg";
+  //globe
+  static const String globe = "$imageSVGPath/globe.svg";
+  //help-circle
+  static const String helpCircle = "$imageSVGPath/help-circle.svg";
+  //info
+  static const String info = "$imageSVGPath/info.svg";
+  //log-out
+  static const String logOut = "$imageSVGPath/log-out.svg";
+  //percent
+  static const String percent = "$imageSVGPath/percent.svg";
+  //star
+  static const String star = "$imageSVGPath/star.svg";
+  //user
+  static const String user = "$imageSVGPath/user.svg";
 }
