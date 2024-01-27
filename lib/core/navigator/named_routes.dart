@@ -14,6 +14,16 @@ enum NamedRoutes {
   home('/home'),
   //notifications
   notifications('/notifications'),
+  //account info
+  accountInfo('/accountInfo'),
+  //offers
+  offers('/offers'),
+  //about app
+  aboutApp('/aboutApp'),
+  //terms and conditions
+  termsAndConditions('/termsAndConditions'),
+  //help and support
+  helpAndSupport('/helpAndSupport'),
   ;
 
   final String routeName;

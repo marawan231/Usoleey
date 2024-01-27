@@ -189,6 +189,216 @@ class S {
       args: [],
     );
   }
+
+  /// `account info`
+  String get accountInfo {
+    return Intl.message(
+      'account info',
+      name: 'accountInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `offers`
+  String get offers {
+    return Intl.message(
+      'offers',
+      name: 'offers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `language`
+  String get language {
+    return Intl.message(
+      'language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `rate application`
+  String get rateApp {
+    return Intl.message(
+      'rate application',
+      name: 'rateApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `help and support`
+  String get helpAndSupport {
+    return Intl.message(
+      'help and support',
+      name: 'helpAndSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `about application`
+  String get aboutApp {
+    return Intl.message(
+      'about application',
+      name: 'aboutApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `terms and conditions`
+  String get termsAndConditions {
+    return Intl.message(
+      'terms and conditions',
+      name: 'termsAndConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `logout`
+  String get logout {
+    return Intl.message(
+      'logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `change image`
+  String get changeImage {
+    return Intl.message(
+      'change image',
+      name: 'changeImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `user name`
+  String get userName {
+    return Intl.message(
+      'user name',
+      name: 'userName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `email`
+  String get email {
+    return Intl.message(
+      'email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `mobile number`
+  String get mobileNumber {
+    return Intl.message(
+      'mobile number',
+      name: 'mobileNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `change`
+  String get change {
+    return Intl.message(
+      'change',
+      name: 'change',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `contact us with mobile`
+  String get contactUsWithMobile {
+    return Intl.message(
+      'contact us with mobile',
+      name: 'contactUsWithMobile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `contact us with email`
+  String get contactUsWithEmial {
+    return Intl.message(
+      'contact us with email',
+      name: 'contactUsWithEmial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `send us using app`
+  String get SendUsUsingApp {
+    return Intl.message(
+      'send us using app',
+      name: 'SendUsUsingApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `are you want to logout from the app`
+  String get areYouWantToLogout {
+    return Intl.message(
+      'are you want to logout from the app',
+      name: 'areYouWantToLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `exit`
+  String get exit {
+    return Intl.message(
+      'exit',
+      name: 'exit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cancel`
+  String get cancel {
+    return Intl.message(
+      'cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `yes`
+  String get yes {
+    return Intl.message(
+      'yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `no`
+  String get no {
+    return Intl.message(
+      'no',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

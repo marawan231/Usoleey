@@ -12,6 +12,28 @@
 "bills"  : "فواتيري",
 "tickets"  :  "تذاكري",
 "more"    : "المزيد",
-"notifications" : "الإشعارات"
+"notifications" : "الإشعارات",
+"accountInfo" :  "معلومات الحساب",
+"offers" :  "العروض",
+"language" :  "اللغة",
+"rateApp" : "قيم التطبيق",
+"helpAndSupport" :  "المساعدة والدعم",
+"aboutApp" :  "عن التطبيق",
+"termsAndConditions" :  "الشروط والأحكام",
+"logout" :  "تسجيل الخروج",
+"changeImage" : "تغيير الصورة",
+"userName" : "اسم المستخدم",
+"email" : "البريد الإلكتروني",
+"mobileNumber" : "رقم الجوال",
+"change" : "تغيير",
+"contactUsWithMobile" : "تواصل معنا عبر الجوال",
+"contactUsWithEmial" : "تواصل معنا عبر البريد الإلكتروني",
+"SendUsUsingApp" : "تواصل معنا عبر التطبيق",
+"areYouWantToLogout" : "هل أنت متأكد من تسجيل الخروج من التطبيق؟",
+"exit" : "خروج",
+"cancel" : "إلغاء",
+"yes" : "نعم",
+"no" : "لا"
+
 
 }

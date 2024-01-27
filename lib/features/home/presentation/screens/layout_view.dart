@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
+import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final List<Widget> layoutScreens = [
@@ -14,7 +16,7 @@ final List<Widget> layoutScreens = [
   const HomeScreen(),
 
   const HomeScreen(),
-  const HomeScreen(),
+  const MoreView(),
 
   // const ProfileView(),
 ];
@@ -30,6 +32,8 @@ class _LayoutViewState extends State<LayoutView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // extendBodyBehindAppBar: true,
+      // extendBody: true,
       bottomNavigationBar: CustomNavigationBar(
         onTap: (index) {
           setState(() {
@@ -37,7 +41,13 @@ class _LayoutViewState extends State<LayoutView> {
           });
         },
       ),
-      appBar: selectedTab == 0 ? _buildAppBar() : SharedAppBar(),
+      appBar: selectedTab == 0
+          ? _buildAppBar()
+          : selectedTab == 3
+              ? AppBar(
+                  backgroundColor: ColorsManager.primary,
+                )
+              : SharedAppBar(),
       body: _buildBody(),
     );
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ColorsManager {
+  //#194C81
   static const Color primary = Color(0xff194C81);
+  //#001833
   static const Color primaryDark = Color(0xff001833);
   static const Color primaryLight = Color(0xffD1E5FA);
   //#EBF5FF
@@ -10,6 +12,7 @@ class ColorsManager {
   //neural colors-----------------------------------
 
   static const Color backgroundColor = Color(0xFFF5F6F7);
+  //#E0E0E0
   static const Color grey = Color(0xFFE0E0E0);
   //#EFF0F2
   static const Color greyLighter = Color(0xFFEFF0F2);

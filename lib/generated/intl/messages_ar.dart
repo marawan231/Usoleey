@@ -22,21 +22,48 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "SendUsUsingApp":
+            MessageLookupByLibrary.simpleMessage("تواصل معنا عبر التطبيق"),
+        "aboutApp": MessageLookupByLibrary.simpleMessage("عن التطبيق"),
+        "accountInfo": MessageLookupByLibrary.simpleMessage("معلومات الحساب"),
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "areYouWantToLogout": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من تسجيل الخروج من التطبيق؟"),
         "bills": MessageLookupByLibrary.simpleMessage("فواتيري"),
+        "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+        "change": MessageLookupByLibrary.simpleMessage("تغيير"),
+        "changeImage": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
         "chooseAppLanguage":
             MessageLookupByLibrary.simpleMessage("قم بإختيار لغة التطبيق"),
+        "contactUsWithEmial": MessageLookupByLibrary.simpleMessage(
+            "تواصل معنا عبر البريد الإلكتروني"),
+        "contactUsWithMobile":
+            MessageLookupByLibrary.simpleMessage("تواصل معنا عبر الجوال"),
         "continueToNext": MessageLookupByLibrary.simpleMessage("متابعة"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "enterYourMobileNumber":
             MessageLookupByLibrary.simpleMessage("أدخل رقم الجوال"),
+        "exit": MessageLookupByLibrary.simpleMessage("خروج"),
+        "helpAndSupport":
+            MessageLookupByLibrary.simpleMessage("المساعدة والدعم"),
+        "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "mobileNumber": MessageLookupByLibrary.simpleMessage("رقم الجوال"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "no": MessageLookupByLibrary.simpleMessage("لا"),
         "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+        "offers": MessageLookupByLibrary.simpleMessage("العروض"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "rateApp": MessageLookupByLibrary.simpleMessage("قيم التطبيق"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
-        "tickets": MessageLookupByLibrary.simpleMessage("تذاكري")
+        "termsAndConditions":
+            MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
+        "tickets": MessageLookupByLibrary.simpleMessage("تذاكري"),
+        "userName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+        "yes": MessageLookupByLibrary.simpleMessage("نعم")
       };
 }
