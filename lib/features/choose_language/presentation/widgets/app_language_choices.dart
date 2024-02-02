@@ -60,6 +60,11 @@ class AppLanguageChoices extends StatelessWidget {
             ),
             50.verticalSpace,
             Visibility(
+              maintainSize: true,
+              maintainAnimation: true,
+              maintainState: true,
+              maintainInteractivity: true,
+              maintainSemantics: true,
               visible:
                   RouterGenerator.chooseLanguageCubit.selectedLanguage != null,
               child: AppTextButton(
