@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/app_strings.dart';

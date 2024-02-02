@@ -45,4 +45,6 @@ class AssetsManager {
   static const String star = "$imageSVGPath/star.svg";
   //user
   static const String user = "$imageSVGPath/user.svg";
+  //pdf
+  static const String pdf = "$imageSVGPath/pdf.svg";
 }
