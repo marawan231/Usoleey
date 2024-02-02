@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
+import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
+import 'package:flutter_complete_project/features/bills/presentation/screens/my_bills_view.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
+import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final List<Widget> layoutScreens = [
   //   const TransactionHistoryView(),
   const HomeScreen(),
-  const HomeScreen(),
+  const MyBillsView(),
 
   const HomeScreen(),
   const MoreView(),
 
   // const ProfileView(),
+];
+List<String> layoutTitles = [
+  S.current.main,
+  S.current.bills,
+  S.current.tickets,
+  S.current.more,
 ];
 
 class LayoutView extends StatefulWidget {
@@ -47,7 +55,9 @@ class _LayoutViewState extends State<LayoutView> {
               ? AppBar(
                   backgroundColor: ColorsManager.primary,
                 )
-              : SharedAppBar(),
+              : SharedAppBar(
+                  title: layoutTitles[selectedTab],
+                ),
       body: _buildBody(),
     );
   }
@@ -98,8 +108,10 @@ class _LayoutViewState extends State<LayoutView> {
         Container(
           width: 40.sp,
           height: 40.sp,
-          decoration:
-              BoxDecoration(color: ColorsManager.black, shape: BoxShape.circle),
+          decoration: BoxDecoration(
+              color: ColorsManager.black,
+              shape: BoxShape.circle,
+              image: DecorationImage(image: AssetImage(AssetsManager.appLogo))),
         ),
         8.horizontalSpace,
         Column(
