@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterYourMobileNumber":
             MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
         "exit": MessageLookupByLibrary.simpleMessage("exit"),
+        "filterBy": MessageLookupByLibrary.simpleMessage("filter by"),
         "helpAndSupport":
             MessageLookupByLibrary.simpleMessage("help and support"),
         "language": MessageLookupByLibrary.simpleMessage("language"),

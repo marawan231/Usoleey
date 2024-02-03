@@ -35,56 +35,51 @@ class _MyBillsViewState extends State<MyBillsView> {
   }
 
   _buildChoices() {
-    return ListView(
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      children: [
-        Wrap(
-          spacing: 8.sp,
-          // runSpacing: 8.sp,
-          children: List.generate(
-            choices.length,
-            (index) => FilterChip(
-              padding: EdgeInsets.symmetric(horizontal: 14.sp, vertical: 10.sp),
-              selected: choices[index].isSelected ?? false,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
-                  side: BorderSide(
-                    color: ColorsManager.primary,
-                  )),
-              selectedColor: ColorsManager.primary,
-              label: Text(
-                choices[index].label ?? '',
-                // style:,
-              ),
-              showCheckmark: false,
-              labelStyle: choices[index].isSelected!
-                  ? getBoldStyle(fontSize: 12.sp, color: Colors.white)
-                  : getRegularStyle(
-                      fontSize: 12.sp, color: ColorsManager.primary),
-              onSelected: (value) {
-                setState(() {
-                  choices.forEach((element) {
-                    element.isSelected = false;
-                  });
-                  choices[index].isSelected = true;
-                });
-              },
-            ),
+    return Wrap(
+      // alignment: WrapAlignment.start,
+      // clipBehavior: Clip.hardEdge,
+
+      spacing: 8.sp,
+      // runSpacing: 8.sp,
+      children: List.generate(
+        choices.length,
+        (index) => FilterChip(
+          padding: EdgeInsets.symmetric(horizontal: 14.sp, vertical: 10.sp),
+          selected: choices[index].isSelected ?? false,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+              side: BorderSide(
+                color: ColorsManager.primary,
+              )),
+          selectedColor: ColorsManager.primary,
+          label: Text(
+            choices[index].label ?? '',
+            // style:,
           ),
+          showCheckmark: false,
+          labelStyle: choices[index].isSelected!
+              ? getBoldStyle(fontSize: 12.sp, color: Colors.white)
+              : getRegularStyle(fontSize: 12.sp, color: ColorsManager.primary),
+          onSelected: (value) {
+            setState(() {
+              choices.forEach((element) {
+                element.isSelected = false;
+              });
+              choices[index].isSelected = true;
+            });
+          },
         ),
-      ],
+      ),
     );
   }
 
   _buildInvoiceList() {
     return Expanded(
       child: ListView.separated(
-        clipBehavior: Clip.none,
-        primary: true,
+        // clipBehavior: Clip.none,
+        // primary: true,
         padding: EdgeInsetsDirectional.only(top: 16.sp, bottom: 16.sp),
-        shrinkWrap: true,
+        // shrinkWrap: true,
         itemCount: 10,
         itemBuilder: (context, index) {
           return BillItem();

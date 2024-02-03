@@ -33,7 +33,8 @@
 "exit" : "exit",
 "cancel" : "cancel",
 "yes" : "yes",
-"no" : "no"
+"no" : "no",
+"filterBy" : "filter by"
 
 
 

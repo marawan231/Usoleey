@@ -399,6 +399,16 @@ class S {
       args: [],
     );
   }
+
+  /// `filter by`
+  String get filterBy {
+    return Intl.message(
+      'filter by',
+      name: 'filterBy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
