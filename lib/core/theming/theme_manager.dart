@@ -14,7 +14,6 @@ ThemeData get appTheme => ThemeData(
           const TextSelectionThemeData(cursorColor: ColorsManager.primary),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          
             foregroundColor:
                 MaterialStateProperty.all<Color>(ColorsManager.white),
             backgroundColor:

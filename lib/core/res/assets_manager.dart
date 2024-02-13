@@ -11,6 +11,11 @@ class AssetsManager {
   static const String homeProfileTemp = "$imageTempPath/home_profile_temp.jpg";
   //temp building
   static const String tempBuilding = "$imageTempPath/temp_building.png";
+  //temp_ticket
+  static const String tempTicket = "$imageTempPath/temp_ticket.png";
+  //temp avatar
+  static const String tempAvatar = "$imageTempPath/temp_avatar.png";
+
   //app logo
   static const String appLogo = "$imagePath/app_logo.png";
 
@@ -47,4 +52,19 @@ class AssetsManager {
   static const String user = "$imageSVGPath/user.svg";
   //pdf
   static const String pdf = "$imageSVGPath/pdf.svg";
+  //home svgs
+  //service
+  static const String service = "$imageSVGPath/service.svg";
+  //send complain
+  static const String sendComplain = "$imageSVGPath/send_complain.svg";
+  //water
+  static const String water = "$imageSVGPath/water.svg";
+  //money
+  static const String money = "$imageSVGPath/money.svg";
+  //electricity
+  static const String electricity = "$imageSVGPath/electricity.svg";
+  //copy
+  static const String copy = "$imageSVGPath/copy.svg";
+  //location
+  static const String location = "$imageSVGPath/location.svg";
 }

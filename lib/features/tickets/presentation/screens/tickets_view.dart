@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/navigator/named_routes.dart';
+import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/widgets/ticket_status.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -72,21 +75,24 @@ class TicketsView extends StatelessWidget {
   }
 
   _buildTicketItem() {
-    return Container(
-      // padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 24.sp),
-      decoration: BoxDecoration(
-        color: ColorsManager.white,
-        border: Border.all(color: ColorsManager.grey, width: 1.sp),
-        borderRadius: BorderRadius.circular(8.r),
+    return InkWell(
+      onTap: () => Go.toNamed(NamedRoutes.ticketDetails),
+      child: Container(
+        // padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 24.sp),
+        decoration: BoxDecoration(
+          color: ColorsManager.white,
+          border: Border.all(color: ColorsManager.grey, width: 1.sp),
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        child: Row(
+          children: [
+            _buildTicketStatusColor(),
+            8.horizontalSpace,
+            Expanded(child: _buildTicketBody()),
+          ],
+        ),
+        // child:
       ),
-      child: Row(
-        children: [
-          _buildTicketStatusColor(),
-          8.horizontalSpace,
-          Expanded(child: _buildTicketBody()),
-        ],
-      ),
-      // child:
     );
   }
 
@@ -153,29 +159,7 @@ class TicketsView extends StatelessWidget {
   }
 
   _buildTicketStatus() {
-    return Container(
-        padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
-        decoration: BoxDecoration(
-          color: ColorsManager.green,
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        child: Row(
-          children: [
-            Icon(
-              Icons.circle,
-              color: ColorsManager.greenDark,
-              size: 8.sp,
-            ),
-            4.horizontalSpace,
-            Text(
-              'تم الحل',
-              style: getBoldStyle(
-                fontSize: 12.sp,
-                color: ColorsManager.greenDark,
-              ),
-            ),
-          ],
-        ));
+    return TicketStatus();
   }
 
   _buildTicketType() {

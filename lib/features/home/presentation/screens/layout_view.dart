@@ -42,7 +42,7 @@ class _LayoutViewState extends State<LayoutView> {
   Widget build(BuildContext context) {
     return Scaffold(
       // extendBodyBehindAppBar: true,
-      extendBody: true,
+      // extendBody: true,
       bottomNavigationBar: CustomNavigationBar(
         onTap: (index) {
           setState(() {
@@ -123,7 +123,8 @@ class _LayoutViewState extends State<LayoutView> {
           decoration: BoxDecoration(
               color: ColorsManager.black,
               shape: BoxShape.circle,
-              image: DecorationImage(image: AssetImage(AssetsManager.appLogo))),
+              image:
+                  DecorationImage(image: AssetImage(AssetsManager.tempAvatar))),
         ),
         8.horizontalSpace,
         Column(

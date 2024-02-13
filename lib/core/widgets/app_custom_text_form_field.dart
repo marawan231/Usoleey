@@ -9,7 +9,7 @@ class AppCustomTextFormField extends StatelessWidget {
       this.hintText,
       this.keyboardType,
       this.obscureText,
-       this.controller,
+      this.controller,
       this.validator,
       this.onSaved,
       this.onChanged,
@@ -19,7 +19,7 @@ class AppCustomTextFormField extends StatelessWidget {
   final String? hintText;
   final TextInputType? keyboardType;
   final bool? obscureText;
-  final TextEditingController ?controller;
+  final TextEditingController? controller;
   final String? Function(String?)? validator;
   final Function(String)? onSaved;
   final Function(String)? onChanged;
@@ -46,7 +46,7 @@ class AppCustomTextFormField extends StatelessWidget {
         keyboardType: keyboardType ?? TextInputType.phone,
         decoration: InputDecoration(
           hintTextDirection: TextDirection.ltr,
-          hintText:   hintText,
+          hintText: hintText,
           hintStyle: getRegularStyle(
             fontSize: 16.sp,
             color: ColorsManager.greyMedium,

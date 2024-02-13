@@ -6,6 +6,7 @@ import 'package:flutter_complete_project/features/choose_language/logic/cubit/ch
 import 'package:flutter_complete_project/features/choose_language/presentation/screen/choose_app_language_view.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/layout_view.dart';
+import 'package:flutter_complete_project/features/home/presentation/screens/property_details_view.dart';
 import 'package:flutter_complete_project/features/login/presentation/screens/login_view.dart';
 import 'package:flutter_complete_project/features/notifications/presentation/screens/notifications_view.dart';
 import 'package:flutter_complete_project/features/offers/presentation/screens/offers_view.dart';
@@ -15,6 +16,7 @@ import 'package:flutter_complete_project/features/splash/presentation/screen/spl
 import 'package:flutter_complete_project/features/terms_and_support/presentation/screens/about_app_view.dart';
 import 'package:flutter_complete_project/features/terms_and_support/presentation/screens/help_and_support_view.dart';
 import 'package:flutter_complete_project/features/terms_and_support/presentation/screens/terms_and_condition_view.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/screens/tickets_details_view.dart';
 
 import 'named_routes.dart';
 import 'page_router/imports_page_router_builder.dart';
@@ -81,6 +83,12 @@ class RouterGenerator {
       case NamedRoutes.helpAndSupport:
         return _pageRouter.build(const HelpAndSupportView(),
             settings: settings);
+      //ticket details
+      case NamedRoutes.ticketDetails:
+        return _pageRouter.build(const TicketDetailsView(), settings: settings);
+        //propertyDetails
+      case NamedRoutes.propertyDetails:
+        return _pageRouter.build(const PropertyDetailsView(), settings: settings);
     }
   }
 }

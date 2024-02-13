@@ -1,15 +1,19 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/navigator/named_routes.dart';
+import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
+import 'package:flutter_complete_project/features/bills/presentation/widgets/bill_item.dart';
+import 'package:flutter_complete_project/features/home/presentation/widgets/custom_services.dart';
 import 'package:flutter_complete_project/features/home/presentation/widgets/home_custom_button.dart';
+import 'package:flutter_complete_project/features/home/presentation/widgets/rent_time_container.dart';
 import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
+import 'package:flutter_complete_project/features/offers/presentation/widgets/offers_item.dart';
 import 'package:flutter_complete_project/features/on_boarding/presentation/widgets/on_boarding_widgets_imports.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -27,10 +31,127 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _buildBody() {
+    return Padding(
+      padding: EdgeInsetsDirectional.only(start: 16.sp, end: 16.sp, top: 19.sp),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildProperties(),
+            16.verticalSpace,
+            _buildIndicators(),
+            24.verticalSpace,
+            CustomServices(),
+            24.verticalSpace,
+
+            _buildOffersList(),
+            24.verticalSpace,
+
+            _buildBillsList(),
+
+            // _buildExploreOffers(),
+            // CustomServices(),
+            // CustomServices(),
+            100.verticalSpace,
+          ],
+        ),
+      ),
+    );
+  }
+
+  // _buildExploreOffers() {
+  //   return Column(
+  //     crossAxisAlignment: CrossAxisAlignment.start,
+  //     children: [
+
+  //       // OffersItem(),
+  //       // 16.verticalSpace,
+  //       // _buildOffersList(),
+  //     ],
+  //   );
+  // }
+  _buildBillsList() {
     return Column(
       children: [
-        _buildProperties(),
-        _buildIndicators(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'فواتيرك القادمة',
+              style: getBoldStyle(fontSize: 16.sp),
+            ),
+            InkWell(
+              onTap: () {
+                selectedTab = 1;
+                Go.toNamed(NamedRoutes.layout);
+              },
+              child: Text(
+                'المزيد',
+                style: getBoldStyle(
+                    fontSize: 12.sp, color: ColorsManager.primaryDark),
+              ),
+            ),
+          ],
+        ),
+        16.verticalSpace,
+        // BillItem(),
+        SizedBox(
+          height: 78.sp,
+          child: ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: 4,
+            itemBuilder: (context, index) => BillItem(
+              title: 'فاتورة مياه',
+              subtitle: 'فبراير ١٤، ٢٠٢٣',
+              width: 268.sp,
+              height: 70.sp,
+            ),
+            separatorBuilder: (context, index) => 16.horizontalSpace,
+          ),
+        ),
+        // _buildBillsList(),
+      ],
+    );
+  }
+
+  _buildOffersList() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'اسكتشف احدث عروض الإيجار',
+              style: getBoldStyle(fontSize: 16.sp),
+            ),
+            InkWell(
+              onTap: () {
+                Go.toNamed(NamedRoutes.offers);
+              },
+              child: Text(
+                'المزيد',
+                style: getBoldStyle(
+                    fontSize: 12.sp, color: ColorsManager.primaryDark),
+              ),
+            ),
+          ],
+        ),
+        16.verticalSpace,
+        SizedBox(
+          height: 180.sp,
+          child: ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: 4,
+            itemBuilder: (context, index) => OffersItem(
+              width: 284.sp,
+              height: 120.sp,
+            ),
+            separatorBuilder: (context, index) => 16.horizontalSpace,
+          ),
+        ),
       ],
     );
   }
@@ -47,9 +168,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _buildIndicators() {
-    return MyPageIndicator(
-      boardController: _pageController,
-      lenght: 4,
+    return Center(
+      child: MyPageIndicator(
+        boardController: _pageController,
+        lenght: 4,
+      ),
     );
   }
 
@@ -57,8 +180,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       // color: Colors.red,
 
-      margin: EdgeInsetsDirectional.only(
-          start: 24.sp, end: 24.sp, top: 16.sp, bottom: 16.sp),
+      // margin: EdgeInsetsDirectional.only(
+      //     start: 24.sp, end: 24.sp, top: 16.sp, bottom: 16.sp),
       height: 310.sp,
       width: 300.sp,
       decoration: BoxDecoration(
@@ -130,33 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _buildRentTime() {
-    return Container(
-      // height: 24.sp,
-      padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
-      margin: EdgeInsetsDirectional.symmetric(horizontal: 16.sp),
-      // width: double.infinity,
-      decoration: BoxDecoration(
-        color: ColorsManager.green,
-        borderRadius: BorderRadius.circular(100.r),
-      ),
-      child: Row(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.calendar_today_outlined,
-            color: ColorsManager.greenDark,
-            size: 16.sp,
-          ),
-          4.horizontalSpace,
-          Text(
-            'موعد دفع الإيجار القادم: ١٣ فبراير، ٢٠٢٣',
-            style:
-                getBoldStyle(fontSize: 12.sp, color: ColorsManager.greenDark),
-          ),
-        ],
-      ),
-    );
+    return RentTimeContainer();
   }
 
   _buildHomeIcon() {

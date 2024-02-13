@@ -63,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("terms and conditions"),
+        "ticketDetails": MessageLookupByLibrary.simpleMessage("ticket details"),
         "tickets": MessageLookupByLibrary.simpleMessage("my tickets"),
         "userName": MessageLookupByLibrary.simpleMessage("user name"),
         "yes": MessageLookupByLibrary.simpleMessage("yes")

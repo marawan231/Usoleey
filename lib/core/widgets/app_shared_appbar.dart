@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
+import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const SharedAppBar({super.key, this.title, this.height, this.closeOntap, this.leading});
+  const SharedAppBar(
+      {super.key, this.title, this.height, this.closeOntap, this.leading});
 
   final String? title;
   final double? height;
@@ -26,6 +28,8 @@ class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: AppBar(
+        scrolledUnderElevation: 0,
+        surfaceTintColor: ColorsManager.white,
         leading: leading,
         actions: [
           _buildTitle(),
