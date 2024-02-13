@@ -22,6 +22,10 @@ enum NamedRoutes {
   termsAndConditions('/termsAndConditions'),
   //help and support
   helpAndSupport('/helpAndSupport'),
+  //ticket details
+  ticketDetails('/ticketDetails'),
+  //propertyDetails
+  propertyDetails('/propertyDetails'),
   ;
 
   final String routeName;

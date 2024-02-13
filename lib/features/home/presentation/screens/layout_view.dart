@@ -9,6 +9,7 @@ import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
 import 'package:flutter_complete_project/features/bills/presentation/screens/my_bills_view.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/screens/tickets_view.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +18,7 @@ final List<Widget> layoutScreens = [
   const HomeScreen(),
   const MyBillsView(),
 
-  const HomeScreen(),
+  const TicketsView(),
   const MoreView(),
 
   // const ProfileView(),
@@ -51,13 +52,24 @@ class _LayoutViewState extends State<LayoutView> {
       ),
       appBar: selectedTab == 0
           ? _buildAppBar()
-          : selectedTab == 3
-              ? AppBar(
-                  backgroundColor: ColorsManager.primary,
+          : selectedTab == 2
+              ? SharedAppBar(
+                  title: layoutTitles[2],
+                  leading: IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      size: 24.sp,
+                    ),
+                    onPressed: () {},
+                  ),
                 )
-              : SharedAppBar(
-                  title: layoutTitles[selectedTab],
-                ),
+              : selectedTab == 3
+                  ? AppBar(
+                      backgroundColor: ColorsManager.primary,
+                    )
+                  : SharedAppBar(
+                      title: layoutTitles[selectedTab],
+                    ),
       body: _buildBody(),
     );
   }
@@ -111,7 +123,8 @@ class _LayoutViewState extends State<LayoutView> {
           decoration: BoxDecoration(
               color: ColorsManager.black,
               shape: BoxShape.circle,
-              image: DecorationImage(image: AssetImage(AssetsManager.appLogo))),
+              image:
+                  DecorationImage(image: AssetImage(AssetsManager.tempAvatar))),
         ),
         8.horizontalSpace,
         Column(

@@ -1,0 +1,2 @@
+String? selectedAppLanguage;
+String? token;

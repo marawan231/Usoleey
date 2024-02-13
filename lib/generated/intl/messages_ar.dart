@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterYourMobileNumber":
             MessageLookupByLibrary.simpleMessage("أدخل رقم الجوال"),
         "exit": MessageLookupByLibrary.simpleMessage("خروج"),
+        "filterBy": MessageLookupByLibrary.simpleMessage("فرز حسب"),
         "helpAndSupport":
             MessageLookupByLibrary.simpleMessage("المساعدة والدعم"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -62,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
+        "ticketDetails": MessageLookupByLibrary.simpleMessage("تفاصيل التذكرة"),
         "tickets": MessageLookupByLibrary.simpleMessage("تذاكري"),
         "userName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "yes": MessageLookupByLibrary.simpleMessage("نعم")

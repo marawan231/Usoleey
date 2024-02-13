@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterYourMobileNumber":
             MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
         "exit": MessageLookupByLibrary.simpleMessage("exit"),
+        "filterBy": MessageLookupByLibrary.simpleMessage("filter by"),
         "helpAndSupport":
             MessageLookupByLibrary.simpleMessage("help and support"),
         "language": MessageLookupByLibrary.simpleMessage("language"),
@@ -62,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("terms and conditions"),
+        "ticketDetails": MessageLookupByLibrary.simpleMessage("ticket details"),
         "tickets": MessageLookupByLibrary.simpleMessage("my tickets"),
         "userName": MessageLookupByLibrary.simpleMessage("user name"),
         "yes": MessageLookupByLibrary.simpleMessage("yes")

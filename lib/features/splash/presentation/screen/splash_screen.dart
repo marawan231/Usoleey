@@ -2,8 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/core/helpers/cache_helper.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
+import 'package:flutter_complete_project/core/navigator/route_generator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -52,9 +55,17 @@ class _SplashViewState extends State<SplashView>
 
   void _goNext() async {
     _timer.cancel();
-    await Go.offAllNamed(NamedRoutes.chooseAppLanguage);
+    // await Go.offAllNamed(NamedRoutes.chooseAppLanguage);
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
+    RouterGenerator.chooseLanguageCubit.selectedLanguage =
+        CacheHelper.getData(key: 'language');
+
+    if (RouterGenerator.chooseLanguageCubit.selectedLanguage != null) {
+      Go.offAllNamed(NamedRoutes.onBoarding);
+    } else {
+      Go.offAllNamed(NamedRoutes.chooseAppLanguage);
+    }
   }
 
   @override
