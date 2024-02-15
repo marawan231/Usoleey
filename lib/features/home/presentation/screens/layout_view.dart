@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
@@ -6,8 +7,10 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
+import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
 import 'package:flutter_complete_project/features/bills/presentation/screens/my_bills_view.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
+import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/screens/tickets_view.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
@@ -121,10 +124,9 @@ class _LayoutViewState extends State<LayoutView> {
           width: 40.sp,
           height: 40.sp,
           decoration: BoxDecoration(
-              color: ColorsManager.black,
-              shape: BoxShape.circle,
-              image:
-                  DecorationImage(image: AssetImage(AssetsManager.tempAvatar))),
+            color: ColorsManager.black,
+            shape: BoxShape.circle,
+          ),
         ),
         8.horizontalSpace,
         Column(
@@ -133,14 +135,14 @@ class _LayoutViewState extends State<LayoutView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'مرحباً خالد',
+              'مرحباً ${getIt<AuthCubit>().userModel?.firstNameEn ?? ''}',
               style: getBoldStyle(
                 fontSize: 16.sp,
                 color: ColorsManager.black,
               ),
             ),
             4.verticalSpace,
-            Text('مستأجر',
+            Text(getIt<AuthCubit>().userModel?.role ?? '',
                 style: getBoldStyle(
                   fontSize: 11.sp,
                   color: ColorsManager.greyLight,
@@ -160,7 +162,10 @@ class _LayoutViewState extends State<LayoutView> {
         borderRadius: BorderRadius.circular(8.r),
       ),
       child: InkWell(
-        onTap: () => Go.toNamed(NamedRoutes.notifications),
+        onTap: () {
+          Go.back();
+        },
+        // onTap: () => Go.toNamed(NamedRoutes.notifications),
         child: Icon(
           Icons.notifications_none_outlined,
           color: ColorsManager.primary,

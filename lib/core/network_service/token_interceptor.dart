@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 
-
 class TokenIntereceptor extends Interceptor {
   @override
   void onRequest(
@@ -11,7 +10,7 @@ class TokenIntereceptor extends Interceptor {
     // options.headers['countrycode'] = '+20';
     // options.headers['phonenumber'] = phoneNumber;
     // options.headers['accesstoken'] = token;
-    // options.headers['Accept-Language'] = lang!.languageCode;
+    options.headers['Accept-Language'] = 'en';
     // options.headers['providername'] = 'TenTen';
 
     //app

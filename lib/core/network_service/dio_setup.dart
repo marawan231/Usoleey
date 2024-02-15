@@ -14,10 +14,10 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 final Dio dio = Dio();
 
-String? token;
-String? deviceId;
-String? phoneNumber;
-String? userId;
+// String? token;
+// String? deviceId;
+// String? phoneNumber;
+// String? userId;
 
 // Future<void> getDataFromLocalStorageData() async {
 //   userId = await sl<SecureStorage>().get(key: 'userId') ?? '';
@@ -48,12 +48,12 @@ Dio setupDio() {
    
       dio: dio,
       logPrint: print, // specify log function (optional)
-      retries: 3, // retry count (optional)
+      retries: 1, // retry count (optional)
       retryDelays: const [
         // set delays between retries (optional)
         Duration(seconds: 1), // wait 1 sec before the first retry
-        Duration(seconds: 2), // wait 2 sec before the second retry
-        Duration(seconds: 3), // wait 3 sec before the third retry
+        // Duration(seconds: 2), // wait 2 sec before the second retry
+        // Duration(seconds: 3), // wait 3 sec before the third retry
       ],
     ),
   );

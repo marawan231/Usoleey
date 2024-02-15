@@ -7,6 +7,7 @@ import 'package:flutter_complete_project/features/choose_language/presentation/s
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/layout_view.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/property_details_view.dart';
+import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/features/login/presentation/screens/login_view.dart';
 import 'package:flutter_complete_project/features/notifications/presentation/screens/notifications_view.dart';
 import 'package:flutter_complete_project/features/offers/presentation/screens/offers_view.dart';
@@ -26,10 +27,13 @@ class RouterGenerator {
   static late ChooseLanguageCubit chooseLanguageCubit;
   //on boarding cubit
   static late OnboardingCubit onboardingCubit;
+  //auth cubit
+  static late AuthCubit authCubit;
 
   RouterGenerator() {
     chooseLanguageCubit = getIt<ChooseLanguageCubit>();
     onboardingCubit = getIt<OnboardingCubit>();
+    authCubit = getIt<AuthCubit>();
   }
 
   static final PageRouterBuilder _pageRouter = PageRouterBuilder();
@@ -56,7 +60,12 @@ class RouterGenerator {
             settings: settings);
       //login
       case NamedRoutes.login:
-        return _pageRouter.build(const LoginView(), settings: settings);
+        return _pageRouter.build(
+            BlocProvider.value(
+              value: authCubit,
+              child: LoginView(),
+            ),
+            settings: settings);
       //layout
       case NamedRoutes.layout:
         return _pageRouter.build(const LayoutView(), settings: settings);
@@ -86,9 +95,10 @@ class RouterGenerator {
       //ticket details
       case NamedRoutes.ticketDetails:
         return _pageRouter.build(const TicketDetailsView(), settings: settings);
-        //propertyDetails
+      //propertyDetails
       case NamedRoutes.propertyDetails:
-        return _pageRouter.build(const PropertyDetailsView(), settings: settings);
+        return _pageRouter.build(const PropertyDetailsView(),
+            settings: settings);
     }
   }
 }

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_project/core/res/assets_manager.dart';
-import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
-import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
 import 'package:flutter_complete_project/features/offers/presentation/widgets/offers_item.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';

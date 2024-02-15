@@ -1,8 +1,11 @@
 //show ios dialog
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 Future<void> showIosDialog(
     {required BuildContext context,
@@ -48,4 +51,39 @@ Future<void> showIosDialog(
           ],
         );
       });
+}
+
+void showToast({
+  required String message,
+  Color? color,
+  ToastGravity? gravity,
+}) {
+  Fluttertoast.showToast(
+    msg: message,
+    toastLength: Toast.LENGTH_LONG,
+    timeInSecForIosWeb: 3,
+    gravity: gravity ?? ToastGravity.BOTTOM,
+    backgroundColor: color ?? ColorsManager.red,
+  );
+}
+
+//show snackbar
+void showSnackBar({
+  required String message,
+  Color? color,
+  int? duration,
+}) {
+  ScaffoldMessenger.of(Go.navigatorKey.currentContext!).showSnackBar(
+    SnackBar(
+      content: Text(
+        message,
+        style: getRegularStyle(
+          fontSize: 14.sp,
+          color: Colors.white,
+        ),
+      ),
+      backgroundColor: color ?? ColorsManager.red,
+      duration: Duration(seconds: duration ?? 2),
+    ),
+  );
 }

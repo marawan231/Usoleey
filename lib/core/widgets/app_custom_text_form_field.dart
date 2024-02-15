@@ -29,9 +29,10 @@ class AppCustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-        child: Column(children: [
-      TextFormField(
+    return Container(
+      // width: double.infinity,
+      // height: 109.sp,
+      child: TextFormField(
         controller: controller,
         validator: validator,
         // onSaved: onSaved,
@@ -52,26 +53,8 @@ class AppCustomTextFormField extends StatelessWidget {
             color: ColorsManager.greyMedium,
           ),
           // prefixIcon: Icon(Icons.phone),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(
-              color: ColorsManager.greyLight,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(
-              color: ColorsManager.grey,
-            ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(
-              color: ColorsManager.greyLight,
-            ),
-          ),
         ),
       ),
-    ]));
+    );
   }
 }

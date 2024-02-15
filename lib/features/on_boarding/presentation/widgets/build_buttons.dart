@@ -63,7 +63,12 @@ class BuildButtons extends StatelessWidget {
                 backgroundColor: ColorsManager.transparent,
                 textStyle: getBoldStyle(
                     color: ColorsManager.primaryDark, fontSize: 16.sp),
-                onPressed: () => Go.offAllNamed(NamedRoutes.login),
+                onPressed: () {
+                  // getIt<C>
+                  CacheHelper.removeAll();
+                  log('CacheHelper.getData(key: language): ${CacheHelper.getData(key: 'language')}');
+                  Go.offAllNamed(NamedRoutes.login);
+                },
                 buttonText: S.current.skip),
           ),
         ],
