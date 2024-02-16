@@ -14,7 +14,7 @@ class AppTextButton extends StatelessWidget {
   final double? buttonHeight;
   final String buttonText;
   final TextStyle? textStyle;
-  final VoidCallback? onPressed;
+  final void Function()? onPressed;
   final bool isLoading;
   const AppTextButton({
     super.key,
@@ -26,7 +26,7 @@ class AppTextButton extends StatelessWidget {
     this.buttonWidth,
     required this.buttonText,
     this.textStyle,
-    this.onPressed,
+    required this.onPressed,
     this.isLoading = false,
   });
 

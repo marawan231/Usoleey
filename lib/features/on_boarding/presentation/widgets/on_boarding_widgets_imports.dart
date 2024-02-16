@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/constants/values.dart';
-import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/helpers/cache_helper.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';

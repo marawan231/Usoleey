@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
-import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
-import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
-import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
 import 'package:flutter_complete_project/features/bills/presentation/screens/my_bills_view.dart';
+import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
@@ -42,10 +40,17 @@ class LayoutView extends StatefulWidget {
 
 class _LayoutViewState extends State<LayoutView> {
   @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      getIt<HomeCubit>().getAllUnits();
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // extendBodyBehindAppBar: true,
-      // extendBody: true,
+
       bottomNavigationBar: CustomNavigationBar(
         onTap: (index) {
           setState(() {

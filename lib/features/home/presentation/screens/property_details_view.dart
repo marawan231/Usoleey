@@ -57,6 +57,7 @@ class PropertyDetailsView extends StatelessWidget {
                 buttonHeight: 38.sp,
                 buttonText: 'طلب خدمة',
                 textStyle: getBoldStyle(fontSize: 12.sp),
+                onPressed: () {},
               ),
             ),
             8.horizontalSpace,
@@ -65,6 +66,7 @@ class PropertyDetailsView extends StatelessWidget {
                 buttonHeight: 38.sp,
                 buttonText: 'ارسال شكوى',
                 textStyle: getBoldStyle(fontSize: 12.sp),
+                onPressed: () {},
               ),
             )
           ],

@@ -4,6 +4,7 @@ import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/features/account_info/presentation/screens/account_info_view.dart';
 import 'package:flutter_complete_project/features/choose_language/logic/cubit/choose_language_cubit.dart';
 import 'package:flutter_complete_project/features/choose_language/presentation/screen/choose_app_language_view.dart';
+import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/layout_view.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/property_details_view.dart';
@@ -29,11 +30,14 @@ class RouterGenerator {
   static late OnboardingCubit onboardingCubit;
   //auth cubit
   static late AuthCubit authCubit;
+  //home cubit
+  static late HomeCubit homeCubit;
 
   RouterGenerator() {
     chooseLanguageCubit = getIt<ChooseLanguageCubit>();
     onboardingCubit = getIt<OnboardingCubit>();
     authCubit = getIt<AuthCubit>();
+    homeCubit = getIt<HomeCubit>();
   }
 
   static final PageRouterBuilder _pageRouter = PageRouterBuilder();

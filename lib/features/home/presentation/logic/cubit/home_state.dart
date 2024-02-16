@@ -1,0 +1,33 @@
+import 'package:flutter_complete_project/features/home/data/models/units_model.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'home_state.freezed.dart';
+
+@freezed
+class HomeState<T> with _$HomeState<T> {
+  const factory HomeState.idle() = Idle<T>;
+
+  //get all units loading state
+  const factory HomeState.getAllUnitsLoading() = GetAllUnitsLoading<T>;
+
+  //get all units success state
+
+  const factory HomeState.getAllUnitsSuccess(List<Units> response) =
+      GetAllUnitsSuccess<T>;
+
+  //get all units error state
+
+  const factory HomeState.getAllUnitsError(String error) = GetAllUnitsError<T>;
+  //change selected unit state loading
+  const factory HomeState.changeSelectedUnitLoading() =
+      ChangeSelectedUnitLoading<T>;
+
+  //change selected unit state success
+  const factory HomeState.changeSelectedUnitSuccess(Units unit) =
+      ChangeSelectedUnitSuccess<T>;
+
+  // reset all state loading
+  const factory HomeState.resetAllLoading() = ResetAllLoading<T>;
+  // reset all state success
+  const factory HomeState.resetAllSuccess() = ResetAllSuccess<T>;
+}

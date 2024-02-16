@@ -1,16 +1,10 @@
+
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter_complete_project/core/network_service/token_interceptor.dart';
 // import 'package:tenten_pay/core/helpers/language_controller.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-// import 'package:tenten_pay/core/navigator/navigator.dart';
-// import 'package:tenten_pay/core/network_service/token_interceptor.dart';
-// import 'package:tenten_pay/core/settings.dart';
-// import 'package:tenten_pay/core/utils/enums.dart';
-// import 'package:tenten_pay/core/utils/utils_functions.dart';
 
-// import '../helpers/secure_storage.dart';
-// import '../services/service_locator.dart';
 
 final Dio dio = Dio();
 
@@ -35,17 +29,15 @@ final Dio dio = Dio();
 Dio setupDio() {
   // Alice alice = sl<Alice>();
   // getDataFromLocalStorageData().then((value) => {
-        dio
-          ..options.connectTimeout = const Duration(seconds: 10)
-          ..options.receiveTimeout = const Duration(seconds: 10);
-          //..options.baseUrl = AppConstants.baseUrl
-  
-          // ));
+  dio
+    ..options.connectTimeout = const Duration(seconds: 10)
+    ..options.receiveTimeout = const Duration(seconds: 10);
+  //..options.baseUrl = AppConstants.baseUrl
+
+  // ));
 
   dio.interceptors.add(
     RetryInterceptor(
-
-   
       dio: dio,
       logPrint: print, // specify log function (optional)
       retries: 1, // retry count (optional)
@@ -72,6 +64,5 @@ Dio setupDio() {
     ),
   );
 
- 
   return dio;
 }

@@ -3,8 +3,8 @@ import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/widgets/filter_by_button.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/widgets/ticket_status.dart';
-import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TicketsView extends StatelessWidget {
@@ -20,46 +20,12 @@ class TicketsView extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 24.sp),
       child: Column(
         children: [
-          _buildFilterBy(),
+          FilterByButton(),
           16.verticalSpace,
           _buildTicketsList(),
         ],
       ),
     );
-  }
-
-  _buildFilterBy() {
-    return Row(
-      children: [
-        Container(
-            // padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 24.sp),
-            width: 100.sp,
-            height: 36.sp,
-            decoration: BoxDecoration(
-              color: ColorsManager.primary,
-              borderRadius: BorderRadius.circular(24.sp),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.filter_alt_outlined,
-                  color: ColorsManager.white,
-                  size: 14.sp,
-                ),
-                5.horizontalSpace,
-                Text(S.current.filterBy,
-                    style: getBoldStyle(
-                      fontSize: 12.sp,
-                      color: Colors.white,
-                    )),
-                // 8.horizontalSpace,
-              ],
-            )),
-      ],
-    );
-    // child: Row();
   }
 
   _buildTicketsList() {
