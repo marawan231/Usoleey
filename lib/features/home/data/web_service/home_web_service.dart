@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_complete_project/core/network_service/network_constants.dart';
+import 'package:flutter_complete_project/features/tickets/data/models/tickets_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../models/units_model.dart';
@@ -13,6 +14,8 @@ abstract class HomeWebServices {
   @GET("dashboard/units")
   Future<UnitsModel> getUnits();
   //get all TicketsStatusModel
+    @GET("tickets")
+  Future<TicketsModel> getAllTickets();
 
   
 }

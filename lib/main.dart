@@ -14,7 +14,6 @@ Future<void> main() async {
   await ScreenUtil.ensureScreenSize();
   await setupGetIt();
   await CacheHelper.init();
-
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

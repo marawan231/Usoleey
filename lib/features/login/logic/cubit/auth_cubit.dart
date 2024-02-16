@@ -17,7 +17,7 @@ class AuthCubit extends Cubit<AuthState> {
   final phoneController = TextEditingController();
   final passwordController = TextEditingController();
 
-  late final UserModel? userModel;
+    UserModel? userModel;
 
   //formKey
 

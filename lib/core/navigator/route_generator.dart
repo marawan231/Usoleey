@@ -18,6 +18,7 @@ import 'package:flutter_complete_project/features/splash/presentation/screen/spl
 import 'package:flutter_complete_project/features/terms_and_support/presentation/screens/about_app_view.dart';
 import 'package:flutter_complete_project/features/terms_and_support/presentation/screens/help_and_support_view.dart';
 import 'package:flutter_complete_project/features/terms_and_support/presentation/screens/terms_and_condition_view.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/screens/tickets_details_view.dart';
 
 import 'named_routes.dart';
@@ -32,12 +33,15 @@ class RouterGenerator {
   static late AuthCubit authCubit;
   //home cubit
   static late HomeCubit homeCubit;
+  //tickets cubit
+  static late TicketsCubit ticketsCubit;
 
   RouterGenerator() {
     chooseLanguageCubit = getIt<ChooseLanguageCubit>();
     onboardingCubit = getIt<OnboardingCubit>();
     authCubit = getIt<AuthCubit>();
     homeCubit = getIt<HomeCubit>();
+    ticketsCubit = getIt<TicketsCubit>();
   }
 
   static final PageRouterBuilder _pageRouter = PageRouterBuilder();

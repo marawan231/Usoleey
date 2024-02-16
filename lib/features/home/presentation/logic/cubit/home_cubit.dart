@@ -1,9 +1,10 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
 import 'package:flutter_complete_project/features/home/data/models/units_model.dart';
 import 'package:flutter_complete_project/features/home/data/repository/home_repository.dart';
 import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_state.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homeRepository) : super(const HomeState.idle());
@@ -23,6 +24,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(const HomeState.resetAllLoading());
 
     selectedUnit = null;
+    getIt<TicketsCubit>().resetAll();
     emit(const HomeState.resetAllSuccess());
   }
 

@@ -12,9 +12,7 @@ class _TicketsWebService implements TicketsWebService {
   _TicketsWebService(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??= 'https://35328f6f-274a-410a-9574-8ba756280786.mock.pstmn.io/';
-  }
+  });
 
   final Dio _dio;
 
@@ -34,7 +32,34 @@ class _TicketsWebService implements TicketsWebService {
     )
             .compose(
               _dio.options,
-              'tickets/status',
+              'getAllTicketsStatus',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = TicketsStatusModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<TicketsStatusModel> getTicketTypes() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<TicketsStatusModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'getAllTicketsTypes',
               queryParameters: queryParameters,
               data: _data,
             )

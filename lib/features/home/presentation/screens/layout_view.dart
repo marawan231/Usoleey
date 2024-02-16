@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_complete_project/features/home/presentation/logic/cubit/
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/screens/tickets_view.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +21,10 @@ final List<Widget> layoutScreens = [
   const HomeScreen(),
   const MyBillsView(),
 
-  const TicketsView(),
+  BlocProvider.value(
+    value: getIt<TicketsCubit>(),
+    child: TicketsView(),
+  ),
   const MoreView(),
 
   // const ProfileView(),
@@ -43,14 +48,17 @@ class _LayoutViewState extends State<LayoutView> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       getIt<HomeCubit>().getAllUnits();
+      getIt<TicketsCubit>().getAllTicketsStatus();
+      getIt<TicketsCubit>().getAllTicketTypes();
+      getIt<TicketsCubit>().getAllTickets();
     });
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       bottomNavigationBar: CustomNavigationBar(
         onTap: (index) {
           setState(() {

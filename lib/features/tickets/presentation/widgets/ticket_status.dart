@@ -4,7 +4,8 @@ import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TicketStatus extends StatelessWidget {
-  const TicketStatus({super.key});
+  const TicketStatus({super.key, required this.status});
+  final String status;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class TicketStatus extends StatelessWidget {
             ),
             4.horizontalSpace,
             Text(
-              'تم الحل',
+              status,
               style: getBoldStyle(
                 fontSize: 12.sp,
                 color: ColorsManager.greenDark,

@@ -7,6 +7,8 @@ import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_state.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_state.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,38 +25,47 @@ class FilterByButton extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            // getIt<HomeCubit>().getAllUnits();
             showModalBottomSheet(
+              isDismissible: false,
+              enableDrag: false,
               context: context,
-              // enableDrag: true,
-              // scrollControlDisabledMaxHeightRatio: 0.5,
-              showDragHandle: true,
-              // anchorPoint: Offset(0.5, 0.5),
+              // showDragHandle: true,
 
               isScrollControlled: true,
-              backgroundColor: Colors.transparent,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40.sp),
+                  topRight: Radius.circular(40.sp),
+                ),
+              ),
+              backgroundColor: ColorsManager.white,
               builder: (context) {
                 return Container(
-                  padding: EdgeInsets.all(20.sp),
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  padding:
+                      EdgeInsets.only(left: 20.sp, right: 20.sp, bottom: 20.sp),
+                  // height: MediaQuery.of(context).size.height * 0.6,
                   // width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: ColorsManager.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(40.sp),
                       topRight: Radius.circular(40.sp),
                     ),
                   ),
-                  child: Column(
-                    children: [
-                      _buildDragHandle(),
-                      _buildResetButton(),
-                      // 20.verticalSpace,
-                      Text(S.current.filterBy,
-                          style: getBoldStyle(fontSize: 16.sp)),
-                      24.verticalSpace,
-                      _buildUnits(),
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        20.verticalSpace,
+                        _buildDragHandle(),
+                        _buildResetButton(),
+                        20.verticalSpace,
+                        Text(S.current.filterBy,
+                            style: getBoldStyle(fontSize: 16.sp)),
+                        24.verticalSpace,
+                        _buildUnits(),
+                      ],
+                    ),
                   ),
                 );
               },
@@ -93,8 +104,8 @@ class FilterByButton extends StatelessWidget {
 
   _buildDragHandle() {
     return Container(
-      width: 40.sp,
-      height: 6.sp,
+      width: 36.sp,
+      height: 5.sp,
       decoration: BoxDecoration(
         color: ColorsManager.grey,
         borderRadius: BorderRadius.circular(100.sp),
@@ -139,23 +150,31 @@ class FilterByButton extends StatelessWidget {
   }
 
   _buildUnits() {
-    return BlocProvider.value(
-      value: getIt<HomeCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: getIt<HomeCubit>()),
+        BlocProvider.value(value: getIt<TicketsCubit>()),
+      ],
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         // mainAxisSize: MainAxisSize.max,
         children: [
-          Text('العقار', style: getBoldStyle(fontSize: 16.sp)),
-          8.verticalSpace,
-          _buildListOfUnits(),
-          8.verticalSpace,
-          Text('نوع التذكرة', style: getBoldStyle(fontSize: 16.sp)),
-          8.verticalSpace,
-          _buildListOfTicketsType(),
-          8.verticalSpace,
-          Text('حالة التذكرة', style: getBoldStyle(fontSize: 16.sp)),
-          8.verticalSpace,
-          _buildListOfTicketsStatus(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('العقار', style: getBoldStyle(fontSize: 16.sp)),
+              8.verticalSpace,
+              _buildListOfUnits(),
+              8.verticalSpace,
+              Text('نوع التذكرة', style: getBoldStyle(fontSize: 16.sp)),
+              8.verticalSpace,
+              _buildListOfTicketsType(),
+              8.verticalSpace,
+              Text('حالة التذكرة', style: getBoldStyle(fontSize: 16.sp)),
+              8.verticalSpace,
+              _buildListOfTicketsStatus(),
+            ],
+          ),
           35.verticalSpace,
           _buildApplyButton(),
         ],
@@ -177,7 +196,7 @@ class FilterByButton extends StatelessWidget {
         return Wrap(
           spacing: 8.sp,
           children: List.generate(
-            5,
+            getIt<HomeCubit>().units.length,
             (index) => CustomFilterChip(
               label: getIt<HomeCubit>().units[index].name,
               selected: getIt<HomeCubit>().units[index] ==
@@ -195,22 +214,44 @@ class FilterByButton extends StatelessWidget {
 }
 
 _buildListOfTicketsType() {
-  return Wrap(
-    spacing: 8.sp,
-    children: List.generate(
-      5,
-      (index) => CustomFilterChip(),
-    ),
+  return BlocBuilder<TicketsCubit, TicketsState>(
+    builder: (context, state) {
+      return Wrap(
+        spacing: 8.sp,
+        children: List.generate(
+          getIt<TicketsCubit>().ticketsTypes.length,
+          (index) => CustomFilterChip(
+              label: getIt<TicketsCubit>().ticketsTypes[index].label,
+              selected: getIt<TicketsCubit>().ticketsTypes[index] ==
+                  getIt<TicketsCubit>().selectedTicketType,
+              onSelected: (value) {
+                getIt<TicketsCubit>().selectTicketType(
+                    getIt<TicketsCubit>().ticketsTypes[index]);
+              }),
+        ),
+      );
+    },
   );
 }
 
 _buildListOfTicketsStatus() {
-  return Wrap(
-    spacing: 8.sp,
-    children: List.generate(
-      5,
-      (index) => CustomFilterChip(),
-    ),
+  return BlocBuilder<TicketsCubit, TicketsState>(
+    builder: (context, state) {
+      return Wrap(
+        spacing: 8.sp,
+        children: List.generate(
+          getIt<TicketsCubit>().ticketsStatus.length,
+          (index) => CustomFilterChip(
+              label: getIt<TicketsCubit>().ticketsStatus[index].label,
+              selected: getIt<TicketsCubit>().ticketsStatus[index] ==
+                  getIt<TicketsCubit>().selectedTicketStatus,
+              onSelected: (value) {
+                getIt<TicketsCubit>().selectTicketStatus(
+                    getIt<TicketsCubit>().ticketsStatus[index]);
+              }),
+        ),
+      );
+    },
   );
 }
 
@@ -226,6 +267,7 @@ class CustomFilterChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChoiceChip(
+      padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 10.sp),
       showCheckmark: false,
       // backgroundColor: ColorsManager.white,
       elevation: 0,

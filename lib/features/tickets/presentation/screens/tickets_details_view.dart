@@ -72,7 +72,7 @@ class TicketDetailsView extends StatelessWidget {
                 12.verticalSpace,
                 Row(
                   children: [
-                    TicketStatus(),
+                    TicketStatus(status: 'procs'),
                   ],
                 ),
               ],

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/features/tickets/data/models/tickets_model.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_state.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/widgets/filter_by_button.dart';
+import 'package:flutter_complete_project/features/tickets/presentation/widgets/ticket_item.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/widgets/ticket_status.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,129 +35,19 @@ class TicketsView extends StatelessWidget {
   }
 
   _buildTicketsList() {
-    return Expanded(
-      child: ListView.separated(
-          padding:
-              EdgeInsets.only(top: 0.sp, bottom: 24.sp, left: 0.sp, right: 0),
-          shrinkWrap: true,
-          itemBuilder: (context, index) => _buildTicketItem(),
-          separatorBuilder: (context, index) => 8.verticalSpace,
-          itemCount: 10),
-    );
-  }
-
-  _buildTicketItem() {
-    return InkWell(
-      onTap: () => Go.toNamed(NamedRoutes.ticketDetails),
-      child: Container(
-        // padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 24.sp),
-        decoration: BoxDecoration(
-          color: ColorsManager.white,
-          border: Border.all(color: ColorsManager.grey, width: 1.sp),
-          borderRadius: BorderRadius.circular(8.r),
-        ),
-        child: Row(
-          children: [
-            _buildTicketStatusColor(),
-            8.horizontalSpace,
-            Expanded(child: _buildTicketBody()),
-          ],
-        ),
-        // child:
-      ),
-    );
-  }
-
-  Widget _buildTicketStatusColor() {
-    return Column(
-      children: [
-        Container(
-          height: 100.sp,
-          width: 8.sp,
-          decoration: BoxDecoration(
-            color: ColorsManager.greenDark,
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(8.r),
-              bottomRight: Radius.circular(8.r),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildTicketBody() {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 10.sp),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          _buildTicketInfo(),
-          10.verticalSpace,
-          Text(
-            'يوجد مشكلة في صيانة الغاز ارجو إرسال عامل للإصلاح',
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: getBoldStyle(fontSize: 14.sp, color: ColorsManager.black),
-          ),
-          10.verticalSpace,
-          Text('تم الإنشاء: منذ ٤ أيام',
-              style: getBoldStyle(
-                fontSize: 11.sp,
-                color: ColorsManager.greyMedium,
-              )),
-        ],
-      ),
-    );
-  }
-
-  _buildTicketInfo() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            _buildTicketStatus(),
-            8.horizontalSpace,
-            _buildTicketType(),
-          ],
-        ),
-        // Spacer(),
-        _buildTicketHashCode(),
-      ],
-    );
-  }
-
-  _buildTicketStatus() {
-    return TicketStatus();
-  }
-
-  _buildTicketType() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
-      decoration: BoxDecoration(
-        color: ColorsManager.greyLighter,
-        borderRadius: BorderRadius.circular(16.r),
-      ),
-      child: Text(
-        'خدمة',
-        style: getBoldStyle(
-          fontSize: 12.sp,
-          color: ColorsManager.greyLight,
-        ),
-      ),
-    );
-  }
-
-  _buildTicketHashCode() {
-    return Text(
-      'رقم التذكرة:#234A',
-      style: getBoldStyle(
-        fontSize: 12.sp,
-        color: const Color.fromRGBO(179, 182, 189, 1),
-      ),
+    return BlocBuilder<TicketsCubit, TicketsState>(
+      builder: (context, state) {
+        return Expanded(
+          child: ListView.separated(
+              padding: EdgeInsets.only(
+                  top: 0.sp, bottom: 24.sp, left: 0.sp, right: 0),
+              shrinkWrap: true,
+              itemBuilder: (context, index) =>
+                  TicketItem(ticket: getIt<TicketsCubit>().tickets[index]),
+              separatorBuilder: (context, index) => 8.verticalSpace,
+              itemCount: getIt<TicketsCubit>().tickets.length),
+        );
+      },
     );
   }
 }
