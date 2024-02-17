@@ -67,9 +67,9 @@ class _SplashViewState extends State<SplashView>
     log('selectedLanguage: ${getIt<ChooseLanguageCubit>().selectedLanguage}');
 
     if (RouterGenerator.chooseLanguageCubit.selectedLanguage != null) {
-      Go.offAllNamed(NamedRoutes.layout);
+      Go.offAllNamed(NamedRoutes.onBoarding);
     } else {
-      Go.offAllNamed(NamedRoutes.layout);
+      Go.offAllNamed(NamedRoutes.chooseAppLanguage);
     }
   }
 

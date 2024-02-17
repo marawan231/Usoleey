@@ -16,6 +16,6 @@ abstract class TicketsWebService {
   @GET("getAllTicketsTypes")
   Future<TicketsStatusModel> getTicketTypes();
   //get all tickets
-  // @GET("tickets")
-  // Future<TicketsModel> getAllTickets();
+  @GET("tickets")
+  Future<TicketsModel> getAllTickets();
 }

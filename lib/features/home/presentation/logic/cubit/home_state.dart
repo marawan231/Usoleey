@@ -30,4 +30,13 @@ class HomeState<T> with _$HomeState<T> {
   const factory HomeState.resetAllLoading() = ResetAllLoading<T>;
   // reset all state success
   const factory HomeState.resetAllSuccess() = ResetAllSuccess<T>;
+
+  //get all ads loading state
+  const factory HomeState.getAdsLoading() = GetAdsLoading<T>;
+
+  //get all ads success state
+  const factory HomeState.getAdsSuccess(List<T> response) = GetAdsSuccess<T>;
+
+  //get all ads error state
+  const factory HomeState.getAdsError(String error) = GetAdsError<T>;
 }

@@ -13,6 +13,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
   await setupGetIt();
+  // await setupDio();
   await CacheHelper.init();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

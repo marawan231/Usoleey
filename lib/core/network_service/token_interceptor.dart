@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_complete_project/core/constants/constants.dart';
 
 class TokenIntereceptor extends Interceptor {
   @override
@@ -12,7 +13,7 @@ class TokenIntereceptor extends Interceptor {
     // options.headers['deviceid'] = deviceId;
     // options.headers['countrycode'] = '+20';
     // options.headers['phonenumber'] = phoneNumber;
-    // options.headers['accesstoken'] = token;
+    options.headers['Authorization'] = 'Bearer ' + '$token';
     options.headers['Accept-Language'] = 'en';
     // options.headers['providername'] = 'TenTen';
 

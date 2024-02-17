@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/constants/values.dart';
-import 'package:flutter_complete_project/core/res/assets_manager.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
+import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -81,8 +83,9 @@ class MoreView extends StatelessWidget {
         children: [
           _buildImage(),
           8.verticalSpace,
+          //first and last name in ar
           Text(
-            'وليد الشهري',
+            '${getIt<AuthCubit>().userModel?.firstNameAr ?? ''} ${getIt<AuthCubit>().userModel?.lastNameAr ?? ''}',
             style: TextStyle(
               fontSize: 24.sp,
               fontWeight: FontWeight.bold,
@@ -91,7 +94,7 @@ class MoreView extends StatelessWidget {
           ),
           8.verticalSpace,
           Text(
-            'مستأجر',
+            getIt<AuthCubit>().userModel?.role ?? '',
             style: getRegularStyle(
               fontSize: 16.sp,
               color: ColorsManager.primary,
@@ -114,13 +117,14 @@ class MoreView extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(8.r),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(50.r),
-            child: Image.asset(
-              AssetsManager.appLogo,
-              fit: BoxFit.cover,
-            ),
-            // child:
-          ),
+              borderRadius: BorderRadius.circular(50.r),
+              child: CustomCachedImage(
+                image: getIt<AuthCubit>().userModel?.photo ?? '',
+                width: 100.sp,
+                height: 100.sp,
+              )
+              // child:
+              ),
         ),
       ),
     );

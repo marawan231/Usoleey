@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CustomCachedImage extends StatelessWidget {
   final String? image;
@@ -21,20 +20,21 @@ class CustomCachedImage extends StatelessWidget {
         : CachedNetworkImage(
             imageUrl: image!,
             imageBuilder: (context, imageProvider) => SizedBox(
-                    child: Image(
-                  image: imageProvider,
-                  color: color,
-                  fit: fit ?? BoxFit.cover,
-                  width: width,
-                  height: height,
-                )),
+                child: Image(
+              image: imageProvider,
+              color: color,
+              fit: fit ?? BoxFit.cover,
+              width: width,
+              height: height,
+            )),
             placeholder: (context, url) => const CupertinoActivityIndicator(),
-            errorWidget: (context, url, error) => SvgPicture.asset(
-                  AssetsManager.bell,
-                  fit: BoxFit.fill,
-                  height: height,
-                  width: width,
-                ));
+            errorWidget: (context, url, error) => Image.asset(
+              AssetsManager.tempBuilding,
+              height: height,
+              width: width,
+              fit: BoxFit.cover,
+            ),
+          );
   }
 }
 

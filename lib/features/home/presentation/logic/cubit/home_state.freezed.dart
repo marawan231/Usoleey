@@ -26,6 +26,9 @@ mixin _$HomeState<T> {
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +41,9 @@ mixin _$HomeState<T> {
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +56,9 @@ mixin _$HomeState<T> {
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +74,9 @@ mixin _$HomeState<T> {
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,6 +91,9 @@ mixin _$HomeState<T> {
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +108,9 @@ mixin _$HomeState<T> {
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,6 +180,9 @@ class _$IdleImpl<T> implements Idle<T> {
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) {
     return idle();
   }
@@ -177,6 +198,9 @@ class _$IdleImpl<T> implements Idle<T> {
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) {
     return idle?.call();
   }
@@ -192,6 +216,9 @@ class _$IdleImpl<T> implements Idle<T> {
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -213,6 +240,9 @@ class _$IdleImpl<T> implements Idle<T> {
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) {
     return idle(this);
   }
@@ -230,6 +260,9 @@ class _$IdleImpl<T> implements Idle<T> {
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) {
     return idle?.call(this);
   }
@@ -247,6 +280,9 @@ class _$IdleImpl<T> implements Idle<T> {
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -307,6 +343,9 @@ class _$GetAllUnitsLoadingImpl<T> implements GetAllUnitsLoading<T> {
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) {
     return getAllUnitsLoading();
   }
@@ -322,6 +361,9 @@ class _$GetAllUnitsLoadingImpl<T> implements GetAllUnitsLoading<T> {
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) {
     return getAllUnitsLoading?.call();
   }
@@ -337,6 +379,9 @@ class _$GetAllUnitsLoadingImpl<T> implements GetAllUnitsLoading<T> {
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) {
     if (getAllUnitsLoading != null) {
@@ -358,6 +403,9 @@ class _$GetAllUnitsLoadingImpl<T> implements GetAllUnitsLoading<T> {
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) {
     return getAllUnitsLoading(this);
   }
@@ -375,6 +423,9 @@ class _$GetAllUnitsLoadingImpl<T> implements GetAllUnitsLoading<T> {
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) {
     return getAllUnitsLoading?.call(this);
   }
@@ -392,6 +443,9 @@ class _$GetAllUnitsLoadingImpl<T> implements GetAllUnitsLoading<T> {
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) {
     if (getAllUnitsLoading != null) {
@@ -485,6 +539,9 @@ class _$GetAllUnitsSuccessImpl<T> implements GetAllUnitsSuccess<T> {
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) {
     return getAllUnitsSuccess(response);
   }
@@ -500,6 +557,9 @@ class _$GetAllUnitsSuccessImpl<T> implements GetAllUnitsSuccess<T> {
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) {
     return getAllUnitsSuccess?.call(response);
   }
@@ -515,6 +575,9 @@ class _$GetAllUnitsSuccessImpl<T> implements GetAllUnitsSuccess<T> {
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) {
     if (getAllUnitsSuccess != null) {
@@ -536,6 +599,9 @@ class _$GetAllUnitsSuccessImpl<T> implements GetAllUnitsSuccess<T> {
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) {
     return getAllUnitsSuccess(this);
   }
@@ -553,6 +619,9 @@ class _$GetAllUnitsSuccessImpl<T> implements GetAllUnitsSuccess<T> {
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) {
     return getAllUnitsSuccess?.call(this);
   }
@@ -570,6 +639,9 @@ class _$GetAllUnitsSuccessImpl<T> implements GetAllUnitsSuccess<T> {
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) {
     if (getAllUnitsSuccess != null) {
@@ -662,6 +734,9 @@ class _$GetAllUnitsErrorImpl<T> implements GetAllUnitsError<T> {
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) {
     return getAllUnitsError(error);
   }
@@ -677,6 +752,9 @@ class _$GetAllUnitsErrorImpl<T> implements GetAllUnitsError<T> {
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) {
     return getAllUnitsError?.call(error);
   }
@@ -692,6 +770,9 @@ class _$GetAllUnitsErrorImpl<T> implements GetAllUnitsError<T> {
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) {
     if (getAllUnitsError != null) {
@@ -713,6 +794,9 @@ class _$GetAllUnitsErrorImpl<T> implements GetAllUnitsError<T> {
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) {
     return getAllUnitsError(this);
   }
@@ -730,6 +814,9 @@ class _$GetAllUnitsErrorImpl<T> implements GetAllUnitsError<T> {
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) {
     return getAllUnitsError?.call(this);
   }
@@ -747,6 +834,9 @@ class _$GetAllUnitsErrorImpl<T> implements GetAllUnitsError<T> {
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) {
     if (getAllUnitsError != null) {
@@ -816,6 +906,9 @@ class _$ChangeSelectedUnitLoadingImpl<T>
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) {
     return changeSelectedUnitLoading();
   }
@@ -831,6 +924,9 @@ class _$ChangeSelectedUnitLoadingImpl<T>
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) {
     return changeSelectedUnitLoading?.call();
   }
@@ -846,6 +942,9 @@ class _$ChangeSelectedUnitLoadingImpl<T>
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) {
     if (changeSelectedUnitLoading != null) {
@@ -867,6 +966,9 @@ class _$ChangeSelectedUnitLoadingImpl<T>
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) {
     return changeSelectedUnitLoading(this);
   }
@@ -884,6 +986,9 @@ class _$ChangeSelectedUnitLoadingImpl<T>
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) {
     return changeSelectedUnitLoading?.call(this);
   }
@@ -901,6 +1006,9 @@ class _$ChangeSelectedUnitLoadingImpl<T>
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) {
     if (changeSelectedUnitLoading != null) {
@@ -992,6 +1100,9 @@ class _$ChangeSelectedUnitSuccessImpl<T>
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) {
     return changeSelectedUnitSuccess(unit);
   }
@@ -1007,6 +1118,9 @@ class _$ChangeSelectedUnitSuccessImpl<T>
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) {
     return changeSelectedUnitSuccess?.call(unit);
   }
@@ -1022,6 +1136,9 @@ class _$ChangeSelectedUnitSuccessImpl<T>
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) {
     if (changeSelectedUnitSuccess != null) {
@@ -1043,6 +1160,9 @@ class _$ChangeSelectedUnitSuccessImpl<T>
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) {
     return changeSelectedUnitSuccess(this);
   }
@@ -1060,6 +1180,9 @@ class _$ChangeSelectedUnitSuccessImpl<T>
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) {
     return changeSelectedUnitSuccess?.call(this);
   }
@@ -1077,6 +1200,9 @@ class _$ChangeSelectedUnitSuccessImpl<T>
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) {
     if (changeSelectedUnitSuccess != null) {
@@ -1143,6 +1269,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) {
     return resetAllLoading();
   }
@@ -1158,6 +1287,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) {
     return resetAllLoading?.call();
   }
@@ -1173,6 +1305,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) {
     if (resetAllLoading != null) {
@@ -1194,6 +1329,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) {
     return resetAllLoading(this);
   }
@@ -1211,6 +1349,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) {
     return resetAllLoading?.call(this);
   }
@@ -1228,6 +1369,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) {
     if (resetAllLoading != null) {
@@ -1287,6 +1431,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
     required TResult Function(Units unit) changeSelectedUnitSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
   }) {
     return resetAllSuccess();
   }
@@ -1302,6 +1449,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
     TResult? Function(Units unit)? changeSelectedUnitSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
   }) {
     return resetAllSuccess?.call();
   }
@@ -1317,6 +1467,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
     TResult Function(Units unit)? changeSelectedUnitSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
     required TResult orElse(),
   }) {
     if (resetAllSuccess != null) {
@@ -1338,6 +1491,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
         changeSelectedUnitSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
   }) {
     return resetAllSuccess(this);
   }
@@ -1355,6 +1511,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
         changeSelectedUnitSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
   }) {
     return resetAllSuccess?.call(this);
   }
@@ -1372,6 +1531,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
         changeSelectedUnitSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
     required TResult orElse(),
   }) {
     if (resetAllSuccess != null) {
@@ -1383,4 +1545,560 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
 
 abstract class ResetAllSuccess<T> implements HomeState<T> {
   const factory ResetAllSuccess() = _$ResetAllSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetAdsLoadingImplCopyWith<T, $Res> {
+  factory _$$GetAdsLoadingImplCopyWith(_$GetAdsLoadingImpl<T> value,
+          $Res Function(_$GetAdsLoadingImpl<T>) then) =
+      __$$GetAdsLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetAdsLoadingImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetAdsLoadingImpl<T>>
+    implements _$$GetAdsLoadingImplCopyWith<T, $Res> {
+  __$$GetAdsLoadingImplCopyWithImpl(_$GetAdsLoadingImpl<T> _value,
+      $Res Function(_$GetAdsLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAdsLoadingImpl<T> implements GetAdsLoading<T> {
+  const _$GetAdsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getAdsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetAdsLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getAllUnitsLoading,
+    required TResult Function(List<Units> response) getAllUnitsSuccess,
+    required TResult Function(String error) getAllUnitsError,
+    required TResult Function() changeSelectedUnitLoading,
+    required TResult Function(Units unit) changeSelectedUnitSuccess,
+    required TResult Function() resetAllLoading,
+    required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
+  }) {
+    return getAdsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getAllUnitsLoading,
+    TResult? Function(List<Units> response)? getAllUnitsSuccess,
+    TResult? Function(String error)? getAllUnitsError,
+    TResult? Function()? changeSelectedUnitLoading,
+    TResult? Function(Units unit)? changeSelectedUnitSuccess,
+    TResult? Function()? resetAllLoading,
+    TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
+  }) {
+    return getAdsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getAllUnitsLoading,
+    TResult Function(List<Units> response)? getAllUnitsSuccess,
+    TResult Function(String error)? getAllUnitsError,
+    TResult Function()? changeSelectedUnitLoading,
+    TResult Function(Units unit)? changeSelectedUnitSuccess,
+    TResult Function()? resetAllLoading,
+    TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
+    required TResult orElse(),
+  }) {
+    if (getAdsLoading != null) {
+      return getAdsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetAllUnitsLoading<T> value) getAllUnitsLoading,
+    required TResult Function(GetAllUnitsSuccess<T> value) getAllUnitsSuccess,
+    required TResult Function(GetAllUnitsError<T> value) getAllUnitsError,
+    required TResult Function(ChangeSelectedUnitLoading<T> value)
+        changeSelectedUnitLoading,
+    required TResult Function(ChangeSelectedUnitSuccess<T> value)
+        changeSelectedUnitSuccess,
+    required TResult Function(ResetAllLoading<T> value) resetAllLoading,
+    required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
+  }) {
+    return getAdsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetAllUnitsLoading<T> value)? getAllUnitsLoading,
+    TResult? Function(GetAllUnitsSuccess<T> value)? getAllUnitsSuccess,
+    TResult? Function(GetAllUnitsError<T> value)? getAllUnitsError,
+    TResult? Function(ChangeSelectedUnitLoading<T> value)?
+        changeSelectedUnitLoading,
+    TResult? Function(ChangeSelectedUnitSuccess<T> value)?
+        changeSelectedUnitSuccess,
+    TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
+  }) {
+    return getAdsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetAllUnitsLoading<T> value)? getAllUnitsLoading,
+    TResult Function(GetAllUnitsSuccess<T> value)? getAllUnitsSuccess,
+    TResult Function(GetAllUnitsError<T> value)? getAllUnitsError,
+    TResult Function(ChangeSelectedUnitLoading<T> value)?
+        changeSelectedUnitLoading,
+    TResult Function(ChangeSelectedUnitSuccess<T> value)?
+        changeSelectedUnitSuccess,
+    TResult Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
+    required TResult orElse(),
+  }) {
+    if (getAdsLoading != null) {
+      return getAdsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAdsLoading<T> implements HomeState<T> {
+  const factory GetAdsLoading() = _$GetAdsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetAdsSuccessImplCopyWith<T, $Res> {
+  factory _$$GetAdsSuccessImplCopyWith(_$GetAdsSuccessImpl<T> value,
+          $Res Function(_$GetAdsSuccessImpl<T>) then) =
+      __$$GetAdsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<T> response});
+}
+
+/// @nodoc
+class __$$GetAdsSuccessImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetAdsSuccessImpl<T>>
+    implements _$$GetAdsSuccessImplCopyWith<T, $Res> {
+  __$$GetAdsSuccessImplCopyWithImpl(_$GetAdsSuccessImpl<T> _value,
+      $Res Function(_$GetAdsSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? response = null,
+  }) {
+    return _then(_$GetAdsSuccessImpl<T>(
+      null == response
+          ? _value._response
+          : response // ignore: cast_nullable_to_non_nullable
+              as List<T>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAdsSuccessImpl<T> implements GetAdsSuccess<T> {
+  const _$GetAdsSuccessImpl(final List<T> response) : _response = response;
+
+  final List<T> _response;
+  @override
+  List<T> get response {
+    if (_response is EqualUnmodifiableListView) return _response;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_response);
+  }
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getAdsSuccess(response: $response)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAdsSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._response, _response));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_response));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAdsSuccessImplCopyWith<T, _$GetAdsSuccessImpl<T>> get copyWith =>
+      __$$GetAdsSuccessImplCopyWithImpl<T, _$GetAdsSuccessImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getAllUnitsLoading,
+    required TResult Function(List<Units> response) getAllUnitsSuccess,
+    required TResult Function(String error) getAllUnitsError,
+    required TResult Function() changeSelectedUnitLoading,
+    required TResult Function(Units unit) changeSelectedUnitSuccess,
+    required TResult Function() resetAllLoading,
+    required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
+  }) {
+    return getAdsSuccess(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getAllUnitsLoading,
+    TResult? Function(List<Units> response)? getAllUnitsSuccess,
+    TResult? Function(String error)? getAllUnitsError,
+    TResult? Function()? changeSelectedUnitLoading,
+    TResult? Function(Units unit)? changeSelectedUnitSuccess,
+    TResult? Function()? resetAllLoading,
+    TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
+  }) {
+    return getAdsSuccess?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getAllUnitsLoading,
+    TResult Function(List<Units> response)? getAllUnitsSuccess,
+    TResult Function(String error)? getAllUnitsError,
+    TResult Function()? changeSelectedUnitLoading,
+    TResult Function(Units unit)? changeSelectedUnitSuccess,
+    TResult Function()? resetAllLoading,
+    TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
+    required TResult orElse(),
+  }) {
+    if (getAdsSuccess != null) {
+      return getAdsSuccess(response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetAllUnitsLoading<T> value) getAllUnitsLoading,
+    required TResult Function(GetAllUnitsSuccess<T> value) getAllUnitsSuccess,
+    required TResult Function(GetAllUnitsError<T> value) getAllUnitsError,
+    required TResult Function(ChangeSelectedUnitLoading<T> value)
+        changeSelectedUnitLoading,
+    required TResult Function(ChangeSelectedUnitSuccess<T> value)
+        changeSelectedUnitSuccess,
+    required TResult Function(ResetAllLoading<T> value) resetAllLoading,
+    required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
+  }) {
+    return getAdsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetAllUnitsLoading<T> value)? getAllUnitsLoading,
+    TResult? Function(GetAllUnitsSuccess<T> value)? getAllUnitsSuccess,
+    TResult? Function(GetAllUnitsError<T> value)? getAllUnitsError,
+    TResult? Function(ChangeSelectedUnitLoading<T> value)?
+        changeSelectedUnitLoading,
+    TResult? Function(ChangeSelectedUnitSuccess<T> value)?
+        changeSelectedUnitSuccess,
+    TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
+  }) {
+    return getAdsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetAllUnitsLoading<T> value)? getAllUnitsLoading,
+    TResult Function(GetAllUnitsSuccess<T> value)? getAllUnitsSuccess,
+    TResult Function(GetAllUnitsError<T> value)? getAllUnitsError,
+    TResult Function(ChangeSelectedUnitLoading<T> value)?
+        changeSelectedUnitLoading,
+    TResult Function(ChangeSelectedUnitSuccess<T> value)?
+        changeSelectedUnitSuccess,
+    TResult Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
+    required TResult orElse(),
+  }) {
+    if (getAdsSuccess != null) {
+      return getAdsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAdsSuccess<T> implements HomeState<T> {
+  const factory GetAdsSuccess(final List<T> response) = _$GetAdsSuccessImpl<T>;
+
+  List<T> get response;
+  @JsonKey(ignore: true)
+  _$$GetAdsSuccessImplCopyWith<T, _$GetAdsSuccessImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAdsErrorImplCopyWith<T, $Res> {
+  factory _$$GetAdsErrorImplCopyWith(_$GetAdsErrorImpl<T> value,
+          $Res Function(_$GetAdsErrorImpl<T>) then) =
+      __$$GetAdsErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetAdsErrorImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetAdsErrorImpl<T>>
+    implements _$$GetAdsErrorImplCopyWith<T, $Res> {
+  __$$GetAdsErrorImplCopyWithImpl(
+      _$GetAdsErrorImpl<T> _value, $Res Function(_$GetAdsErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetAdsErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAdsErrorImpl<T> implements GetAdsError<T> {
+  const _$GetAdsErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getAdsError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAdsErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAdsErrorImplCopyWith<T, _$GetAdsErrorImpl<T>> get copyWith =>
+      __$$GetAdsErrorImplCopyWithImpl<T, _$GetAdsErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getAllUnitsLoading,
+    required TResult Function(List<Units> response) getAllUnitsSuccess,
+    required TResult Function(String error) getAllUnitsError,
+    required TResult Function() changeSelectedUnitLoading,
+    required TResult Function(Units unit) changeSelectedUnitSuccess,
+    required TResult Function() resetAllLoading,
+    required TResult Function() resetAllSuccess,
+    required TResult Function() getAdsLoading,
+    required TResult Function(List<T> response) getAdsSuccess,
+    required TResult Function(String error) getAdsError,
+  }) {
+    return getAdsError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getAllUnitsLoading,
+    TResult? Function(List<Units> response)? getAllUnitsSuccess,
+    TResult? Function(String error)? getAllUnitsError,
+    TResult? Function()? changeSelectedUnitLoading,
+    TResult? Function(Units unit)? changeSelectedUnitSuccess,
+    TResult? Function()? resetAllLoading,
+    TResult? Function()? resetAllSuccess,
+    TResult? Function()? getAdsLoading,
+    TResult? Function(List<T> response)? getAdsSuccess,
+    TResult? Function(String error)? getAdsError,
+  }) {
+    return getAdsError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getAllUnitsLoading,
+    TResult Function(List<Units> response)? getAllUnitsSuccess,
+    TResult Function(String error)? getAllUnitsError,
+    TResult Function()? changeSelectedUnitLoading,
+    TResult Function(Units unit)? changeSelectedUnitSuccess,
+    TResult Function()? resetAllLoading,
+    TResult Function()? resetAllSuccess,
+    TResult Function()? getAdsLoading,
+    TResult Function(List<T> response)? getAdsSuccess,
+    TResult Function(String error)? getAdsError,
+    required TResult orElse(),
+  }) {
+    if (getAdsError != null) {
+      return getAdsError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetAllUnitsLoading<T> value) getAllUnitsLoading,
+    required TResult Function(GetAllUnitsSuccess<T> value) getAllUnitsSuccess,
+    required TResult Function(GetAllUnitsError<T> value) getAllUnitsError,
+    required TResult Function(ChangeSelectedUnitLoading<T> value)
+        changeSelectedUnitLoading,
+    required TResult Function(ChangeSelectedUnitSuccess<T> value)
+        changeSelectedUnitSuccess,
+    required TResult Function(ResetAllLoading<T> value) resetAllLoading,
+    required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetAdsLoading<T> value) getAdsLoading,
+    required TResult Function(GetAdsSuccess<T> value) getAdsSuccess,
+    required TResult Function(GetAdsError<T> value) getAdsError,
+  }) {
+    return getAdsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetAllUnitsLoading<T> value)? getAllUnitsLoading,
+    TResult? Function(GetAllUnitsSuccess<T> value)? getAllUnitsSuccess,
+    TResult? Function(GetAllUnitsError<T> value)? getAllUnitsError,
+    TResult? Function(ChangeSelectedUnitLoading<T> value)?
+        changeSelectedUnitLoading,
+    TResult? Function(ChangeSelectedUnitSuccess<T> value)?
+        changeSelectedUnitSuccess,
+    TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult? Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult? Function(GetAdsError<T> value)? getAdsError,
+  }) {
+    return getAdsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetAllUnitsLoading<T> value)? getAllUnitsLoading,
+    TResult Function(GetAllUnitsSuccess<T> value)? getAllUnitsSuccess,
+    TResult Function(GetAllUnitsError<T> value)? getAllUnitsError,
+    TResult Function(ChangeSelectedUnitLoading<T> value)?
+        changeSelectedUnitLoading,
+    TResult Function(ChangeSelectedUnitSuccess<T> value)?
+        changeSelectedUnitSuccess,
+    TResult Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetAdsLoading<T> value)? getAdsLoading,
+    TResult Function(GetAdsSuccess<T> value)? getAdsSuccess,
+    TResult Function(GetAdsError<T> value)? getAdsError,
+    required TResult orElse(),
+  }) {
+    if (getAdsError != null) {
+      return getAdsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAdsError<T> implements HomeState<T> {
+  const factory GetAdsError(final String error) = _$GetAdsErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetAdsErrorImplCopyWith<T, _$GetAdsErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

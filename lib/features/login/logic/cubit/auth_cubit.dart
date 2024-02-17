@@ -1,9 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/constants/constants.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
+import 'package:flutter_complete_project/features/account_info/presentation/screens/account_info_view.dart';
 import 'package:flutter_complete_project/features/login/data/models/auth_model.dart';
 import 'package:flutter_complete_project/features/login/data/models/login_request_model.dart';
 import 'package:flutter_complete_project/features/login/data/repository/auth_repository.dart';
@@ -17,7 +16,7 @@ class AuthCubit extends Cubit<AuthState> {
   final phoneController = TextEditingController();
   final passwordController = TextEditingController();
 
-    UserModel? userModel;
+  UserModel? userModel;
 
   //formKey
 
@@ -30,7 +29,10 @@ class AuthCubit extends Cubit<AuthState> {
       success: (AuthModel response) async {
         token = response.data!.accessToken;
         userModel = response.data?.user;
-
+        accountInfoList[0].value =
+            '${userModel!.firstNameAr} ${userModel!.lastNameAr}';
+        accountInfoList[1].value = userModel!.email ?? '';
+        accountInfoList[2].value = userModel!.phoneNumber ?? '';
         emit(AuthState.loginSuccess(response));
       },
       failure: (networkExceptions) {

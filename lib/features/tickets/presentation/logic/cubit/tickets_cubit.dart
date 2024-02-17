@@ -30,18 +30,18 @@ class TicketsCubit extends Cubit<TicketsState> {
   }
 
   void getAllTicketsStatus() async {
-    emit(const TicketsState.getAllTicketsLoading());
+    emit(const TicketsState.getTicketsStatusLoading());
     var result = await ticketsRepository.getTicketsStatus();
 
     result.when(
       success: (response) {
         inspect(response.data!);
         ticketsStatus = response.data!;
-        emit(TicketsState.getAllTicketsSuccess(response.data!));
+        emit(TicketsState.getAllTicketsStatusSuccess(response.data!));
       },
       failure: (networkExceptions) {
         final error = DioExceptionType.getErrorMessage(networkExceptions);
-        emit(TicketsState.getAllTicketsError(error));
+        emit(TicketsState.getAllTicketsStatusError(error));
       },
     );
   }
@@ -77,9 +77,9 @@ class TicketsCubit extends Cubit<TicketsState> {
 
     result.when(
       success: (response) {
-        inspect(response.data!);
-        tickets = response.data!;
-        emit(TicketsState.getAllTicketsSuccess(response.data!));
+        // inspect(response.data!);
+        tickets = response.data!.tickets!;
+        emit(TicketsState.getAllTicketsSuccess(response.data!.tickets!));
       },
       failure: (networkExceptions) {
         final error = DioExceptionType.getErrorMessage(networkExceptions);

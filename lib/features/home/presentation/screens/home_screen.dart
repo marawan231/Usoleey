@@ -8,9 +8,9 @@ import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_complete_project/features/bills/presentation/widgets/bill_item.dart';
 import 'package:flutter_complete_project/features/home/presentation/widgets/custom_services.dart';
 import 'package:flutter_complete_project/features/home/presentation/widgets/home_custom_button.dart';
+import 'package:flutter_complete_project/features/home/presentation/widgets/list_of_advertisments.dart';
 import 'package:flutter_complete_project/features/home/presentation/widgets/rent_time_container.dart';
 import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
-import 'package:flutter_complete_project/features/offers/presentation/widgets/offers_item.dart';
 import 'package:flutter_complete_project/features/on_boarding/presentation/widgets/on_boarding_widgets_imports.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -43,15 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
             24.verticalSpace,
             CustomServices(),
             24.verticalSpace,
-
-            _buildOffersList(),
+            AdvetisementsList(),
             24.verticalSpace,
-
             _buildBillsList(),
-
-            // _buildExploreOffers(),
-            // CustomServices(),
-            // CustomServices(),
             100.verticalSpace,
           ],
         ),
@@ -59,17 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // _buildExploreOffers() {
-  //   return Column(
-  //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     children: [
-
-  //       // OffersItem(),
-  //       // 16.verticalSpace,
-  //       // _buildOffersList(),
-  //     ],
-  //   );
-  // }
   _buildBillsList() {
     return Column(
       children: [
@@ -111,47 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         // _buildBillsList(),
-      ],
-    );
-  }
-
-  _buildOffersList() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'اسكتشف احدث عروض الإيجار',
-              style: getBoldStyle(fontSize: 16.sp),
-            ),
-            InkWell(
-              onTap: () {
-                Go.toNamed(NamedRoutes.offers);
-              },
-              child: Text(
-                'المزيد',
-                style: getBoldStyle(
-                    fontSize: 12.sp, color: ColorsManager.primaryDark),
-              ),
-            ),
-          ],
-        ),
-        16.verticalSpace,
-        SizedBox(
-          height: 180.sp,
-          child: ListView.separated(
-            shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
-            itemCount: 4,
-            itemBuilder: (context, index) => OffersItem(
-              width: 284.sp,
-              height: 120.sp,
-            ),
-            separatorBuilder: (context, index) => 16.horizontalSpace,
-          ),
-        ),
       ],
     );
   }

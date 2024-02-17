@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
+import 'package:flutter_complete_project/features/home/data/models/ads_model.dart';
 import 'package:flutter_complete_project/features/home/data/models/units_model.dart';
 import 'package:flutter_complete_project/features/home/data/repository/home_repository.dart';
 import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_state.dart';
@@ -11,6 +12,8 @@ class HomeCubit extends Cubit<HomeState> {
   final HomeRepository homeRepository;
 
   List<Units> units = [];
+  //list of ads
+  List<Ad> ads = [];
   //selected unit
   Units? selectedUnit;
 
@@ -41,6 +44,24 @@ class HomeCubit extends Cubit<HomeState> {
       failure: (networkExceptions) {
         final error = DioExceptionType.getErrorMessage(networkExceptions);
         emit(HomeState.getAllUnitsError(error));
+      },
+    );
+  }
+
+  //get all ads
+  void getAds() async {
+    emit(const HomeState.getAdsLoading());
+    var result = await homeRepository.getAds();
+
+    result.when(
+      success: (response) {
+        // inspect(response.data!.ads);
+        ads = response.data!;
+        emit(HomeState.getAdsSuccess(response.data!));
+      },
+      failure: (networkExceptions) {
+        final error = DioExceptionType.getErrorMessage(networkExceptions);
+        emit(HomeState.getAdsError(error));
       },
     );
   }

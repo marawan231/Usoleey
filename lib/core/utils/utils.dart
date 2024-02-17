@@ -6,6 +6,7 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Future<void> showIosDialog(
     {required BuildContext context,
@@ -86,4 +87,12 @@ void showSnackBar({
       duration: Duration(seconds: duration ?? 2),
     ),
   );
+}
+
+void launchWebUrl({required String url}) async {
+  // print('----------------------------------------------------------------');
+  if (!await launchUrl(Uri.parse(url))) {
+    showToast(message: 'Could not launch $url');
+    // launchWebUrl(url: 'https://www.google.com');
+  }
 }

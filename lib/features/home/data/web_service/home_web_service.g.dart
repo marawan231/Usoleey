@@ -12,9 +12,7 @@ class _HomeWebServices implements HomeWebServices {
   _HomeWebServices(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??= 'http://8.213.34.113/api/v1/';
-  }
+  });
 
   final Dio _dio;
 
@@ -34,7 +32,7 @@ class _HomeWebServices implements HomeWebServices {
     )
             .compose(
               _dio.options,
-              'dashboard/units',
+              'units',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -48,20 +46,20 @@ class _HomeWebServices implements HomeWebServices {
   }
 
   @override
-  Future<TicketsModel> getAllTickets() async {
+  Future<AdsModel> getAds() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<TicketsModel>(Options(
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<AdsModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'tickets',
+              'ads',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -70,7 +68,7 @@ class _HomeWebServices implements HomeWebServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = TicketsModel.fromJson(_result.data!);
+    final value = AdsModel.fromJson(_result.data!);
     return value;
   }
 

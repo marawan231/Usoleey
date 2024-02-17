@@ -12,9 +12,7 @@ class _AuthWebService implements AuthWebService {
   _AuthWebService(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??= 'http://8.213.34.113/api/v1/';
-  }
+  });
 
   final Dio _dio;
 

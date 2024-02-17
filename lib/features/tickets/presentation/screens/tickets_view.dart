@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
-import 'package:flutter_complete_project/core/navigator/named_routes.dart';
-import 'package:flutter_complete_project/core/navigator/navigator.dart';
-import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
-import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_complete_project/features/tickets/data/models/tickets_model.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_state.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/widgets/filter_by_button.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/widgets/ticket_item.dart';
-import 'package:flutter_complete_project/features/tickets/presentation/widgets/ticket_status.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TicketsView extends StatelessWidget {

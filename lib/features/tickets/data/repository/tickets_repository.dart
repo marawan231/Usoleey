@@ -1,7 +1,7 @@
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/network_service/api_result.dart';
+import 'package:flutter_complete_project/core/network_service/network_constants.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
-import 'package:flutter_complete_project/features/home/data/web_service/home_web_service.dart';
 import 'package:flutter_complete_project/features/tickets/data/models/tickets_model.dart';
 import 'package:flutter_complete_project/features/tickets/data/models/tickets_status_model.dart';
 import 'package:flutter_complete_project/features/tickets/data/web_service/tickets_web_service.dart';
@@ -35,7 +35,9 @@ class TicketsRepository {
   //get all tickets
   Future<ApiResult<TicketsModel>> getAllTickets() async {
     try {
-      var response = await HomeWebServices(getIt()).getAllTickets();
+      var response =
+          await TicketsWebService(getIt(), baseUrl: NetworkConstants.baseUrl)
+              .getAllTickets();
       return ApiResult.success(response);
     } catch (error, stacktrace) {
       return ApiResult.failure(

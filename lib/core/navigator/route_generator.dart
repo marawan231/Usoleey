@@ -88,7 +88,12 @@ class RouterGenerator {
         return _pageRouter.build(const AccountInfoView(), settings: settings);
       //offers
       case NamedRoutes.offers:
-        return _pageRouter.build(const OffersView(), settings: settings);
+        return _pageRouter.build(
+            BlocProvider.value(
+              value: homeCubit,
+              child: OffersView(),
+            ),
+            settings: settings);
       //about app
       case NamedRoutes.aboutApp:
         return _pageRouter.build(const AboutAppView(), settings: settings);

@@ -18,7 +18,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final List<Widget> layoutScreens = [
   //   const TransactionHistoryView(),
-  const HomeScreen(),
+  BlocProvider.value(
+    value: getIt<HomeCubit>(),
+    child: HomeScreen(),
+  ),
   const MyBillsView(),
 
   BlocProvider.value(
@@ -46,8 +49,10 @@ class LayoutView extends StatefulWidget {
 class _LayoutViewState extends State<LayoutView> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((_s) {
       getIt<HomeCubit>().getAllUnits();
+      getIt<HomeCubit>().getAds();
+
       getIt<TicketsCubit>().getAllTicketsStatus();
       getIt<TicketsCubit>().getAllTicketTypes();
       getIt<TicketsCubit>().getAllTickets();
@@ -76,7 +81,9 @@ class _LayoutViewState extends State<LayoutView> {
                       Icons.add,
                       size: 24.sp,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      getIt<TicketsCubit>().getAllTickets();
+                    },
                   ),
                 )
               : selectedTab == 3

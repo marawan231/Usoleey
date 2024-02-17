@@ -20,7 +20,7 @@ mixin _$TicketsState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -31,13 +31,16 @@ mixin _$TicketsState<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -48,13 +51,16 @@ mixin _$TicketsState<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -65,6 +71,9 @@ mixin _$TicketsState<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -92,6 +101,12 @@ mixin _$TicketsState<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -115,6 +130,12 @@ mixin _$TicketsState<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -136,6 +157,11 @@ mixin _$TicketsState<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -199,7 +225,7 @@ class _$IdleImpl<T> implements Idle<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -210,6 +236,9 @@ class _$IdleImpl<T> implements Idle<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return idle();
   }
@@ -219,7 +248,7 @@ class _$IdleImpl<T> implements Idle<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -230,6 +259,9 @@ class _$IdleImpl<T> implements Idle<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return idle?.call();
   }
@@ -239,7 +271,7 @@ class _$IdleImpl<T> implements Idle<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -250,6 +282,9 @@ class _$IdleImpl<T> implements Idle<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -283,6 +318,12 @@ class _$IdleImpl<T> implements Idle<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return idle(this);
   }
@@ -309,6 +350,12 @@ class _$IdleImpl<T> implements Idle<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return idle?.call(this);
   }
@@ -333,6 +380,11 @@ class _$IdleImpl<T> implements Idle<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -388,7 +440,7 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -399,6 +451,9 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return getAllTicketsLoading();
   }
@@ -408,7 +463,7 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -419,6 +474,9 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return getAllTicketsLoading?.call();
   }
@@ -428,7 +486,7 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -439,6 +497,9 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketsLoading != null) {
@@ -472,6 +533,12 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return getAllTicketsLoading(this);
   }
@@ -498,6 +565,12 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return getAllTicketsLoading?.call(this);
   }
@@ -522,6 +595,11 @@ class _$GetAllTicketsLoadingImpl<T> implements GetAllTicketsLoading<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketsLoading != null) {
@@ -542,7 +620,7 @@ abstract class _$$GetAllTicketsSuccessImplCopyWith<T, $Res> {
           $Res Function(_$GetAllTicketsSuccessImpl<T>) then) =
       __$$GetAllTicketsSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({List<T> tickets});
+  $Res call({List<Ticket> tickets});
 }
 
 /// @nodoc
@@ -562,7 +640,7 @@ class __$$GetAllTicketsSuccessImplCopyWithImpl<T, $Res>
       null == tickets
           ? _value._tickets
           : tickets // ignore: cast_nullable_to_non_nullable
-              as List<T>,
+              as List<Ticket>,
     ));
   }
 }
@@ -570,11 +648,12 @@ class __$$GetAllTicketsSuccessImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
-  const _$GetAllTicketsSuccessImpl(final List<T> tickets) : _tickets = tickets;
+  const _$GetAllTicketsSuccessImpl(final List<Ticket> tickets)
+      : _tickets = tickets;
 
-  final List<T> _tickets;
+  final List<Ticket> _tickets;
   @override
-  List<T> get tickets {
+  List<Ticket> get tickets {
     if (_tickets is EqualUnmodifiableListView) return _tickets;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tickets);
@@ -609,7 +688,7 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -620,6 +699,9 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return getAllTicketsSuccess(tickets);
   }
@@ -629,7 +711,7 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -640,6 +722,9 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return getAllTicketsSuccess?.call(tickets);
   }
@@ -649,7 +734,7 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -660,6 +745,9 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketsSuccess != null) {
@@ -693,6 +781,12 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return getAllTicketsSuccess(this);
   }
@@ -719,6 +813,12 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return getAllTicketsSuccess?.call(this);
   }
@@ -743,6 +843,11 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketsSuccess != null) {
@@ -753,10 +858,10 @@ class _$GetAllTicketsSuccessImpl<T> implements GetAllTicketsSuccess<T> {
 }
 
 abstract class GetAllTicketsSuccess<T> implements TicketsState<T> {
-  const factory GetAllTicketsSuccess(final List<T> tickets) =
+  const factory GetAllTicketsSuccess(final List<Ticket> tickets) =
       _$GetAllTicketsSuccessImpl<T>;
 
-  List<T> get tickets;
+  List<Ticket> get tickets;
   @JsonKey(ignore: true)
   _$$GetAllTicketsSuccessImplCopyWith<T, _$GetAllTicketsSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -829,7 +934,7 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -840,6 +945,9 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return getAllTicketsError(error);
   }
@@ -849,7 +957,7 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -860,6 +968,9 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return getAllTicketsError?.call(error);
   }
@@ -869,7 +980,7 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -880,6 +991,9 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketsError != null) {
@@ -913,6 +1027,12 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return getAllTicketsError(this);
   }
@@ -939,6 +1059,12 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return getAllTicketsError?.call(this);
   }
@@ -963,6 +1089,11 @@ class _$GetAllTicketsErrorImpl<T> implements GetAllTicketsError<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketsError != null) {
@@ -1027,7 +1158,7 @@ class _$selectTicketStatusLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -1038,6 +1169,9 @@ class _$selectTicketStatusLoadingImpl<T>
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return selectTicketStatusLoading();
   }
@@ -1047,7 +1181,7 @@ class _$selectTicketStatusLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1058,6 +1192,9 @@ class _$selectTicketStatusLoadingImpl<T>
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return selectTicketStatusLoading?.call();
   }
@@ -1067,7 +1204,7 @@ class _$selectTicketStatusLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1078,6 +1215,9 @@ class _$selectTicketStatusLoadingImpl<T>
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (selectTicketStatusLoading != null) {
@@ -1111,6 +1251,12 @@ class _$selectTicketStatusLoadingImpl<T>
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return selectTicketStatusLoading(this);
   }
@@ -1137,6 +1283,12 @@ class _$selectTicketStatusLoadingImpl<T>
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return selectTicketStatusLoading?.call(this);
   }
@@ -1161,6 +1313,11 @@ class _$selectTicketStatusLoadingImpl<T>
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (selectTicketStatusLoading != null) {
@@ -1249,7 +1406,7 @@ class _$SelectTicketStatusSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -1260,6 +1417,9 @@ class _$SelectTicketStatusSuccessImpl<T>
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return selectTicketStatusSuccess(ticketStatus);
   }
@@ -1269,7 +1429,7 @@ class _$SelectTicketStatusSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1280,6 +1440,9 @@ class _$SelectTicketStatusSuccessImpl<T>
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return selectTicketStatusSuccess?.call(ticketStatus);
   }
@@ -1289,7 +1452,7 @@ class _$SelectTicketStatusSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1300,6 +1463,9 @@ class _$SelectTicketStatusSuccessImpl<T>
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (selectTicketStatusSuccess != null) {
@@ -1333,6 +1499,12 @@ class _$SelectTicketStatusSuccessImpl<T>
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return selectTicketStatusSuccess(this);
   }
@@ -1359,6 +1531,12 @@ class _$SelectTicketStatusSuccessImpl<T>
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return selectTicketStatusSuccess?.call(this);
   }
@@ -1383,6 +1561,11 @@ class _$SelectTicketStatusSuccessImpl<T>
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (selectTicketStatusSuccess != null) {
@@ -1447,7 +1630,7 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -1458,6 +1641,9 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return getAllTicketTypesLoading();
   }
@@ -1467,7 +1653,7 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1478,6 +1664,9 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return getAllTicketTypesLoading?.call();
   }
@@ -1487,7 +1676,7 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1498,6 +1687,9 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketTypesLoading != null) {
@@ -1531,6 +1723,12 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return getAllTicketTypesLoading(this);
   }
@@ -1557,6 +1755,12 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return getAllTicketTypesLoading?.call(this);
   }
@@ -1581,6 +1785,11 @@ class _$GetAllTicketTypesLoadingImpl<T> implements GetAllTicketTypesLoading<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketTypesLoading != null) {
@@ -1672,7 +1881,7 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -1683,6 +1892,9 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return getAllTicketTypesSuccess(ticketTypes);
   }
@@ -1692,7 +1904,7 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1703,6 +1915,9 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return getAllTicketTypesSuccess?.call(ticketTypes);
   }
@@ -1712,7 +1927,7 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1723,6 +1938,9 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketTypesSuccess != null) {
@@ -1756,6 +1974,12 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return getAllTicketTypesSuccess(this);
   }
@@ -1782,6 +2006,12 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return getAllTicketTypesSuccess?.call(this);
   }
@@ -1806,6 +2036,11 @@ class _$GetAllTicketTypesSuccessImpl<T> implements GetAllTicketTypesSuccess<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketTypesSuccess != null) {
@@ -1894,7 +2129,7 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -1905,6 +2140,9 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return getAllTicketTypesError(error);
   }
@@ -1914,7 +2152,7 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1925,6 +2163,9 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return getAllTicketTypesError?.call(error);
   }
@@ -1934,7 +2175,7 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -1945,6 +2186,9 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketTypesError != null) {
@@ -1978,6 +2222,12 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return getAllTicketTypesError(this);
   }
@@ -2004,6 +2254,12 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return getAllTicketTypesError?.call(this);
   }
@@ -2028,6 +2284,11 @@ class _$GetAllTicketTypesErrorImpl<T> implements GetAllTicketTypesError<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (getAllTicketTypesError != null) {
@@ -2091,7 +2352,7 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -2102,6 +2363,9 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return selectTicketTypeLoading();
   }
@@ -2111,7 +2375,7 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -2122,6 +2386,9 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return selectTicketTypeLoading?.call();
   }
@@ -2131,7 +2398,7 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -2142,6 +2409,9 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (selectTicketTypeLoading != null) {
@@ -2175,6 +2445,12 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return selectTicketTypeLoading(this);
   }
@@ -2201,6 +2477,12 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return selectTicketTypeLoading?.call(this);
   }
@@ -2225,6 +2507,11 @@ class _$SelectTicketTypeLoadingImpl<T> implements SelectTicketTypeLoading<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (selectTicketTypeLoading != null) {
@@ -2310,7 +2597,7 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -2321,6 +2608,9 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return selectTicketTypeSuccess(ticketType);
   }
@@ -2330,7 +2620,7 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -2341,6 +2631,9 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return selectTicketTypeSuccess?.call(ticketType);
   }
@@ -2350,7 +2643,7 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -2361,6 +2654,9 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (selectTicketTypeSuccess != null) {
@@ -2394,6 +2690,12 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return selectTicketTypeSuccess(this);
   }
@@ -2420,6 +2722,12 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return selectTicketTypeSuccess?.call(this);
   }
@@ -2444,6 +2752,11 @@ class _$SelectTicketTypeSuccessImpl<T> implements SelectTicketTypeSuccess<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (selectTicketTypeSuccess != null) {
@@ -2503,7 +2816,7 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -2514,6 +2827,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return resetAllLoading();
   }
@@ -2523,7 +2839,7 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -2534,6 +2850,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return resetAllLoading?.call();
   }
@@ -2543,7 +2862,7 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -2554,6 +2873,9 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (resetAllLoading != null) {
@@ -2587,6 +2909,12 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return resetAllLoading(this);
   }
@@ -2613,6 +2941,12 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return resetAllLoading?.call(this);
   }
@@ -2637,6 +2971,11 @@ class _$ResetAllLoadingImpl<T> implements ResetAllLoading<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (resetAllLoading != null) {
@@ -2690,7 +3029,7 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getAllTicketsLoading,
-    required TResult Function(List<T> tickets) getAllTicketsSuccess,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
     required TResult Function(String error) getAllTicketsError,
     required TResult Function() selectTicketStatusLoading,
     required TResult Function(T ticketStatus) selectTicketStatusSuccess,
@@ -2701,6 +3040,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
     required TResult Function(T ticketType) selectTicketTypeSuccess,
     required TResult Function() resetAllLoading,
     required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
   }) {
     return resetAllSuccess();
   }
@@ -2710,7 +3052,7 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getAllTicketsLoading,
-    TResult? Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult? Function(String error)? getAllTicketsError,
     TResult? Function()? selectTicketStatusLoading,
     TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -2721,6 +3063,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
     TResult? Function(T ticketType)? selectTicketTypeSuccess,
     TResult? Function()? resetAllLoading,
     TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
   }) {
     return resetAllSuccess?.call();
   }
@@ -2730,7 +3075,7 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getAllTicketsLoading,
-    TResult Function(List<T> tickets)? getAllTicketsSuccess,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
     TResult Function(String error)? getAllTicketsError,
     TResult Function()? selectTicketStatusLoading,
     TResult Function(T ticketStatus)? selectTicketStatusSuccess,
@@ -2741,6 +3086,9 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
     TResult Function(T ticketType)? selectTicketTypeSuccess,
     TResult Function()? resetAllLoading,
     TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (resetAllSuccess != null) {
@@ -2774,6 +3122,12 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
         selectTicketTypeSuccess,
     required TResult Function(ResetAllLoading<T> value) resetAllLoading,
     required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
   }) {
     return resetAllSuccess(this);
   }
@@ -2800,6 +3154,12 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
         selectTicketTypeSuccess,
     TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
   }) {
     return resetAllSuccess?.call(this);
   }
@@ -2824,6 +3184,11 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
     TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
     TResult Function(ResetAllLoading<T> value)? resetAllLoading,
     TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
     required TResult orElse(),
   }) {
     if (resetAllSuccess != null) {
@@ -2835,4 +3200,730 @@ class _$ResetAllSuccessImpl<T> implements ResetAllSuccess<T> {
 
 abstract class ResetAllSuccess<T> implements TicketsState<T> {
   const factory ResetAllSuccess() = _$ResetAllSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetTicketsStatusLoadingImplCopyWith<T, $Res> {
+  factory _$$GetTicketsStatusLoadingImplCopyWith(
+          _$GetTicketsStatusLoadingImpl<T> value,
+          $Res Function(_$GetTicketsStatusLoadingImpl<T>) then) =
+      __$$GetTicketsStatusLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetTicketsStatusLoadingImplCopyWithImpl<T, $Res>
+    extends _$TicketsStateCopyWithImpl<T, $Res,
+        _$GetTicketsStatusLoadingImpl<T>>
+    implements _$$GetTicketsStatusLoadingImplCopyWith<T, $Res> {
+  __$$GetTicketsStatusLoadingImplCopyWithImpl(
+      _$GetTicketsStatusLoadingImpl<T> _value,
+      $Res Function(_$GetTicketsStatusLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetTicketsStatusLoadingImpl<T> implements GetTicketsStatusLoading<T> {
+  const _$GetTicketsStatusLoadingImpl();
+
+  @override
+  String toString() {
+    return 'TicketsState<$T>.getTicketsStatusLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTicketsStatusLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getAllTicketsLoading,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
+    required TResult Function(String error) getAllTicketsError,
+    required TResult Function() selectTicketStatusLoading,
+    required TResult Function(T ticketStatus) selectTicketStatusSuccess,
+    required TResult Function() getAllTicketTypesLoading,
+    required TResult Function(List<T> ticketTypes) getAllTicketTypesSuccess,
+    required TResult Function(String error) getAllTicketTypesError,
+    required TResult Function() selectTicketTypeLoading,
+    required TResult Function(T ticketType) selectTicketTypeSuccess,
+    required TResult Function() resetAllLoading,
+    required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
+  }) {
+    return getTicketsStatusLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getAllTicketsLoading,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
+    TResult? Function(String error)? getAllTicketsError,
+    TResult? Function()? selectTicketStatusLoading,
+    TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
+    TResult? Function()? getAllTicketTypesLoading,
+    TResult? Function(List<T> ticketTypes)? getAllTicketTypesSuccess,
+    TResult? Function(String error)? getAllTicketTypesError,
+    TResult? Function()? selectTicketTypeLoading,
+    TResult? Function(T ticketType)? selectTicketTypeSuccess,
+    TResult? Function()? resetAllLoading,
+    TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
+  }) {
+    return getTicketsStatusLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getAllTicketsLoading,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
+    TResult Function(String error)? getAllTicketsError,
+    TResult Function()? selectTicketStatusLoading,
+    TResult Function(T ticketStatus)? selectTicketStatusSuccess,
+    TResult Function()? getAllTicketTypesLoading,
+    TResult Function(List<T> ticketTypes)? getAllTicketTypesSuccess,
+    TResult Function(String error)? getAllTicketTypesError,
+    TResult Function()? selectTicketTypeLoading,
+    TResult Function(T ticketType)? selectTicketTypeSuccess,
+    TResult Function()? resetAllLoading,
+    TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
+    required TResult orElse(),
+  }) {
+    if (getTicketsStatusLoading != null) {
+      return getTicketsStatusLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetAllTicketsLoading<T> value)
+        getAllTicketsLoading,
+    required TResult Function(GetAllTicketsSuccess<T> value)
+        getAllTicketsSuccess,
+    required TResult Function(GetAllTicketsError<T> value) getAllTicketsError,
+    required TResult Function(selectTicketStatusLoading<T> value)
+        selectTicketStatusLoading,
+    required TResult Function(SelectTicketStatusSuccess<T> value)
+        selectTicketStatusSuccess,
+    required TResult Function(GetAllTicketTypesLoading<T> value)
+        getAllTicketTypesLoading,
+    required TResult Function(GetAllTicketTypesSuccess<T> value)
+        getAllTicketTypesSuccess,
+    required TResult Function(GetAllTicketTypesError<T> value)
+        getAllTicketTypesError,
+    required TResult Function(SelectTicketTypeLoading<T> value)
+        selectTicketTypeLoading,
+    required TResult Function(SelectTicketTypeSuccess<T> value)
+        selectTicketTypeSuccess,
+    required TResult Function(ResetAllLoading<T> value) resetAllLoading,
+    required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
+  }) {
+    return getTicketsStatusLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetAllTicketsLoading<T> value)? getAllTicketsLoading,
+    TResult? Function(GetAllTicketsSuccess<T> value)? getAllTicketsSuccess,
+    TResult? Function(GetAllTicketsError<T> value)? getAllTicketsError,
+    TResult? Function(selectTicketStatusLoading<T> value)?
+        selectTicketStatusLoading,
+    TResult? Function(SelectTicketStatusSuccess<T> value)?
+        selectTicketStatusSuccess,
+    TResult? Function(GetAllTicketTypesLoading<T> value)?
+        getAllTicketTypesLoading,
+    TResult? Function(GetAllTicketTypesSuccess<T> value)?
+        getAllTicketTypesSuccess,
+    TResult? Function(GetAllTicketTypesError<T> value)? getAllTicketTypesError,
+    TResult? Function(SelectTicketTypeLoading<T> value)?
+        selectTicketTypeLoading,
+    TResult? Function(SelectTicketTypeSuccess<T> value)?
+        selectTicketTypeSuccess,
+    TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
+  }) {
+    return getTicketsStatusLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetAllTicketsLoading<T> value)? getAllTicketsLoading,
+    TResult Function(GetAllTicketsSuccess<T> value)? getAllTicketsSuccess,
+    TResult Function(GetAllTicketsError<T> value)? getAllTicketsError,
+    TResult Function(selectTicketStatusLoading<T> value)?
+        selectTicketStatusLoading,
+    TResult Function(SelectTicketStatusSuccess<T> value)?
+        selectTicketStatusSuccess,
+    TResult Function(GetAllTicketTypesLoading<T> value)?
+        getAllTicketTypesLoading,
+    TResult Function(GetAllTicketTypesSuccess<T> value)?
+        getAllTicketTypesSuccess,
+    TResult Function(GetAllTicketTypesError<T> value)? getAllTicketTypesError,
+    TResult Function(SelectTicketTypeLoading<T> value)? selectTicketTypeLoading,
+    TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
+    TResult Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
+    required TResult orElse(),
+  }) {
+    if (getTicketsStatusLoading != null) {
+      return getTicketsStatusLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTicketsStatusLoading<T> implements TicketsState<T> {
+  const factory GetTicketsStatusLoading() = _$GetTicketsStatusLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetAllTicketsStatusSuccessImplCopyWith<T, $Res> {
+  factory _$$GetAllTicketsStatusSuccessImplCopyWith(
+          _$GetAllTicketsStatusSuccessImpl<T> value,
+          $Res Function(_$GetAllTicketsStatusSuccessImpl<T>) then) =
+      __$$GetAllTicketsStatusSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<T> ticketsStatus});
+}
+
+/// @nodoc
+class __$$GetAllTicketsStatusSuccessImplCopyWithImpl<T, $Res>
+    extends _$TicketsStateCopyWithImpl<T, $Res,
+        _$GetAllTicketsStatusSuccessImpl<T>>
+    implements _$$GetAllTicketsStatusSuccessImplCopyWith<T, $Res> {
+  __$$GetAllTicketsStatusSuccessImplCopyWithImpl(
+      _$GetAllTicketsStatusSuccessImpl<T> _value,
+      $Res Function(_$GetAllTicketsStatusSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ticketsStatus = null,
+  }) {
+    return _then(_$GetAllTicketsStatusSuccessImpl<T>(
+      null == ticketsStatus
+          ? _value._ticketsStatus
+          : ticketsStatus // ignore: cast_nullable_to_non_nullable
+              as List<T>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllTicketsStatusSuccessImpl<T>
+    implements GetAllTicketsStatusSuccess<T> {
+  const _$GetAllTicketsStatusSuccessImpl(final List<T> ticketsStatus)
+      : _ticketsStatus = ticketsStatus;
+
+  final List<T> _ticketsStatus;
+  @override
+  List<T> get ticketsStatus {
+    if (_ticketsStatus is EqualUnmodifiableListView) return _ticketsStatus;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_ticketsStatus);
+  }
+
+  @override
+  String toString() {
+    return 'TicketsState<$T>.getAllTicketsStatusSuccess(ticketsStatus: $ticketsStatus)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllTicketsStatusSuccessImpl<T> &&
+            const DeepCollectionEquality()
+                .equals(other._ticketsStatus, _ticketsStatus));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_ticketsStatus));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllTicketsStatusSuccessImplCopyWith<T,
+          _$GetAllTicketsStatusSuccessImpl<T>>
+      get copyWith => __$$GetAllTicketsStatusSuccessImplCopyWithImpl<T,
+          _$GetAllTicketsStatusSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getAllTicketsLoading,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
+    required TResult Function(String error) getAllTicketsError,
+    required TResult Function() selectTicketStatusLoading,
+    required TResult Function(T ticketStatus) selectTicketStatusSuccess,
+    required TResult Function() getAllTicketTypesLoading,
+    required TResult Function(List<T> ticketTypes) getAllTicketTypesSuccess,
+    required TResult Function(String error) getAllTicketTypesError,
+    required TResult Function() selectTicketTypeLoading,
+    required TResult Function(T ticketType) selectTicketTypeSuccess,
+    required TResult Function() resetAllLoading,
+    required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
+  }) {
+    return getAllTicketsStatusSuccess(ticketsStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getAllTicketsLoading,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
+    TResult? Function(String error)? getAllTicketsError,
+    TResult? Function()? selectTicketStatusLoading,
+    TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
+    TResult? Function()? getAllTicketTypesLoading,
+    TResult? Function(List<T> ticketTypes)? getAllTicketTypesSuccess,
+    TResult? Function(String error)? getAllTicketTypesError,
+    TResult? Function()? selectTicketTypeLoading,
+    TResult? Function(T ticketType)? selectTicketTypeSuccess,
+    TResult? Function()? resetAllLoading,
+    TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
+  }) {
+    return getAllTicketsStatusSuccess?.call(ticketsStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getAllTicketsLoading,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
+    TResult Function(String error)? getAllTicketsError,
+    TResult Function()? selectTicketStatusLoading,
+    TResult Function(T ticketStatus)? selectTicketStatusSuccess,
+    TResult Function()? getAllTicketTypesLoading,
+    TResult Function(List<T> ticketTypes)? getAllTicketTypesSuccess,
+    TResult Function(String error)? getAllTicketTypesError,
+    TResult Function()? selectTicketTypeLoading,
+    TResult Function(T ticketType)? selectTicketTypeSuccess,
+    TResult Function()? resetAllLoading,
+    TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
+    required TResult orElse(),
+  }) {
+    if (getAllTicketsStatusSuccess != null) {
+      return getAllTicketsStatusSuccess(ticketsStatus);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetAllTicketsLoading<T> value)
+        getAllTicketsLoading,
+    required TResult Function(GetAllTicketsSuccess<T> value)
+        getAllTicketsSuccess,
+    required TResult Function(GetAllTicketsError<T> value) getAllTicketsError,
+    required TResult Function(selectTicketStatusLoading<T> value)
+        selectTicketStatusLoading,
+    required TResult Function(SelectTicketStatusSuccess<T> value)
+        selectTicketStatusSuccess,
+    required TResult Function(GetAllTicketTypesLoading<T> value)
+        getAllTicketTypesLoading,
+    required TResult Function(GetAllTicketTypesSuccess<T> value)
+        getAllTicketTypesSuccess,
+    required TResult Function(GetAllTicketTypesError<T> value)
+        getAllTicketTypesError,
+    required TResult Function(SelectTicketTypeLoading<T> value)
+        selectTicketTypeLoading,
+    required TResult Function(SelectTicketTypeSuccess<T> value)
+        selectTicketTypeSuccess,
+    required TResult Function(ResetAllLoading<T> value) resetAllLoading,
+    required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
+  }) {
+    return getAllTicketsStatusSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetAllTicketsLoading<T> value)? getAllTicketsLoading,
+    TResult? Function(GetAllTicketsSuccess<T> value)? getAllTicketsSuccess,
+    TResult? Function(GetAllTicketsError<T> value)? getAllTicketsError,
+    TResult? Function(selectTicketStatusLoading<T> value)?
+        selectTicketStatusLoading,
+    TResult? Function(SelectTicketStatusSuccess<T> value)?
+        selectTicketStatusSuccess,
+    TResult? Function(GetAllTicketTypesLoading<T> value)?
+        getAllTicketTypesLoading,
+    TResult? Function(GetAllTicketTypesSuccess<T> value)?
+        getAllTicketTypesSuccess,
+    TResult? Function(GetAllTicketTypesError<T> value)? getAllTicketTypesError,
+    TResult? Function(SelectTicketTypeLoading<T> value)?
+        selectTicketTypeLoading,
+    TResult? Function(SelectTicketTypeSuccess<T> value)?
+        selectTicketTypeSuccess,
+    TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
+  }) {
+    return getAllTicketsStatusSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetAllTicketsLoading<T> value)? getAllTicketsLoading,
+    TResult Function(GetAllTicketsSuccess<T> value)? getAllTicketsSuccess,
+    TResult Function(GetAllTicketsError<T> value)? getAllTicketsError,
+    TResult Function(selectTicketStatusLoading<T> value)?
+        selectTicketStatusLoading,
+    TResult Function(SelectTicketStatusSuccess<T> value)?
+        selectTicketStatusSuccess,
+    TResult Function(GetAllTicketTypesLoading<T> value)?
+        getAllTicketTypesLoading,
+    TResult Function(GetAllTicketTypesSuccess<T> value)?
+        getAllTicketTypesSuccess,
+    TResult Function(GetAllTicketTypesError<T> value)? getAllTicketTypesError,
+    TResult Function(SelectTicketTypeLoading<T> value)? selectTicketTypeLoading,
+    TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
+    TResult Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
+    required TResult orElse(),
+  }) {
+    if (getAllTicketsStatusSuccess != null) {
+      return getAllTicketsStatusSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllTicketsStatusSuccess<T> implements TicketsState<T> {
+  const factory GetAllTicketsStatusSuccess(final List<T> ticketsStatus) =
+      _$GetAllTicketsStatusSuccessImpl<T>;
+
+  List<T> get ticketsStatus;
+  @JsonKey(ignore: true)
+  _$$GetAllTicketsStatusSuccessImplCopyWith<T,
+          _$GetAllTicketsStatusSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAllTicketsStatusErrorImplCopyWith<T, $Res> {
+  factory _$$GetAllTicketsStatusErrorImplCopyWith(
+          _$GetAllTicketsStatusErrorImpl<T> value,
+          $Res Function(_$GetAllTicketsStatusErrorImpl<T>) then) =
+      __$$GetAllTicketsStatusErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetAllTicketsStatusErrorImplCopyWithImpl<T, $Res>
+    extends _$TicketsStateCopyWithImpl<T, $Res,
+        _$GetAllTicketsStatusErrorImpl<T>>
+    implements _$$GetAllTicketsStatusErrorImplCopyWith<T, $Res> {
+  __$$GetAllTicketsStatusErrorImplCopyWithImpl(
+      _$GetAllTicketsStatusErrorImpl<T> _value,
+      $Res Function(_$GetAllTicketsStatusErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetAllTicketsStatusErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllTicketsStatusErrorImpl<T> implements GetAllTicketsStatusError<T> {
+  const _$GetAllTicketsStatusErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TicketsState<$T>.getAllTicketsStatusError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllTicketsStatusErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllTicketsStatusErrorImplCopyWith<T, _$GetAllTicketsStatusErrorImpl<T>>
+      get copyWith => __$$GetAllTicketsStatusErrorImplCopyWithImpl<T,
+          _$GetAllTicketsStatusErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getAllTicketsLoading,
+    required TResult Function(List<Ticket> tickets) getAllTicketsSuccess,
+    required TResult Function(String error) getAllTicketsError,
+    required TResult Function() selectTicketStatusLoading,
+    required TResult Function(T ticketStatus) selectTicketStatusSuccess,
+    required TResult Function() getAllTicketTypesLoading,
+    required TResult Function(List<T> ticketTypes) getAllTicketTypesSuccess,
+    required TResult Function(String error) getAllTicketTypesError,
+    required TResult Function() selectTicketTypeLoading,
+    required TResult Function(T ticketType) selectTicketTypeSuccess,
+    required TResult Function() resetAllLoading,
+    required TResult Function() resetAllSuccess,
+    required TResult Function() getTicketsStatusLoading,
+    required TResult Function(List<T> ticketsStatus) getAllTicketsStatusSuccess,
+    required TResult Function(String error) getAllTicketsStatusError,
+  }) {
+    return getAllTicketsStatusError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getAllTicketsLoading,
+    TResult? Function(List<Ticket> tickets)? getAllTicketsSuccess,
+    TResult? Function(String error)? getAllTicketsError,
+    TResult? Function()? selectTicketStatusLoading,
+    TResult? Function(T ticketStatus)? selectTicketStatusSuccess,
+    TResult? Function()? getAllTicketTypesLoading,
+    TResult? Function(List<T> ticketTypes)? getAllTicketTypesSuccess,
+    TResult? Function(String error)? getAllTicketTypesError,
+    TResult? Function()? selectTicketTypeLoading,
+    TResult? Function(T ticketType)? selectTicketTypeSuccess,
+    TResult? Function()? resetAllLoading,
+    TResult? Function()? resetAllSuccess,
+    TResult? Function()? getTicketsStatusLoading,
+    TResult? Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult? Function(String error)? getAllTicketsStatusError,
+  }) {
+    return getAllTicketsStatusError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getAllTicketsLoading,
+    TResult Function(List<Ticket> tickets)? getAllTicketsSuccess,
+    TResult Function(String error)? getAllTicketsError,
+    TResult Function()? selectTicketStatusLoading,
+    TResult Function(T ticketStatus)? selectTicketStatusSuccess,
+    TResult Function()? getAllTicketTypesLoading,
+    TResult Function(List<T> ticketTypes)? getAllTicketTypesSuccess,
+    TResult Function(String error)? getAllTicketTypesError,
+    TResult Function()? selectTicketTypeLoading,
+    TResult Function(T ticketType)? selectTicketTypeSuccess,
+    TResult Function()? resetAllLoading,
+    TResult Function()? resetAllSuccess,
+    TResult Function()? getTicketsStatusLoading,
+    TResult Function(List<T> ticketsStatus)? getAllTicketsStatusSuccess,
+    TResult Function(String error)? getAllTicketsStatusError,
+    required TResult orElse(),
+  }) {
+    if (getAllTicketsStatusError != null) {
+      return getAllTicketsStatusError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetAllTicketsLoading<T> value)
+        getAllTicketsLoading,
+    required TResult Function(GetAllTicketsSuccess<T> value)
+        getAllTicketsSuccess,
+    required TResult Function(GetAllTicketsError<T> value) getAllTicketsError,
+    required TResult Function(selectTicketStatusLoading<T> value)
+        selectTicketStatusLoading,
+    required TResult Function(SelectTicketStatusSuccess<T> value)
+        selectTicketStatusSuccess,
+    required TResult Function(GetAllTicketTypesLoading<T> value)
+        getAllTicketTypesLoading,
+    required TResult Function(GetAllTicketTypesSuccess<T> value)
+        getAllTicketTypesSuccess,
+    required TResult Function(GetAllTicketTypesError<T> value)
+        getAllTicketTypesError,
+    required TResult Function(SelectTicketTypeLoading<T> value)
+        selectTicketTypeLoading,
+    required TResult Function(SelectTicketTypeSuccess<T> value)
+        selectTicketTypeSuccess,
+    required TResult Function(ResetAllLoading<T> value) resetAllLoading,
+    required TResult Function(ResetAllSuccess<T> value) resetAllSuccess,
+    required TResult Function(GetTicketsStatusLoading<T> value)
+        getTicketsStatusLoading,
+    required TResult Function(GetAllTicketsStatusSuccess<T> value)
+        getAllTicketsStatusSuccess,
+    required TResult Function(GetAllTicketsStatusError<T> value)
+        getAllTicketsStatusError,
+  }) {
+    return getAllTicketsStatusError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetAllTicketsLoading<T> value)? getAllTicketsLoading,
+    TResult? Function(GetAllTicketsSuccess<T> value)? getAllTicketsSuccess,
+    TResult? Function(GetAllTicketsError<T> value)? getAllTicketsError,
+    TResult? Function(selectTicketStatusLoading<T> value)?
+        selectTicketStatusLoading,
+    TResult? Function(SelectTicketStatusSuccess<T> value)?
+        selectTicketStatusSuccess,
+    TResult? Function(GetAllTicketTypesLoading<T> value)?
+        getAllTicketTypesLoading,
+    TResult? Function(GetAllTicketTypesSuccess<T> value)?
+        getAllTicketTypesSuccess,
+    TResult? Function(GetAllTicketTypesError<T> value)? getAllTicketTypesError,
+    TResult? Function(SelectTicketTypeLoading<T> value)?
+        selectTicketTypeLoading,
+    TResult? Function(SelectTicketTypeSuccess<T> value)?
+        selectTicketTypeSuccess,
+    TResult? Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult? Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult? Function(GetTicketsStatusLoading<T> value)?
+        getTicketsStatusLoading,
+    TResult? Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult? Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
+  }) {
+    return getAllTicketsStatusError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetAllTicketsLoading<T> value)? getAllTicketsLoading,
+    TResult Function(GetAllTicketsSuccess<T> value)? getAllTicketsSuccess,
+    TResult Function(GetAllTicketsError<T> value)? getAllTicketsError,
+    TResult Function(selectTicketStatusLoading<T> value)?
+        selectTicketStatusLoading,
+    TResult Function(SelectTicketStatusSuccess<T> value)?
+        selectTicketStatusSuccess,
+    TResult Function(GetAllTicketTypesLoading<T> value)?
+        getAllTicketTypesLoading,
+    TResult Function(GetAllTicketTypesSuccess<T> value)?
+        getAllTicketTypesSuccess,
+    TResult Function(GetAllTicketTypesError<T> value)? getAllTicketTypesError,
+    TResult Function(SelectTicketTypeLoading<T> value)? selectTicketTypeLoading,
+    TResult Function(SelectTicketTypeSuccess<T> value)? selectTicketTypeSuccess,
+    TResult Function(ResetAllLoading<T> value)? resetAllLoading,
+    TResult Function(ResetAllSuccess<T> value)? resetAllSuccess,
+    TResult Function(GetTicketsStatusLoading<T> value)? getTicketsStatusLoading,
+    TResult Function(GetAllTicketsStatusSuccess<T> value)?
+        getAllTicketsStatusSuccess,
+    TResult Function(GetAllTicketsStatusError<T> value)?
+        getAllTicketsStatusError,
+    required TResult orElse(),
+  }) {
+    if (getAllTicketsStatusError != null) {
+      return getAllTicketsStatusError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllTicketsStatusError<T> implements TicketsState<T> {
+  const factory GetAllTicketsStatusError(final String error) =
+      _$GetAllTicketsStatusErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetAllTicketsStatusErrorImplCopyWith<T, _$GetAllTicketsStatusErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

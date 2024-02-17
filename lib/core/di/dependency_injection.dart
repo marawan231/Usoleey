@@ -31,9 +31,11 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<AuthRepository>(
       () => AuthRepository(getIt<AuthWebService>()));
   // AuthWebService
-  getIt.registerLazySingleton<AuthWebService>(() => AuthWebService(dio));
+  getIt.registerLazySingleton<AuthWebService>(
+      () => AuthWebService(getIt<Dio>(), baseUrl: NetworkConstants.baseUrl));
   //home web services
-  getIt.registerLazySingleton<HomeWebServices>(() => HomeWebServices(dio));
+  getIt.registerLazySingleton<HomeWebServices>(
+      () => HomeWebServices(getIt<Dio>(), baseUrl: NetworkConstants.baseUrl));
   // home repository
   getIt.registerLazySingleton<HomeRepository>(
       () => HomeRepository(homeWebServices: getIt<HomeWebServices>()));
@@ -47,8 +49,8 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<TicketsRepository>(
       () => TicketsRepository(ticketsWebService: getIt<TicketsWebService>()));
   // TicketsWebService
-  getIt.registerLazySingleton<TicketsWebService>(
-      () => TicketsWebService(dio, baseUrl: NetworkConstants.mockBaseUrl));
+  getIt.registerLazySingleton<TicketsWebService>(() =>
+      TicketsWebService(getIt<Dio>(), baseUrl: NetworkConstants.mockBaseUrl));
   // Dio & ApiService
   getIt.registerLazySingleton<Dio>(() => setupDio());
 }

@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_project/core/res/assets_manager.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
+import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
 import 'package:flutter_complete_project/features/account_info/data/models/account_info.dart';
+import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 List<AccountInfo> accountInfoList = [
-  AccountInfo(title: S.current.userName, value: 'محمد عبد الرحمن'),
-  AccountInfo(title: S.current.email, value: 'example@domain.com'),
-  AccountInfo(title: S.current.mobileNumber, value: '05693994932'),
+  AccountInfo(title: S.current.userName, value: ''),
+  AccountInfo(title: S.current.email, value: ''),
+  AccountInfo(title: S.current.mobileNumber, value: ''),
   AccountInfo(title: S.current.password, value: S.current.change),
 ];
 
@@ -82,11 +84,16 @@ class AccountInfoView extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: ColorsManager.primaryLight,
-              image: DecorationImage(
-                image: AssetImage(AssetsManager.appLogo),
-                fit: BoxFit.cover,
-              ),
+
               // borderRadius: BorderRadius.circular(8.r),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(32.r),
+              child: CustomCachedImage(
+                image: getIt<AuthCubit>().userModel?.photo ?? '',
+                width: 64.sp,
+                height: 64.sp,
+              ),
             ),
           ),
           //change image
