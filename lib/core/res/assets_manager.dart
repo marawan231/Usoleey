@@ -5,6 +5,7 @@ const String imagePath = "assets/images";
 const String imageSVGPath = "assets/svgs";
 const String imagePngPath = "assets/images/png";
 const String imageTempPath = "assets/temp";
+const String lottiePath = "assets/lottie";
 
 class AssetsManager {
   //create temp
@@ -67,4 +68,10 @@ class AssetsManager {
   static const String copy = "$imageSVGPath/copy.svg";
   //location
   static const String location = "$imageSVGPath/location.svg";
+  //empty_ticket
+  // static const String emptyTicket = "$imageSVGPath/empty_ticket.svg";
+  //lottie animation empty_invoices
+  static const String emptyInvoices = "$lottiePath/empty_invoices.json";
+  //lottie animation empty_tickets
+  static const String emptyTickets = "$lottiePath/empty_tickets.json";
 }

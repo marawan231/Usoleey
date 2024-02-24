@@ -5,15 +5,19 @@ import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-class BillItem extends StatelessWidget {
-  const BillItem(
-      {super.key,
-      this.height,
-      this.width,
-      this.icon,
-      this.title,
-      this.subtitle,
-      this.trailing, this.titleStyle, this.subtitleStyle});
+class InvoicesItem extends StatelessWidget {
+  const InvoicesItem({
+    super.key,
+    this.height,
+    this.width,
+    this.icon,
+    this.title,
+    this.subtitle,
+    this.trailing,
+    this.titleStyle,
+    this.subtitleStyle,
+    this.onTap,
+  });
   final double? height;
   final double? width;
   final String? icon;
@@ -23,6 +27,9 @@ class BillItem extends StatelessWidget {
   final Widget? trailing;
   final TextStyle? titleStyle;
   final TextStyle? subtitleStyle;
+  final void Function()? onTap ;
+
+  // final Invoice? invoice;
   // final
   @override
   Widget build(BuildContext context) {
@@ -30,6 +37,7 @@ class BillItem extends StatelessWidget {
       height: height ?? 80.sp,
       width: width ?? double.infinity,
       child: ListTile(
+        onTap: onTap ,
         tileColor: ColorsManager.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.r),
@@ -59,15 +67,16 @@ class BillItem extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 8.sp),
           child: Text(
             title ?? 'Due on 12/12/2021',
-            style: titleStyle?? getRegularStyle(
-              fontSize: 12.sp,
-              color: ColorsManager.greyLight,
-            ),
+            style: titleStyle ??
+                getRegularStyle(
+                  fontSize: 12.sp,
+                  color: ColorsManager.greyLight,
+                ),
           ),
         ),
         subtitle: Text(
           subtitle ?? 'Invoice #123',
-          style:  subtitleStyle?? getBoldStyle(fontSize: 16.sp),
+          style: subtitleStyle ?? getBoldStyle(fontSize: 16.sp),
         ),
         horizontalTitleGap: 8,
         trailing: trailing ??

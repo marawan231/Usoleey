@@ -6,10 +6,12 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
-import 'package:flutter_complete_project/features/bills/presentation/screens/my_bills_view.dart';
+import 'package:flutter_complete_project/features/invoices/logic/invoices_cubit.dart';
+import 'package:flutter_complete_project/features/invoices/presentation/screens/my_invoices_view.dart';
 import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
+import 'package:flutter_complete_project/features/more/logic/more_cubit.dart';
 import 'package:flutter_complete_project/features/more/presentation/screens/more_view.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
 import 'package:flutter_complete_project/features/tickets/presentation/screens/tickets_view.dart';
@@ -18,17 +20,28 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final List<Widget> layoutScreens = [
   //   const TransactionHistoryView(),
+  //multi bloc provider
+  MultiBlocProvider(providers: [
+    BlocProvider.value(
+      value: getIt<HomeCubit>(),
+    ),
+    BlocProvider.value(
+      value: getIt<InvoicesCubit>(),
+    ),
+  ], child: HomeScreen()),
   BlocProvider.value(
-    value: getIt<HomeCubit>(),
-    child: HomeScreen(),
+    value: getIt<InvoicesCubit>(),
+    child: MyInvoicesView(),
   ),
-  const MyBillsView(),
 
   BlocProvider.value(
     value: getIt<TicketsCubit>(),
     child: TicketsView(),
   ),
-  const MoreView(),
+  BlocProvider.value(
+    value: getIt<MoreCubit>(),
+    child: MoreView(),
+  ),
 
   // const ProfileView(),
 ];
@@ -50,15 +63,18 @@ class _LayoutViewState extends State<LayoutView> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_s) {
-      getIt<HomeCubit>().getAllUnits();
-      getIt<HomeCubit>().getAds();
-
-      getIt<TicketsCubit>().getAllTicketsStatus();
-      getIt<TicketsCubit>().getAllTicketTypes();
-      getIt<TicketsCubit>().getAllTickets();
+      _fetchInitialData();
     });
 
     super.initState();
+  }
+
+  _fetchInitialData() {
+    getIt<TicketsCubit>().getAllTicketsStatus();
+    getIt<TicketsCubit>().getAllTicketTypes();
+    getIt<TicketsCubit>().getAllTickets();
+    getIt<InvoicesCubit>().getAllInvoices();
+    getIt<MoreCubit>().getContactInfo();  
   }
 
   @override
@@ -82,7 +98,7 @@ class _LayoutViewState extends State<LayoutView> {
                       size: 24.sp,
                     ),
                     onPressed: () {
-                      getIt<TicketsCubit>().getAllTickets();
+                      // getIt<TicketsCubit>().getAllTickets();
                     },
                   ),
                 )
@@ -155,7 +171,7 @@ class _LayoutViewState extends State<LayoutView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'مرحباً ${getIt<AuthCubit>().userModel?.firstNameEn ?? ''}',
+              'مرحباً ${getIt<AuthCubit>().userModel?.firstName ?? ''}',
               style: getBoldStyle(
                 fontSize: 16.sp,
                 color: ColorsManager.black,

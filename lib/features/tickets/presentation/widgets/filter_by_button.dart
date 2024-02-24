@@ -269,7 +269,7 @@ class CustomFilterChip extends StatelessWidget {
     return ChoiceChip(
       padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 10.sp),
       showCheckmark: false,
-      // backgroundColor: ColorsManager.white,
+      backgroundColor: ColorsManager.white,
       elevation: 0,
       pressElevation: 0,
       // materialTapTargetSize: MaterialTapTargetSize.hrinkWrap,

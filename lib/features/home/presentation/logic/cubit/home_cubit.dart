@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
@@ -31,13 +33,13 @@ class HomeCubit extends Cubit<HomeState> {
     emit(const HomeState.resetAllSuccess());
   }
 
-  void getAllUnits() async {
+  Future<void> getAllUnits() async {
     emit(const HomeState.getAllUnitsLoading());
     var result = await homeRepository.getAllUnits();
 
     result.when(
       success: (response) {
-        // inspect(response.data!.units);
+        inspect(response.data!.units);
         units = response.data!.units!;
         emit(HomeState.getAllUnitsSuccess(response.data!.units!));
       },

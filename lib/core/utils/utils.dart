@@ -58,8 +58,11 @@ void showToast({
   required String message,
   Color? color,
   ToastGravity? gravity,
+  Color? textColor,
 }) {
   Fluttertoast.showToast(
+    textColor: textColor,
+    // webPosition: 'center',
     msg: message,
     toastLength: Toast.LENGTH_LONG,
     timeInSecForIosWeb: 3,
@@ -95,4 +98,53 @@ void launchWebUrl({required String url}) async {
     showToast(message: 'Could not launch $url');
     // launchWebUrl(url: 'https://www.google.com');
   }
+}
+
+getMonthName(int month) {
+  switch (month) {
+    case 1:
+      return 'يناير';
+    case 2:
+      return 'فبراير';
+    case 3:
+      return 'مارس';
+    case 4:
+      return 'أبريل';
+    case 5:
+      return 'مايو';
+    case 6:
+      return 'يونيو';
+    case 7:
+      return 'يوليو';
+    case 8:
+      return 'أغسطس';
+    case 9:
+      return 'سبتمبر';
+    case 10:
+      return 'أكتوبر';
+    case 11:
+      return 'نوفمبر';
+    case 12:
+      return 'ديسمبر';
+    default:
+      return '';
+  }
+}
+
+getCreatedAt(String createdAt) {
+  //from 2023-02-14T00:00:00.000Z to فبراير ١٤، ٢٠٢٣
+
+  final date = DateTime.parse(createdAt);
+  final String day = date.day.toString();
+  final String month = getMonthName(date.month);
+  final String year = date.year.toString();
+
+  final result = '$day $month $year';
+
+  return result;
+}
+
+int getCount(int length) {
+  //if legnth of ads is less than 4 return the length of ads else return length
+  return length > 3 ? 3 : length;
 }

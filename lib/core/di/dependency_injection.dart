@@ -6,9 +6,15 @@ import 'package:flutter_complete_project/features/choose_language/logic/cubit/ch
 import 'package:flutter_complete_project/features/home/data/repository/home_repository.dart';
 import 'package:flutter_complete_project/features/home/data/web_service/home_web_service.dart';
 import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_cubit.dart';
+import 'package:flutter_complete_project/features/invoices/data/repository/inovices_repository.dart';
+import 'package:flutter_complete_project/features/invoices/data/web_services/invoices_web_services.dart';
+import 'package:flutter_complete_project/features/invoices/logic/invoices_cubit.dart';
 import 'package:flutter_complete_project/features/login/data/repository/auth_repository.dart';
 import 'package:flutter_complete_project/features/login/data/web_service/auth_web_service.dart';
 import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
+import 'package:flutter_complete_project/features/more/data/repository/more_repository.dart';
+import 'package:flutter_complete_project/features/more/data/web_services/more_web_services.dart';
+import 'package:flutter_complete_project/features/more/logic/more_cubit.dart';
 import 'package:flutter_complete_project/features/on_boarding/logic/cubit/onboarding_cubit.dart';
 import 'package:flutter_complete_project/features/tickets/data/repository/tickets_repository.dart';
 import 'package:flutter_complete_project/features/tickets/data/web_service/tickets_web_service.dart';
@@ -51,6 +57,27 @@ Future<void> setupGetIt() async {
   // TicketsWebService
   getIt.registerLazySingleton<TicketsWebService>(() =>
       TicketsWebService(getIt<Dio>(), baseUrl: NetworkConstants.mockBaseUrl));
+  //Invoices Web Services
+  getIt.registerLazySingleton<InvoicesWebServices>(() =>
+      InvoicesWebServices(getIt<Dio>(), baseUrl: NetworkConstants.baseUrl));
+  // Invoices Repository
+  getIt.registerLazySingleton<InvoiceRepository>(
+      () => InvoiceRepository(getIt<InvoicesWebServices>()));
+  // InvoiceCubit
+  getIt.registerLazySingleton<InvoicesCubit>(
+      () => InvoicesCubit(getIt<InvoiceRepository>()));
+
+  //more web services
+  getIt.registerLazySingleton<MoreWebServices>(
+      () => MoreWebServices(getIt<Dio>(), baseUrl: NetworkConstants.baseUrl));
+  // More Repository
+  getIt.registerLazySingleton<MoreRepository>(
+      () => MoreRepository(moreWebServices: getIt()));
+
+//More cubit
+  getIt.registerLazySingleton<MoreCubit>(
+      () => MoreCubit(getIt<MoreRepository>()));
+
   // Dio & ApiService
   getIt.registerLazySingleton<Dio>(() => setupDio());
 }

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
@@ -6,39 +7,36 @@ import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';
-import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_cubit.dart';
-import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_state.dart';
-import 'package:flutter_complete_project/features/offers/presentation/widgets/offers_item.dart';
+import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
+import 'package:flutter_complete_project/features/invoices/logic/invoices_cubit.dart';
+import 'package:flutter_complete_project/features/invoices/logic/invoices_state.dart';
+import 'package:flutter_complete_project/features/invoices/presentation/widgets/invoices_item.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AdvetisementsList extends StatelessWidget {
-  const AdvetisementsList({super.key});
+class HomeInvoicesList extends StatelessWidget {
+  const HomeInvoicesList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return _buildOffersList();
+    return _buildBillsList();
   }
 
-  _buildOffersList() {
-    return BlocBuilder<HomeCubit, HomeState>(
-      buildWhen: (previous, current) =>
-          current is GetAdsLoading ||
-          current is GetAdsSuccess ||
-          current is GetAdsError,
+  _buildBillsList() {
+    return BlocBuilder<InvoicesCubit, InvoicesState>(
       builder: (context, state) {
         return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'اسكتشف احدث عروض الإيجار',
+                  'فواتيرك القادمة',
                   style: getBoldStyle(fontSize: 16.sp),
                 ),
                 InkWell(
                   onTap: () {
-                    Go.toNamed(NamedRoutes.offers);
+                    selectedTab = 1;
+                    Go.toNamed(NamedRoutes.layout);
                   },
                   child: Text(
                     'المزيد',
@@ -49,20 +47,25 @@ class AdvetisementsList extends StatelessWidget {
               ],
             ),
             16.verticalSpace,
+            // BillItem(),
             SizedBox(
-              height: 180.sp,
+              height: 78.sp,
               child: ListView.separated(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: getCount(getIt<HomeCubit>().ads.length),
-                itemBuilder: (context, index) => OffersItem(
-                  ads: getIt<HomeCubit>().ads[index],
-                  width: 284.sp,
-                  height: 120.sp,
+                itemCount: getCount(getIt<InvoicesCubit>().invoices.length),
+                itemBuilder: (context, index) => InvoicesItem(
+                  title: getIt<InvoicesCubit>().invoices[index].type ?? '',
+                  subtitle: getCreatedAt(
+                      getIt<InvoicesCubit>().invoices[index].createdAt ?? ''),
+                  icon: getIt<InvoicesCubit>().invoices[index].icon,
+                  width: 268.sp,
+                  height: 70.sp,
                 ),
                 separatorBuilder: (context, index) => 16.horizontalSpace,
               ),
             ),
+            // _buildBillsList(),
           ],
         );
       },

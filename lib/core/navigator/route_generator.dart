@@ -7,9 +7,11 @@ import 'package:flutter_complete_project/features/choose_language/presentation/s
 import 'package:flutter_complete_project/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter_complete_project/features/home/presentation/screens/layout_view.dart';
-import 'package:flutter_complete_project/features/home/presentation/screens/property_details_view.dart';
+import 'package:flutter_complete_project/features/home/presentation/screens/unit_details_view.dart';
+import 'package:flutter_complete_project/features/invoices/logic/invoices_cubit.dart';
 import 'package:flutter_complete_project/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/features/login/presentation/screens/login_view.dart';
+import 'package:flutter_complete_project/features/more/logic/more_cubit.dart';
 import 'package:flutter_complete_project/features/notifications/presentation/screens/notifications_view.dart';
 import 'package:flutter_complete_project/features/offers/presentation/screens/offers_view.dart';
 import 'package:flutter_complete_project/features/on_boarding/logic/cubit/onboarding_cubit.dart';
@@ -35,6 +37,10 @@ class RouterGenerator {
   static late HomeCubit homeCubit;
   //tickets cubit
   static late TicketsCubit ticketsCubit;
+  // invoices cubit
+  static late InvoicesCubit invoicesCubit;
+  //more cubit
+  static late MoreCubit moreCubit;
 
   RouterGenerator() {
     chooseLanguageCubit = getIt<ChooseLanguageCubit>();
@@ -42,6 +48,8 @@ class RouterGenerator {
     authCubit = getIt<AuthCubit>();
     homeCubit = getIt<HomeCubit>();
     ticketsCubit = getIt<TicketsCubit>();
+    invoicesCubit = getIt<InvoicesCubit>();
+    moreCubit = getIt<MoreCubit>();
   }
 
   static final PageRouterBuilder _pageRouter = PageRouterBuilder();
@@ -110,7 +118,9 @@ class RouterGenerator {
         return _pageRouter.build(const TicketDetailsView(), settings: settings);
       //propertyDetails
       case NamedRoutes.propertyDetails:
-        return _pageRouter.build(const PropertyDetailsView(),
+        final arg = settings.arguments as Map<String, dynamic>;
+        final unit = arg['unit'];
+        return _pageRouter.build(UnitDetailsView(unit: unit),
             settings: settings);
     }
   }

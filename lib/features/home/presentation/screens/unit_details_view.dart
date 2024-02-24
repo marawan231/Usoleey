@@ -1,18 +1,23 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
-import 'package:flutter_complete_project/features/bills/presentation/widgets/bill_item.dart';
+import 'package:flutter_complete_project/features/home/data/models/units_model.dart';
 import 'package:flutter_complete_project/features/home/presentation/widgets/rent_time_container.dart';
+import 'package:flutter_complete_project/features/invoices/presentation/widgets/invoices_item.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-class PropertyDetailsView extends StatelessWidget {
-  const PropertyDetailsView({super.key});
+class UnitDetailsView extends StatelessWidget {
+  const UnitDetailsView({super.key, required this.unit});
+
+  final Units unit;
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +103,7 @@ class PropertyDetailsView extends StatelessWidget {
                 RichText(
                     text: TextSpan(children: [
                   TextSpan(
-                    text: '١٥٠٠',
+                    text: unit.rent.toString(),
                     style: getBoldStyle(
                         fontSize: 16.sp, color: ColorsManager.black),
                   ),
@@ -110,7 +115,9 @@ class PropertyDetailsView extends StatelessWidget {
                   ),
                 ])),
                 16.verticalSpace,
-                RentTimeContainer(),
+                RentTimeContainer(
+                  rentTime: unit.rentCollectionDate ?? '',
+                ),
               ],
             ),
           ),
@@ -161,32 +168,38 @@ class PropertyDetailsView extends StatelessWidget {
           ),
         ),
         10.verticalSpace,
-        BillItem(
+        InvoicesItem(
           title: 'تكلفة فاتورة المياه',
           subtitle: '١٢٠ ريال/شهري',
           trailing: SizedBox(),
-          icon: AssetsManager.water,
+          // icon: AssetsManager.water,
         ),
         10.verticalSpace,
-        BillItem(
+        InvoicesItem(
           title: 'رقم حساب فاتورة الكهرباء',
-          subtitle: '١٢٩٤٩٠٥٩٤٨٩٤٩',
-          trailing: Container(
-            width: 30.sp,
-            height: 30.sp,
-            // padding: EdgeInsetsDirectional.only(start: .sp, end: 16.sp),
-            decoration: BoxDecoration(
-              color: ColorsManager.primaryLighter,
-              borderRadius: BorderRadius.all(Radius.circular(8.sp)),
-            ),
-            child: Transform.scale(
-              scale: 0.5,
-              child: SvgPicture.asset(
-                AssetsManager.copy,
-                // height: 16.sp,
-                // width: 16.sp,
-                // color: ColorsManager.primaryDark,
-                // size: 16.sp,
+          subtitle: unit.electricityAccount ?? '',
+          trailing: InkWell(
+            onTap: () {
+              Clipboard.setData(
+                  new ClipboardData(text: unit.electricityAccount ?? ''));
+              showToast(
+                  message: 'تم نسخ الرقم',
+                  color: ColorsManager.primaryLighter,
+                  textColor: ColorsManager.black);
+            },
+            child: Container(
+              width: 30.sp,
+              height: 30.sp,
+              // padding: EdgeInsetsDirectional.only(start: .sp, end: 16.sp),
+              decoration: BoxDecoration(
+                color: ColorsManager.primaryLighter,
+                borderRadius: BorderRadius.all(Radius.circular(8.sp)),
+              ),
+              child: Transform.scale(
+                scale: 0.5,
+                child: SvgPicture.asset(
+                  AssetsManager.copy,
+                ),
               ),
             ),
           ),
@@ -208,7 +221,7 @@ class PropertyDetailsView extends StatelessWidget {
           ),
         ),
         10.verticalSpace,
-        BillItem(
+        InvoicesItem(
           trailing: SizedBox(),
           icon: AssetsManager.location,
           title: 'الرياض',
@@ -238,27 +251,18 @@ class PropertyDetailsView extends StatelessWidget {
           ),
         ),
         10.verticalSpace,
-        BillItem(
-          title: 'فاتورة الإيجار',
-          // titleStyle: getBoldStyle(
-          //   fontSize: 11.sp,
-          //   color: ColorsManager.greyLight,
-          // ),
-          subtitle: 'فبراير ١٤، ٢٠٢٣',
-          // subtitleStyle: getBoldStyle(
-          //   fontSize: 14.sp,
-          //   color: ColorsManager.p,
-          // ),
-          trailing: SizedBox(),
-          icon: AssetsManager.money,
-        ),
-        8.verticalSpace,
-        BillItem(
-          title: 'فاتورة المياه',
-          subtitle: 'فبراير ١٤، ٢٠٢٣',
-          // trailing: SizedBox(),
-          icon: AssetsManager.water,
-        ),
+        ListView.separated(
+            physics: NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            itemBuilder: (context, index) => InvoicesItem(
+                  title: 'فاتورة الإيجار',
+                  subtitle: 'فبراير ١٤، ٢٠٢٣',
+                  trailing: SizedBox(),
+                  icon: AssetsManager.money,
+                ),
+            separatorBuilder: (context, index) => 8.verticalSpace,
+            itemCount: 2),
       ],
     );
   }

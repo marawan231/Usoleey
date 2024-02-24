@@ -5,17 +5,26 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../data/models/units_model.dart';
+
 class HomeCustomButton extends StatelessWidget {
-  const HomeCustomButton({super.key, this.isAddButton});
+  const HomeCustomButton(
+      {super.key, this.isAddButton, this.unit, this.onTap, this.text});
 
   final bool? isAddButton;
+  final Units? unit;
+  final void Function()? onTap;
+  final String? text;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Go.toNamed(NamedRoutes.propertyDetails);
-      },
+      onTap: onTap ??
+          () {
+            Go.toNamed(NamedRoutes.propertyDetails, arguments: {
+              'unit': unit,
+            });
+          },
       child: Container(
         margin: EdgeInsetsDirectional.only(top: 16.sp),
         width: double.infinity,
@@ -41,7 +50,7 @@ class HomeCustomButton extends StatelessWidget {
               ),
             ),
             Text(
-              'عرض التفاصيل',
+              text ?? 'عرض التفاصيل',
               style: getBoldStyle(
                   fontSize: 12.sp, color: ColorsManager.primaryDark),
             ),

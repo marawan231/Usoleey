@@ -85,7 +85,7 @@ class MoreView extends StatelessWidget {
           8.verticalSpace,
           //first and last name in ar
           Text(
-            '${getIt<AuthCubit>().userModel?.firstNameAr ?? ''} ${getIt<AuthCubit>().userModel?.lastNameAr ?? ''}',
+            '${getIt<AuthCubit>().userModel?.firstName ?? ''} ${getIt<AuthCubit>().userModel?.lastName ?? ''}',
             style: TextStyle(
               fontSize: 24.sp,
               fontWeight: FontWeight.bold,

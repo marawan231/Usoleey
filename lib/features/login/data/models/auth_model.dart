@@ -34,10 +34,10 @@ class UserModel {
   String? phoneNumber;
   String? photo;
   String? email;
-  String? firstNameEn;
-  String? lastNameEn;
-  String? firstNameAr;
-  String? lastNameAr;
+  String? firstName;
+  String? lastName;
+  // String? firstNameAr;
+  // String? lastNameAr;
   String? role;
   String? deviceId;
   String? fcmToken;
@@ -50,10 +50,10 @@ class UserModel {
       this.phoneNumber,
       this.photo,
       this.email,
-      this.firstNameEn,
-      this.lastNameEn,
-      this.firstNameAr,
-      this.lastNameAr,
+      this.firstName,
+      this.lastName,
+      // this.firstNameAr,
+      // this.lastNameAr,
       this.role,
       this.deviceId,
       this.fcmToken,

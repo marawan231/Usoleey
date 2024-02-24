@@ -80,9 +80,9 @@ class SupportModel {
 //title
 //subtitle
 
-  final String? title;
-  final String? subtitle;
-  final IconData? icon;
+  String? title;
+  String? subtitle;
+  IconData? icon;
 
   SupportModel({this.title, this.subtitle, this.icon});
 }
@@ -90,12 +90,12 @@ class SupportModel {
 List<SupportModel> supportList = [
   SupportModel(
     title: S.current.contactUsWithMobile,
-    subtitle: '15938',
+    subtitle: '',
     icon: Icons.phone_in_talk_outlined,
   ),
   SupportModel(
     title: S.current.contactUsWithEmial,
-    subtitle: 'support@usoly.com',
+    subtitle: '',
     icon: Icons.alternate_email_outlined,
   ),
   SupportModel(

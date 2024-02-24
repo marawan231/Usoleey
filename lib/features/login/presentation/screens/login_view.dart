@@ -26,7 +26,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
     super.initState();
-    getIt<AuthCubit>().phoneController.text = '1093739627';
+    getIt<AuthCubit>().phoneController.text = '+201552218404';
     getIt<AuthCubit>().passwordController.text = 'jkER%43@11j';
   }
 
@@ -196,7 +196,7 @@ class _LoginViewState extends State<LoginView> {
       listener: (context, state) {
         state.whenOrNull(
           loginSuccess: (data) {
-            Go.toNamed(NamedRoutes.layout);
+            Go.offAllNamed(NamedRoutes.layout);
           },
           loginError: (message) {
             showToast(message: message.toString());
