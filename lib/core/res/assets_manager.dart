@@ -64,8 +64,14 @@ class AssetsManager {
   static const String money = "$imageSVGPath/money.svg";
   //electricity
   static const String electricity = "$imageSVGPath/electricity.svg";
+  //home unit icon
+  static const String homeUnitIcon = "$imageSVGPath/home_unit_icon.svg";
   //copy
   static const String copy = "$imageSVGPath/copy.svg";
+  //maintenance
+  static const String maintenance = "$imageSVGPath/maintenance.svg";
+  //warning_chat
+  static const String warningChat = "$imageSVGPath/warning_chat.svg";
   //location
   static const String location = "$imageSVGPath/location.svg";
   //empty_ticket

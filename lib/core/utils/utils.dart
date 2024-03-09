@@ -6,6 +6,7 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Future<void> showIosDialog(
@@ -147,4 +148,23 @@ getCreatedAt(String createdAt) {
 int getCount(int length) {
   //if legnth of ads is less than 4 return the length of ads else return length
   return length > 3 ? 3 : length;
+}
+
+Future<void> showGalleryError(BuildContext context) async {
+  final status = await Permission.photos.status;
+  if (status.isDenied) {
+    showIosDialog(
+      context: context,
+      title: 'الصور',
+      content: 'يجب السماح بالوصول للصور',
+      okText: 'الذهاب للإعدادات',
+      cancelText: 'إلغاء',
+      ok: () {
+        openAppSettings();
+      },
+      cancel: () {},
+    );
+  } else {
+    showToast(message: 'حدث خطأ ما');
+  }
 }

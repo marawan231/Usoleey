@@ -15,7 +15,7 @@ class AppCustomTextFormField extends StatelessWidget {
       this.onChanged,
       this.onFieldSubmitted,
       this.onTap,
-      this.onEditingComplete});
+      this.onEditingComplete, this.hintTextDirection, this.maxLines});
   final String? hintText;
   final TextInputType? keyboardType;
   final bool? obscureText;
@@ -26,6 +26,8 @@ class AppCustomTextFormField extends StatelessWidget {
   final Function(String)? onFieldSubmitted;
   final Function? onTap;
   final Function(String)? onEditingComplete;
+  final TextDirection? hintTextDirection;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class AppCustomTextFormField extends StatelessWidget {
       // width: double.infinity,
       // height: 109.sp,
       child: TextFormField(
+        maxLines: maxLines ?? 1,
         controller: controller,
         validator: validator,
         // onSaved: onSaved,
@@ -46,7 +49,7 @@ class AppCustomTextFormField extends StatelessWidget {
         onTapOutside: (event) => FocusScope.of(context).unfocus(),
         keyboardType: keyboardType ?? TextInputType.phone,
         decoration: InputDecoration(
-          hintTextDirection: TextDirection.ltr,
+          hintTextDirection: hintTextDirection?? TextDirection.ltr,
           hintText: hintText,
           hintStyle: getRegularStyle(
             fontSize: 16.sp,
