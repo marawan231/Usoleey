@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +14,8 @@ class AppTextButton extends StatelessWidget {
   final double? buttonHeight;
   final String buttonText;
   final TextStyle? textStyle;
-  final VoidCallback? onPressed;
+  final void Function()? onPressed;
+  final bool isLoading;
   const AppTextButton({
     super.key,
     this.borderRadius,
@@ -24,7 +26,8 @@ class AppTextButton extends StatelessWidget {
     this.buttonWidth,
     required this.buttonText,
     this.textStyle,
-    this.onPressed,
+    required this.onPressed,
+    this.isLoading = false,
   });
 
   @override
@@ -39,14 +42,18 @@ class AppTextButton extends StatelessWidget {
           Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 50.h),
         ),
       ),
-      onPressed: onPressed ?? null,
-      child: Text(buttonText,
-          style: textStyle ??
-              getBoldStyle(
-                fontSize: 16.sp,
-                // fontWeight: FontWeight.w700,
-                color: ColorsManager.white,
-              )),
+      onPressed: isLoading ? null : onPressed,
+      child: isLoading
+          ? const CupertinoActivityIndicator(
+              color: Colors.white,
+            )
+          : Text(buttonText,
+              style: textStyle ??
+                  getBoldStyle(
+                    fontSize: 16.sp,
+                    // fontWeight: FontWeight.w700,
+                    color: ColorsManager.white,
+                  )),
     );
   }
 }

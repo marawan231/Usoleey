@@ -3,6 +3,8 @@ import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/navigator/route_generator.dart';
 import 'package:flutter_complete_project/core/theming/theme_manager.dart';
+// ignore: unused_import
+import 'package:flutter_complete_project/tenant_flow/features/choose_language/logic/cubit/choose_language_cubit.dart';
 
 // ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -31,8 +33,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // initGetIt();
-
     return ScreenUtilInit(
         designSize: const Size(375, 812),
         useInheritedMediaQuery: true,

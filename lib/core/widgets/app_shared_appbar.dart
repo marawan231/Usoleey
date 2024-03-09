@@ -1,6 +1,10 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/navigator/named_routes.dart';
+import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -30,7 +34,21 @@ class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         scrolledUnderElevation: 0,
         surfaceTintColor: ColorsManager.white,
-        leading: leading,
+        leading: leading ??
+            IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                selectedTab == 1
+                    ? {
+                        selectedTab = 0,
+                        Go.offNamed(NamedRoutes.layout),
+                      }
+                    : Go.back();
+              },
+            ),
         actions: [
           _buildTitle(),
         ],

@@ -30,13 +30,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: any
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   #A build system for Dart code generation and modular compilation
   build_runner: ^2.4.7
   # State management
-  flutter_bloc: ^8.1.3
+  flutter_bloc: ^8.1.4
   # Code generator (mainly used with cubit & retrofit)
   freezed: ^2.4.5
   freezed_annotation: ^2.4.1
@@ -63,6 +64,12 @@ dependencies:
   flutter_offline: ^3.0.1
   dio_smart_retry: ^6.0.0
   smooth_page_indicator: ^1.1.0
+  fluttertoast: ^8.2.4
+  cached_network_image: ^3.3.1
+  url_launcher: ^6.2.4
+  lottie: ^3.1.0
+  image_picker: ^1.0.7
+  permission_handler: ^11.3.0
 
 dev_dependencies:
   flutter_test:
@@ -104,6 +111,8 @@ flutter:
     - assets/images/
     - assets/svgs/
     - assets/temp/
+    #lottie
+    - assets/lottie/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

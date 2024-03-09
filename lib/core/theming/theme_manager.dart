@@ -1,27 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData get appTheme => ThemeData(
-      scaffoldBackgroundColor: ColorsManager.backgroundColor,
-      useMaterial3: true,
-      primaryColor: ColorsManager.primary,
-      appBarTheme: const AppBarTheme(
-        backgroundColor: ColorsManager.white,
-        iconTheme: IconThemeData(color: ColorsManager.primary),
+    scaffoldBackgroundColor: ColorsManager.backgroundColor,
+    useMaterial3: true,
+    primaryColor: ColorsManager.primary,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: ColorsManager.white,
+      iconTheme: IconThemeData(color: ColorsManager.primary),
+    ),
+    // App bar background color),
+    textSelectionTheme:
+        const TextSelectionThemeData(cursorColor: ColorsManager.primary),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100.r))),
+          foregroundColor:
+              MaterialStateProperty.all<Color>(ColorsManager.white),
+          backgroundColor:
+              MaterialStateProperty.all<Color>(ColorsManager.primary)),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: BorderSide(
+          color: ColorsManager.greyLight,
+        ),
       ),
-      // App bar background color),
-      textSelectionTheme:
-          const TextSelectionThemeData(cursorColor: ColorsManager.primary),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-            foregroundColor:
-                MaterialStateProperty.all<Color>(ColorsManager.white),
-            backgroundColor:
-                MaterialStateProperty.all<Color>(ColorsManager.primary)),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: BorderSide(
+          color: ColorsManager.grey,
+        ),
       ),
-    );
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: BorderSide(
+          color: ColorsManager.greyLight,
+        ),
+      ),
+    ));
       // inputDecorationTheme: InputDecorationTheme(
-      //     isDense: true,
+          // isDense: true,
       //     contentPadding: EdgeInsets.symmetric(
       //         vertical: AppPadding.pH16, horizontal: AppPadding.pH16),
       //     enabledBorder: OutlineInputBorder(
@@ -38,7 +61,7 @@ ThemeData get appTheme => ThemeData(
       //         borderRadius: BorderRadius.circular(AppBorderRadius.r16)),
       //     focusedErrorBorder: OutlineInputBorder(
       //         borderSide: BorderSide.none,
-      //         borderRadius: BorderRadius.circular(AppBorderRadius.r16))),
+              // borderRadius: BorderRadius.circular(AppBorderRadius.r16))),
 
       // bottomNavigationBarTheme: BottomNavigationBarThemeData(
       //   backgroundColor: ColorsManager.grey2,
