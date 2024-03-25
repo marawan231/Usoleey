@@ -3,8 +3,8 @@ import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/app_strings.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';
-import 'package:flutter_complete_project/tenant_flow/features/more/data/models/profile_item.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
+import 'package:flutter_complete_project/tenant_flow/features/more/data/models/profile_item.dart';
 
 List<String> appLanguages = [
   S.current.arabic,

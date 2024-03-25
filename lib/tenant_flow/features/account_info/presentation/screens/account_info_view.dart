@@ -4,9 +4,9 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
 import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
+import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/account_info/data/models/account_info.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
-import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 List<AccountInfo> accountInfoList = [

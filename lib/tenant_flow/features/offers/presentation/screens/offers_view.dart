@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
+import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/offers/presentation/widgets/offers_item.dart';
-import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OffersView extends StatelessWidget {

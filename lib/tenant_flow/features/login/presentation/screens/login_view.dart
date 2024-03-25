@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
@@ -5,15 +7,18 @@ import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
+import 'package:flutter_complete_project/core/shared_cubits/user_cubit/user_cubit.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_text_form_field.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
+import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/data/models/login_request_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_state.dart';
-import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../data/models/auth_model.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -26,8 +31,8 @@ class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
     super.initState();
-    getIt<AuthCubit>().phoneController.text = '+201554318403';
-    getIt<AuthCubit>().passwordController.text = 'jkER%43@11j';
+    getIt<AuthCubit>().phoneController.text = '01092964109';
+    getIt<AuthCubit>().passwordController.text = '111111';
   }
 
   @override
@@ -195,8 +200,14 @@ class _LoginViewState extends State<LoginView> {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         state.whenOrNull(
-          loginSuccess: (data) {
-            Go.offAllNamed(NamedRoutes.layout);
+          loginSuccess: (AuthModel authModel) {
+            if (authModel.data!.user!.role == 'OWNER') {
+              getIt<UserCubit>()
+                  .updateUser(authModel.data!.user!, authModel.data!.stats!);
+              Go.offAllNamed(NamedRoutes.ownerLayout);
+            } else {
+              Go.offAllNamed(NamedRoutes.layout);
+            }
           },
           loginError: (message) {
             showToast(message: message.toString());
@@ -210,15 +221,17 @@ class _LoginViewState extends State<LoginView> {
             loginLoading: () => true,
           ),
           buttonText: S.current.next,
-          onPressed: () {
+          onPressed: () async {
             if (getIt<AuthCubit>().formKey.currentState!.validate()) {
+              final String? fcmToken = await getToken();
               getIt<AuthCubit>().login(
                   loginRequestModel: LoginRequestModel(
                       phoneNumber: getIt<AuthCubit>().phoneController.text,
                       password: getIt<AuthCubit>().passwordController.text,
                       deviceId: 'asd',
-                      deviceType: 'ios',
-                      fcmToken: 'asdasdasdasldasdkaslda;sld;kl; '));
+                      deviceType: Platform.isAndroid ? 'android' : 'ios',
+                      fcmToken: fcmToken,
+                      language: 'ar'));
             }
           },
         );

@@ -1,17 +1,17 @@
 import 'dart:io';
-import 'package:flutter_complete_project/core/utils/utils.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:image_picker/image_picker.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
+import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/data/models/tickets_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/data/models/tickets_status_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/data/repository/tickets_repository.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/logic/cubit/tickets_state.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class TicketsCubit extends Cubit<TicketsState> {
   TicketsCubit(this.ticketsRepository) : super(const TicketsState.idle());
@@ -63,7 +63,7 @@ class TicketsCubit extends Cubit<TicketsState> {
 
       emit(TicketsState.imageSelectedSuccess());
       // startStream(chatId);
-    } on PlatformException catch (e) {
+    } on PlatformException catch (_) {
       var status = await Permission.photos.status;
       if (status.isDenied) {
         showGalleryError(context);

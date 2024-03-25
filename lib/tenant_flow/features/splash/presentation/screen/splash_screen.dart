@@ -13,6 +13,8 @@ import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/tenant_flow/features/choose_language/logic/cubit/choose_language_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/notification/notification_service.dart';
+
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
 
@@ -29,6 +31,8 @@ class _SplashViewState extends State<SplashView>
 
   @override
   void initState() {
+    NotificationService().setupNotifications();
+    NotificationNavigator(onRouting: (message) {});
     _timer = Timer(const Duration(seconds: 2), _goNext);
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);

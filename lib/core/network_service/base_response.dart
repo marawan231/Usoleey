@@ -4,11 +4,10 @@ part 'base_response.g.dart';
 
 @JsonSerializable(genericArgumentFactories: true)
 class BaseResponse<T> {
-  final bool? success;
   final String? message;
   final T? data;
 
-  BaseResponse({this.message, this.data, this.success});
+  BaseResponse({this.message, this.data});
 
   factory BaseResponse.fromJson(
           Map<String, dynamic> json, T Function(Object? json) fromJsonT) =>

@@ -1,0 +1,33 @@
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/core/enums/enums.dart';
+import 'package:flutter_complete_project/core/extensions/scroll_controller_extension.dart';
+import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
+import 'package:flutter_complete_project/core/extensions/validator.dart';
+import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
+import 'package:flutter_complete_project/core/shared_models/owner_property_model.dart';
+import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/core/utils/utils.dart';
+import 'package:flutter_complete_project/core/widgets/app_custom_text_form_field.dart';
+import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
+import 'package:flutter_complete_project/core/widgets/bottom_sheet_header.dart';
+import 'package:flutter_complete_project/core/widgets/custom_bottom_sheet_dialog.dart';
+import 'package:flutter_complete_project/core/widgets/custom_date_picker.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/create_unit/presentation/logic/cubit/create_unit_cubit.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/create_unit/presentation/utils/create_unit_utils.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../../core/navigator/navigator.dart';
+import '../../../../../core/res/assets_manager.dart';
+import '../../../../../generated/l10n.dart';
+import '../../../create_property/presentation/screens/create_property_screens_imports.dart';
+
+part 'create_unit_form.dart';
+part 'switcher.dart';
+part 'unit_image.dart';
+part 'unit_information.dart';
+part 'unit_specifications.dart';

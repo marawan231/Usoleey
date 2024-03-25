@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 part 'auth_model.g.dart';
 
 @JsonSerializable(explicitToJson: true)
@@ -19,8 +20,9 @@ class AuthModelData {
   UserModel? user;
   String? accessToken;
   int? expiresIn;
+  Stats? stats;
 
-  AuthModelData({this.user, this.accessToken, this.expiresIn});
+  AuthModelData({this.user, this.accessToken, this.expiresIn, this.stats});
 
   factory AuthModelData.fromJson(Map<String, dynamic> json) =>
       _$AuthModelDataFromJson(json);
@@ -36,6 +38,7 @@ class UserModel {
   String? email;
   String? firstName;
   String? lastName;
+
   // String? firstNameAr;
   // String? lastNameAr;
   String? role;
@@ -65,4 +68,16 @@ class UserModel {
       _$UserModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Stats {
+  int? openTickets, totalRents, tenantsCount, unitsCount;
+
+  Stats(
+      {this.openTickets, this.totalRents, this.tenantsCount, this.unitsCount});
+
+  factory Stats.fromJson(Map<String, dynamic> json) => _$StatsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$StatsToJson(this);
 }

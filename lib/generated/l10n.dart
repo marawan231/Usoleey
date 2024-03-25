@@ -419,6 +419,706 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property Owner`
+  String get propertyOwner {
+    return Intl.message(
+      'Property Owner',
+      name: 'propertyOwner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open tickets`
+  String get openTickets {
+    return Intl.message(
+      'Open tickets',
+      name: 'openTickets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Annual rent`
+  String get annualRent {
+    return Intl.message(
+      'Annual rent',
+      name: 'annualRent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tenants count`
+  String get tenantsCount {
+    return Intl.message(
+      'Tenants count',
+      name: 'tenantsCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Units count`
+  String get unitsCount {
+    return Intl.message(
+      'Units count',
+      name: 'unitsCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ny Real Estate`
+  String get myRealEstate {
+    return Intl.message(
+      'Ny Real Estate',
+      name: 'myRealEstate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add unit`
+  String get addUnit {
+    return Intl.message(
+      'Add unit',
+      name: 'addUnit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add building`
+  String get addBuilding {
+    return Intl.message(
+      'Add building',
+      name: 'addBuilding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Instrument Number`
+  String get instrumentNumber {
+    return Intl.message(
+      'Instrument Number',
+      name: 'instrumentNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unit Building Address`
+  String get unitAddress {
+    return Intl.message(
+      'Unit Building Address',
+      name: 'unitAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `District`
+  String get district {
+    return Intl.message(
+      'District',
+      name: 'district',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Street`
+  String get sreet {
+    return Intl.message(
+      'Street',
+      name: 'sreet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unit Number`
+  String get unitNumber {
+    return Intl.message(
+      'Unit Number',
+      name: 'unitNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Postal Code`
+  String get postalCode {
+    return Intl.message(
+      'Postal Code',
+      name: 'postalCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add property`
+  String get addProperty {
+    return Intl.message(
+      'Add property',
+      name: 'addProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subnumber`
+  String get subNumber {
+    return Intl.message(
+      'Subnumber',
+      name: 'subNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message(
+      'Address',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City`
+  String get city {
+    return Intl.message(
+      'City',
+      name: 'city',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get validateEmptyMessage {
+    return Intl.message(
+      'This field is required',
+      name: 'validateEmptyMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unit Information`
+  String get informationUnit {
+    return Intl.message(
+      'Unit Information',
+      name: 'informationUnit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unit Name`
+  String get unitName {
+    return Intl.message(
+      'Unit Name',
+      name: 'unitName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly Unit Rent`
+  String get unitRent {
+    return Intl.message(
+      'Monthly Unit Rent',
+      name: 'unitRent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rent Commencement Date`
+  String get unitDate {
+    return Intl.message(
+      'Rent Commencement Date',
+      name: 'unitDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Electricity Bill Account Number`
+  String get electricityAccount {
+    return Intl.message(
+      'Electricity Bill Account Number',
+      name: 'electricityAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water Bill Account Number`
+  String get waterAccount {
+    return Intl.message(
+      'Water Bill Account Number',
+      name: 'waterAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unit Specifications`
+  String get unitSpecifications {
+    return Intl.message(
+      'Unit Specifications',
+      name: 'unitSpecifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unit Area in Square Meters`
+  String get unitSpace {
+    return Intl.message(
+      'Unit Area in Square Meters',
+      name: 'unitSpace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Rooms`
+  String get roomsCount {
+    return Intl.message(
+      'Number of Rooms',
+      name: 'roomsCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Air Conditioners`
+  String get conditionersCount {
+    return Intl.message(
+      'Number of Air Conditioners',
+      name: 'conditionersCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Bathrooms`
+  String get bathroomsCount {
+    return Intl.message(
+      'Number of Bathrooms',
+      name: 'bathroomsCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Has a Living Room`
+  String get thereIsLoungue {
+    return Intl.message(
+      'Has a Living Room',
+      name: 'thereIsLoungue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Has a Kitchen`
+  String get thereIsKitchecn {
+    return Intl.message(
+      'Has a Kitchen',
+      name: 'thereIsKitchecn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property`
+  String get property {
+    return Intl.message(
+      'Property',
+      name: 'property',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create unit`
+  String get createUnit {
+    return Intl.message(
+      'Create unit',
+      name: 'createUnit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Units`
+  String get units {
+    return Intl.message(
+      'Units',
+      name: 'units',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose property`
+  String get chooseProperty {
+    return Intl.message(
+      'Choose property',
+      name: 'chooseProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add new property`
+  String get addNewProperty {
+    return Intl.message(
+      'Add new property',
+      name: 'addNewProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent tickets`
+  String get recentTickets {
+    return Intl.message(
+      'Recent tickets',
+      name: 'recentTickets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `reviewing`
+  String get reviewing {
+    return Intl.message(
+      'reviewing',
+      name: 'reviewing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `solved`
+  String get solved {
+    return Intl.message(
+      'solved',
+      name: 'solved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `canceled`
+  String get canceled {
+    return Intl.message(
+      'canceled',
+      name: 'canceled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `processing`
+  String get processing {
+    return Intl.message(
+      'processing',
+      name: 'processing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `service`
+  String get service {
+    return Intl.message(
+      'service',
+      name: 'service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `complain`
+  String get complain {
+    return Intl.message(
+      'complain',
+      name: 'complain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `other`
+  String get other {
+    return Intl.message(
+      'other',
+      name: 'other',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show details`
+  String get showDetails {
+    return Intl.message(
+      'Show details',
+      name: 'showDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total rent`
+  String get totalRent {
+    return Intl.message(
+      'Total rent',
+      name: 'totalRent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SAR`
+  String get sar {
+    return Intl.message(
+      'SAR',
+      name: 'sar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SAR/Month`
+  String get monthSar {
+    return Intl.message(
+      'SAR/Month',
+      name: 'monthSar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next rent collection date`
+  String get rentDate {
+    return Intl.message(
+      'Next rent collection date',
+      name: 'rentDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `update unit information`
+  String get unitInfromationEdit {
+    return Intl.message(
+      'update unit information',
+      name: 'unitInfromationEdit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rent`
+  String get rent {
+    return Intl.message(
+      'Rent',
+      name: 'rent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bills`
+  String get biils {
+    return Intl.message(
+      'Bills',
+      name: 'biils',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tenant`
+  String get tenant {
+    return Intl.message(
+      'Tenant',
+      name: 'tenant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tenant information`
+  String get tenantInformation {
+    return Intl.message(
+      'Tenant information',
+      name: 'tenantInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call`
+  String get call {
+    return Intl.message(
+      'Call',
+      name: 'call',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Mail`
+  String get sendMail {
+    return Intl.message(
+      'Send Mail',
+      name: 'sendMail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next invoices`
+  String get nextInvoices {
+    return Intl.message(
+      'Next invoices',
+      name: 'nextInvoices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invoice`
+  String get invoice {
+    return Intl.message(
+      'Invoice',
+      name: 'invoice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water`
+  String get water {
+    return Intl.message(
+      'Water',
+      name: 'water',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show all invoices`
+  String get showAllInvoices {
+    return Intl.message(
+      'Show all invoices',
+      name: 'showAllInvoices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show all tikcets`
+  String get showAllTickets {
+    return Intl.message(
+      'Show all tikcets',
+      name: 'showAllTickets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest property tickets`
+  String get latestPropertyTickets {
+    return Intl.message(
+      'Latest property tickets',
+      name: 'latestPropertyTickets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property invoices`
+  String get propertyInvoices {
+    return Intl.message(
+      'Property invoices',
+      name: 'propertyInvoices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property tickets`
+  String get propertyTickets {
+    return Intl.message(
+      'Property tickets',
+      name: 'propertyTickets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

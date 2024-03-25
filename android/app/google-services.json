@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "194046198221",
+    "project_id": "usooly-31efe",
+    "storage_bucket": "usooly-31efe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194046198221:android:79894681599f98bff64484",
+        "android_client_info": {
+          "package_name": "com.example.usooley"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSttnZ84LqtEeUV08eB7v3WmuAF1EIEwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

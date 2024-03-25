@@ -1,4 +1,3 @@
-
 enum NamedRoutes {
   splash('/'),
   chooseAppLanguage('/chooseAppLanguage'),
@@ -8,6 +7,8 @@ enum NamedRoutes {
   login('/login'),
   //layout
   layout('/layout'),
+  //ownerLayout
+  ownerLayout('/ownerLayout'),
   //home
   home('/home'),
   //notifications
@@ -26,11 +27,18 @@ enum NamedRoutes {
   ticketDetails('/ticketDetails'),
   //propertyDetails
   propertyDetails('/propertyDetails'),
+  //createUnit
+  createUnit('/createUnit'),
+  //ownerPropertyDetails
+  ownerPropertyDetails('/ownerPropertyDetails'),
+  //unitDetails
+  ownerUnitDetails('/unitDetails'), //unitDetails
+  ownerInvoices('/ownerInvoices'),
+  ownerTikcets('/ownerTikcets'),
+  updateUnit('/updateUnit'),
   ;
 
   final String routeName;
 
   const NamedRoutes(this.routeName);
 }
-
-

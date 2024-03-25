@@ -20,6 +20,7 @@ class ColorsManager {
   static const Color greyLight = Color(0xFF77797E);
   //#B3B6BD
   static const Color greyMedium = Color(0xFFB3B6BD);
+
   //0xffF5F6F7
   static const Color greyLightest = Color(0xffF5F6F7);
   static const Color greyDark = Color(0xFFBDBDBD);
@@ -30,6 +31,21 @@ class ColorsManager {
   static const Color red = Color(0xFFE02020);
   //#D1F8DC
   static const Color green = Color(0xFFD1F8DC);
+  //#C79B32
+  static const Color brown = Color(0xFFC79B32);
+
+  //#FFF6DC
+  static const Color goldLight = Color(0xFFFFF6DC);
+
+  //#C3A030
+  static const Color gold = Color(0xFFFFF6DC);
+
+  //#E5FFEE
+  static const Color greenLight = Color(0xFFE5FFEE);
+
+  //#2EA154
+  static const Color greenPrimary = Color(0xFF2EA154);
+
   //#449059
   static const Color greenDark = Color(0xFF449059);
 }

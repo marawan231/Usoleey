@@ -1,0 +1,32 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
+import 'package:flutter_complete_project/core/navigator/named_routes.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/update_unit/presentation/screens/update_unit_screens_imports.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../../core/extensions/invoice_type_extention.dart';
+import '../../../../../core/navigator/navigator.dart';
+import '../../../../../core/res/assets_manager.dart';
+import '../../../../../core/res/custom_text_styles.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/utils/utils.dart';
+import '../../../../../core/widgets/custom_border_container.dart';
+import '../../../../../core/widgets/custom_text_button.dart';
+import '../../../../../core/widgets/ticket_item.dart';
+import '../../../../../generated/l10n.dart';
+import '../../../owner_home/data/models/home_model.dart';
+import '../../data/models/invoice_model.dart';
+import '../../data/models/tenant_model.dart';
+import '../../data/models/unit_details_model.dart';
+
+part 'invoice_item.dart';
+part 'invoices.dart';
+part 'recent_tickets.dart';
+part 'tenant_details.dart';
+part 'tenant_row_item.dart';
+part 'unit_details_body.dart';
+part 'unit_details_header.dart';
+part 'unit_main_information.dart';
+part 'unit_main_information_item.dart';

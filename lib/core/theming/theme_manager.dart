@@ -22,27 +22,27 @@ ThemeData get appTheme => ThemeData(
               MaterialStateProperty.all<Color>(ColorsManager.white),
           backgroundColor:
               MaterialStateProperty.all<Color>(ColorsManager.primary)),
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.r),
-        borderSide: BorderSide(
-          color: ColorsManager.greyLight,
-        ),
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.r),
-        borderSide: BorderSide(
-          color: ColorsManager.grey,
-        ),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.r),
-        borderSide: BorderSide(
-          color: ColorsManager.greyLight,
-        ),
-      ),
-    ));
+    ),);
+    // inputDecorationTheme: InputDecorationTheme(
+    //   border: OutlineInputBorder(
+    //     borderRadius: BorderRadius.circular(8.r),
+    //     borderSide: BorderSide(
+    //       color: ColorsManager.greyLight,
+    //     ),
+    //   ),
+    //   enabledBorder: OutlineInputBorder(
+    //     borderRadius: BorderRadius.circular(8.r),
+    //     borderSide: BorderSide(
+    //       color: ColorsManager.grey,
+    //     ),
+    //   ),
+    //   focusedBorder: OutlineInputBorder(
+    //     borderRadius: BorderRadius.circular(8.r),
+    //     borderSide: BorderSide(
+    //       color: ColorsManager.greyLight,
+    //     ),
+    //   ),
+    // ));
       // inputDecorationTheme: InputDecorationTheme(
           // isDense: true,
       //     contentPadding: EdgeInsets.symmetric(

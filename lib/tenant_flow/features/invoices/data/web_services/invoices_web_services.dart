@@ -8,6 +8,6 @@ part 'invoices_web_services.g.dart';
 abstract class InvoicesWebServices {
   factory InvoicesWebServices(Dio dio, {String baseUrl}) = _InvoicesWebServices;
 
-  @GET("invoices")
+  @GET("owner_invoices")
   Future<InvoicesModel> getAllInvoices();
 }

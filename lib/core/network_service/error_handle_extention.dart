@@ -1,5 +1,3 @@
-
-
 import 'api_result.dart';
 import 'network_exceptions.dart';
 

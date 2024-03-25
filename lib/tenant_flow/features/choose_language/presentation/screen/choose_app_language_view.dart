@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_complete_project/tenant_flow/features/choose_language/presentation/widgets/app_language_choices.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
+import 'package:flutter_complete_project/tenant_flow/features/choose_language/presentation/widgets/app_language_choices.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ChooseAppLanguageView extends StatelessWidget {

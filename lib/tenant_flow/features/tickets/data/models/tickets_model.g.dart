@@ -81,7 +81,7 @@ Unit _$UnitFromJson(Map<String, dynamic> json) => Unit(
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
       tenantId: json['tenantId'] as int?,
-      // ownerId: json['ownerId'] as String?,
+      ownerId: json['ownerId'] as int?,
       propertyId: json['propertyId'] as int?,
       enterpriseId: json['enterpriseId'] as String?,
       tenant: json['tenant'] == null

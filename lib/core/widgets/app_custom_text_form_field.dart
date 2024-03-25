@@ -15,7 +15,12 @@ class AppCustomTextFormField extends StatelessWidget {
       this.onChanged,
       this.onFieldSubmitted,
       this.onTap,
-      this.onEditingComplete, this.hintTextDirection, this.maxLines});
+      this.onEditingComplete,
+      this.hintTextDirection,
+      this.maxLines,
+      this.textInputAction,
+      this.readOnly});
+
   final String? hintText;
   final TextInputType? keyboardType;
   final bool? obscureText;
@@ -24,40 +29,47 @@ class AppCustomTextFormField extends StatelessWidget {
   final Function(String)? onSaved;
   final Function(String)? onChanged;
   final Function(String)? onFieldSubmitted;
-  final Function? onTap;
+  final void Function()? onTap;
   final Function(String)? onEditingComplete;
   final TextDirection? hintTextDirection;
   final int? maxLines;
+  final TextInputAction? textInputAction;
+  final bool? readOnly;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // width: double.infinity,
-      // height: 109.sp,
-      child: TextFormField(
-        maxLines: maxLines ?? 1,
-        controller: controller,
-        validator: validator,
-        // onSaved: onSaved,
-        onChanged: onChanged,
-        onFieldSubmitted: onFieldSubmitted,
-        // onEditingComplete: onEditingComplete,
-        // onTap: onTap,
-        obscureText: obscureText ?? false,
-
-        // textDirection: TextDirection.rtl,
-        onTapOutside: (event) => FocusScope.of(context).unfocus(),
-        keyboardType: keyboardType ?? TextInputType.phone,
-        decoration: InputDecoration(
-          hintTextDirection: hintTextDirection?? TextDirection.ltr,
-          hintText: hintText,
-          hintStyle: getRegularStyle(
-            fontSize: 16.sp,
-            color: ColorsManager.greyMedium,
-          ),
-          // prefixIcon: Icon(Icons.phone),
+    return Stack(
+      children: [
+        Container(
+          height: 56.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.r),
+              border: Border.all(color: ColorsManager.grey)),
         ),
-      ),
+        TextFormField(
+          onTap: onTap,
+          maxLines: maxLines ?? 1,
+          controller: controller,
+          validator: validator,
+          readOnly: readOnly ?? false,
+          onChanged: onChanged,
+          onFieldSubmitted: onFieldSubmitted,
+          obscureText: obscureText ?? false,
+          textInputAction: textInputAction ?? TextInputAction.next,
+          onTapOutside: (event) => FocusScope.of(context).unfocus(),
+          keyboardType: keyboardType ?? TextInputType.phone,
+          decoration: InputDecoration(
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+            border: InputBorder.none,
+            labelText: hintText,
+            floatingLabelStyle:
+                getRegularStyle(fontSize: 16.sp, color: ColorsManager.primary),
+            labelStyle: getRegularStyle(
+                fontSize: 16.sp, color: ColorsManager.greyMedium),
+          ),
+        )
+      ],
     );
   }
 }

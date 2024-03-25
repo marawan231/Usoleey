@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
-import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/core/widgets/empty_lottie.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
@@ -32,7 +31,7 @@ class TicketsView extends StatelessWidget {
               isButtonVisible: true,
               buttonText: 'إنشاء تذكرة',
               onPressed: () {
-             _openTicketCreationFlow(Go.navigatorKey.currentContext);
+                _openTicketCreationFlow(Go.navigatorKey.currentContext);
               },
               padding: 0,
             )

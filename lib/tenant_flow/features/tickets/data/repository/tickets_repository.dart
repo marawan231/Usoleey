@@ -1,8 +1,6 @@
 import 'dart:developer';
 
-import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/network_service/api_result.dart';
-import 'package:flutter_complete_project/core/network_service/network_constants.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/data/models/tickets_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/data/web_service/tickets_web_service.dart';

@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/create_unit/presentation/logic/cubit/create_unit_cubit.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/create_unit/presentation/screens/create_unit_screens_imports.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/owner_home_layout/presentation/screens/owner_home_layout_screens_imports.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/owner_invoices/presentation/screens/owner_invoices_screens_imports.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/property_details/presentation/screens/owner_property_details_screens_imports.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/unit_details/presentation/screens/unit_details_screens_imports.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/update_unit/presentation/screens/update_unit_screens_imports.dart';
 import 'package:flutter_complete_project/tenant_flow/features/account_info/presentation/screens/account_info_view.dart';
 import 'package:flutter_complete_project/tenant_flow/features/choose_language/logic/cubit/choose_language_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/choose_language/presentation/screen/choose_app_language_view.dart';
@@ -23,24 +30,32 @@ import 'package:flutter_complete_project/tenant_flow/features/terms_and_support/
 import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/screens/tickets_details_view.dart';
 
+import '../../property_owner_flow/features/owner_tickets/presentation/screens/owner_tickets_screens_imports.dart';
 import 'named_routes.dart';
 import 'page_router/imports_page_router_builder.dart';
 
 class RouterGenerator {
   //choose language cubit
   static late ChooseLanguageCubit chooseLanguageCubit;
+
   //on boarding cubit
   static late OnboardingCubit onboardingCubit;
+
   //auth cubit
   static late AuthCubit authCubit;
+
   //home cubit
   static late HomeCubit homeCubit;
+
   //tickets cubit
   static late TicketsCubit ticketsCubit;
-  // invoices cubit
+
+  // owner_invoices cubit
   static late InvoicesCubit invoicesCubit;
+
   //more cubit
   static late MoreCubit moreCubit;
+  static late CreateUnitCubit createUnitCubit;
 
   RouterGenerator() {
     chooseLanguageCubit = getIt<ChooseLanguageCubit>();
@@ -50,6 +65,7 @@ class RouterGenerator {
     ticketsCubit = getIt<TicketsCubit>();
     invoicesCubit = getIt<InvoicesCubit>();
     moreCubit = getIt<MoreCubit>();
+    createUnitCubit = getIt<CreateUnitCubit>();
   }
 
   static final PageRouterBuilder _pageRouter = PageRouterBuilder();
@@ -116,11 +132,37 @@ class RouterGenerator {
       //ticket details
       case NamedRoutes.ticketDetails:
         return _pageRouter.build(const TicketDetailsView(), settings: settings);
+      case NamedRoutes.createUnit:
+        return _pageRouter.build(
+            BlocProvider.value(
+              value: createUnitCubit,
+              child: CreateUnitScreen(),
+            ),
+            settings: settings);
       //propertyDetails
       case NamedRoutes.propertyDetails:
         final arg = settings.arguments as Map<String, dynamic>;
         final unit = arg['unit'];
         return _pageRouter.build(UnitDetailsView(unit: unit),
+            settings: settings);
+      case NamedRoutes.ownerLayout:
+        return _pageRouter.build(OwnerHomeLayoutScreen(), settings: settings);
+      case NamedRoutes.ownerPropertyDetails:
+        final arg = settings.arguments as OwnerPropertyDetailsScreen;
+        return _pageRouter.build(OwnerPropertyDetailsScreen(id: arg.id),
+            settings: settings);
+      case NamedRoutes.ownerUnitDetails:
+        final arg = settings.arguments as OwnerUnitDetailsScreen;
+        return _pageRouter.build(OwnerUnitDetailsScreen(id: arg.id),
+            settings: settings);
+      case NamedRoutes.ownerInvoices:
+        return _pageRouter.build(OwnerInvoicesScreen(), settings: settings);
+      case NamedRoutes.ownerTikcets:
+        return _pageRouter.build(OwnerTicketsScreen(), settings: settings);
+      case NamedRoutes.updateUnit:
+        final arg = settings.arguments as UpdateUnitScreen;
+        return _pageRouter.build(
+            UpdateUnitScreen(unitDetailsModel: arg.unitDetailsModel),
             settings: settings);
     }
   }

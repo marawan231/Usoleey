@@ -20,7 +20,7 @@ class _AuthWebService implements AuthWebService {
 
   @override
   Future<AuthModel> signIn(LoginRequestModel model) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};

@@ -22,7 +22,7 @@ Map<String, dynamic> _$InvoicesModelToJson(InvoicesModel instance) =>
 
 InovicesModelData _$InovicesModelDataFromJson(Map<String, dynamic> json) =>
     InovicesModelData(
-      invoices: (json['invoices'] as List<dynamic>?)
+      invoices: (json['owner_invoices'] as List<dynamic>?)
           ?.map((e) => Invoice.fromJson(e as Map<String, dynamic>))
           .toList(),
       pagination: json['pagination'] == null
@@ -32,7 +32,7 @@ InovicesModelData _$InovicesModelDataFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$InovicesModelDataToJson(InovicesModelData instance) =>
     <String, dynamic>{
-      'invoices': instance.invoices?.map((e) => e.toJson()).toList(),
+      'owner_invoices': instance.invoices?.map((e) => e.toJson()).toList(),
       'pagination': instance.pagination?.toJson(),
     };
 

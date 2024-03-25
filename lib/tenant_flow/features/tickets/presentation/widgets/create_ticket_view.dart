@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
-import 'package:flutter_complete_project/core/navigator/navigator.dart';
-
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_state.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/widgets/ticket_choose_type_view.dart';

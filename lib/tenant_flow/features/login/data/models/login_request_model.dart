@@ -12,12 +12,14 @@ class LoginRequestModel {
   String? deviceId;
   String? deviceType;
   String? fcmToken;
+  String? language;
 
   LoginRequestModel(
       {this.phoneNumber,
       this.password,
       this.deviceId,
       this.deviceType,
+      this.language,
       this.fcmToken});
 
   factory LoginRequestModel.fromJson(Map<String, dynamic> json) {
@@ -27,6 +29,7 @@ class LoginRequestModel {
       deviceId: json['deviceId'],
       deviceType: json['deviceType'],
       fcmToken: json['fcmToken'],
+      language: json['language'],
     );
   }
 
@@ -36,7 +39,8 @@ class LoginRequestModel {
       "password": password,
       "deviceId": deviceId,
       "deviceType": deviceType,
-      "fcmToken": fcmToken
+      "fcmToken": fcmToken,
+      "language": language,
     };
   }
   

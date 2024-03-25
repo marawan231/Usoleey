@@ -16,6 +16,7 @@ class AppTextButton extends StatelessWidget {
   final TextStyle? textStyle;
   final void Function()? onPressed;
   final bool isLoading;
+
   const AppTextButton({
     super.key,
     this.borderRadius,
@@ -44,9 +45,7 @@ class AppTextButton extends StatelessWidget {
       ),
       onPressed: isLoading ? null : onPressed,
       child: isLoading
-          ? const CupertinoActivityIndicator(
-              color: Colors.white,
-            )
+          ? const CupertinoActivityIndicator(color: Colors.white)
           : Text(buttonText,
               style: textStyle ??
                   getBoldStyle(

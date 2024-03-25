@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
@@ -9,37 +8,42 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
   const SharedAppBar(
-      {super.key, this.title, this.height, this.closeOntap, this.leading});
+      {super.key,
+      this.title,
+      this.height,
+      this.closeOntap,
+      this.leading,
+      this.bottom,
+      this.withBottomRounded = true});
 
   final String? title;
   final double? height;
   final Widget? leading;
   final Function()? closeOntap;
+  final PreferredSizeWidget? bottom;
+  final bool withBottomRounded;
 
   _buildTitle() {
     return Padding(
-      padding: EdgeInsetsDirectional.only(end: 24.sp),
-      child: Text(title ?? '',
-          style: getBoldStyle(
-            color: Colors.black,
-            fontSize: 16.sp,
-          )),
-    );
+        padding: EdgeInsetsDirectional.only(start: 12.sp),
+        child: Text(title ?? '',
+            style: getBoldStyle(color: Colors.black, fontSize: 16.sp)));
   }
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: AppBar(
-        scrolledUnderElevation: 0,
-        surfaceTintColor: ColorsManager.white,
-        leading: leading ??
+    return AppBar(
+      scrolledUnderElevation: 0,
+      automaticallyImplyLeading: false,
+      surfaceTintColor: ColorsManager.white,
+      bottom: bottom,
+      title: _buildTitle(),
+      actions: [
+        leading ??
             IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black,
-              ),
+              icon: RotatedBox(
+                  quarterTurns: 2,
+                  child: Icon(Icons.arrow_back_ios, color: Colors.black)),
               onPressed: () {
                 selectedTab == 1
                     ? {
@@ -49,14 +53,10 @@ class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
                     : Go.back();
               },
             ),
-        actions: [
-          _buildTitle(),
-        ],
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(16.r),
-          ),
-        ),
+      ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(withBottomRounded ? 16.r : 0)),
       ),
     );
   }

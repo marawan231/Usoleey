@@ -6,17 +6,19 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
-import 'package:flutter_complete_project/tenant_flow/features/invoices/logic/invoices_cubit.dart';
-import 'package:flutter_complete_project/tenant_flow/features/invoices/presentation/screens/my_invoices_view.dart';
+import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/screens/home_screen.dart';
+import 'package:flutter_complete_project/tenant_flow/features/invoices/logic/invoices_cubit.dart';
+import 'package:flutter_complete_project/tenant_flow/features/invoices/presentation/screens/my_invoices_view.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/more/logic/more_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/more/presentation/screens/more_view.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/screens/tickets_view.dart';
-import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/navigator/named_routes.dart';
 
 final List<Widget> layoutScreens = [
   //   const TransactionHistoryView(),
@@ -197,10 +199,7 @@ class _LayoutViewState extends State<LayoutView> {
         borderRadius: BorderRadius.circular(8.r),
       ),
       child: InkWell(
-        onTap: () {
-          Go.back();
-        },
-        // onTap: () => Go.toNamed(NamedRoutes.notifications),
+        onTap: () => Go.toNamed(NamedRoutes.notifications),
         child: Icon(
           Icons.notifications_none_outlined,
           color: ColorsManager.primary,

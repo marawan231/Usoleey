@@ -20,10 +20,10 @@ class _HomeWebServices implements HomeWebServices {
 
   @override
   Future<UnitsModel> getUnits() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<UnitsModel>(Options(
       method: 'GET',
@@ -47,10 +47,10 @@ class _HomeWebServices implements HomeWebServices {
 
   @override
   Future<AdsModel> getAds() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result =
         await _dio.fetch<Map<String, dynamic>>(_setStreamType<AdsModel>(Options(
       method: 'GET',

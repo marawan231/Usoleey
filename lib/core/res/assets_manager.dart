@@ -35,6 +35,8 @@ class AssetsManager {
   //more view
   //bell
   static const String bell = "$imageSVGPath/bell.svg";
+  //ownerBell
+  static const String ownerBell = "$imageSVGPath/owner_bell.svg";
   //book-open
   static const String bookOpen = "$imageSVGPath/book-open.svg";
   //globe
@@ -74,6 +76,21 @@ class AssetsManager {
   static const String warningChat = "$imageSVGPath/warning_chat.svg";
   //location
   static const String location = "$imageSVGPath/location.svg";
+  //openTickets
+  static const String openTickets = "$imageSVGPath/open_tickets.svg";
+  //realState
+  static const String realState = "$imageSVGPath/real_state.svg";
+  //homeUser
+  static const String homeUser = "$imageSVGPath/home_user.svg";
+  //close
+  static const String close = "$imageSVGPath/close.svg";
+  //addUnit
+  static const String addUnit = "$imageSVGPath/add_unit.svg";
+  static const String building = "$imageSVGPath/building.svg";
+  static const String editIcon = "$imageSVGPath/edit_icon.svg";
+  static const String property = "$imageSVGPath/property.svg";
+  static const String phone = "$imageSVGPath/phone.svg";
+  static const String mail = "$imageSVGPath/mail.svg";
   //empty_ticket
   // static const String emptyTicket = "$imageSVGPath/empty_ticket.svg";
   //lottie animation empty_invoices
