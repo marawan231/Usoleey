@@ -4,11 +4,9 @@ import 'package:flutter_complete_project/core/shared_models/property_model.dart'
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../../core/enums/enums.dart';
-import '../../../../../../core/shared_models/owner_property_model.dart';
 import '../../../data/repository/my_real_estate_repository.dart';
 
 part 'my_real_estate_cubit.freezed.dart';
-
 part 'my_real_estate_state.dart';
 
 class MyRealEstateCubit extends Cubit<MyRealEstateState> {

@@ -14,12 +14,10 @@ import '../../../../../../core/enums/enums.dart';
 import '../../../../../../core/navigator/navigator.dart';
 import '../../../../../../core/network_service/network_exceptions.dart';
 import '../../../../../../core/shared_cubits/user_cubit/user_cubit.dart';
-import '../../../../../../core/shared_models/owner_property_model.dart';
 import '../../../../../../core/utils/utils.dart';
 import '../../../data/repository/create_unit_repository.dart';
 
 part 'create_unit_cubit.freezed.dart';
-
 part 'create_unit_state.dart';
 
 class CreateUnitCubit extends Cubit<CreateUnitState> {

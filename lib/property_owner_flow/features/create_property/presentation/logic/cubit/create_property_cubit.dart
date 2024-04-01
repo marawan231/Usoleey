@@ -16,7 +16,6 @@ import '../../../data/models/create_property_request.dart';
 import '../../../data/repository/create_property_repository.dart';
 
 part 'create_property_cubit.freezed.dart';
-
 part 'create_property_state.dart';
 
 class CreatePropertyCubit extends Cubit<CreatePropertyState> {

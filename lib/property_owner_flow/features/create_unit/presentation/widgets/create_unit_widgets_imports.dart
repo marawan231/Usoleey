@@ -8,7 +8,6 @@ import 'package:flutter_complete_project/core/extensions/scroll_controller_exten
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
 import 'package:flutter_complete_project/core/extensions/validator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
-import 'package:flutter_complete_project/core/shared_models/owner_property_model.dart';
 import 'package:flutter_complete_project/core/shared_models/property_model.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';

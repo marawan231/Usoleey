@@ -15,13 +15,11 @@ import '../../../../../../core/enums/enums.dart';
 import '../../../../../../core/shared_models/property_model.dart';
 import '../../../../../../core/utils/utils.dart';
 import '../../../../../../core/widgets/custom_bottom_sheet_dialog.dart';
-import '../../../../create_unit/presentation/logic/cubit/create_unit_cubit.dart';
 import '../../../../create_unit/presentation/widgets/create_unit_widgets_imports.dart';
 import '../../../../ticket_details/data/models/ticket_details_model.dart';
 import '../../../data/repository/update_unit_repository.dart';
 
 part 'update_unit_cubit.freezed.dart';
-
 part 'update_unit_state.dart';
 
 class UpdateUnitCubit extends Cubit<UpdateUnitState> {

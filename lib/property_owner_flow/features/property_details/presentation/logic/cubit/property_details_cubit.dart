@@ -6,7 +6,6 @@ import '../../../../../../core/enums/enums.dart';
 import '../../../data/repository/property_details_repository.dart';
 
 part 'property_details_cubit.freezed.dart';
-
 part 'property_details_state.dart';
 
 class PropertyDetailsCubit extends Cubit<PropertyDetailsState> {

@@ -6,7 +6,6 @@ import '../../../../owner_home/data/models/home_model.dart';
 import '../../../data/repository/owner_tickets_repository.dart';
 
 part 'owner_tickets_cubit.freezed.dart';
-
 part 'owner_tickets_state.dart';
 
 class OwnerTicketsCubit extends Cubit<OwnerTicketsState> {

@@ -28,6 +28,6 @@ part 'owner_home_app_bar.dart';
 part 'owner_home_bar_content.dart';
 part 'owner_home_body.dart';
 part 'owner_home_stats.dart';
+part 'recent_ticket_shimmer.dart';
 part 'recent_tickets.dart';
 part 'stats_item.dart';
-part 'recent_ticket_shimmer.dart';

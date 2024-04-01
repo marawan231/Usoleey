@@ -6,7 +6,6 @@ import '../../../../../../core/enums/enums.dart';
 import '../../../data/repository/owner_home_repository.dart';
 
 part 'owner_home_cubit.freezed.dart';
-
 part 'owner_home_state.dart';
 
 class OwnerHomeCubit extends Cubit<OwnerHomeState> {

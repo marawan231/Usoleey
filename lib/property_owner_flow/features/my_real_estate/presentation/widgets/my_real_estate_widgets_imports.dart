@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_complete_project/core/enums/enums.dart';
 import 'package:flutter_complete_project/core/extensions/scroll_controller_extension.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
@@ -29,7 +27,7 @@ part 'add_unit_item.dart';
 part 'item_background.dart';
 part 'my_properties.dart';
 part 'my_real_estate_property_item.dart';
+part 'my_real_estate_unit_item.dart';
 part 'my_units.dart';
 part 'rent.dart';
 part 'rent_date.dart';
-part 'my_real_estate_unit_item.dart';
