@@ -6,6 +6,7 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
 import 'package:flutter_complete_project/core/widgets/custom_shimmer.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/owner_notification/data/models/notification_model.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/owner_notification/presentation/logic/cubit/owner_notification_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +16,5 @@ import '../../../../../core/widgets/base_remote_widget.dart';
 import '../../../../../core/widgets/custom_pagination_list.dart';
 import '../../../../../core/widgets/empty_lottie.dart';
 import '../../../../../generated/l10n.dart';
-import 'package:flutter_complete_project/property_owner_flow/features/owner_notification/data/models/notification_model.dart';
-
 
 part 'owner_notification_screen.dart';

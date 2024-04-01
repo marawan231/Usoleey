@@ -1,24 +1,22 @@
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/data/models/create_invoice_request_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../../core/di/dependency_injection.dart';
 import '../../../../../../core/enums/enums.dart';
 import '../../../../my_tickets/presentation/logic/cubit/my_tickets_cubit.dart';
 import '../../../data/models/ticket_details_model.dart';
 import '../../../data/repository/ticket_details_repository.dart';
-import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart' as path_provider;
-import 'package:url_launcher/url_launcher.dart';
-import 'dart:io';
 
 part 'ticket_details_cubit.freezed.dart';
-
 part 'ticket_details_state.dart';
 
 class TicketDetailsCubit extends Cubit<TicketDetailsState> {

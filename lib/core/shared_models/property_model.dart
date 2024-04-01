@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-
 part 'property_model.g.dart';
 @JsonSerializable(ignoreUnannotated: false)
 class PropertyModel {

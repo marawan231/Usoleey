@@ -7,9 +7,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../data/repository/owner_notification_repository.dart';
 
-part 'owner_notification_state.dart';
-
 part 'owner_notification_cubit.freezed.dart';
+part 'owner_notification_state.dart';
 
 class OwnerNotificationCubit extends Cubit<OwnerNotificationState> {
   final OwnerNotificationRepository ownerNotificationRepository;

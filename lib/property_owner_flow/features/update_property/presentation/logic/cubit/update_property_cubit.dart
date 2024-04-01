@@ -5,7 +5,6 @@ import 'package:flutter_complete_project/core/enums/enums.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/property_details/data/models/propert_details_model.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/property_details/presentation/logic/cubit/property_details_cubit.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/update_property/data/models/update_property_request_model.dart';
-import 'package:flutter_complete_project/property_owner_flow/features/update_unit/presentation/utils/update_unit_utils.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../../core/di/dependency_injection.dart';
@@ -13,9 +12,8 @@ import '../../../../../../core/utils/utils.dart';
 import '../../../data/repository/update_property_repository.dart';
 import '../../utils/update_property_utils.dart';
 
-part 'update_property_state.dart';
-
 part 'update_property_cubit.freezed.dart';
+part 'update_property_state.dart';
 
 class UpdatePropertyCubit extends Cubit<UpdatePropertyState> {
   final UpdatePropertyRepository updatePropertyRepository;

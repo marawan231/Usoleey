@@ -1,8 +1,4 @@
 
-import 'dart:io';
-
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,12 +6,9 @@ import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
-import 'package:flutter_complete_project/core/widgets/custom_text_button.dart';
-import 'package:flutter_complete_project/property_owner_flow/features/my_tickets/presentation/logic/cubit/my_tickets_cubit.dart';
-import 'package:flutter_complete_project/property_owner_flow/features/unit_details/data/models/unit_details_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:open_file/open_file.dart';
 
 import '../../../../../core/enums/enums.dart';
 import '../../../../../core/extensions/ticket_status_extention.dart';
@@ -30,8 +23,7 @@ import '../../../../../core/widgets/custom_border_container.dart';
 import '../../../../../core/widgets/ticket_item.dart';
 import '../../../../../generated/l10n.dart';
 import '../../data/models/ticket_details_model.dart';
-import '../logic/cubit/ticket_details_cubit.dart';import 'package:open_file/open_file.dart';
-
+import '../logic/cubit/ticket_details_cubit.dart';
 
 part 'ticket_content.dart';
 part 'ticket_details_body.dart';
