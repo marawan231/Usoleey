@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$CreatePropertyState {
   RequestState get createPropertyState => throw _privateConstructorUsedError;
+  File? get propertyImage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreatePropertyStateCopyWith<CreatePropertyState> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $CreatePropertyStateCopyWith<$Res> {
           CreatePropertyState value, $Res Function(CreatePropertyState) then) =
       _$CreatePropertyStateCopyWithImpl<$Res, CreatePropertyState>;
   @useResult
-  $Res call({RequestState createPropertyState});
+  $Res call({RequestState createPropertyState, File? propertyImage});
 }
 
 /// @nodoc
@@ -46,12 +47,17 @@ class _$CreatePropertyStateCopyWithImpl<$Res, $Val extends CreatePropertyState>
   @override
   $Res call({
     Object? createPropertyState = null,
+    Object? propertyImage = freezed,
   }) {
     return _then(_value.copyWith(
       createPropertyState: null == createPropertyState
           ? _value.createPropertyState
           : createPropertyState // ignore: cast_nullable_to_non_nullable
               as RequestState,
+      propertyImage: freezed == propertyImage
+          ? _value.propertyImage
+          : propertyImage // ignore: cast_nullable_to_non_nullable
+              as File?,
     ) as $Val);
   }
 }
@@ -64,7 +70,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RequestState createPropertyState});
+  $Res call({RequestState createPropertyState, File? propertyImage});
 }
 
 /// @nodoc
@@ -79,12 +85,17 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? createPropertyState = null,
+    Object? propertyImage = freezed,
   }) {
     return _then(_$InitialImpl(
       createPropertyState: null == createPropertyState
           ? _value.createPropertyState
           : createPropertyState // ignore: cast_nullable_to_non_nullable
               as RequestState,
+      propertyImage: freezed == propertyImage
+          ? _value.propertyImage
+          : propertyImage // ignore: cast_nullable_to_non_nullable
+              as File?,
     ));
   }
 }
@@ -92,15 +103,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl({this.createPropertyState = RequestState.initial});
+  const _$InitialImpl(
+      {this.createPropertyState = RequestState.initial, this.propertyImage});
 
   @override
   @JsonKey()
   final RequestState createPropertyState;
+  @override
+  final File? propertyImage;
 
   @override
   String toString() {
-    return 'CreatePropertyState(createPropertyState: $createPropertyState)';
+    return 'CreatePropertyState(createPropertyState: $createPropertyState, propertyImage: $propertyImage)';
   }
 
   @override
@@ -109,11 +123,14 @@ class _$InitialImpl implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
             (identical(other.createPropertyState, createPropertyState) ||
-                other.createPropertyState == createPropertyState));
+                other.createPropertyState == createPropertyState) &&
+            (identical(other.propertyImage, propertyImage) ||
+                other.propertyImage == propertyImage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, createPropertyState);
+  int get hashCode =>
+      Object.hash(runtimeType, createPropertyState, propertyImage);
 
   @JsonKey(ignore: true)
   @override
@@ -123,11 +140,14 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements CreatePropertyState {
-  const factory _Initial({final RequestState createPropertyState}) =
-      _$InitialImpl;
+  const factory _Initial(
+      {final RequestState createPropertyState,
+      final File? propertyImage}) = _$InitialImpl;
 
   @override
   RequestState get createPropertyState;
+  @override
+  File? get propertyImage;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

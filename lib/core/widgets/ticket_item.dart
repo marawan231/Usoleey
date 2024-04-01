@@ -1,9 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
+import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../generated/l10n.dart';
 import '../../property_owner_flow/features/owner_home/data/models/home_model.dart';
+import '../../property_owner_flow/features/ticket_details/presentation/screens/ticket_details_screen_imports.dart';
 import '../extensions/ticket_status_extention.dart';
 import '../extensions/ticket_type_extention.dart';
 import '../navigator/named_routes.dart';
@@ -55,13 +58,23 @@ class TicketItem extends StatelessWidget {
                 CircleAvatar(
                     minRadius: 18.h,
                     backgroundColor: ColorsManager.greyLighter,
-                    child: CircleAvatar(minRadius: 16.h)),
+                    child: CircleAvatar(
+                      minRadius: 16.h,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(26.r),
+                        child: CustomCachedImage(
+                          height: 36.sp,
+                          width: 36.sp,
+                          image: ticket.unit?.tenant!.photo ?? '',
+                        ),
+                      ),
+                    )),
                 8.horizontalSpace,
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'وليد الشهري',
+                      '${ticket.unit?.tenant!.firstNameAr ?? ' '} ${ticket.unit?.tenant!.lastNameAr ?? ' '}',
                       style: getBoldStyle(
                           fontSize: 14.sp, color: ColorsManager.primaryDark),
                     ),
@@ -79,7 +92,12 @@ class TicketItem extends StatelessWidget {
               ],
             ),
             if (showDetailsButton)
-              CustomTextButton(onPressed: () {}, title: S.current.showDetails)
+              CustomTextButton(
+                  onPressed: () {
+                    Go.toNamed(NamedRoutes.ownerTicketDetails,
+                        arguments: TicketDetailsScreen(id: ticket.id ?? 0));
+                  },
+                  title: S.current.showDetails)
           ].joinWith(10.verticalSpace),
         ),
         // child:

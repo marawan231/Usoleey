@@ -22,8 +22,8 @@ class _OwnerHomeLayoutViewState extends State<OwnerHomeLayoutView> {
   final List<Widget> _pages = [
     const OwnerHomeScreen(),
     const MyRealStateScreen(),
-    const TicketsView(),
-    const MoreView(),
+    const MyTicketsScreen(),
+    const MoreView()
   ];
 
   @override

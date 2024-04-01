@@ -12,16 +12,17 @@ class CreatePropertyRepository {
       CreatePropertyRequestModel createPropertyRequestModel) async {
     try {
       var response = await createPropertyWebServices.createProperty(
-          name: createPropertyRequestModel.name,
-          address: createPropertyRequestModel.address,
-          blockNumber: createPropertyRequestModel.blockNumber,
-          city: createPropertyRequestModel.city,
-          district: createPropertyRequestModel.district,
-          instrumentNumber: createPropertyRequestModel.instrumentNumber,
-          ownerId: createPropertyRequestModel.ownerId,
-          postalCode: createPropertyRequestModel.postalCode,
-          street: createPropertyRequestModel.street,
-          unitsCount: createPropertyRequestModel.unitsCount);
+          createPropertyRequestModel.image,
+          createPropertyRequestModel.name,
+          createPropertyRequestModel.address,
+          createPropertyRequestModel.unitsCount,
+          createPropertyRequestModel.instrumentNumber,
+          createPropertyRequestModel.postalCode,
+          createPropertyRequestModel.blockNumber,
+          createPropertyRequestModel.street,
+          createPropertyRequestModel.district,
+          createPropertyRequestModel.city,
+          createPropertyRequestModel.ownerId);
       return ApiResult.success(response.message!);
     } catch (error, stacktrace) {
       return ApiResult.failure(

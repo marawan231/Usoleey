@@ -44,7 +44,9 @@ TicketModel _$TicketModelFromJson(Map<String, dynamic> json) => TicketModel(
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
       unitId: json['unitId'] as int?,
-    );
+    )..unit = json['unit'] == null
+        ? null
+        : Unit.fromJson(json['unit'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$TicketModelToJson(TicketModel instance) =>
     <String, dynamic>{
@@ -55,4 +57,5 @@ Map<String, dynamic> _$TicketModelToJson(TicketModel instance) =>
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
       'unitId': instance.unitId,
+      'unit': instance.unit,
     };

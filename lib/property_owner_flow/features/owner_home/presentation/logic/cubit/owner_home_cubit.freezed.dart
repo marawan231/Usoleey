@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$OwnerHomeState {
   RequestState get getHomeStatsState => throw _privateConstructorUsedError;
+  int? get notificationCount => throw _privateConstructorUsedError;
   HomeModel? get homeModel => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +31,10 @@ abstract class $OwnerHomeStateCopyWith<$Res> {
           OwnerHomeState value, $Res Function(OwnerHomeState) then) =
       _$OwnerHomeStateCopyWithImpl<$Res, OwnerHomeState>;
   @useResult
-  $Res call({RequestState getHomeStatsState, HomeModel? homeModel});
+  $Res call(
+      {RequestState getHomeStatsState,
+      int? notificationCount,
+      HomeModel? homeModel});
 }
 
 /// @nodoc
@@ -47,6 +51,7 @@ class _$OwnerHomeStateCopyWithImpl<$Res, $Val extends OwnerHomeState>
   @override
   $Res call({
     Object? getHomeStatsState = null,
+    Object? notificationCount = freezed,
     Object? homeModel = freezed,
   }) {
     return _then(_value.copyWith(
@@ -54,6 +59,10 @@ class _$OwnerHomeStateCopyWithImpl<$Res, $Val extends OwnerHomeState>
           ? _value.getHomeStatsState
           : getHomeStatsState // ignore: cast_nullable_to_non_nullable
               as RequestState,
+      notificationCount: freezed == notificationCount
+          ? _value.notificationCount
+          : notificationCount // ignore: cast_nullable_to_non_nullable
+              as int?,
       homeModel: freezed == homeModel
           ? _value.homeModel
           : homeModel // ignore: cast_nullable_to_non_nullable
@@ -70,7 +79,10 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RequestState getHomeStatsState, HomeModel? homeModel});
+  $Res call(
+      {RequestState getHomeStatsState,
+      int? notificationCount,
+      HomeModel? homeModel});
 }
 
 /// @nodoc
@@ -85,6 +97,7 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? getHomeStatsState = null,
+    Object? notificationCount = freezed,
     Object? homeModel = freezed,
   }) {
     return _then(_$InitialImpl(
@@ -92,6 +105,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getHomeStatsState
           : getHomeStatsState // ignore: cast_nullable_to_non_nullable
               as RequestState,
+      notificationCount: freezed == notificationCount
+          ? _value.notificationCount
+          : notificationCount // ignore: cast_nullable_to_non_nullable
+              as int?,
       homeModel: freezed == homeModel
           ? _value.homeModel
           : homeModel // ignore: cast_nullable_to_non_nullable
@@ -104,17 +121,21 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
-      {this.getHomeStatsState = RequestState.loading, this.homeModel});
+      {this.getHomeStatsState = RequestState.loading,
+      this.notificationCount,
+      this.homeModel});
 
   @override
   @JsonKey()
   final RequestState getHomeStatsState;
   @override
+  final int? notificationCount;
+  @override
   final HomeModel? homeModel;
 
   @override
   String toString() {
-    return 'OwnerHomeState(getHomeStatsState: $getHomeStatsState, homeModel: $homeModel)';
+    return 'OwnerHomeState(getHomeStatsState: $getHomeStatsState, notificationCount: $notificationCount, homeModel: $homeModel)';
   }
 
   @override
@@ -124,12 +145,15 @@ class _$InitialImpl implements _Initial {
             other is _$InitialImpl &&
             (identical(other.getHomeStatsState, getHomeStatsState) ||
                 other.getHomeStatsState == getHomeStatsState) &&
+            (identical(other.notificationCount, notificationCount) ||
+                other.notificationCount == notificationCount) &&
             (identical(other.homeModel, homeModel) ||
                 other.homeModel == homeModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getHomeStatsState, homeModel);
+  int get hashCode =>
+      Object.hash(runtimeType, getHomeStatsState, notificationCount, homeModel);
 
   @JsonKey(ignore: true)
   @override
@@ -141,10 +165,13 @@ class _$InitialImpl implements _Initial {
 abstract class _Initial implements OwnerHomeState {
   const factory _Initial(
       {final RequestState getHomeStatsState,
+      final int? notificationCount,
       final HomeModel? homeModel}) = _$InitialImpl;
 
   @override
   RequestState get getHomeStatsState;
+  @override
+  int? get notificationCount;
   @override
   HomeModel? get homeModel;
   @override

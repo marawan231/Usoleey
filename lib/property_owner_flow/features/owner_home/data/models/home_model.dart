@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../ticket_details/data/models/ticket_details_model.dart';
+
 part 'home_model.g.dart'; 
 
 @JsonSerializable(ignoreUnannotated: false)
@@ -52,6 +54,8 @@ class TicketModel {
   String? updatedAt;
   @JsonKey(name: 'unitId')
   int? unitId;
+  @JsonKey(name: 'unit')
+  Unit? unit;
 
   TicketModel({this.id, this.description, this.status, this.type, this.createdAt, this.updatedAt, this.unitId});
 

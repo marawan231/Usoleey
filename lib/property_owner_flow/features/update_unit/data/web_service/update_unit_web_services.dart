@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/data/models/ticket_details_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../../core/network_service/base_response.dart';
@@ -13,24 +14,26 @@ abstract class UpdateUnitWebServices {
   factory UpdateUnitWebServices(Dio dio, {String baseUrl}) =
       _UpdateUnitWebServices;
 
-  @PUT("units")
+  @PUT("units/{id}")
   @MultiPart()
-  Future<BaseResponse> updateUnit(
-      @Part() File image,
-      @Part() String name,
-      @Part() num rent,
-      @Part() String rentCollectionDate,
-      @Part() String electricityAccount,
-      @Part() String waterAccount,
-      @Part() String address,
-      @Part() int space,
-      @Part() int rooms,
-      @Part() int bathrooms,
-      @Part() bool lounge,
-      @Part() int conditioners,
-      @Part() bool kitchen,
-      @Part() int propertyId,
-      @Part() int ownerId);
+  Future<BaseResponse<Unit>> updateUnit(
+    @Path('id') String id, {
+    @Part() File? image,
+    @Part() String? name,
+    @Part() num? rent,
+    @Part() String? rentCollectionDate,
+    @Part() String? electricityAccount,
+    @Part() String? waterAccount,
+    @Part() String? address,
+    @Part() num? space,
+    @Part() int? rooms,
+    @Part() int? bathrooms,
+    @Part() bool? lounge,
+    @Part() int? conditioners,
+    @Part() bool? kitchen,
+    @Part() int? propertyId,
+    @Part() int? ownerId,
+  });
 
   @GET("properties")
   Future<BaseResponse<OwnerPropertyModel>> getMyProperties(

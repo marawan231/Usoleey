@@ -115,6 +115,10 @@ void launchWebUrl({required String url}) async {
   }
 }
 
+void launchTel({required String phoneNumber}) async {
+  launchUrl(Uri.parse("tel://$phoneNumber"));
+}
+
 getMonthName(int month) {
   switch (month) {
     case 1:
@@ -277,7 +281,6 @@ TicketStatusModel getTicketStatusProperties(TicketStatus status) {
           color: ColorsManager.primary);
   }
 }
-
 
 TicketTypeModel getTicketTypeProperties(TicketType type) {
   switch (type) {

@@ -25,8 +25,7 @@ class UpdateUnitView extends StatefulWidget {
 class _UpdateUnitViewState extends State<UpdateUnitView> {
   @override
   void initState() {
-    getIt<UpdateUnitCubit>()
-        .updateRoomsCount(widget.unitDetailsModel.rooms ?? 0);
+    getIt<UpdateUnitCubit>().initValues(widget.unitDetailsModel);
     super.initState();
   }
 
@@ -37,52 +36,167 @@ class _UpdateUnitViewState extends State<UpdateUnitView> {
           title: widget.unitDetailsModel.address, withBottomRounded: false),
       body: ListView(
         children: [
-          Container(
-            height: 250.h,
-            child: Stack(
-              children: [
-                CachedNetworkImage(
-                    imageUrl: widget.unitDetailsModel.image ?? ''),
-                PositionedDirectional(
-                  bottom: 22.h,
-                  start: 24.w,
-                  child: CircleAvatar(
-                    backgroundColor: ColorsManager.primary,
-                    maxRadius: 29.sp,
-                    child: SvgPicture.asset(AssetsManager.editIcon,
-                        color: ColorsManager.white),
-                  ),
-                )
-              ],
-            ),
-          ),
+          UpdateUnitHeader(),
           Column(
             children: [
+              BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                builder: (context, state) {
+                  return IgnorePointer(
+                    ignoring: state.updateUnitState == RequestState.loading,
+                    child: UpdateUnitItem(
+                        title: S.current.unitName,
+                        valueController:
+                            UpdateUnitUtils.updateUnitControllers['name'],
+                        enabled: state.nameEnabled,
+                        isLoading:
+                            state.updateNameState == RequestState.loading,
+                        editTap: () => getIt<UpdateUnitCubit>().updateName(
+                            UpdateUnitUtils
+                                .updateUnitControllers['name']!.text)),
+                  );
+                },
+              ),
+              BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                builder: (context, state) {
+                  return UpdateUnitItem(
+                      title: S.current.rent,
+                      valueController:
+                          UpdateUnitUtils.updateUnitControllers['rent']!,
+                      textInputType: TextInputType.number,
+                      isLoading: state.updateRentState == RequestState.loading,
+                      enabled: state.rentEnabled,
+                      editTap: () => getIt<UpdateUnitCubit>().updateRent(
+                          UpdateUnitUtils.updateUnitControllers['rent']!.text));
+                },
+              ),
+              BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                builder: (context, state) {
+                  return UpdateUnitItem(
+                      title: S.current.rentDate,
+                      readonly: true,
+                      isLoading:
+                          state.updateRentDataState == RequestState.loading,
+                      valueController: UpdateUnitUtils
+                          .updateUnitControllers['rentCollectionDate']!,
+                      enabled: state.dateEnabled,
+                      editTap: () =>
+                          getIt<UpdateUnitCubit>().updateRentCollectionDate());
+                },
+              ),
               UpdateUnitItem(
-                  title: S.current.unitName,
-                  value: widget.unitDetailsModel.name ?? ''),
-              UpdateUnitItem(
-                  title: S.current.unitRent,
-                  value: widget.unitDetailsModel.rent.toString()),
-              UpdateUnitItem(
-                  title: S.current.unitDate,
-                  value: widget.unitDetailsModel.rentCollectionDate.toString()),
-              UpdateUnitItem(
+                  leadingWidget: SizedBox(),
                   title: S.current.unitAddress,
-                  value: widget.unitDetailsModel.address.toString()),
-              UpdateUnitItem(
-                  title: S.current.unitSpace,
-                  value: widget.unitDetailsModel.space.toString()),
-              UpdateUnitItem(
-                  title: S.current.electricityAccount,
-                  value: widget.unitDetailsModel.electricityAccount.toString()),
+                  valueController:
+                      UpdateUnitUtils.updateUnitControllers['address']!),
+              BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                builder: (context, state) {
+                  return UpdateUnitItem(
+                      title: S.current.unitSpace,
+                      enabled: state.spaceEnabled,
+                      textInputType: TextInputType.number,
+                      valueController:
+                          UpdateUnitUtils.updateUnitControllers['space'],
+                      isLoading: state.updateSpaceState == RequestState.loading,
+                      editTap: () => getIt<UpdateUnitCubit>().updateSpace(
+                          UpdateUnitUtils
+                              .updateUnitControllers['space']!.text));
+                },
+              ),
+              BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                builder: (context, state) {
+                  return UpdateUnitItem(
+                      title: S.current.electricityAccount,
+                      valueController: UpdateUnitUtils
+                          .updateUnitControllers['electricityAccount'],
+                      enabled: state.electricityAccountEnabled,
+                      isLoading:
+                          state.updateElectricityState == RequestState.loading,
+                      editTap: () => getIt<UpdateUnitCubit>()
+                          .updateElectricityAccount(UpdateUnitUtils
+                              .updateUnitControllers['electricityAccount']!
+                              .text));
+                },
+              ),
               UpdateUnitItem(
                   title: S.current.roomsCount,
                   leadingWidget: BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
                     builder: (context, state) {
-                      return ItemWithCount(count: state.roomsCount);
+                      return ItemWithCount(
+                        isLoading:
+                            state.updateRoomsState == RequestState.loading,
+                        count: state.roomsCount,
+                        increasePressed: () => getIt<UpdateUnitCubit>()
+                            .updateRoomsCount(state.roomsCount + 1),
+                        decreasePressed: () => getIt<UpdateUnitCubit>()
+                            .updateRoomsCount(state.roomsCount - 1),
+                      );
                     },
                   )),
+              UpdateUnitItem(
+                  title: S.current.bathroomsCount,
+                  leadingWidget: BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                    builder: (context, state) {
+                      return ItemWithCount(
+                        isLoading:
+                            state.updateBathRoomsState == RequestState.loading,
+                        count: state.bathroomsCount,
+                        increasePressed: () => getIt<UpdateUnitCubit>()
+                            .updateBathroomsCount(state.bathroomsCount + 1),
+                        decreasePressed: () => getIt<UpdateUnitCubit>()
+                            .updateBathroomsCount(state.bathroomsCount - 1),
+                      );
+                    },
+                  )),
+              UpdateUnitItem(
+                  title: S.current.conditionersCount,
+                  leadingWidget: BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                    builder: (context, state) {
+                      return ItemWithCount(
+                        isLoading: state.updateConditionersState ==
+                            RequestState.loading,
+                        count: state.conditionersCount,
+                        increasePressed: () => getIt<UpdateUnitCubit>()
+                            .updateConditionersCount(
+                                state.conditionersCount + 1),
+                        decreasePressed: () => getIt<UpdateUnitCubit>()
+                            .updateConditionersCount(
+                                state.conditionersCount - 1),
+                      );
+                    },
+                  )),
+              UpdateUnitItem(
+                  title: S.current.thereIsKitchecn,
+                  leadingWidget: BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                    builder: (context, state) {
+                      return CupertinoSwitch(
+                          value: state.kitchen,
+                          onChanged: (value) =>
+                              getIt<UpdateUnitCubit>().updateKitchen(value));
+                    },
+                  )),
+              UpdateUnitItem(
+                  title: S.current.thereIsLoungue,
+                  leadingWidget: BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                    builder: (context, state) {
+                      return CupertinoSwitch(
+                          value: state.lounge,
+                          onChanged: (value) =>
+                              getIt<UpdateUnitCubit>().updateLounge(value));
+                    },
+                  )),
+              BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+                builder: (context, state) {
+                  return UpdateUnitItem(
+                      valueController: TextEditingController(
+                          text:
+                              '${state.selectedProperty?.name!} , ${state.selectedProperty?.district!} , ${state.selectedProperty?.street!}'),
+                      title: S.current.property,
+                      isLoading:
+                          state.updatePropertyIdState == RequestState.loading,
+                      editTap: () =>
+                          getIt<UpdateUnitCubit>().openProperties());
+                },
+              ),
             ].joinWith(Divider()),
           )
         ],
@@ -91,39 +205,26 @@ class _UpdateUnitViewState extends State<UpdateUnitView> {
   }
 }
 
-class ItemWithCount extends StatelessWidget {
-  final int count;
-
-  const ItemWithCount({super.key, required this.count});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-            onPressed: () {
-              if (count > 0)
-                getIt<UpdateUnitCubit>().updateRoomsCount(count - 1);
-            },
-            icon: Icon(Icons.remove, color: ColorsManager.primary)),
-        Text(count.toString(),
-            style: getBoldStyle(fontSize: 14.sp, color: ColorsManager.primary)),
-        IconButton(
-            onPressed: () =>
-                getIt<UpdateUnitCubit>().updateRoomsCount(count + 1),
-            icon: Icon(Icons.add, color: ColorsManager.primary)),
-      ],
-    );
-  }
-}
-
 class UpdateUnitItem extends StatelessWidget {
   const UpdateUnitItem(
-      {super.key, required this.title, this.value, this.leadingWidget});
+      {super.key,
+      required this.title,
+      this.valueController,
+      this.leadingWidget,
+      this.enabled,
+      this.editTap,
+      this.readonly,
+      this.isLoading = false,
+      this.textInputType});
 
   final String title;
-  final String? value;
+  final TextEditingController? valueController;
   final Widget? leadingWidget;
+  final bool? enabled;
+  final void Function()? editTap;
+  final bool? readonly;
+  final bool isLoading;
+  final TextInputType? textInputType;
 
   @override
   Widget build(BuildContext context) {
@@ -135,32 +236,135 @@ class UpdateUnitItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style: getRegularStyle(
-                      fontSize: 14.sp, color: ColorsManager.greyLight),
-                ),
+                Text(title,
+                    style: getRegularStyle(
+                        fontSize: 14.sp, color: ColorsManager.greyLight)),
                 16.verticalSpace,
-                if (value != null)
+                if (valueController != null)
                   SizedBox(
                     width: 227.w,
-                    child: Text(
-                      value ?? '',
-                      style: getBoldStyle(
-                          fontSize: 14.sp,
-                          color: ColorsManager.primary,
-                          height: 1.5),
-                    ),
+                    child: enabled ?? false
+                        ? TextField(
+                            keyboardType: textInputType ?? TextInputType.name,
+                            decoration: InputDecoration(),
+                            controller: valueController,
+                            readOnly: readonly ?? false)
+                        : Text(
+                            valueController!.text,
+                            style: getBoldStyle(
+                                fontSize: 14.sp,
+                                color: ColorsManager.primary,
+                                height: 1.5),
+                          ),
                   ),
               ],
             ),
           ),
-          leadingWidget ??
-              Text(
+          leadingWidget ?? EditButton(editTap: editTap!, isLoading: isLoading)
+        ],
+      ),
+    );
+  }
+}
+
+class EditButton extends StatelessWidget {
+  final bool isLoading;
+  final void Function() editTap;
+
+  const EditButton({super.key, required this.isLoading, required this.editTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return isLoading
+        ? Center(child: CupertinoActivityIndicator())
+        : InkWell(
+            onTap: editTap,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
                 S.current.edit,
                 style:
                     getBoldStyle(fontSize: 14.sp, color: ColorsManager.primary),
-              )
+              ),
+            ));
+  }
+}
+
+class ItemWithCount extends StatelessWidget {
+  final int count;
+  final void Function() increasePressed;
+  final void Function() decreasePressed;
+  final bool isLoading;
+
+  const ItemWithCount(
+      {super.key,
+      required this.count,
+      required this.increasePressed,
+      required this.decreasePressed,
+      this.isLoading = false});
+
+  @override
+  Widget build(BuildContext context) {
+    return IgnorePointer(
+      ignoring: isLoading,
+      child: Row(
+        children: [
+          IconButton(
+              onPressed: () {
+                if (count > 0) decreasePressed();
+              },
+              icon: Icon(Icons.remove, color: ColorsManager.primary)),
+          isLoading
+              ? CupertinoActivityIndicator()
+              : Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 6.w),
+                  child: Text(count.toString(),
+                      style: getBoldStyle(
+                          fontSize: 14.sp, color: ColorsManager.primary)),
+                ),
+          IconButton(
+              onPressed: increasePressed,
+              icon: Icon(Icons.add, color: ColorsManager.primary))
+        ],
+      ),
+    );
+  }
+}
+
+class UpdateUnitHeader extends StatelessWidget {
+  const UpdateUnitHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 250.h,
+      child: Stack(
+        children: [
+          BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
+            builder: (context, state) {
+              return state.updateImageState != RequestState.loading
+                  ? Center(
+                      child: CustomCachedImage(
+                          image: state.unitImage,
+                          height: 250.h,
+                          width: double.infinity),
+                    )
+                  : Center(child: CupertinoActivityIndicator());
+            },
+          ),
+          PositionedDirectional(
+            bottom: 22.h,
+            start: 24.w,
+            child: InkWell(
+              onTap: getIt<UpdateUnitCubit>().updateUnitImage,
+              child: CircleAvatar(
+                backgroundColor: ColorsManager.primary,
+                maxRadius: 29.sp,
+                child: SvgPicture.asset(AssetsManager.editIcon,
+                    color: ColorsManager.white),
+              ),
+            ),
+          )
         ],
       ),
     );

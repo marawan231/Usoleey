@@ -4,7 +4,7 @@ part of 'my_real_estate_cubit.dart';
 class MyRealEstateState with _$MyRealEstateState {
   const factory MyRealEstateState({
     @Default(RequestState.loading) RequestState getMyPropertiesState,
-    @Default([]) List<Property> properties,
+    @Default([]) List<PropertyModel> properties,
     @Default(1) int propertyPaginationPage,
     @Default(RequestState.loading) RequestState getMyUnitsState,
     @Default([]) List<Unit> units,

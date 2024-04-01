@@ -6,6 +6,7 @@ import '../../../../../../core/enums/enums.dart';
 import '../../../data/repository/owner_home_repository.dart';
 
 part 'owner_home_cubit.freezed.dart';
+
 part 'owner_home_state.dart';
 
 class OwnerHomeCubit extends Cubit<OwnerHomeState> {
@@ -17,9 +18,15 @@ class OwnerHomeCubit extends Cubit<OwnerHomeState> {
     final result = await this.ownerHomeRepository.getHomeStats();
     result.when(success: (homeModel) {
       emit(state.copyWith(
-          homeModel: homeModel, getHomeStatsState: RequestState.success));
+          homeModel: homeModel,
+          getHomeStatsState: RequestState.success,
+          notificationCount: homeModel.notificationsCount));
     }, failure: (failure) {
       emit(state.copyWith(getHomeStatsState: RequestState.error));
     });
+  }
+
+  void updateNotificationCount(int count) {
+    emit(state.copyWith(notificationCount: count));
   }
 }

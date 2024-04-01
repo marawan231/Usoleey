@@ -36,6 +36,9 @@ enum NamedRoutes {
   ownerInvoices('/ownerInvoices'),
   ownerTikcets('/ownerTikcets'),
   updateUnit('/updateUnit'),
+  ownerTicketDetails('/ownerTicketDetails'),
+  ownerNotification('/ownerNotification'),
+  updateProperty('/updateProperty'),
   ;
 
   final String routeName;

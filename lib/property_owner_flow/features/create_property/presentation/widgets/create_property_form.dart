@@ -26,6 +26,7 @@ class _CreatePropertyFormState extends State<CreatePropertyForm> {
                   style: getBoldStyle(
                       color: ColorsManager.primary, fontSize: 16.sp))),
           8.verticalSpace,
+          PropertyImage(),
           AppCustomTextFormField(
               controller: CreatePropertyUtils.createPropertyControllers['name'],
               hintText: S.current.name,

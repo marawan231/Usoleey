@@ -33,22 +33,14 @@ class _OwnerUnitDetailsViewState extends State<OwnerUnitDetailsView> {
     return Scaffold(
       body: BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
         builder: (context, state) {
-          print(state.getUnitDetailsState);
-          switch (state.getUnitDetailsState) {
-            case RequestState.initial:
-            case RequestState.loading:
-              return CupertinoActivityIndicator();
-            case RequestState.success:
-              return UnitDetailsBody(unitDetailsModel: state.unitDetailsModel!);
-            case RequestState.error:
-              return SizedBox();
-          }
+          return BaseRemoteWidget(
+              requestState: state.getUnitDetailsState,
+              successWidget: state.unitDetailsModel != null
+                  ? UnitDetailsBody(unitDetailsModel: state.unitDetailsModel!)
+                  : const SizedBox());
         },
       ),
     );
   }
 }
-
-
-
 

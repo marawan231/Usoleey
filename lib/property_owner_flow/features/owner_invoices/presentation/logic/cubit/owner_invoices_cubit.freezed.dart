@@ -16,9 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$OwnerInvoicesState {
-  RequestState get getInvoicesState => throw _privateConstructorUsedError;
   List<InvoiceModel> get invoices => throw _privateConstructorUsedError;
-  int get page => throw _privateConstructorUsedError;
   int get selectedTab => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -32,11 +30,7 @@ abstract class $OwnerInvoicesStateCopyWith<$Res> {
           OwnerInvoicesState value, $Res Function(OwnerInvoicesState) then) =
       _$OwnerInvoicesStateCopyWithImpl<$Res, OwnerInvoicesState>;
   @useResult
-  $Res call(
-      {RequestState getInvoicesState,
-      List<InvoiceModel> invoices,
-      int page,
-      int selectedTab});
+  $Res call({List<InvoiceModel> invoices, int selectedTab});
 }
 
 /// @nodoc
@@ -52,24 +46,14 @@ class _$OwnerInvoicesStateCopyWithImpl<$Res, $Val extends OwnerInvoicesState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? getInvoicesState = null,
     Object? invoices = null,
-    Object? page = null,
     Object? selectedTab = null,
   }) {
     return _then(_value.copyWith(
-      getInvoicesState: null == getInvoicesState
-          ? _value.getInvoicesState
-          : getInvoicesState // ignore: cast_nullable_to_non_nullable
-              as RequestState,
       invoices: null == invoices
           ? _value.invoices
           : invoices // ignore: cast_nullable_to_non_nullable
               as List<InvoiceModel>,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
       selectedTab: null == selectedTab
           ? _value.selectedTab
           : selectedTab // ignore: cast_nullable_to_non_nullable
@@ -86,11 +70,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {RequestState getInvoicesState,
-      List<InvoiceModel> invoices,
-      int page,
-      int selectedTab});
+  $Res call({List<InvoiceModel> invoices, int selectedTab});
 }
 
 /// @nodoc
@@ -104,24 +84,14 @@ class __$$InitialImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? getInvoicesState = null,
     Object? invoices = null,
-    Object? page = null,
     Object? selectedTab = null,
   }) {
     return _then(_$InitialImpl(
-      getInvoicesState: null == getInvoicesState
-          ? _value.getInvoicesState
-          : getInvoicesState // ignore: cast_nullable_to_non_nullable
-              as RequestState,
       invoices: null == invoices
           ? _value._invoices
           : invoices // ignore: cast_nullable_to_non_nullable
               as List<InvoiceModel>,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
       selectedTab: null == selectedTab
           ? _value.selectedTab
           : selectedTab // ignore: cast_nullable_to_non_nullable
@@ -134,15 +104,9 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
-      {this.getInvoicesState = RequestState.loading,
-      final List<InvoiceModel> invoices = const [],
-      this.page = 1,
-      this.selectedTab = 1})
+      {final List<InvoiceModel> invoices = const [], this.selectedTab = 1})
       : _invoices = invoices;
 
-  @override
-  @JsonKey()
-  final RequestState getInvoicesState;
   final List<InvoiceModel> _invoices;
   @override
   @JsonKey()
@@ -154,14 +118,11 @@ class _$InitialImpl implements _Initial {
 
   @override
   @JsonKey()
-  final int page;
-  @override
-  @JsonKey()
   final int selectedTab;
 
   @override
   String toString() {
-    return 'OwnerInvoicesState(getInvoicesState: $getInvoicesState, invoices: $invoices, page: $page, selectedTab: $selectedTab)';
+    return 'OwnerInvoicesState(invoices: $invoices, selectedTab: $selectedTab)';
   }
 
   @override
@@ -169,17 +130,14 @@ class _$InitialImpl implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
-            (identical(other.getInvoicesState, getInvoicesState) ||
-                other.getInvoicesState == getInvoicesState) &&
             const DeepCollectionEquality().equals(other._invoices, _invoices) &&
-            (identical(other.page, page) || other.page == page) &&
             (identical(other.selectedTab, selectedTab) ||
                 other.selectedTab == selectedTab));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getInvoicesState,
-      const DeepCollectionEquality().hash(_invoices), page, selectedTab);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_invoices), selectedTab);
 
   @JsonKey(ignore: true)
   @override
@@ -190,17 +148,11 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements OwnerInvoicesState {
   const factory _Initial(
-      {final RequestState getInvoicesState,
-      final List<InvoiceModel> invoices,
-      final int page,
+      {final List<InvoiceModel> invoices,
       final int selectedTab}) = _$InitialImpl;
 
   @override
-  RequestState get getInvoicesState;
-  @override
   List<InvoiceModel> get invoices;
-  @override
-  int get page;
   @override
   int get selectedTab;
   @override

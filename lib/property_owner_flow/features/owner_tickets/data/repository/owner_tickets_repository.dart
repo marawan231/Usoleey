@@ -11,7 +11,7 @@ class OwnerTicketsRepository {
   OwnerTicketsRepository(this.ownerTicketsWebServices);
 
   Future<ApiResult<AllTicketsModel>> getOwnerTickets(
-      {int page = 1, int limit = 25}) async {
+      {int page = 1, int limit = 1000}) async {
     try {
       var response = await ownerTicketsWebServices.getOwnerTickets();
       return ApiResult.success(response.data!);

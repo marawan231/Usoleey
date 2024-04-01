@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MyRealEstateState {
   RequestState get getMyPropertiesState => throw _privateConstructorUsedError;
-  List<Property> get properties => throw _privateConstructorUsedError;
+  List<PropertyModel> get properties => throw _privateConstructorUsedError;
   int get propertyPaginationPage => throw _privateConstructorUsedError;
   RequestState get getMyUnitsState => throw _privateConstructorUsedError;
   List<Unit> get units => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $MyRealEstateStateCopyWith<$Res> {
   @useResult
   $Res call(
       {RequestState getMyPropertiesState,
-      List<Property> properties,
+      List<PropertyModel> properties,
       int propertyPaginationPage,
       RequestState getMyUnitsState,
       List<Unit> units,
@@ -71,7 +71,7 @@ class _$MyRealEstateStateCopyWithImpl<$Res, $Val extends MyRealEstateState>
       properties: null == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
-              as List<Property>,
+              as List<PropertyModel>,
       propertyPaginationPage: null == propertyPaginationPage
           ? _value.propertyPaginationPage
           : propertyPaginationPage // ignore: cast_nullable_to_non_nullable
@@ -102,7 +102,7 @@ abstract class _$$InitialImplCopyWith<$Res>
   @useResult
   $Res call(
       {RequestState getMyPropertiesState,
-      List<Property> properties,
+      List<PropertyModel> properties,
       int propertyPaginationPage,
       RequestState getMyUnitsState,
       List<Unit> units,
@@ -135,7 +135,7 @@ class __$$InitialImplCopyWithImpl<$Res>
       properties: null == properties
           ? _value._properties
           : properties // ignore: cast_nullable_to_non_nullable
-              as List<Property>,
+              as List<PropertyModel>,
       propertyPaginationPage: null == propertyPaginationPage
           ? _value.propertyPaginationPage
           : propertyPaginationPage // ignore: cast_nullable_to_non_nullable
@@ -161,7 +161,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {this.getMyPropertiesState = RequestState.loading,
-      final List<Property> properties = const [],
+      final List<PropertyModel> properties = const [],
       this.propertyPaginationPage = 1,
       this.getMyUnitsState = RequestState.loading,
       final List<Unit> units = const [],
@@ -172,10 +172,10 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final RequestState getMyPropertiesState;
-  final List<Property> _properties;
+  final List<PropertyModel> _properties;
   @override
   @JsonKey()
-  List<Property> get properties {
+  List<PropertyModel> get properties {
     if (_properties is EqualUnmodifiableListView) return _properties;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_properties);
@@ -243,7 +243,7 @@ class _$InitialImpl implements _Initial {
 abstract class _Initial implements MyRealEstateState {
   const factory _Initial(
       {final RequestState getMyPropertiesState,
-      final List<Property> properties,
+      final List<PropertyModel> properties,
       final int propertyPaginationPage,
       final RequestState getMyUnitsState,
       final List<Unit> units,
@@ -252,7 +252,7 @@ abstract class _Initial implements MyRealEstateState {
   @override
   RequestState get getMyPropertiesState;
   @override
-  List<Property> get properties;
+  List<PropertyModel> get properties;
   @override
   int get propertyPaginationPage;
   @override

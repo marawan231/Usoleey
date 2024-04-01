@@ -1,10 +1,14 @@
+import 'dart:io';
+
 class CreatePropertyRequestModel {
   final String name, address, instrumentNumber, street, district, city;
+  final File image;
 
   final int unitsCount, ownerId, blockNumber, postalCode;
 
   CreatePropertyRequestModel(
       {required this.name,
+      required this.image,
       required this.address,
       required this.instrumentNumber,
       required this.postalCode,

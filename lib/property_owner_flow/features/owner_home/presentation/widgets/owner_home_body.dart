@@ -5,11 +5,12 @@ class OwnerHomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-      children: [OwnerHomeStats(), 24.verticalSpace, RecentTickets()],
+    return RefreshIndicator(
+      onRefresh: () async => getIt<OwnerHomeCubit>().getHomeStats(),
+      child: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+        children: [OwnerHomeStats(), 24.verticalSpace, RecentTickets()],
+      ),
     );
   }
 }
-
-

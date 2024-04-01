@@ -35,16 +35,28 @@ import '../../property_owner_flow/features/create_unit/data/repository/create_un
 import '../../property_owner_flow/features/create_unit/data/web_service/create_unit_web_service.dart';
 import '../../property_owner_flow/features/create_unit/presentation/logic/cubit/create_unit_cubit.dart';
 import '../../property_owner_flow/features/my_real_estate/data/repository/my_real_estate_repository.dart';
+import '../../property_owner_flow/features/my_tickets/data/repository/my_tickets_repository.dart';
+import '../../property_owner_flow/features/my_tickets/data/web_service/my_tickets_web_service.dart';
+import '../../property_owner_flow/features/my_tickets/presentation/logic/cubit/my_tickets_cubit.dart';
 import '../../property_owner_flow/features/owner_invoices/data/repository/owner_invoices_repository.dart';
 import '../../property_owner_flow/features/owner_invoices/data/web_service/owner_invoices_web_service.dart';
 import '../../property_owner_flow/features/owner_invoices/presentation/logic/cubit/owner_invoices_cubit.dart';
+import '../../property_owner_flow/features/owner_notification/data/repository/owner_notification_repository.dart';
+import '../../property_owner_flow/features/owner_notification/data/web_services/owner_notification_web_services.dart';
+import '../../property_owner_flow/features/owner_notification/presentation/logic/cubit/owner_notification_cubit.dart';
 import '../../property_owner_flow/features/owner_tickets/data/repository/owner_tickets_repository.dart';
 import '../../property_owner_flow/features/owner_tickets/data/web_service/owner_tickets_web_service.dart';
 import '../../property_owner_flow/features/owner_tickets/presentation/logic/cubit/owner_tickets_cubit.dart';
 import '../../property_owner_flow/features/property_details/data/repository/property_details_repository.dart';
 import '../../property_owner_flow/features/property_details/data/web_service/property_details_web_service.dart';
 import '../../property_owner_flow/features/property_details/presentation/logic/cubit/property_details_cubit.dart';
+import '../../property_owner_flow/features/ticket_details/data/repository/ticket_details_repository.dart';
+import '../../property_owner_flow/features/ticket_details/data/web_services/ticket_details_web_services.dart';
+import '../../property_owner_flow/features/ticket_details/presentation/logic/cubit/ticket_details_cubit.dart';
 import '../../property_owner_flow/features/unit_details/data/repository/unit_details_repository.dart';
+import '../../property_owner_flow/features/update_property/data/repository/update_property_repository.dart';
+import '../../property_owner_flow/features/update_property/data/web_service/update_property_web_services.dart';
+import '../../property_owner_flow/features/update_property/presentation/logic/cubit/update_property_cubit.dart';
 import '../../property_owner_flow/features/update_unit/data/repository/update_unit_repository.dart';
 import '../../property_owner_flow/features/update_unit/data/web_service/update_unit_web_services.dart';
 import '../../property_owner_flow/features/update_unit/presentation/logic/cubit/update_unit_cubit.dart';
@@ -224,4 +236,56 @@ Future<void> setupGetIt() async {
   //OwnerInvices Cubit
   getIt.registerLazySingleton<UpdateUnitCubit>(
       () => UpdateUnitCubit(getIt<UpdateUnitRepository>()));
+
+  // MyTicketsWebService
+  getIt.registerLazySingleton<MyTicketsWebServices>(() =>
+      MyTicketsWebServices(getIt<Dio>(), baseUrl: NetworkConstants.baseUrl));
+
+  // MyTicketsRepository
+  getIt.registerLazySingleton<MyTicketsRepository>(
+      () => MyTicketsRepository(getIt<MyTicketsWebServices>()));
+
+  //MyTickets Cubit
+  getIt.registerLazySingleton<MyTicketsCubit>(
+      () => MyTicketsCubit(getIt<MyTicketsRepository>()));
+
+  // TicketDetailsWebService
+  getIt.registerLazySingleton<TicketDetailsWebServices>(() =>
+      TicketDetailsWebServices(getIt<Dio>(),
+          baseUrl: NetworkConstants.baseUrl));
+
+  // TicketDetailsRepository
+  getIt.registerLazySingleton<TicketDetailsRepository>(
+      () => TicketDetailsRepository(getIt<TicketDetailsWebServices>()));
+
+  //TicketDetails Cubit
+  getIt.registerLazySingleton<TicketDetailsCubit>(
+      () => TicketDetailsCubit(getIt<TicketDetailsRepository>()));
+
+  // OwnerNotificationWebService
+  getIt.registerLazySingleton<OwnerNotificationWebService>(() =>
+      OwnerNotificationWebService(getIt<Dio>(),
+          baseUrl: NetworkConstants.baseUrl));
+
+  // OwnerNotificationRepository
+  getIt.registerLazySingleton<OwnerNotificationRepository>(
+      () => OwnerNotificationRepository(getIt<OwnerNotificationWebService>()));
+
+  //OwnerNotification Cubit
+  getIt.registerLazySingleton<OwnerNotificationCubit>(
+      () => OwnerNotificationCubit(getIt<OwnerNotificationRepository>()));
+
+
+  // UpdatePropertyWebService
+  getIt.registerLazySingleton<UpdatePropertyWebServices>(() =>
+      UpdatePropertyWebServices(getIt<Dio>(),
+          baseUrl: NetworkConstants.baseUrl));
+
+  // UpdatePropertyRepository
+  getIt.registerLazySingleton<UpdatePropertyRepository>(
+          () => UpdatePropertyRepository(getIt<UpdatePropertyWebServices>()));
+
+  //UpdateProperty Cubit
+  getIt.registerLazySingleton<UpdatePropertyCubit>(
+          () => UpdatePropertyCubit(getIt<UpdatePropertyRepository>()));
 }

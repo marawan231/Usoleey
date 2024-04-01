@@ -5,12 +5,24 @@ class CreateUnitScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CreateUnitView();
+    return BlocProvider.value(
+        value: getIt<CreateUnitCubit>(), child: CreateUnitView());
   }
 }
 
-class CreateUnitView extends StatelessWidget {
+class CreateUnitView extends StatefulWidget {
   const CreateUnitView({super.key});
+
+  @override
+  State<CreateUnitView> createState() => _CreateUnitViewState();
+}
+
+class _CreateUnitViewState extends State<CreateUnitView> {
+  @override
+  void initState() {
+    getIt<CreateUnitCubit>().initData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -29,7 +29,8 @@ class RecentTickets extends StatelessWidget {
               height: 48.h,
               fontSize: 16.sp,
               onPressed: () {
-                Go.toNamed(NamedRoutes.ownerTikcets);
+                Go.toNamed(NamedRoutes.ownerTikcets,
+                    arguments: OwnerTicketsScreen(tickets: tickets));
               },
               icon: Icon(Icons.add),
               title: S.current.showAllTickets)

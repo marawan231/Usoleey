@@ -14,10 +14,20 @@ class UnitDetailsHeader extends StatelessWidget {
       height: 320.h,
       child: Stack(
         children: [
-          CachedNetworkImage(
-              imageUrl: '${unitDetailsModel.image ?? ''}',
+          CustomCachedImage(
+              image: '${unitDetailsModel.image ?? ''}',
               width: double.infinity,
               height: 250.h),
+          PositionedDirectional(
+            end: 0,
+            child: IconButton(
+              onPressed: Go.back,
+              icon: Icon(
+                Icons.arrow_forward,
+                color: ColorsManager.white,
+              ),
+            ),
+          ),
           Positioned(
             left: 0,
             right: 0,

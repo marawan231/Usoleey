@@ -10,13 +10,6 @@ part 'tickets_web_service.g.dart';
 abstract class TicketsWebService {
   factory TicketsWebService(Dio dio, {String baseUrl}) = _TicketsWebService;
 
-  //get all TicketsStatusModel
-  // @GET("getAllTicketsStatus")
-  // Future<TicketsStatusModel> getTicketsStatus();
-  // //get all ticke types
-  // @GET("getAllTicketsTypes")
-  // Future<TicketsStatusModel> getTicketTypes();
-  //get all tickets
   @GET("tickets")
   Future<TicketsModel> getAllTickets();
 

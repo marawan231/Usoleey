@@ -6,8 +6,8 @@ class CreateUnitState with _$CreateUnitState {
       {@Default(RequestState.initial) RequestState createUnitState,
       @Default(false) bool lounge,
       @Default(RequestState.loading) RequestState getMyPropertiesState,
-      @Default([]) List<Property> properties,
-      Property? property,
+      @Default([]) List<PropertyModel> properties,
+      PropertyModel? property,
       @Default(1) int page,
       File? unitImage,
       @Default(false) bool kitchen}) = _Initial;

@@ -91,10 +91,13 @@ class AssetsManager {
   static const String property = "$imageSVGPath/property.svg";
   static const String phone = "$imageSVGPath/phone.svg";
   static const String mail = "$imageSVGPath/mail.svg";
+  static const String invoice = "$imageSVGPath/invoice.svg";
   //empty_ticket
   // static const String emptyTicket = "$imageSVGPath/empty_ticket.svg";
   //lottie animation empty_invoices
   static const String emptyInvoices = "$lottiePath/empty_invoices.json";
+  //lottie animation empty_invoices
+  static const String emptyNotifications = "$lottiePath/empty_notification.json";
   //lottie animation empty_tickets
   static const String emptyTickets = "$lottiePath/empty_tickets.json";
 }

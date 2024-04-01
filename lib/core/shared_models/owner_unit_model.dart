@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'owner_unit_model.g.dart'; 
+part 'owner_unit_model.g.dart';
 
 @JsonSerializable(ignoreUnannotated: false)
 class OwnerUnitModel {
@@ -11,9 +11,10 @@ class OwnerUnitModel {
 
   OwnerUnitModel({this.units, this.pagination});
 
-   factory OwnerUnitModel.fromJson(Map<String, dynamic> json) => _$OwnerUnitModelFromJson(json);
+  factory OwnerUnitModel.fromJson(Map<String, dynamic> json) =>
+      _$OwnerUnitModelFromJson(json);
 
-   Map<String, dynamic> toJson() => _$OwnerUnitModelToJson(this);
+  Map<String, dynamic> toJson() => _$OwnerUnitModelToJson(this);
 }
 
 @JsonSerializable(ignoreUnannotated: false)
@@ -31,9 +32,9 @@ class Unit {
 
   Unit({this.id, this.name, this.rent, this.rentCollectionDate, this.address});
 
-   factory Unit.fromJson(Map<String, dynamic> json) => _$UnitFromJson(json);
+  factory Unit.fromJson(Map<String, dynamic> json) => _$UnitFromJson(json);
 
-   Map<String, dynamic> toJson() => _$UnitToJson(this);
+  Map<String, dynamic> toJson() => _$UnitToJson(this);
 }
 
 @JsonSerializable(ignoreUnannotated: false)
@@ -47,8 +48,8 @@ class Pagination {
 
   Pagination({this.page, this.limit, this.count});
 
-   factory Pagination.fromJson(Map<String, dynamic> json) => _$PaginationFromJson(json);
+  factory Pagination.fromJson(Map<String, dynamic> json) =>
+      _$PaginationFromJson(json);
 
-   Map<String, dynamic> toJson() => _$PaginationToJson(this);
+  Map<String, dynamic> toJson() => _$PaginationToJson(this);
 }
-

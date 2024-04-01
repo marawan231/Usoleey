@@ -1,17 +1,22 @@
 part of 'owner_tickets_screens_imports.dart';
 
 class OwnerTicketsScreen extends StatelessWidget {
-  const OwnerTicketsScreen({super.key});
+  final List<TicketModel> tickets;
+
+  const OwnerTicketsScreen({super.key, required this.tickets});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
-        value: getIt<OwnerTicketsCubit>(), child: OwnerTicketsView());
+        value: getIt<OwnerTicketsCubit>(),
+        child: OwnerTicketsView(tickets: tickets));
   }
 }
 
 class OwnerTicketsView extends StatefulWidget {
-  const OwnerTicketsView({super.key});
+  final List<TicketModel> tickets;
+
+  const OwnerTicketsView({super.key, required this.tickets});
 
   @override
   State<OwnerTicketsView> createState() => _OwnerTicketsViewState();
@@ -20,7 +25,7 @@ class OwnerTicketsView extends StatefulWidget {
 class _OwnerTicketsViewState extends State<OwnerTicketsView> {
   @override
   void initState() {
-    getIt<OwnerTicketsCubit>().getTickets();
+    getIt<OwnerTicketsCubit>().updateTickets(widget.tickets);
     super.initState();
   }
 
@@ -36,14 +41,23 @@ class _OwnerTicketsViewState extends State<OwnerTicketsView> {
             16.verticalSpace,
             Expanded(child: BlocBuilder<OwnerTicketsCubit, OwnerTicketsState>(
                 builder: (context, state) {
-              return ListView.separated(
-                  separatorBuilder: (context, index) => 8.verticalSpace,
-                  itemCount: getIt<OwnerTicketsCubit>()
+              return getIt<OwnerTicketsCubit>()
                       .filterTickets(state.tickets)
-                      .length,
-                  itemBuilder: (context, index) => TicketItem(
-                      ticket: getIt<OwnerTicketsCubit>()
-                          .filterTickets(state.tickets)[index]));
+                      .isNotEmpty
+                  ? ListView.separated(
+                      separatorBuilder: (context, index) => 8.verticalSpace,
+                      itemCount: getIt<OwnerTicketsCubit>()
+                          .filterTickets(state.tickets)
+                          .length,
+                      itemBuilder: (context, index) => TicketItem(
+                          ticket: getIt<OwnerTicketsCubit>()
+                              .filterTickets(state.tickets)[index]))
+                  : EmptyLottie(
+                      lottiePath: AssetsManager.emptyTickets,
+                      title: S.current.emptyTickets,
+                      subTitle: '',
+                      isButtonVisible: false,
+                      padding: 0);
             }))
           ],
         ),

@@ -1,17 +1,23 @@
 part of 'owner_invoices_screens_imports.dart';
 
 class OwnerInvoicesScreen extends StatelessWidget {
-  const OwnerInvoicesScreen({super.key});
+  final List<InvoiceModel> invoices;
+
+  const OwnerInvoicesScreen({super.key, required this.invoices});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
-        value: getIt<OwnerInvoicesCubit>(), child: OnwerInvoicesView());
+      value: getIt<OwnerInvoicesCubit>(),
+      child: OnwerInvoicesView(invoices: invoices),
+    );
   }
 }
 
 class OnwerInvoicesView extends StatefulWidget {
-  const OnwerInvoicesView({super.key});
+  final List<InvoiceModel> invoices;
+
+  const OnwerInvoicesView({super.key, required this.invoices});
 
   @override
   State<OnwerInvoicesView> createState() => _OnwerInvoicesViewState();
@@ -20,7 +26,7 @@ class OnwerInvoicesView extends StatefulWidget {
 class _OnwerInvoicesViewState extends State<OnwerInvoicesView> {
   @override
   void initState() {
-    getIt<OwnerInvoicesCubit>().getInvoices();
+    getIt<OwnerInvoicesCubit>().updateInvoices(widget.invoices);
     super.initState();
   }
 
@@ -36,14 +42,23 @@ class _OnwerInvoicesViewState extends State<OnwerInvoicesView> {
             16.verticalSpace,
             Expanded(child: BlocBuilder<OwnerInvoicesCubit, OwnerInvoicesState>(
                 builder: (context, state) {
-              return ListView.separated(
-                  separatorBuilder: (context, index) => 8.verticalSpace,
-                  itemCount: getIt<OwnerInvoicesCubit>()
+              return getIt<OwnerInvoicesCubit>()
                       .filterInvoices(state.invoices)
-                      .length,
-                  itemBuilder: (context, index) => InvoiceItem(
-                      invoiceModel: getIt<OwnerInvoicesCubit>()
-                          .filterInvoices(state.invoices)[index]));
+                      .isNotEmpty
+                  ? ListView.separated(
+                      separatorBuilder: (context, index) => 8.verticalSpace,
+                      itemCount: getIt<OwnerInvoicesCubit>()
+                          .filterInvoices(state.invoices)
+                          .length,
+                      itemBuilder: (context, index) => InvoiceItem(
+                          invoiceModel: getIt<OwnerInvoicesCubit>()
+                              .filterInvoices(state.invoices)[index]))
+                  : EmptyLottie(
+                      lottiePath: AssetsManager.emptyInvoices,
+                      title: S.current.emptyInvoices,
+                      subTitle: S.current.emptyInvoicesSubTitle,
+                      isButtonVisible: false,
+                      padding: 0);
             }))
           ],
         ),

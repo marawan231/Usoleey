@@ -9,7 +9,7 @@ class UnitDetailsRepository {
 
   UnitDetailsRepository(this.unitDetailsWebService);
 
-  Future<ApiResult<UnitDetailsModel>> getMyProperties(
+  Future<ApiResult<UnitDetailsModel>> getUnitDetails(
       {required String id}) async {
     try {
       var response = await unitDetailsWebService.getUnitDetails(id);

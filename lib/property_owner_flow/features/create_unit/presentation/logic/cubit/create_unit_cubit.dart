@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/extensions/map_text_editing_controller.dart';
+import 'package:flutter_complete_project/core/shared_models/property_model.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/create_unit/data/models/create_unit_request_model.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/my_real_estate/presentation/logic/cubit/my_real_estate_cubit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,6 +19,7 @@ import '../../../../../../core/utils/utils.dart';
 import '../../../data/repository/create_unit_repository.dart';
 
 part 'create_unit_cubit.freezed.dart';
+
 part 'create_unit_state.dart';
 
 class CreateUnitCubit extends Cubit<CreateUnitState> {
@@ -79,14 +81,17 @@ class CreateUnitCubit extends Cubit<CreateUnitState> {
   }
 
   Future<void> getMyProperties() async {
+    if (count != 0 && state.properties.length >= count) {
+      return;
+    }
     final result = await createUnitRepository.getMyProperties(page: state.page);
     result.when(success: (propertyModel) {
-      List<Property> newList = List.from(state.properties)
+      List<PropertyModel> newList = List.from(state.properties)
         ..addAll(propertyModel.updatedProperties ?? []);
       count = propertyModel.pagination!.count!;
       emit(state.copyWith(
-          getMyPropertiesState: RequestState.success,
           properties: newList,
+          getMyPropertiesState: RequestState.success,
           page: state.page + 1));
     }, failure: (failure) {
       emit(state.copyWith(getMyPropertiesState: RequestState.error));
@@ -106,7 +111,7 @@ class CreateUnitCubit extends Cubit<CreateUnitState> {
 
   void kitchenOnChage(bool value) => emit(state.copyWith(kitchen: value));
 
-  void propertyOnChange(Property? property) {
+  void propertyOnChange(PropertyModel? property) {
     if (state.property == property) {
       emit(state.copyWith(property: null));
     } else {
@@ -114,4 +119,13 @@ class CreateUnitCubit extends Cubit<CreateUnitState> {
     }
   }
 
+  void initData() {
+    emit(state.copyWith(
+        property: null,
+        unitImage: null,
+        kitchen: false,
+        lounge: false,
+        properties: [],
+        page: 1));
+  }
 }

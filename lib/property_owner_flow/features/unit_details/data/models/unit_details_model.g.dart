@@ -33,7 +33,7 @@ UnitDetailsModel _$UnitDetailsModelFromJson(Map<String, dynamic> json) =>
           : Owner.fromJson(json['owner'] as Map<String, dynamic>),
       property: json['property'] == null
           ? null
-          : Property.fromJson(json['property'] as Map<String, dynamic>),
+          : PropertyModel.fromJson(json['property'] as Map<String, dynamic>),
       tenant: json['tenant'] == null
           ? null
           : TenantModel.fromJson(json['tenant'] as Map<String, dynamic>),
@@ -100,42 +100,6 @@ Map<String, dynamic> _$OwnerToJson(Owner instance) => <String, dynamic>{
       'lastNameAr': instance.lastNameAr,
       'fcmToken': instance.fcmToken,
       'language': instance.language,
-    };
-
-Property _$PropertyFromJson(Map<String, dynamic> json) => Property(
-      id: json['id'] as int?,
-      name: json['name'] as String?,
-      address: json['address'] as String?,
-      unitsCount: json['unitsCount'] as int?,
-      instrumentNumber: json['instrumentNumber'] as String?,
-      postalCode: json['postalCode'] as String?,
-      blockNumber: json['blockNumber'] as String?,
-      street: json['street'] as String?,
-      district: json['district'] as String?,
-      city: json['city'] as String?,
-      image: json['image'] as String?,
-      createdAt: json['createdAt'] as String?,
-      updatedAt: json['updatedAt'] as String?,
-      enterpriseId: json['enterpriseId'] as int?,
-      ownerId: json['ownerId'] as int?,
-    );
-
-Map<String, dynamic> _$PropertyToJson(Property instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'address': instance.address,
-      'unitsCount': instance.unitsCount,
-      'instrumentNumber': instance.instrumentNumber,
-      'postalCode': instance.postalCode,
-      'blockNumber': instance.blockNumber,
-      'street': instance.street,
-      'district': instance.district,
-      'city': instance.city,
-      'image': instance.image,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'enterpriseId': instance.enterpriseId,
-      'ownerId': instance.ownerId,
     };
 
 Detail _$DetailFromJson(Map<String, dynamic> json) => Detail(

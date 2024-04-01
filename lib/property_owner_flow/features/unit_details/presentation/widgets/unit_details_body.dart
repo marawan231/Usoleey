@@ -19,6 +19,7 @@ class UnitDetailsBody extends StatelessWidget {
         if (unitDetailsModel.tickets != null &&
             unitDetailsModel.tickets!.isNotEmpty)
           RecentTickets(tickets: unitDetailsModel.tickets ?? []),
+        10.verticalSpace
       ].joinWith(24.verticalSpace),
     );
   }

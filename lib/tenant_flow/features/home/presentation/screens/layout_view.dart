@@ -39,10 +39,7 @@ final List<Widget> layoutScreens = [
   MultiBlocProvider(providers: [
     BlocProvider.value(value: getIt<TicketsCubit>()),
   ], child: TicketsView()),
-  BlocProvider.value(
-    value: getIt<MoreCubit>(),
-    child: MoreView(),
-  ),
+  BlocProvider.value(value: getIt<MoreCubit>(), child: MoreView()),
 
   // const ProfileView(),
 ];

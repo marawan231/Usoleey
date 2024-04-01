@@ -24,7 +24,7 @@ class Invoices extends StatelessWidget {
             height: 48.h,
             fontSize: 16.sp,
             onPressed: () {
-              Go.toNamed(NamedRoutes.ownerInvoices);
+              Go.toNamed(NamedRoutes.ownerInvoices,arguments: OwnerInvoicesScreen(invoices: invoices));
             },
             margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 2.h),
             icon: Icon(Icons.add),

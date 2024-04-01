@@ -19,92 +19,124 @@ class _UpdateUnitWebServices implements UpdateUnitWebServices {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<dynamic>> updateUnit(
-    File image,
-    String name,
-    num rent,
-    String rentCollectionDate,
-    String electricityAccount,
-    String waterAccount,
-    String address,
-    int space,
-    int rooms,
-    int bathrooms,
-    bool lounge,
-    int conditioners,
-    bool kitchen,
-    int propertyId,
-    int ownerId,
-  ) async {
+  Future<BaseResponse<Unit>> updateUnit(
+    String id, {
+    File? image,
+    String? name,
+    num? rent,
+    String? rentCollectionDate,
+    String? electricityAccount,
+    String? waterAccount,
+    String? address,
+    num? space,
+    int? rooms,
+    int? bathrooms,
+    bool? lounge,
+    int? conditioners,
+    bool? kitchen,
+    int? propertyId,
+    int? ownerId,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = FormData();
-    _data.files.add(MapEntry(
-      'image',
-      MultipartFile.fromFileSync(
-        image.path,
-        filename: image.path.split(Platform.pathSeparator).last,
-      ),
-    ));
-    _data.fields.add(MapEntry(
-      'name',
-      name,
-    ));
-    _data.fields.add(MapEntry(
-      'rent',
-      rent.toString(),
-    ));
-    _data.fields.add(MapEntry(
-      'rentCollectionDate',
-      rentCollectionDate,
-    ));
-    _data.fields.add(MapEntry(
-      'electricityAccount',
-      electricityAccount,
-    ));
-    _data.fields.add(MapEntry(
-      'waterAccount',
-      waterAccount,
-    ));
-    _data.fields.add(MapEntry(
-      'address',
-      address,
-    ));
-    _data.fields.add(MapEntry(
-      'space',
-      space.toString(),
-    ));
-    _data.fields.add(MapEntry(
-      'rooms',
-      rooms.toString(),
-    ));
-    _data.fields.add(MapEntry(
-      'bathrooms',
-      bathrooms.toString(),
-    ));
-    _data.fields.add(MapEntry(
-      'lounge',
-      lounge.toString(),
-    ));
-    _data.fields.add(MapEntry(
-      'conditioners',
-      conditioners.toString(),
-    ));
-    _data.fields.add(MapEntry(
-      'kitchen',
-      kitchen.toString(),
-    ));
-    _data.fields.add(MapEntry(
-      'propertyId',
-      propertyId.toString(),
-    ));
-    _data.fields.add(MapEntry(
-      'ownerId',
-      ownerId.toString(),
-    ));
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<dynamic>>(Options(
+    if (image != null) {
+      _data.files.add(MapEntry(
+        'image',
+        MultipartFile.fromFileSync(
+          image.path,
+          filename: image.path.split(Platform.pathSeparator).last,
+        ),
+      ));
+    }
+    if (name != null) {
+      _data.fields.add(MapEntry(
+        'name',
+        name,
+      ));
+    }
+    if (rent != null) {
+      _data.fields.add(MapEntry(
+        'rent',
+        rent.toString(),
+      ));
+    }
+    if (rentCollectionDate != null) {
+      _data.fields.add(MapEntry(
+        'rentCollectionDate',
+        rentCollectionDate,
+      ));
+    }
+    if (electricityAccount != null) {
+      _data.fields.add(MapEntry(
+        'electricityAccount',
+        electricityAccount,
+      ));
+    }
+    if (waterAccount != null) {
+      _data.fields.add(MapEntry(
+        'waterAccount',
+        waterAccount,
+      ));
+    }
+    if (address != null) {
+      _data.fields.add(MapEntry(
+        'address',
+        address,
+      ));
+    }
+    if (space != null) {
+      _data.fields.add(MapEntry(
+        'space',
+        space.toString(),
+      ));
+    }
+    if (rooms != null) {
+      _data.fields.add(MapEntry(
+        'rooms',
+        rooms.toString(),
+      ));
+    }
+    if (bathrooms != null) {
+      _data.fields.add(MapEntry(
+        'bathrooms',
+        bathrooms.toString(),
+      ));
+    }
+    if (lounge != null) {
+      _data.fields.add(MapEntry(
+        'lounge',
+        lounge.toString(),
+      ));
+    }
+    if (conditioners != null) {
+      _data.fields.add(MapEntry(
+        'conditioners',
+        conditioners.toString(),
+      ));
+    }
+    if (kitchen != null) {
+      _data.fields.add(MapEntry(
+        'kitchen',
+        kitchen.toString(),
+      ));
+    }
+    if (propertyId != null) {
+      _data.fields.add(MapEntry(
+        'propertyId',
+        propertyId.toString(),
+      ));
+    }
+    if (ownerId != null) {
+      _data.fields.add(MapEntry(
+        'ownerId',
+        ownerId.toString(),
+      ));
+    }
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<Unit>>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -112,7 +144,7 @@ class _UpdateUnitWebServices implements UpdateUnitWebServices {
     )
             .compose(
               _dio.options,
-              'units',
+              'units/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -121,9 +153,9 @@ class _UpdateUnitWebServices implements UpdateUnitWebServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponse<dynamic>.fromJson(
+    final value = BaseResponse<Unit>.fromJson(
       _result.data!,
-      (json) => json as dynamic,
+      (json) => Unit.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

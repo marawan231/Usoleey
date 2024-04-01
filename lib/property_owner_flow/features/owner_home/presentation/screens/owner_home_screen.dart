@@ -7,7 +7,7 @@ class OwnerHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider.value(value: getIt<OwnerHomeCubit>()..getHomeStats()),
+        BlocProvider.value(value: getIt<OwnerHomeCubit>()),
         BlocProvider(create: (context) => getIt<UserCubit>()),
       ],
       child: OwnerHomeView(),
@@ -15,8 +15,19 @@ class OwnerHomeScreen extends StatelessWidget {
   }
 }
 
-class OwnerHomeView extends StatelessWidget {
+class OwnerHomeView extends StatefulWidget {
   const OwnerHomeView({super.key});
+
+  @override
+  State<OwnerHomeView> createState() => _OwnerHomeViewState();
+}
+
+class _OwnerHomeViewState extends State<OwnerHomeView> {
+  @override
+  void initState() {
+    getIt<OwnerHomeCubit>().getHomeStats();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -34,9 +34,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("Address"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "annualRent": MessageLookupByLibrary.simpleMessage("Annual rent"),
+        "approve": MessageLookupByLibrary.simpleMessage("Approve"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "areYouWantToLogout": MessageLookupByLibrary.simpleMessage(
             "are you want to logout from the app"),
+        "attachments": MessageLookupByLibrary.simpleMessage("Attachments"),
         "bathroomsCount":
             MessageLookupByLibrary.simpleMessage("Number of Bathrooms"),
         "biils": MessageLookupByLibrary.simpleMessage("Bills"),
@@ -46,25 +48,42 @@ class MessageLookup extends MessageLookupByLibrary {
         "canceled": MessageLookupByLibrary.simpleMessage("canceled"),
         "change": MessageLookupByLibrary.simpleMessage("change"),
         "changeImage": MessageLookupByLibrary.simpleMessage("change image"),
+        "changeStatusResolved": MessageLookupByLibrary.simpleMessage(
+            "Change ticket status to \'Resolved\'"),
         "chooseAppLanguage":
             MessageLookupByLibrary.simpleMessage("Choose your language"),
+        "chooseFromlist": MessageLookupByLibrary.simpleMessage(
+            "Choose from the following list"),
         "chooseProperty":
             MessageLookupByLibrary.simpleMessage("Choose property"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
         "complain": MessageLookupByLibrary.simpleMessage("complain"),
+        "conatct": MessageLookupByLibrary.simpleMessage("Conatct"),
         "conditionersCount":
             MessageLookupByLibrary.simpleMessage("Number of Air Conditioners"),
+        "contactTenant":
+            MessageLookupByLibrary.simpleMessage("Contact the tenant"),
         "contactUsWithEmial":
             MessageLookupByLibrary.simpleMessage("contact us with email"),
         "contactUsWithMobile":
             MessageLookupByLibrary.simpleMessage("contact us with mobile"),
         "continueToNext": MessageLookupByLibrary.simpleMessage("Continue"),
         "createUnit": MessageLookupByLibrary.simpleMessage("Create unit"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "district": MessageLookupByLibrary.simpleMessage("District"),
+        "done": MessageLookupByLibrary.simpleMessage("done"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "electricityAccount": MessageLookupByLibrary.simpleMessage(
             "Electricity Bill Account Number"),
         "email": MessageLookupByLibrary.simpleMessage("email"),
+        "emptyInvoices":
+            MessageLookupByLibrary.simpleMessage("You have no invoices"),
+        "emptyInvoicesSubTitle": MessageLookupByLibrary.simpleMessage(
+            "When invoices are issued, they will appear here"),
+        "emptyNotifications":
+            MessageLookupByLibrary.simpleMessage("You have no notifications"),
+        "emptyTickets":
+            MessageLookupByLibrary.simpleMessage("You have no tickets"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "enterYourMobileNumber":
             MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
@@ -83,14 +102,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("logout"),
         "main": MessageLookupByLibrary.simpleMessage("Main"),
+        "menu": MessageLookupByLibrary.simpleMessage("Menu"),
         "mobileNumber": MessageLookupByLibrary.simpleMessage("mobile number"),
         "monthSar": MessageLookupByLibrary.simpleMessage("SAR/Month"),
         "more": MessageLookupByLibrary.simpleMessage("more"),
         "myRealEstate": MessageLookupByLibrary.simpleMessage("Ny Real Estate"),
+        "myTickets": MessageLookupByLibrary.simpleMessage("My tickets"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "nextInvoices": MessageLookupByLibrary.simpleMessage("Next invoices"),
         "no": MessageLookupByLibrary.simpleMessage("no"),
+        "noTicketsProcess": MessageLookupByLibrary.simpleMessage(
+            "You have no tickets in processing"),
+        "noTicketsReview": MessageLookupByLibrary.simpleMessage(
+            "You have no tickets pending review"),
+        "noTicketsSolved":
+            MessageLookupByLibrary.simpleMessage("You have no tickets solved"),
         "notifications": MessageLookupByLibrary.simpleMessage("notifications"),
         "offers": MessageLookupByLibrary.simpleMessage("offers"),
         "openTickets": MessageLookupByLibrary.simpleMessage("Open tickets"),
@@ -109,6 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "rentDate":
             MessageLookupByLibrary.simpleMessage("Next rent collection date"),
+        "repaired": MessageLookupByLibrary.simpleMessage("Repaired"),
         "reviewing": MessageLookupByLibrary.simpleMessage("reviewing"),
         "roomsCount": MessageLookupByLibrary.simpleMessage("Number of Rooms"),
         "sar": MessageLookupByLibrary.simpleMessage("SAR"),
@@ -122,6 +150,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "showDetails": MessageLookupByLibrary.simpleMessage("Show details"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "solved": MessageLookupByLibrary.simpleMessage("solved"),
+        "solvedAlertCancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "solvedAlertOk": MessageLookupByLibrary.simpleMessage("Solved"),
+        "solvedAlertSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Once you confirm that a ticket is resolved, you will not be able to make any edits or updates to its contents."),
+        "solvedAlertTitle": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to change the remember status to \'Resolved\'?"),
         "sreet": MessageLookupByLibrary.simpleMessage("Street"),
         "subNumber": MessageLookupByLibrary.simpleMessage("Subnumber"),
         "tenant": MessageLookupByLibrary.simpleMessage("Tenant"),
@@ -134,7 +168,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Has a Kitchen"),
         "thereIsLoungue":
             MessageLookupByLibrary.simpleMessage("Has a Living Room"),
+        "ticketContent": MessageLookupByLibrary.simpleMessage("Ticket content"),
+        "ticketCreatedDate":
+            MessageLookupByLibrary.simpleMessage("Date the ticket was created"),
         "ticketDetails": MessageLookupByLibrary.simpleMessage("ticket details"),
+        "ticketId": MessageLookupByLibrary.simpleMessage("Ticket id"),
+        "ticketType": MessageLookupByLibrary.simpleMessage("Ticket type"),
+        "ticketUpdatedDate":
+            MessageLookupByLibrary.simpleMessage("Date of last update"),
         "tickets": MessageLookupByLibrary.simpleMessage("my tickets"),
         "totalRent": MessageLookupByLibrary.simpleMessage("Total rent"),
         "unitAddress":
@@ -152,9 +193,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Unit Specifications"),
         "units": MessageLookupByLibrary.simpleMessage("Units"),
         "unitsCount": MessageLookupByLibrary.simpleMessage("Units count"),
+        "uploadInvoice":
+            MessageLookupByLibrary.simpleMessage(" Upload the invoice"),
         "userName": MessageLookupByLibrary.simpleMessage("user name"),
         "validateEmptyMessage":
             MessageLookupByLibrary.simpleMessage("This field is required"),
+        "viewInvoice": MessageLookupByLibrary.simpleMessage("View invoice"),
         "water": MessageLookupByLibrary.simpleMessage("Water"),
         "waterAccount":
             MessageLookupByLibrary.simpleMessage("Water Bill Account Number"),

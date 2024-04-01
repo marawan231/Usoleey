@@ -19,39 +19,76 @@ class _CreatePropertyWebServices implements CreatePropertyWebServices {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<dynamic>> createProperty({
-    required String name,
-    required String address,
-    required int unitsCount,
-    required String instrumentNumber,
-    required int postalCode,
-    required int blockNumber,
-    required String street,
-    required String district,
-    required String city,
-    required int ownerId,
-  }) async {
+  Future<BaseResponse<dynamic>> createProperty(
+    File image,
+    String name,
+    String address,
+    int unitsCount,
+    String instrumentNumber,
+    int postalCode,
+    int blockNumber,
+    String street,
+    String district,
+    String city,
+    int ownerId,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {
-      'name': name,
-      'address': address,
-      'unitsCount': unitsCount,
-      'instrumentNumber': instrumentNumber,
-      'postalCode': postalCode,
-      'blockNumber': blockNumber,
-      'street': street,
-      'district': district,
-      'city': city,
-      'ownerId': ownerId,
-    };
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'image',
+      MultipartFile.fromFileSync(
+        image.path,
+        filename: image.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    _data.fields.add(MapEntry(
+      'name',
+      name,
+    ));
+    _data.fields.add(MapEntry(
+      'address',
+      address,
+    ));
+    _data.fields.add(MapEntry(
+      'unitsCount',
+      unitsCount.toString(),
+    ));
+    _data.fields.add(MapEntry(
+      'instrumentNumber',
+      instrumentNumber,
+    ));
+    _data.fields.add(MapEntry(
+      'postalCode',
+      postalCode.toString(),
+    ));
+    _data.fields.add(MapEntry(
+      'blockNumber',
+      blockNumber.toString(),
+    ));
+    _data.fields.add(MapEntry(
+      'street',
+      street,
+    ));
+    _data.fields.add(MapEntry(
+      'district',
+      district,
+    ));
+    _data.fields.add(MapEntry(
+      'city',
+      city,
+    ));
+    _data.fields.add(MapEntry(
+      'ownerId',
+      ownerId.toString(),
+    ));
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
-      contentType: 'application/x-www-form-urlencoded',
+      contentType: 'multipart/form-data',
     )
             .compose(
               _dio.options,

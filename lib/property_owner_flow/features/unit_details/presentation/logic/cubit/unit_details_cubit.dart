@@ -6,6 +6,7 @@ import '../../../../../../core/enums/enums.dart';
 import '../../../data/repository/unit_details_repository.dart';
 
 part 'unit_details_cubit.freezed.dart';
+
 part 'unit_details_state.dart';
 
 class UnitDetailsCubit extends Cubit<UnitDetailsState> {
@@ -14,8 +15,9 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
   UnitDetailsCubit(this.unitDetailsRepository) : super(_Initial());
 
   Future<void> getUnitDetails({required int id}) async {
+    emit(state.copyWith(getUnitDetailsState: RequestState.loading));
     final result =
-        await unitDetailsRepository.getMyProperties(id: id.toString());
+        await unitDetailsRepository.getUnitDetails(id: id.toString());
     result.when(success: (unitDetailsModel) {
       emit(state.copyWith(
           getUnitDetailsState: RequestState.success,

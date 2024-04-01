@@ -200,6 +200,36 @@ class S {
     );
   }
 
+  /// `You have no notifications`
+  String get emptyNotifications {
+    return Intl.message(
+      'You have no notifications',
+      name: 'emptyNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no invoices`
+  String get emptyInvoices {
+    return Intl.message(
+      'You have no invoices',
+      name: 'emptyInvoices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `When invoices are issued, they will appear here`
+  String get emptyInvoicesSubTitle {
+    return Intl.message(
+      'When invoices are issued, they will appear here',
+      name: 'emptyInvoicesSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `offers`
   String get offers {
     return Intl.message(
@@ -1115,6 +1145,266 @@ class S {
     return Intl.message(
       'Edit',
       name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My tickets`
+  String get myTickets {
+    return Intl.message(
+      'My tickets',
+      name: 'myTickets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no tickets pending review`
+  String get noTicketsReview {
+    return Intl.message(
+      'You have no tickets pending review',
+      name: 'noTicketsReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no tickets in processing`
+  String get noTicketsProcess {
+    return Intl.message(
+      'You have no tickets in processing',
+      name: 'noTicketsProcess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no tickets solved`
+  String get noTicketsSolved {
+    return Intl.message(
+      'You have no tickets solved',
+      name: 'noTicketsSolved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no tickets`
+  String get emptyTickets {
+    return Intl.message(
+      'You have no tickets',
+      name: 'emptyTickets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket id`
+  String get ticketId {
+    return Intl.message(
+      'Ticket id',
+      name: 'ticketId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket content`
+  String get ticketContent {
+    return Intl.message(
+      'Ticket content',
+      name: 'ticketContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket type`
+  String get ticketType {
+    return Intl.message(
+      'Ticket type',
+      name: 'ticketType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attachments`
+  String get attachments {
+    return Intl.message(
+      'Attachments',
+      name: 'attachments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date the ticket was created`
+  String get ticketCreatedDate {
+    return Intl.message(
+      'Date the ticket was created',
+      name: 'ticketCreatedDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of last update`
+  String get ticketUpdatedDate {
+    return Intl.message(
+      'Date of last update',
+      name: 'ticketUpdatedDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Approve`
+  String get approve {
+    return Intl.message(
+      'Approve',
+      name: 'approve',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Menu`
+  String get menu {
+    return Intl.message(
+      'Menu',
+      name: 'menu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose from the following list`
+  String get chooseFromlist {
+    return Intl.message(
+      'Choose from the following list',
+      name: 'chooseFromlist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact the tenant`
+  String get contactTenant {
+    return Intl.message(
+      'Contact the tenant',
+      name: 'contactTenant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Upload the invoice`
+  String get uploadInvoice {
+    return Intl.message(
+      ' Upload the invoice',
+      name: 'uploadInvoice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change ticket status to 'Resolved'`
+  String get changeStatusResolved {
+    return Intl.message(
+      'Change ticket status to \'Resolved\'',
+      name: 'changeStatusResolved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conatct`
+  String get conatct {
+    return Intl.message(
+      'Conatct',
+      name: 'conatct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `done`
+  String get done {
+    return Intl.message(
+      'done',
+      name: 'done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repaired`
+  String get repaired {
+    return Intl.message(
+      'Repaired',
+      name: 'repaired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View invoice`
+  String get viewInvoice {
+    return Intl.message(
+      'View invoice',
+      name: 'viewInvoice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to change the remember status to 'Resolved'?`
+  String get solvedAlertTitle {
+    return Intl.message(
+      'Are you sure you want to change the remember status to \'Resolved\'?',
+      name: 'solvedAlertTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Once you confirm that a ticket is resolved, you will not be able to make any edits or updates to its contents.`
+  String get solvedAlertSubtitle {
+    return Intl.message(
+      'Once you confirm that a ticket is resolved, you will not be able to make any edits or updates to its contents.',
+      name: 'solvedAlertSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Solved`
+  String get solvedAlertOk {
+    return Intl.message(
+      'Solved',
+      name: 'solvedAlertOk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get solvedAlertCancel {
+    return Intl.message(
+      'Cancel',
+      name: 'solvedAlertCancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
       desc: '',
       args: [],
     );

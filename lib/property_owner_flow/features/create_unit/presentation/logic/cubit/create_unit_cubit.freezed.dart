@@ -19,8 +19,8 @@ mixin _$CreateUnitState {
   RequestState get createUnitState => throw _privateConstructorUsedError;
   bool get lounge => throw _privateConstructorUsedError;
   RequestState get getMyPropertiesState => throw _privateConstructorUsedError;
-  List<Property> get properties => throw _privateConstructorUsedError;
-  Property? get property => throw _privateConstructorUsedError;
+  List<PropertyModel> get properties => throw _privateConstructorUsedError;
+  PropertyModel? get property => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   File? get unitImage => throw _privateConstructorUsedError;
   bool get kitchen => throw _privateConstructorUsedError;
@@ -40,8 +40,8 @@ abstract class $CreateUnitStateCopyWith<$Res> {
       {RequestState createUnitState,
       bool lounge,
       RequestState getMyPropertiesState,
-      List<Property> properties,
-      Property? property,
+      List<PropertyModel> properties,
+      PropertyModel? property,
       int page,
       File? unitImage,
       bool kitchen});
@@ -85,11 +85,11 @@ class _$CreateUnitStateCopyWithImpl<$Res, $Val extends CreateUnitState>
       properties: null == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
-              as List<Property>,
+              as List<PropertyModel>,
       property: freezed == property
           ? _value.property
           : property // ignore: cast_nullable_to_non_nullable
-              as Property?,
+              as PropertyModel?,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -118,8 +118,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       {RequestState createUnitState,
       bool lounge,
       RequestState getMyPropertiesState,
-      List<Property> properties,
-      Property? property,
+      List<PropertyModel> properties,
+      PropertyModel? property,
       int page,
       File? unitImage,
       bool kitchen});
@@ -161,11 +161,11 @@ class __$$InitialImplCopyWithImpl<$Res>
       properties: null == properties
           ? _value._properties
           : properties // ignore: cast_nullable_to_non_nullable
-              as List<Property>,
+              as List<PropertyModel>,
       property: freezed == property
           ? _value.property
           : property // ignore: cast_nullable_to_non_nullable
-              as Property?,
+              as PropertyModel?,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -189,7 +189,7 @@ class _$InitialImpl implements _Initial {
       {this.createUnitState = RequestState.initial,
       this.lounge = false,
       this.getMyPropertiesState = RequestState.loading,
-      final List<Property> properties = const [],
+      final List<PropertyModel> properties = const [],
       this.property,
       this.page = 1,
       this.unitImage,
@@ -205,17 +205,17 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final RequestState getMyPropertiesState;
-  final List<Property> _properties;
+  final List<PropertyModel> _properties;
   @override
   @JsonKey()
-  List<Property> get properties {
+  List<PropertyModel> get properties {
     if (_properties is EqualUnmodifiableListView) return _properties;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_properties);
   }
 
   @override
-  final Property? property;
+  final PropertyModel? property;
   @override
   @JsonKey()
   final int page;
@@ -274,8 +274,8 @@ abstract class _Initial implements CreateUnitState {
       {final RequestState createUnitState,
       final bool lounge,
       final RequestState getMyPropertiesState,
-      final List<Property> properties,
-      final Property? property,
+      final List<PropertyModel> properties,
+      final PropertyModel? property,
       final int page,
       final File? unitImage,
       final bool kitchen}) = _$InitialImpl;
@@ -287,9 +287,9 @@ abstract class _Initial implements CreateUnitState {
   @override
   RequestState get getMyPropertiesState;
   @override
-  List<Property> get properties;
+  List<PropertyModel> get properties;
   @override
-  Property? get property;
+  PropertyModel? get property;
   @override
   int get page;
   @override
