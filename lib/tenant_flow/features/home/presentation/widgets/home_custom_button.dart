@@ -5,6 +5,7 @@ import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../data/models/units_model.dart';
 
 class HomeCustomButton extends StatelessWidget {
@@ -21,9 +22,7 @@ class HomeCustomButton extends StatelessWidget {
     return InkWell(
       onTap: onTap ??
           () {
-            Go.toNamed(NamedRoutes.propertyDetails, arguments: {
-              'unit': unit,
-            });
+            Go.toNamed(NamedRoutes.propertyDetails, arguments: {'unit': unit});
           },
       child: Container(
         margin: EdgeInsetsDirectional.only(top: 16.sp),
@@ -50,7 +49,7 @@ class HomeCustomButton extends StatelessWidget {
               ),
             ),
             Text(
-              text ?? 'عرض التفاصيل',
+              text ?? S.current.showDetails,
               style: getBoldStyle(
                   fontSize: 12.sp, color: ColorsManager.primaryDark),
             ),

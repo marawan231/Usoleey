@@ -29,7 +29,7 @@ class MyTicketsView extends StatelessWidget {
               indicatorSize: TabBarIndicatorSize.tab,
               dividerHeight: 0.001,
               tabs: [
-                Tab(text: S.current.reviewing),
+                Tab(text: S.current.active),
                 Tab(text: S.current.processing),
                 Tab(text: S.current.solved)
               ],

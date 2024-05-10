@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../../core/network_service/base_response.dart';
-import '../../../owner_tickets/data/models/all_tickets_model.dart';
+import '../../../../../core/shared_models/all_tickets_model.dart';
 
 part 'my_tickets_web_service.g.dart';
 

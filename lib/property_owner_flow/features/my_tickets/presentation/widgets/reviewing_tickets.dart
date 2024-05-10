@@ -50,9 +50,7 @@ class _ReviewingTicketsState extends State<ReviewingTickets> {
 }
 
 class TicketsListShimmer extends StatelessWidget {
-  const TicketsListShimmer({
-    super.key,
-  });
+  const TicketsListShimmer({super.key});
 
   @override
   Widget build(BuildContext context) {

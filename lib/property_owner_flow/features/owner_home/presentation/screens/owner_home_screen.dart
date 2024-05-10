@@ -31,6 +31,6 @@ class _OwnerHomeViewState extends State<OwnerHomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: OwnerHomeAppBar(), body: OwnerHomeBody());
+    return Scaffold(appBar: UserHomeAppBar(), body: OwnerHomeBody());
   }
 }

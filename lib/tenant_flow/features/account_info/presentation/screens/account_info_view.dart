@@ -1,23 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
+import 'package:flutter_complete_project/core/shared_cubits/user_cubit/user_cubit.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
 import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/account_info/data/models/account_info.dart';
+import 'package:flutter_complete_project/tenant_flow/features/login/data/models/auth_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:http/http.dart';
 
-List<AccountInfo> accountInfoList = [
-  AccountInfo(title: S.current.userName, value: ''),
-  AccountInfo(title: S.current.email, value: ''),
-  AccountInfo(title: S.current.mobileNumber, value: ''),
-  AccountInfo(title: S.current.password, value: S.current.change),
-];
+late List<AccountInfo> accountInfoList;
 
-class AccountInfoView extends StatelessWidget {
+class AccountInfoView extends StatefulWidget {
   const AccountInfoView({super.key});
+
+  @override
+  State<AccountInfoView> createState() => _AccountInfoViewState();
+}
+
+class _AccountInfoViewState extends State<AccountInfoView> {
+  @override
+  void initState() {
+    final UserModel? userModel = getIt<UserCubit>().state.userModel;
+    accountInfoList = [
+      AccountInfo(
+          title: S.current.userName,
+          value: '${userModel?.firstName} ${userModel?.lastName}'),
+      AccountInfo(title: S.current.email, value: userModel?.email),
+      AccountInfo(title: S.current.mobileNumber, value: userModel?.phoneNumber),
+      AccountInfo(title: S.current.password, value: S.current.change),
+    ];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,9 +130,9 @@ class AccountInfoView extends StatelessWidget {
   }
 }
 
-/* 
+/*
 ListView.separated(itemBuilder: (context, index) {
-      
+
     }, separatorBuilder: (context, index) {
-      
+
     }, itemCount: ,);*/

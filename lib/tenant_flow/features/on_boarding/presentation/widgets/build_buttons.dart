@@ -2,6 +2,7 @@ part of 'on_boarding_widgets_imports.dart';
 
 class BuildButtons extends StatelessWidget {
   const BuildButtons({super.key, required this.boardController});
+
   final PageController boardController;
 
   @override
@@ -29,7 +30,7 @@ class BuildButtons extends StatelessWidget {
           AppTextButton(
               onPressed: () => Go.toNamed(NamedRoutes.login),
               buttonText: S.current.login),
-          // 24.verticalSpace,
+          10.verticalSpace,
           AppTextButton(
               backgroundColor: ColorsManager.backgroundColor,
               textStyle: getBoldStyle(
@@ -65,7 +66,7 @@ class BuildButtons extends StatelessWidget {
                     color: ColorsManager.primaryDark, fontSize: 16.sp),
                 onPressed: () {
                   // getIt<C>
-                  CacheHelper.removeAll();
+                  // CacheHelper.removeAll();
                   log('CacheHelper.getData(key: language): ${CacheHelper.getData(key: 'language')}');
                   Go.offAllNamed(NamedRoutes.login);
                 },

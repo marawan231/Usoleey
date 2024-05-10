@@ -92,6 +92,9 @@ class AssetsManager {
   static const String phone = "$imageSVGPath/phone.svg";
   static const String mail = "$imageSVGPath/mail.svg";
   static const String invoice = "$imageSVGPath/invoice.svg";
+  static const String removeTicketImage = "$imageSVGPath/remove_ticket_image.svg";
+  static const String rating = "$imageSVGPath/rating.svg";
+  static const String ticketSent = "$imageSVGPath/ticket_sent.svg";
   //empty_ticket
   // static const String emptyTicket = "$imageSVGPath/empty_ticket.svg";
   //lottie animation empty_invoices

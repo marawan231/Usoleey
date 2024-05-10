@@ -68,9 +68,7 @@ class _OnwerInvoicesViewState extends State<OnwerInvoicesView> {
 }
 
 class InvoicesTabBar extends StatelessWidget {
-  const InvoicesTabBar({
-    super.key,
-  });
+  const InvoicesTabBar({super.key});
 
   @override
   Widget build(BuildContext context) {

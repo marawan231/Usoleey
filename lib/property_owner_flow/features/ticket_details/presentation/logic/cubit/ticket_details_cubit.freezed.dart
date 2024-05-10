@@ -21,6 +21,8 @@ mixin _$TicketDetailsState {
   TicketDetailsModel? get ticketDetailsModel =>
       throw _privateConstructorUsedError;
   File? get pdfFile => throw _privateConstructorUsedError;
+  RequestState get rateRequestState => throw _privateConstructorUsedError;
+  int get star => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TicketDetailsStateCopyWith<TicketDetailsState> get copyWith =>
@@ -37,7 +39,9 @@ abstract class $TicketDetailsStateCopyWith<$Res> {
       {RequestState getTicketDetailsState,
       RequestState updateTicketStatus,
       TicketDetailsModel? ticketDetailsModel,
-      File? pdfFile});
+      File? pdfFile,
+      RequestState rateRequestState,
+      int star});
 }
 
 /// @nodoc
@@ -57,6 +61,8 @@ class _$TicketDetailsStateCopyWithImpl<$Res, $Val extends TicketDetailsState>
     Object? updateTicketStatus = null,
     Object? ticketDetailsModel = freezed,
     Object? pdfFile = freezed,
+    Object? rateRequestState = null,
+    Object? star = null,
   }) {
     return _then(_value.copyWith(
       getTicketDetailsState: null == getTicketDetailsState
@@ -75,6 +81,14 @@ class _$TicketDetailsStateCopyWithImpl<$Res, $Val extends TicketDetailsState>
           ? _value.pdfFile
           : pdfFile // ignore: cast_nullable_to_non_nullable
               as File?,
+      rateRequestState: null == rateRequestState
+          ? _value.rateRequestState
+          : rateRequestState // ignore: cast_nullable_to_non_nullable
+              as RequestState,
+      star: null == star
+          ? _value.star
+          : star // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -91,7 +105,9 @@ abstract class _$$InitialImplCopyWith<$Res>
       {RequestState getTicketDetailsState,
       RequestState updateTicketStatus,
       TicketDetailsModel? ticketDetailsModel,
-      File? pdfFile});
+      File? pdfFile,
+      RequestState rateRequestState,
+      int star});
 }
 
 /// @nodoc
@@ -109,6 +125,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? updateTicketStatus = null,
     Object? ticketDetailsModel = freezed,
     Object? pdfFile = freezed,
+    Object? rateRequestState = null,
+    Object? star = null,
   }) {
     return _then(_$InitialImpl(
       getTicketDetailsState: null == getTicketDetailsState
@@ -127,6 +145,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.pdfFile
           : pdfFile // ignore: cast_nullable_to_non_nullable
               as File?,
+      rateRequestState: null == rateRequestState
+          ? _value.rateRequestState
+          : rateRequestState // ignore: cast_nullable_to_non_nullable
+              as RequestState,
+      star: null == star
+          ? _value.star
+          : star // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -138,7 +164,9 @@ class _$InitialImpl implements _Initial {
       {this.getTicketDetailsState = RequestState.loading,
       this.updateTicketStatus = RequestState.initial,
       this.ticketDetailsModel,
-      this.pdfFile});
+      this.pdfFile,
+      this.rateRequestState = RequestState.initial,
+      this.star = 0});
 
   @override
   @JsonKey()
@@ -150,10 +178,16 @@ class _$InitialImpl implements _Initial {
   final TicketDetailsModel? ticketDetailsModel;
   @override
   final File? pdfFile;
+  @override
+  @JsonKey()
+  final RequestState rateRequestState;
+  @override
+  @JsonKey()
+  final int star;
 
   @override
   String toString() {
-    return 'TicketDetailsState(getTicketDetailsState: $getTicketDetailsState, updateTicketStatus: $updateTicketStatus, ticketDetailsModel: $ticketDetailsModel, pdfFile: $pdfFile)';
+    return 'TicketDetailsState(getTicketDetailsState: $getTicketDetailsState, updateTicketStatus: $updateTicketStatus, ticketDetailsModel: $ticketDetailsModel, pdfFile: $pdfFile, rateRequestState: $rateRequestState, star: $star)';
   }
 
   @override
@@ -167,12 +201,15 @@ class _$InitialImpl implements _Initial {
                 other.updateTicketStatus == updateTicketStatus) &&
             (identical(other.ticketDetailsModel, ticketDetailsModel) ||
                 other.ticketDetailsModel == ticketDetailsModel) &&
-            (identical(other.pdfFile, pdfFile) || other.pdfFile == pdfFile));
+            (identical(other.pdfFile, pdfFile) || other.pdfFile == pdfFile) &&
+            (identical(other.rateRequestState, rateRequestState) ||
+                other.rateRequestState == rateRequestState) &&
+            (identical(other.star, star) || other.star == star));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, getTicketDetailsState,
-      updateTicketStatus, ticketDetailsModel, pdfFile);
+      updateTicketStatus, ticketDetailsModel, pdfFile, rateRequestState, star);
 
   @JsonKey(ignore: true)
   @override
@@ -186,7 +223,9 @@ abstract class _Initial implements TicketDetailsState {
       {final RequestState getTicketDetailsState,
       final RequestState updateTicketStatus,
       final TicketDetailsModel? ticketDetailsModel,
-      final File? pdfFile}) = _$InitialImpl;
+      final File? pdfFile,
+      final RequestState rateRequestState,
+      final int star}) = _$InitialImpl;
 
   @override
   RequestState get getTicketDetailsState;
@@ -196,6 +235,10 @@ abstract class _Initial implements TicketDetailsState {
   TicketDetailsModel? get ticketDetailsModel;
   @override
   File? get pdfFile;
+  @override
+  RequestState get rateRequestState;
+  @override
+  int get star;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

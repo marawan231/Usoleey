@@ -3,7 +3,7 @@ import 'package:flutter_complete_project/property_owner_flow/features/my_tickets
 
 import '../../../../../core/network_service/api_result.dart';
 import '../../../../../core/network_service/network_exceptions.dart';
-import '../../../owner_tickets/data/models/all_tickets_model.dart';
+import '../../../../../core/shared_models/all_tickets_model.dart';
 
 class MyTicketsRepository {
   final MyTicketsWebServices myTicketsWebServices;
@@ -12,10 +12,10 @@ class MyTicketsRepository {
 
   Future<ApiResult<AllTicketsModel>> getMyTickets(
       {required GetMyTicketsQueryModel getMyTicketsQueryModel}) async {
-    Map<String, dynamic> quuries = getMyTicketsQueryModel.toJson();
-    quuries.keys.where((key) => quuries[key] != null || quuries[key] != '');
+    Map<String, dynamic> queries = getMyTicketsQueryModel.toJson();
+    queries.keys.where((key) => queries[key] != null || queries[key] != '');
     try {
-      var response = await myTicketsWebServices.getMyTickets(quuries);
+      var response = await myTicketsWebServices.getMyTickets(queries);
       return ApiResult.success(response.data!);
     } catch (error, stacktrace) {
       return ApiResult.failure(

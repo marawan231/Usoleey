@@ -15,9 +15,7 @@ import 'package:flutter_complete_project/tenant_flow/features/choose_language/lo
 import 'package:flutter_complete_project/tenant_flow/features/home/data/repository/home_repository.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/web_service/home_web_service.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
-import 'package:flutter_complete_project/tenant_flow/features/invoices/data/repository/inovices_repository.dart';
-import 'package:flutter_complete_project/tenant_flow/features/invoices/data/web_services/invoices_web_services.dart';
-import 'package:flutter_complete_project/tenant_flow/features/invoices/logic/invoices_cubit.dart';
+
 import 'package:flutter_complete_project/tenant_flow/features/login/data/repository/auth_repository.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/data/web_service/auth_web_service.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
@@ -25,9 +23,6 @@ import 'package:flutter_complete_project/tenant_flow/features/more/data/reposito
 import 'package:flutter_complete_project/tenant_flow/features/more/data/web_services/more_web_services.dart';
 import 'package:flutter_complete_project/tenant_flow/features/more/logic/more_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/on_boarding/logic/cubit/onboarding_cubit.dart';
-import 'package:flutter_complete_project/tenant_flow/features/tickets/data/repository/tickets_repository.dart';
-import 'package:flutter_complete_project/tenant_flow/features/tickets/data/web_service/tickets_web_service.dart';
-import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../property_owner_flow/features/create_property/data/web_service/create_property_web_service.dart';
@@ -60,6 +55,13 @@ import '../../property_owner_flow/features/update_property/presentation/logic/cu
 import '../../property_owner_flow/features/update_unit/data/repository/update_unit_repository.dart';
 import '../../property_owner_flow/features/update_unit/data/web_service/update_unit_web_services.dart';
 import '../../property_owner_flow/features/update_unit/presentation/logic/cubit/update_unit_cubit.dart';
+import '../../tenant_flow/features/tenant_home_layout/presentation/logic/cubit/tenant_home_layout_cubit.dart';
+import '../../tenant_flow/features/tenant_invoices/data/repository/tenant_inovices_repository.dart';
+import '../../tenant_flow/features/tenant_invoices/data/web_services/tenant_invoices_web_services.dart';
+import '../../tenant_flow/features/tenant_invoices/logic/tenant_invoices_cubit.dart';
+import '../../tenant_flow/features/tenant_tickets/data/repository/tenant_tickets_repository.dart';
+import '../../tenant_flow/features/tenant_tickets/data/web_service/tenant_tickets_web_service.dart';
+import '../../tenant_flow/features/tenant_tickets/presentation/logic/cubit/tenant_tickets_cubit.dart';
 import '../shared_cubits/user_cubit/user_cubit.dart';
 
 final getIt = GetIt.instance;
@@ -94,23 +96,25 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<HomeCubit>(
       () => HomeCubit(getIt<HomeRepository>()));
   // TicketsCubit
-  getIt.registerLazySingleton<TicketsCubit>(
-      () => TicketsCubit(getIt<TicketsRepository>()));
+  getIt.registerLazySingleton<TenantTicketsCubit>(
+      () => TenantTicketsCubit(getIt<TenantTicketsRepository>()));
   // TicketsRepository
-  getIt.registerLazySingleton<TicketsRepository>(
-      () => TicketsRepository(ticketsWebService: getIt<TicketsWebService>()));
+  getIt.registerLazySingleton<TenantTicketsRepository>(() =>
+      TenantTicketsRepository(
+          tenantTicketsWebService: getIt<TenantTicketsWebService>()));
   // TicketsWebService
-  getIt.registerLazySingleton<TicketsWebService>(() =>
-      TicketsWebService(getIt<Dio>(), baseUrl: NetworkConstants.mockBaseUrl));
+  getIt.registerLazySingleton<TenantTicketsWebService>(() =>
+      TenantTicketsWebService(getIt<Dio>(), baseUrl: NetworkConstants.baseUrl));
   //Invoices Web Services
-  getIt.registerLazySingleton<InvoicesWebServices>(() =>
-      InvoicesWebServices(getIt<Dio>(), baseUrl: NetworkConstants.baseUrl));
+  getIt.registerLazySingleton<TenantInvoicesWebServices>(() =>
+      TenantInvoicesWebServices(getIt<Dio>(),
+          baseUrl: NetworkConstants.baseUrl));
   // Invoices Repository
-  getIt.registerLazySingleton<InvoiceRepository>(
-      () => InvoiceRepository(getIt<InvoicesWebServices>()));
+  getIt.registerLazySingleton<TenantInvoiceRepository>(
+      () => TenantInvoiceRepository(getIt<TenantInvoicesWebServices>()));
   // InvoiceCubit
-  getIt.registerLazySingleton<InvoicesCubit>(
-      () => InvoicesCubit(getIt<InvoiceRepository>()));
+  getIt.registerLazySingleton<TenantInvoicesCubit>(
+      () => TenantInvoicesCubit(getIt<TenantInvoiceRepository>()));
 
   //more web_service services
   getIt.registerLazySingleton<MoreWebServices>(
@@ -275,7 +279,8 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<OwnerNotificationCubit>(
       () => OwnerNotificationCubit(getIt<OwnerNotificationRepository>()));
 
-
+  getIt.registerLazySingleton<TenantHomeLayoutCubit>(
+      () => TenantHomeLayoutCubit());
   // UpdatePropertyWebService
   getIt.registerLazySingleton<UpdatePropertyWebServices>(() =>
       UpdatePropertyWebServices(getIt<Dio>(),
@@ -283,9 +288,9 @@ Future<void> setupGetIt() async {
 
   // UpdatePropertyRepository
   getIt.registerLazySingleton<UpdatePropertyRepository>(
-          () => UpdatePropertyRepository(getIt<UpdatePropertyWebServices>()));
+      () => UpdatePropertyRepository(getIt<UpdatePropertyWebServices>()));
 
   //UpdateProperty Cubit
   getIt.registerLazySingleton<UpdatePropertyCubit>(
-          () => UpdatePropertyCubit(getIt<UpdatePropertyRepository>()));
+      () => UpdatePropertyCubit(getIt<UpdatePropertyRepository>()));
 }

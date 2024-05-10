@@ -60,6 +60,7 @@ class CreateUnitCubit extends Cubit<CreateUnitState> {
             ownerId: user?.id ?? 0,
             image: state.unitImage!);
     createUnitRequest(createUnitRequestModel);
+
   }
 
   Future<void> createUnitRequest(

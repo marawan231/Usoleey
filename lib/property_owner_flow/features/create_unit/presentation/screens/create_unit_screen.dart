@@ -25,9 +25,25 @@ class _CreateUnitViewState extends State<CreateUnitView> {
   }
 
   @override
+  void dispose() {
+    CreateUnitUtils.disposeControllers();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: SharedAppBar(title: S.current.createUnit),
-        body: const CreateUnitForm());
+    return BlocBuilder<CreateUnitCubit, CreateUnitState>(
+      builder: (context, state) {
+        return PopScope(
+          canPop: state.createUnitState != RequestState.loading,
+          child: IgnorePointer(
+            ignoring: state.createUnitState == RequestState.loading,
+            child: Scaffold(
+                appBar: SharedAppBar(title: S.current.createUnit),
+                body: const CreateUnitForm()),
+          ),
+        );
+      },
+    );
   }
 }

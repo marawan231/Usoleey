@@ -6,7 +6,7 @@ enum NamedRoutes {
   //login
   login('/login'),
   //layout
-  layout('/layout'),
+  tenantLayout('/tenantLayout'),
   //ownerLayout
   ownerLayout('/ownerLayout'),
   //home

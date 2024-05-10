@@ -29,6 +29,7 @@ class CreateUnitRepository {
           createUnitRequestModel.conditioners,
           createUnitRequestModel.kitchen,
           createUnitRequestModel.propertyId,
+          'OWNER',
           createUnitRequestModel.ownerId);
       return ApiResult.success(response.message!);
     } catch (error, stacktrace) {

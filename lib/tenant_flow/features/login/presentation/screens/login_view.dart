@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/core/extensions/validator.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
@@ -15,9 +16,9 @@ import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/data/models/login_request_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
-import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_state.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/enums/enums.dart';
 import '../../data/models/auth_model.dart';
 
 class LoginView extends StatefulWidget {
@@ -30,9 +31,9 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
+    getIt<AuthCubit>().phoneController.text = '+201093739627';
+    getIt<AuthCubit>().passwordController.text = 'jkER%43@11j';
     super.initState();
-    getIt<AuthCubit>().phoneController.text = '01092964109';
-    getIt<AuthCubit>().passwordController.text = '111111';
   }
 
   @override
@@ -127,26 +128,29 @@ class _LoginViewState extends State<LoginView> {
 
   _buildPhoneForm(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: TextDirection.ltr,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Expanded(flex: 1, child: _buildNumberPrefix()),
+          8.horizontalSpace,
           Expanded(
             flex: 5,
-            child: AppCustomTextFormField(
-              controller: getIt<AuthCubit>().phoneController,
-              hintText: '05xxxxxxx33',
-              keyboardType: TextInputType.phone,
-              validator: (p0) {
-                if (p0!.isEmpty) {
-                  return 'Please enter your phone number';
-                }
-                return null;
+            child: BlocBuilder<AuthCubit, AuthState>(
+              builder: (context, state) {
+                return Focus(
+                  onFocusChange: getIt<AuthCubit>().changePhoneNumberFocus,
+                  child: AppCustomTextFormField(
+                    focusNode: getIt<AuthCubit>().phoneNumberFocusNode,
+                    controller: getIt<AuthCubit>().phoneController,
+                    hintText: state.phoneNumberFocus ? null : '05xxxxxxx33',
+                    keyboardType: TextInputType.phone,
+                    validator: (value) => value!.validatePhone(),
+                  ),
+                );
               },
             ),
           ),
-          8.horizontalSpace,
-          Expanded(flex: 1, child: _buildNumberPrefix()),
         ],
       ),
     );
@@ -160,12 +164,7 @@ class _LoginViewState extends State<LoginView> {
             controller: getIt<AuthCubit>().passwordController,
             hintText: S.current.password,
             keyboardType: TextInputType.visiblePassword,
-            validator: (p0) {
-              if (p0!.isEmpty || p0.length < 6) {
-                return 'Please enter your password';
-              }
-              return null;
-            },
+            validator: (value) => value!.validatePassword(),
             obscureText: true,
           ),
         ),
@@ -197,44 +196,12 @@ class _LoginViewState extends State<LoginView> {
   }
 
   _buildFooter() {
-    return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          loginSuccess: (AuthModel authModel) {
-            if (authModel.data!.user!.role == 'OWNER') {
-              getIt<UserCubit>()
-                  .updateUser(authModel.data!.user!, authModel.data!.stats!);
-              Go.offAllNamed(NamedRoutes.ownerLayout);
-            } else {
-              Go.offAllNamed(NamedRoutes.layout);
-            }
-          },
-          loginError: (message) {
-            showToast(message: message.toString());
-          },
-        );
-      },
+    return BlocBuilder<AuthCubit, AuthState>(
       builder: (context, state) {
         return AppTextButton(
-          isLoading: state.maybeWhen(
-            orElse: () => false,
-            loginLoading: () => true,
-          ),
-          buttonText: S.current.next,
-          onPressed: () async {
-            if (getIt<AuthCubit>().formKey.currentState!.validate()) {
-              final String? fcmToken = await getToken();
-              getIt<AuthCubit>().login(
-                  loginRequestModel: LoginRequestModel(
-                      phoneNumber: getIt<AuthCubit>().phoneController.text,
-                      password: getIt<AuthCubit>().passwordController.text,
-                      deviceId: 'asd',
-                      deviceType: Platform.isAndroid ? 'android' : 'ios',
-                      fcmToken: fcmToken,
-                      language: 'ar'));
-            }
-          },
-        );
+            isLoading: state.loginRequestState == RequestState.loading,
+            buttonText: S.current.login,
+            onPressed: () => getIt<AuthCubit>().login());
       },
     );
   }

@@ -13,7 +13,8 @@ class CreateUnitForm extends StatelessWidget {
           UnitInformation(),
           UnitSpecifications(),
           UnitProperty(),
-          CreateUnitButton()
+          CreateUnitButton(),
+          10.verticalSpace
         ].joinWith(32.verticalSpace)));
   }
 }

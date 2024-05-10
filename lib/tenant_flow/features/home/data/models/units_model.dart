@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../../../property_owner_flow/features/unit_details/data/models/invoice_model.dart';
+
 part 'units_model.g.dart';
 
 @JsonSerializable(explicitToJson: true)
@@ -48,6 +50,7 @@ class Units {
   String? updatedAt;
   Property? property;
   Owner? owner;
+  List<InvoiceModel>? invoices;
 
   Units(
       {this.id,
@@ -67,6 +70,7 @@ class Units {
       this.updatedAt,
       this.property,
       this.owner,
+      this.invoices,
       this.isSelected = false});
 
   factory Units.fromJson(Map<String, dynamic> json) => _$UnitsFromJson(json);

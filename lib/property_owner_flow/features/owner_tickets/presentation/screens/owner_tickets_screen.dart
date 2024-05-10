@@ -76,7 +76,7 @@ class TicketsTabBar extends StatelessWidget {
       child: Row(
           children: [
         TabItem(name: S.current.all, index: 1),
-        TabItem(name: S.current.reviewing, index: 2),
+        TabItem(name: S.current.active, index: 2),
         TabItem(name: S.current.processing, index: 3),
         TabItem(name: S.current.solved, index: 4),
         TabItem(name: S.current.canceled, index: 5),

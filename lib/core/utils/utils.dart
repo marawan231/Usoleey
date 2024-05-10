@@ -1,12 +1,16 @@
 //show ios dialog
+import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/core/helpers/cache_helper.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
+import 'package:flutter_complete_project/core/shared_cubits/user_cubit/user_cubit.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -17,6 +21,7 @@ import 'package:timeago/timeago.dart' as timeago;
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../generated/l10n.dart';
+import '../../tenant_flow/features/login/data/models/auth_model.dart';
 import '../enums/enums.dart';
 import '../res/assets_manager.dart';
 import '../shared_models/invoice_type_model.dart';
@@ -259,21 +264,16 @@ String formatCreatedAtAgo(String createAt) {
 
 TicketStatusModel getTicketStatusProperties(TicketStatus status) {
   switch (status) {
-    case TicketStatus.reviewing:
+    case TicketStatus.active:
       return TicketStatusModel(
-          status: S.current.reviewing,
+          status: S.current.active,
           backgroundColor: ColorsManager.goldLight,
-          color: ColorsManager.gold);
-    case TicketStatus.solved:
+          color: ColorsManager.brown);
+    case TicketStatus.closed:
       return TicketStatusModel(
           status: S.current.solved,
           backgroundColor: ColorsManager.greenLight,
           color: ColorsManager.greenPrimary);
-    case TicketStatus.canceled:
-      return TicketStatusModel(
-          status: S.current.canceled,
-          backgroundColor: ColorsManager.red.withOpacity(0.5),
-          color: ColorsManager.red);
     case TicketStatus.processing:
       return TicketStatusModel(
           status: S.current.processing,
@@ -310,4 +310,30 @@ InvoiceTypeModel getInvoiceTypeProperties(InvoiceType status) {
       return InvoiceTypeModel(
           image: AssetsManager.water, text: S.current.water);
   }
+}
+
+Future<List<File>> getImages() async {
+  final ImagePicker picker = ImagePicker();
+  final List<XFile> result = await picker.pickMultiImage();
+  if (result.isNotEmpty) {
+    List<File> files = result.map((e) => File(e.path)).toList();
+    return files;
+  } else {
+    return [];
+  }
+}
+
+void saveCurrentUserData(UserModel userModel) async {
+  getIt<UserCubit>().updateUser(userModel);
+}
+
+void saveUserDataInStorage(UserModel userModel) =>
+    CacheHelper.saveData(key: 'userData', value: json.encode(userModel));
+
+void saveTokenDataInStorage(String token) =>
+    CacheHelper.saveData(key: 'token', value: token);
+
+void clearAllData() async {
+  await CacheHelper.removeData(key: 'userData');
+  await CacheHelper.removeData(key: 'token');
 }

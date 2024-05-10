@@ -9,12 +9,12 @@ class CustomNavBar extends StatefulWidget {
 
 class _CustomNavBarState extends State<CustomNavBar> {
   List<NavigationItem> get navigationItems => [
-        NavigationItem(icon: AssetsManager.navbarHome, title: S.current.main),
+        NavigationItem(icon: AssetsManager.navbarHome, title: S.of(context).main),
         NavigationItem(
-            icon: AssetsManager.realState, title: S.current.myRealEstate),
+            icon: AssetsManager.realState, title: S.of(context).myRealEstate),
         NavigationItem(
-            icon: AssetsManager.navbarTickets, title: S.current.tickets),
-        NavigationItem(icon: AssetsManager.navbarMore, title: S.current.more)
+            icon: AssetsManager.navbarTickets, title: S.of(context).tickets),
+        NavigationItem(icon: AssetsManager.navbarMore, title: S.of(context).more)
       ];
 
   @override

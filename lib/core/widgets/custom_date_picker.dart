@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/tenant_flow/features/choose_language/logic/cubit/choose_language_cubit.dart';
 import 'package:intl/intl.dart';
 
 import '../navigator/navigator.dart';
@@ -7,7 +9,7 @@ import '../navigator/navigator.dart';
 Future<DateTime?> customShowDatePicker(
     {required TextEditingController controller, String? dateFormat}) async {
   DateTime? pickedDate = await showDatePicker(
-    // locale: Languages.currentLanguage!.locale,
+    locale: getIt<ChooseLanguageCubit>().state.language,
     context: Go.navigatorKey.currentContext!,
     initialDate: DateTime.now(),
     firstDate: DateTime(1900),
@@ -32,7 +34,7 @@ Future<DateTime?> customShowDatePicker(
     },
   );
   if (pickedDate != null) {
-    String formattedDate = DateFormat(dateFormat ?? 'EEE, M/d/y', 'ar')
+    String formattedDate = DateFormat(dateFormat ?? 'EEE, M/d/y', getIt<ChooseLanguageCubit>().state.language?.languageCode)
         .format(pickedDate); // use your desired date format
     controller.text = formattedDate;
   }

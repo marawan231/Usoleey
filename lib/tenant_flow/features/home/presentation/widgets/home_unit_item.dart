@@ -6,6 +6,7 @@ import 'package:flutter_complete_project/tenant_flow/features/home/presentation/
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/widgets/rent_time_container.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../data/models/units_model.dart';
 
 class HomeUnitItem extends StatelessWidget {
@@ -51,7 +52,7 @@ class HomeUnitItem extends StatelessWidget {
 
   _buildRentValue() {
     return Text(
-      '${unit.rent} ريال/شهري',
+      '${unit.rent} ${S.current.monthSar}',
       textAlign: TextAlign.center,
       maxLines: 2,
       overflow: TextOverflow.ellipsis,

@@ -1,7 +1,7 @@
 
 import '../../../../../core/network_service/api_result.dart';
 import '../../../../../core/network_service/network_exceptions.dart';
-import '../models/all_tickets_model.dart';
+import '../../../../../core/shared_models/all_tickets_model.dart';
 import '../web_service/owner_tickets_web_service.dart';
 
 

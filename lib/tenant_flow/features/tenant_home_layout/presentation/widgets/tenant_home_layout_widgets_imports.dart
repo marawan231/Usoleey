@@ -1,0 +1,13 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_complete_project/tenant_flow/features/tenant_home_layout/presentation/logic/cubit/tenant_home_layout_cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../../core/res/assets_manager.dart';
+import '../../../../../core/res/custom_text_styles.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../generated/l10n.dart';
+import '../utils/utils/navigation_item.dart';
+
+part 'custom_nav_bar.dart';

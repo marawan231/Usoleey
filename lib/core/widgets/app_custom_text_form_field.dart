@@ -19,7 +19,8 @@ class AppCustomTextFormField extends StatelessWidget {
       this.hintTextDirection,
       this.maxLines,
       this.textInputAction,
-      this.readOnly});
+      this.focusNode,
+      this.readOnly, this.height});
 
   final String? hintText;
   final TextInputType? keyboardType;
@@ -35,18 +36,21 @@ class AppCustomTextFormField extends StatelessWidget {
   final int? maxLines;
   final TextInputAction? textInputAction;
   final bool? readOnly;
+  final double? height;
+  final FocusNode? focusNode;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          height: 56.h,
+          height:height?? 56.h,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(color: ColorsManager.grey)),
         ),
         TextFormField(
+          focusNode: focusNode,
           onTap: onTap,
           maxLines: maxLines ?? 1,
           controller: controller,

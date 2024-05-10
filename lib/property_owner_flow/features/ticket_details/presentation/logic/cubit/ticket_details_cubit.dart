@@ -1,11 +1,15 @@
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
+import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
+import 'package:flutter_complete_project/core/shared_cubits/user_cubit/user_cubit.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/data/models/create_invoice_request_model.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/data/models/rate_request_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:url_launcher/url_launcher.dart';
@@ -17,6 +21,7 @@ import '../../../data/models/ticket_details_model.dart';
 import '../../../data/repository/ticket_details_repository.dart';
 
 part 'ticket_details_cubit.freezed.dart';
+
 part 'ticket_details_state.dart';
 
 class TicketDetailsCubit extends Cubit<TicketDetailsState> {
@@ -73,9 +78,11 @@ class TicketDetailsCubit extends Cubit<TicketDetailsState> {
 
     final result =
         await ticketDetailsRepository.createInvoice(createInvoiceRequestModel);
-    result.when(success: (success) {
-      showToast(message: 'تم رفع الفاتورة بنجاح');
-    }, failure: (failure) {});
+    result.when(
+        success: (success) {
+          showToast(message: 'تم رفع الفاتورة بنجاح');
+        },
+        failure: (failure) {});
   }
 
   Future<PlatformFile?> pickPdfFile() async {
@@ -117,5 +124,29 @@ class TicketDetailsCubit extends Cubit<TicketDetailsState> {
     } else {
       throw 'File does not exist';
     }
+  }
+
+  void updateRate(double? rate) => emit(state.copyWith(star: rate!.toInt()));
+
+  Future<void> rate(String feedBack, GlobalKey<FormState> formKey) async {
+    if (!formKey.currentState!.validate()) return;
+    emit(state.copyWith(rateRequestState: RequestState.loading));
+
+    final RateRequestModel rateRequestModel = RateRequestModel(
+        ticketId: state.ticketDetailsModel!.id!,
+        userId: getIt<UserCubit>().state.userModel?.id ?? 0,
+        stars: state.ticketDetailsModel!.id!,
+        feedback: feedBack);
+
+    final result = await ticketDetailsRepository.rate(rateRequestModel);
+    result.when(success: (success) {
+      emit(state.copyWith(rateRequestState: RequestState.success));
+      Go.back();
+      showToast(message: success);
+    }, failure: (failure) {
+      emit(state.copyWith(rateRequestState: RequestState.error));
+
+      showToast(message: DioExceptionType.getErrorMessage(failure));
+    });
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/data/models/rate_request_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../../core/network_service/base_response.dart';
@@ -21,7 +22,7 @@ abstract class TicketDetailsWebServices {
   Future<BaseResponse<TicketDetailsModel>> updateTicket(
       @Path("id") String id, @Field('status') String status);
 
-  @POST("invoices")
+  @POST("tenant_invoices")
   @FormUrlEncoded()
   Future<BaseResponse> createInvoice(
       @Part() File file,
@@ -30,6 +31,10 @@ abstract class TicketDetailsWebServices {
       @Part() int unitId,
       @Part() int ticketId);
 
-// @PUT("invoices")
+  @POST("rates")
+  Future<BaseResponse> rate(
+      {@Body() required RateRequestModel rateRequestModel});
+
+// @PUT("tenant_invoices")
 // Future<BaseResponse> createInvoice(@Field() String status);
 }

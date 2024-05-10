@@ -34,6 +34,7 @@ class _CreateUnitWebServices implements CreateUnitWebServices {
     int conditioners,
     bool kitchen,
     int propertyId,
+    String maintenanceMan,
     int ownerId,
   ) async {
     final _extra = <String, dynamic>{};
@@ -98,6 +99,10 @@ class _CreateUnitWebServices implements CreateUnitWebServices {
     _data.fields.add(MapEntry(
       'propertyId',
       propertyId.toString(),
+    ));
+    _data.fields.add(MapEntry(
+      'maintenanceMan',
+      maintenanceMan,
     ));
     _data.fields.add(MapEntry(
       'ownerId',

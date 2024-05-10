@@ -1,6 +1,6 @@
 enum RequestState { initial, loading, success, error }
 
-enum TicketStatus { solved, canceled, processing, reviewing }
+enum TicketStatus { closed, processing, active }
 
 enum TicketType { service, complain, other }
 

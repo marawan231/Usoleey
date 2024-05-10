@@ -1,84 +1,119 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/core/enums/enums.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
+import 'package:flutter_complete_project/property_owner_flow/features/unit_details/data/models/invoice_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/models/ads_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/models/units_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/repository/home_repository.dart';
-import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_state.dart';
-import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
+import 'package:flutter_complete_project/tenant_flow/features/tenant_home_layout/presentation/logic/cubit/tenant_home_layout_cubit.dart';
+import 'package:flutter_complete_project/tenant_flow/features/tenant_tickets/presentation/logic/cubit/tenant_tickets_cubit.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
+
+import '../../../../../../core/di/dependency_injection.dart';
+
+part 'home_cubit.freezed.dart';
+
+part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this.homeRepository) : super(const HomeState.idle());
+  HomeCubit(this.homeRepository) : super(_Initial());
   final HomeRepository homeRepository;
 
-  List<Units> units = [];
-  //list of ads
-  List<Ad> ads = [];
-  //selected unit
-  Units? selectedUnit;
-  int bottomSheetSelectedView = 0;
-
   void changeSelectedUnit(Units unit) {
-    emit(const HomeState.changeSelectedUnitLoading());
     selectedUnit = unit;
-    emit(HomeState.changeSelectedUnitSuccess(unit));
+    emit(state.copyWith(unitSelected: unit));
   }
+
+  Units? selectedUnit;
 
 //change Bottom sheet selected view
   void changeBottomSheetSelectedView(int index) {
-    emit(HomeState.changeBottomSheetSelectedViewLoading(index));
-    bottomSheetSelectedView = index;
-    emit(HomeState.changeBottomSheetSelectedViewSuccess(index));
-  }
-
-  void resetSelectedUnit() {
-    emit(const HomeState.resetSelectedUnitLoading());
-    selectedUnit = null;
-
-    emit(const HomeState.resetSelectedUnit());
+    emit(state.copyWith(bottomSheetSelected: index));
   }
 
   void resetAll() {
-    emit(const HomeState.resetAllLoading());
+    getIt<TenantTicketsCubit>().selectTicket(null);
+    getIt<TenantTicketsCubit>().resetAll();
+    // getIt<TenantTicketsCubit>().imagesFile = [];
 
-    selectedUnit = null;
-    bottomSheetSelectedView = 0;
-    getIt<TicketsCubit>().resetAll();
-    emit(const HomeState.resetAllSuccess());
+    emit(state.copyWith(bottomSheetSelected: 0, unitSelected: null));
   }
 
   Future<void> getAllUnits() async {
-    emit(const HomeState.getAllUnitsLoading());
+    emit(state.copyWith(getUnitsRequestState: RequestState.loading));
+
     var result = await homeRepository.getAllUnits();
 
     result.when(
       success: (response) {
-        // inspect(response.data!.units);
-        units = response.data!.units!;
-        emit(HomeState.getAllUnitsSuccess(response.data!.units!));
+        emit(state.copyWith(
+            units: response.data!.units!,
+            getUnitsRequestState: RequestState.success));
       },
       failure: (networkExceptions) {
-        final error = DioExceptionType.getErrorMessage(networkExceptions);
-        emit(HomeState.getAllUnitsError(error));
+        emit(state.copyWith(getUnitsRequestState: RequestState.error));
       },
     );
   }
 
   //get all ads
   void getAds() async {
-    emit(const HomeState.getAdsLoading());
+    emit(state.copyWith(getAdsRequestState: RequestState.loading));
+
     var result = await homeRepository.getAds();
 
     result.when(
       success: (response) {
-        // inspect(response.data!.ads);
-        ads = response.data!;
-        emit(HomeState.getAdsSuccess(response.data!));
+        emit(state.copyWith(
+            ads: response.data!, getAdsRequestState: RequestState.success));
       },
       failure: (networkExceptions) {
         final error = DioExceptionType.getErrorMessage(networkExceptions);
-        emit(HomeState.getAdsError(error));
+        emit(state.copyWith(getAdsRequestState: RequestState.error));
       },
     );
+  }
+
+  initBottomSheetSelectedView() {
+    if (state.units.isEmpty) {
+      changeBottomSheetSelectedView(1);
+    } else {
+      changeBottomSheetSelectedView(0);
+    }
+  }
+
+  Future<void> getNotificationCount() async {
+    emit(
+        state.copyWith(getNotificationCountRequestState: RequestState.loading));
+    var result = await homeRepository.getNotificationCount();
+
+    result.when(
+      success: (response) {
+        emit(state.copyWith(
+            notificationCount: response,
+            getNotificationCountRequestState: RequestState.success));
+      },
+      failure: (networkExceptions) {},
+    );
+  }
+
+  Future<void> getNextInvoices() async {
+    emit(state.copyWith(getInvoicesRequestState: RequestState.loading));
+    var result = await homeRepository.getNextInvoices();
+    result.when(
+      success: (response) {
+        emit(state.copyWith(
+            invoices: response.length > 4 ? response.sublist(0, 4) : response,
+            getInvoicesRequestState: RequestState.success));
+      },
+      failure: (networkExceptions) {
+        emit(state.copyWith(getInvoicesRequestState: RequestState.error));
+      },
+    );
+  }
+
+  void updateNotificationCount(int count) {
+    emit(state.copyWith(notificationCount: count));
   }
 }

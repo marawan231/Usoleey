@@ -14,9 +14,7 @@ import 'package:flutter_complete_project/tenant_flow/features/choose_language/lo
 import 'package:flutter_complete_project/tenant_flow/features/choose_language/presentation/screen/choose_app_language_view.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/screens/home_screen.dart';
-import 'package:flutter_complete_project/tenant_flow/features/home/presentation/screens/layout_view.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/screens/unit_details_view.dart';
-import 'package:flutter_complete_project/tenant_flow/features/invoices/logic/invoices_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/presentation/screens/login_view.dart';
 import 'package:flutter_complete_project/tenant_flow/features/more/logic/more_cubit.dart';
@@ -25,14 +23,16 @@ import 'package:flutter_complete_project/tenant_flow/features/offers/presentatio
 import 'package:flutter_complete_project/tenant_flow/features/on_boarding/logic/cubit/onboarding_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/on_boarding/presentation/views/on_boarding_views_imports.dart';
 import 'package:flutter_complete_project/tenant_flow/features/splash/presentation/screen/splash_screen.dart';
+import 'package:flutter_complete_project/tenant_flow/features/tenant_home_layout/presentation/screens/tenant_home_layout_screens_imports.dart';
 import 'package:flutter_complete_project/tenant_flow/features/terms_and_support/presentation/screens/about_app_view.dart';
 import 'package:flutter_complete_project/tenant_flow/features/terms_and_support/presentation/screens/help_and_support_view.dart';
 import 'package:flutter_complete_project/tenant_flow/features/terms_and_support/presentation/screens/terms_and_condition_view.dart';
-import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/logic/cubit/tickets_cubit.dart';
-import 'package:flutter_complete_project/tenant_flow/features/tickets/presentation/screens/tickets_details_view.dart';
 
 import '../../property_owner_flow/features/owner_tickets/presentation/screens/owner_tickets_screens_imports.dart';
 import '../../property_owner_flow/features/update_property/presentation/screens/update_property_screens_imports.dart';
+import '../../tenant_flow/features/tenant_invoices/logic/tenant_invoices_cubit.dart';
+import '../../tenant_flow/features/tenant_tickets/presentation/logic/cubit/tenant_tickets_cubit.dart';
+import '../../tenant_flow/features/tenant_tickets/presentation/screens/tickets_details_view.dart';
 import 'named_routes.dart';
 import 'page_router/imports_page_router_builder.dart';
 
@@ -49,11 +49,11 @@ class RouterGenerator {
   //home cubit
   static late HomeCubit homeCubit;
 
-  //tickets cubit
-  static late TicketsCubit ticketsCubit;
+  //tenant_tickets cubit
+  static late TenantTicketsCubit ticketsCubit;
 
   // owner_invoices cubit
-  static late InvoicesCubit invoicesCubit;
+  static late TenantInvoicesCubit invoicesCubit;
 
   //more cubit
   static late MoreCubit moreCubit;
@@ -63,8 +63,8 @@ class RouterGenerator {
     onboardingCubit = getIt<OnboardingCubit>();
     authCubit = getIt<AuthCubit>();
     homeCubit = getIt<HomeCubit>();
-    ticketsCubit = getIt<TicketsCubit>();
-    invoicesCubit = getIt<InvoicesCubit>();
+    ticketsCubit = getIt<TenantTicketsCubit>();
+    invoicesCubit = getIt<TenantInvoicesCubit>();
     moreCubit = getIt<MoreCubit>();
   }
 
@@ -99,11 +99,12 @@ class RouterGenerator {
             ),
             settings: settings);
       //layout
-      case NamedRoutes.layout:
-        return _pageRouter.build(const LayoutView(), settings: settings);
+      case NamedRoutes.tenantLayout:
+        return _pageRouter.build(const TenantHomeLayoutScreen(),
+            settings: settings);
       //home
       case NamedRoutes.home:
-        return _pageRouter.build(const HomeScreen(), settings: settings);
+        return _pageRouter.build(const HomeView(), settings: settings);
       //notifications
       case NamedRoutes.notifications:
         return _pageRouter.build(const NotificationsView(), settings: settings);

@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter_complete_project/core/network_service/token_interceptor.dart';
 
+import 'app_interceptor.dart';
+
 final Dio dio = Dio();
 
 Dio setupDio() {
@@ -20,6 +22,7 @@ Dio setupDio() {
     ),
   );
   dio.interceptors.add(TokenIntereceptor());
+  dio.interceptors.add(AppInterceptors());
   dio.interceptors.add(
     LogInterceptor(
       requestBody: true,

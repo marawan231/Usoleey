@@ -20,7 +20,7 @@ class MyTicketsCubit extends Cubit<MyTicketsState> {
 
   Future<void> getReviewingTickets({bool firstTime = false}) async {
     GetMyTicketsQueryModel getMyTicketsQueryModel =
-        GetMyTicketsQueryModel(page: state.reviewingPage, status: 'REVIEWING');
+        GetMyTicketsQueryModel(page: state.reviewingPage, status: 'ACTIVE',limit: 8);
     if (firstTime) {
       emit(state.copyWith(
           reviewingPage: 1,
@@ -59,7 +59,7 @@ class MyTicketsCubit extends Cubit<MyTicketsState> {
     }
 
     GetMyTicketsQueryModel getMyTicketsQueryModel = GetMyTicketsQueryModel(
-        page: state.processingPage, status: 'PROCESSING');
+        page: state.processingPage, status: 'PROCESSING',limit: 8);
 
     final result = await myTicketsRepository.getMyTickets(
         getMyTicketsQueryModel: getMyTicketsQueryModel);
@@ -87,7 +87,7 @@ class MyTicketsCubit extends Cubit<MyTicketsState> {
       return;
     }
     GetMyTicketsQueryModel getMyTicketsQueryModel =
-        GetMyTicketsQueryModel(page: state.solvedPage, status: 'SOLVED');
+        GetMyTicketsQueryModel(page: state.solvedPage, status: 'CLOSED',limit: 8);
 
     final result = await myTicketsRepository.getMyTickets(
         getMyTicketsQueryModel: getMyTicketsQueryModel);
@@ -103,4 +103,5 @@ class MyTicketsCubit extends Cubit<MyTicketsState> {
       emit(state.copyWith(getSolvedTicketsState: RequestState.error));
     });
   }
+
 }

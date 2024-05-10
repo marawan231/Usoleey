@@ -107,6 +107,12 @@ class NotificationItem extends StatelessWidget {
       color:
           notification.status == 'UNSEEN' ? ColorsManager.primaryLighter : null,
       child: ListTile(
+          onTap: () {
+            if (notification.ticketId != null) {
+              Go.toNamed(NamedRoutes.ownerTicketDetails,
+                  arguments: TicketDetailsScreen(id: notification.ticketId!));
+            }
+          },
           contentPadding:
               EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
           horizontalTitleGap: 8.w,

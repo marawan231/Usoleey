@@ -3,6 +3,7 @@ import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/enums/enums.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/owner_home/presentation/logic/cubit/owner_home_cubit.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/owner_notification/data/models/notification_model.dart';
+import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../data/repository/owner_notification_repository.dart';
@@ -32,6 +33,7 @@ class OwnerNotificationCubit extends Cubit<OwnerNotificationState> {
         page: state.page);
     result.when(success: (ticketModel) {
       getIt<OwnerHomeCubit>().updateNotificationCount(0);
+      getIt<HomeCubit>().updateNotificationCount(0);
       List<OwnerNotificationItem> newList = List.from(state.notifications)
         ..addAll(ticketModel.notifications ?? []);
       count = ticketModel.pagination!.count!;

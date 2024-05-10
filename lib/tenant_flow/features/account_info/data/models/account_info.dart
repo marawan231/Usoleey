@@ -1,10 +1,6 @@
 class AccountInfo {
-   String? title;
-   String? value;
+  String? title;
+  String? value;
 
-  AccountInfo({
-    this.title,
-    this.value,
-  });
-  
+  AccountInfo({this.title, this.value});
 }

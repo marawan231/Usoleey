@@ -20,12 +20,11 @@ import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/ticket_item.dart';
 import '../../../../../core/widgets/ticket_shimmer_item.dart';
 import '../../../../../generated/l10n.dart';
+import '../../../../../tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import '../../../../../tenant_flow/features/login/data/models/auth_model.dart';
 
 part 'home_item_curve_clipper.dart';
 part 'notification_button.dart';
-part 'owner_home_app_bar.dart';
-part 'owner_home_bar_content.dart';
 part 'owner_home_body.dart';
 part 'owner_home_stats.dart';
 part 'recent_ticket_shimmer.dart';

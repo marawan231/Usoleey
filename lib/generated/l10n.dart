@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -61,10 +60,10 @@ class S {
     );
   }
 
-  /// `Arabic`
+  /// `العربية`
   String get arabic {
     return Intl.message(
-      'Arabic',
+      'العربية',
       name: 'arabic',
       desc: '',
       args: [],
@@ -76,6 +75,66 @@ class S {
     return Intl.message(
       'English',
       name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Easy Property and Payment Management`
+  String get onBoardingTitle1 {
+    return Intl.message(
+      'Easy Property and Payment Management',
+      name: 'onBoardingTitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Whether you're a property owner or a tenant, you can now efficiently and transparently track all financial transactions.`
+  String get onBoardingSubtitle1 {
+    return Intl.message(
+      'Whether you\'re a property owner or a tenant, you can now efficiently and transparently track all financial transactions.',
+      name: 'onBoardingSubtitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submitting Complaints and Service Requests`
+  String get onBoardingTitle2 {
+    return Intl.message(
+      'Submitting Complaints and Service Requests',
+      name: 'onBoardingTitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `With ease. A request tracking system ensures efficient monitoring of your request's progress.`
+  String get onBoardingSubtitle2 {
+    return Intl.message(
+      'With ease. A request tracking system ensures efficient monitoring of your request\'s progress.',
+      name: 'onBoardingSubtitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enhancing Communication between Owners and Tenants`
+  String get onBoardingTitle3 {
+    return Intl.message(
+      'Enhancing Communication between Owners and Tenants',
+      name: 'onBoardingTitle3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Direct and effective communication between owners and tenants to address inquiries and coordinate faster.`
+  String get onBoardingSubtitle3 {
+    return Intl.message(
+      'Direct and effective communication between owners and tenants to address inquiries and coordinate faster.',
+      name: 'onBoardingSubtitle3',
       desc: '',
       args: [],
     );
@@ -141,6 +200,36 @@ class S {
     );
   }
 
+  /// `This field is required`
+  String get fillField {
+    return Intl.message(
+      'This field is required',
+      name: 'fillField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid mobile number`
+  String get phoneValidation {
+    return Intl.message(
+      'Please enter a valid mobile number',
+      name: 'phoneValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter at least 6 letters or numbers`
+  String get passValidation {
+    return Intl.message(
+      'Please enter at least 6 letters or numbers',
+      name: 'passValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Main`
   String get main {
     return Intl.message(
@@ -151,20 +240,20 @@ class S {
     );
   }
 
-  /// `my bills`
+  /// `My invoices`
   String get bills {
     return Intl.message(
-      'my bills',
+      'My invoices',
       name: 'bills',
       desc: '',
       args: [],
     );
   }
 
-  /// `my tickets`
+  /// `tickets`
   String get tickets {
     return Intl.message(
-      'my tickets',
+      'tickets',
       name: 'tickets',
       desc: '',
       args: [],
@@ -1171,6 +1260,16 @@ class S {
     );
   }
 
+  /// `You have no tickets`
+  String get noTickets {
+    return Intl.message(
+      'You have no tickets',
+      name: 'noTickets',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `You have no tickets in processing`
   String get noTicketsProcess {
     return Intl.message(
@@ -1406,6 +1505,456 @@ class S {
     return Intl.message(
       'Delete',
       name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Created At`
+  String get createdAt {
+    return Intl.message(
+      'Created At',
+      name: 'createdAt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get active {
+    return Intl.message(
+      'Active',
+      name: 'active',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket status`
+  String get ticketStatus {
+    return Intl.message(
+      'Ticket status',
+      name: 'ticketStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete All`
+  String get deleteAll {
+    return Intl.message(
+      'Delete All',
+      name: 'deleteAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply`
+  String get apply {
+    return Intl.message(
+      'Apply',
+      name: 'apply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel ticket`
+  String get cancelTicket {
+    return Intl.message(
+      'Cancel ticket',
+      name: 'cancelTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to cancel the ticket?`
+  String get cancelTicketTitle {
+    return Intl.message(
+      'Do you want to cancel the ticket?',
+      name: 'cancelTicketTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to cancel the ticket?`
+  String get cancelTicketSubtitle {
+    return Intl.message(
+      'Are you sure you want to cancel the ticket?',
+      name: 'cancelTicketSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Space`
+  String get space {
+    return Intl.message(
+      'Space',
+      name: 'space',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rooms`
+  String get rooms {
+    return Intl.message(
+      'Rooms',
+      name: 'rooms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lounge`
+  String get lounge {
+    return Intl.message(
+      'Lounge',
+      name: 'lounge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bathrooms`
+  String get bathrooms {
+    return Intl.message(
+      'Bathrooms',
+      name: 'bathrooms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conditioner`
+  String get conditioner {
+    return Intl.message(
+      'Conditioner',
+      name: 'conditioner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conditioners`
+  String get conditioners {
+    return Intl.message(
+      'Conditioners',
+      name: 'conditioners',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kitchen`
+  String get kitchen {
+    return Intl.message(
+      'Kitchen',
+      name: 'kitchen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Square meters`
+  String get squareMeters {
+    return Intl.message(
+      'Square meters',
+      name: 'squareMeters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bed rooms`
+  String get bedRooms {
+    return Intl.message(
+      'Bed rooms',
+      name: 'bedRooms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available`
+  String get there {
+    return Intl.message(
+      'Available',
+      name: 'there',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unavailable`
+  String get nothing {
+    return Intl.message(
+      'Unavailable',
+      name: 'nothing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Service Request`
+  String get serviceRequest {
+    return Intl.message(
+      'Service Request',
+      name: 'serviceRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit Complaint`
+  String get submitComplaint {
+    return Intl.message(
+      'Submit Complaint',
+      name: 'submitComplaint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `National real estate address`
+  String get unitAddrss {
+    return Intl.message(
+      'National real estate address',
+      name: 'unitAddrss',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore the latest rental offers`
+  String get explorelatestRentalOffers {
+    return Intl.message(
+      'Explore the latest rental offers',
+      name: 'explorelatestRentalOffers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `When you add a rental property, it will appear here`
+  String get emptyTenantUnitTitle {
+    return Intl.message(
+      'When you add a rental property, it will appear here',
+      name: 'emptyTenantUnitTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next rent payment date: `
+  String get nextRentPaymentDate {
+    return Intl.message(
+      'Next rent payment date: ',
+      name: 'nextRentPaymentDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Next Invoices`
+  String get yourNextInvoices {
+    return Intl.message(
+      'Your Next Invoices',
+      name: 'yourNextInvoices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket sent successfully`
+  String get ticketSentSuccessfullyTitle {
+    return Intl.message(
+      'Ticket sent successfully',
+      name: 'ticketSentSuccessfullyTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `One of our representatives will respond to you as soon as possible`
+  String get ticketSentSuccessfullySubtitle {
+    return Intl.message(
+      'One of our representatives will respond to you as soon as possible',
+      name: 'ticketSentSuccessfullySubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View the Ticket`
+  String get viewTicket {
+    return Intl.message(
+      'View the Ticket',
+      name: 'viewTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Unit`
+  String get chooseUnit {
+    return Intl.message(
+      'Choose Unit',
+      name: 'chooseUnit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select the unit for which you would like to open a ticket`
+  String get chooseSpecificUnit {
+    return Intl.message(
+      'Select the unit for which you would like to open a ticket',
+      name: 'chooseSpecificUnit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What type of ticket would you like to create?`
+  String get chooseType {
+    return Intl.message(
+      'What type of ticket would you like to create?',
+      name: 'chooseType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose the type of ticket you would like to create based on what your order will include.`
+  String get chooseTypeSubtitle {
+    return Intl.message(
+      'Choose the type of ticket you would like to create based on what your order will include.',
+      name: 'chooseTypeSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Describe the service you would like to request and one of our representatives will respond to you within 24 hours.`
+  String get serviceDescription {
+    return Intl.message(
+      'Describe the service you would like to request and one of our representatives will respond to you within 24 hours.',
+      name: 'serviceDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send the complaint you are facing and it will be answered within 24 hours`
+  String get complainDescription {
+    return Intl.message(
+      'Send the complaint you are facing and it will be answered within 24 hours',
+      name: 'complainDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact us and we will respond to you within 24 hours`
+  String get otherDescription {
+    return Intl.message(
+      'Contact us and we will respond to you within 24 hours',
+      name: 'otherDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write the ticket content and add photos`
+  String get ticketContentDescription {
+    return Intl.message(
+      'Write the ticket content and add photos',
+      name: 'ticketContentDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uplaod Image`
+  String get uploadImage {
+    return Intl.message(
+      'Uplaod Image',
+      name: 'uploadImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write the content of the ticket`
+  String get writeTicketContent {
+    return Intl.message(
+      'Write the content of the ticket',
+      name: 'writeTicketContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rate`
+  String get rate {
+    return Intl.message(
+      'Rate',
+      name: 'rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `evaluation of experience`
+  String get evaluationExperience {
+    return Intl.message(
+      'evaluation of experience',
+      name: 'evaluationExperience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share your rating with us`
+  String get shareRating {
+    return Intl.message(
+      'Share your rating with us',
+      name: 'shareRating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sharing your evaluation gives us the opportunity to develop and improve our services`
+  String get shareRatingDescription {
+    return Intl.message(
+      'Sharing your evaluation gives us the opportunity to develop and improve our services',
+      name: 'shareRatingDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write us your opinion (optional)`
+  String get writeYourOption {
+    return Intl.message(
+      'Write us your opinion (optional)',
+      name: 'writeYourOption',
       desc: '',
       args: [],
     );

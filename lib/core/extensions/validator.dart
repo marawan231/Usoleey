@@ -1,4 +1,3 @@
-
 import '../../generated/l10n.dart';
 
 extension Validator on String {
@@ -15,7 +14,7 @@ extension Validator on String {
 
   String? validateName({String? message}) {
     if (trim().isEmpty) {
-      return message ?? 'This field is mandatory';
+      return message ?? S.current.fillField;
     } else if (!RegExp(r"^[a-zA-Z\s]{1,}$").hasMatch(this)) {
       return message ?? 'Please provide a valid name.';
     }
@@ -24,16 +23,16 @@ extension Validator on String {
 
   String? validatePassword({String? message}) {
     if (trim().isEmpty) {
-      return message;
+      return message ?? S.current.fillField;
     } else if (length < 6) {
-      return message;
+      return message ?? S.current.passValidation;
     }
     return null;
   }
 
   String? validateEmail({String? message}) {
     if (trim().isEmpty) {
-      return message ?? 'This field is mandatory';
+      return message ?? S.current.fillField;
     } else if (!RegExp(
             r"^[\w-]+(\.[\w-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$")
         .hasMatch(this)) {
@@ -53,12 +52,23 @@ extension Validator on String {
     return null;
   }
 
-
   String? validatePasswordConfirm({required String pass, String? message}) {
     if (trim().isEmpty) {
       return message;
     } else if (this != pass) {
       return message;
+    }
+    return null;
+  }
+
+  String? validatePhone({String? message}) {
+    if (trim().isEmpty) {
+      return message ?? S.current.fillField;
+    } else if (!RegExp(
+                r'(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)')
+            .hasMatch(this) ||
+        length < 10) {
+      return message ?? S.current.phoneValidation;
     }
     return null;
   }

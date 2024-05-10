@@ -1,3 +1,4 @@
+import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/data/models/rate_request_model.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/data/models/ticket_details_model.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/data/web_services/ticket_details_web_services.dart';
 
@@ -41,6 +42,17 @@ class TicketDetailsRepository {
           'TICKET',
           createInvoiceRequestModel.unitId,
           createInvoiceRequestModel.ticketId);
+      return ApiResult.success(response.message!);
+    } catch (error, stacktrace) {
+      return ApiResult.failure(
+          DioExceptionType.getDioException(error, stacktrace));
+    }
+  }
+
+  Future<ApiResult<String>> rate(RateRequestModel rateRequestModel) async {
+    try {
+      var response = await ticketDetailsWebServices.rate(
+          rateRequestModel: rateRequestModel);
       return ApiResult.success(response.message!);
     } catch (error, stacktrace) {
       return ApiResult.failure(

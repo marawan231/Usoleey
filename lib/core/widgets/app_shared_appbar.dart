@@ -43,12 +43,12 @@ class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
             IconButton(
               icon: RotatedBox(
                   quarterTurns: 2,
-                  child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+                  child: Icon(Icons.arrow_back, color: Colors.black)),
               onPressed: () {
                 selectedTab == 1
                     ? {
                         selectedTab = 0,
-                        Go.offNamed(NamedRoutes.layout),
+                        Go.offNamed(NamedRoutes.tenantLayout),
                       }
                     : Go.back();
               },

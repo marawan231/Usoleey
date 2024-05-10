@@ -16,7 +16,8 @@ class TicketDetailsScreen extends StatelessWidget {
 class OwnerTicketDetailsView extends StatefulWidget {
   final int id;
 
-  const OwnerTicketDetailsView({super.key, required this.id});
+  const OwnerTicketDetailsView(
+      {super.key, required this.id});
 
   @override
   State<OwnerTicketDetailsView> createState() => _OwnerTicketDetailsViewState();

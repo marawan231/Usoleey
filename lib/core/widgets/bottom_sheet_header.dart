@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../tenant_flow/features/tickets/presentation/widgets/custom_drag_handler.dart';
+import '../../tenant_flow/features/tenant_tickets/presentation/widgets/custom_drag_handler.dart';
 import '../navigator/navigator.dart';
 import '../res/assets_manager.dart';
 

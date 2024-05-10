@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/tenant_flow/features/tenant_tickets/presentation/logic/cubit/tenant_tickets_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../../core/di/dependency_injection.dart';
+import '../../../../../core/enums/enums.dart';
+import '../../../../../generated/l10n.dart';
+import '../../../tenant_tickets/data/models/tickets_status_model.dart';
 
 class CustomServices extends StatelessWidget {
   const CustomServices({super.key});
@@ -13,12 +19,26 @@ class CustomServices extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-            child: _buildServiceItem(
-                title: 'طلب خدمة', icon: AssetsManager.service)),
+            child: InkWell(
+          onTap: () {
+            getIt<TenantTicketsCubit>()
+                .selectTicket(getIt<TenantTicketsCubit>().ticketsTypes[0]);
+            getIt<TenantTicketsCubit>().openTicketCreationFlow(context);
+          },
+          child:
+              _buildServiceItem(title: S.current.serviceRequest, icon: AssetsManager.service),
+        )),
         16.horizontalSpace,
         Expanded(
-            child: _buildServiceItem(
-                title: 'إرسال شكوى', icon: AssetsManager.sendComplain)),
+            child: InkWell(
+          onTap: () {
+            getIt<TenantTicketsCubit>()
+                .selectTicket(getIt<TenantTicketsCubit>().ticketsTypes[1]);
+            getIt<TenantTicketsCubit>().openTicketCreationFlow(context);
+          },
+          child: _buildServiceItem(
+              title: S.current.submitComplaint, icon: AssetsManager.sendComplain),
+        )),
       ],
     );
   }

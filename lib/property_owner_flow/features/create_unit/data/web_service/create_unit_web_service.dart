@@ -30,6 +30,7 @@ abstract class CreateUnitWebServices {
       @Part() int conditioners,
       @Part() bool kitchen,
       @Part() int propertyId,
+      @Part() String maintenanceMan,
       @Part() int ownerId);
 
   @GET("properties")

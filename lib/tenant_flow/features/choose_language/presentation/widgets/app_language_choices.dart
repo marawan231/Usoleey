@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/constants/values.dart';
+import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/navigator/route_generator.dart';
@@ -15,70 +17,55 @@ class AppLanguageChoices extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ChooseLanguageCubit, ChooseLanguageState>(
-      listener: (context, state) {},
-      //build when
-
-      buildWhen: (previous, current) =>
-          current == ChooseLanguageState.changeSelectedLanguageLoaded() ||
-          current == ChooseLanguageState.changeSelectedLanguageLoading(),
-
+    return BlocBuilder<ChooseLanguageCubit, ChooseLanguageState>(
       builder: (context, state) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 75.sp,
-              child: ListView.separated(
-                  physics: const NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return AppLanguageItem(
-                      language: appLanguages[index],
-                      isSelected: state.maybeWhen(
-                        orElse: () => false,
-                        changeSelectedLanguageLoading: () =>
-                            appLanguages[index] ==
-                            RouterGenerator
-                                .chooseLanguageCubit.selectedLanguage,
-                        changeSelectedLanguageLoaded: () =>
-                            appLanguages[index] ==
-                            RouterGenerator
-                                .chooseLanguageCubit.selectedLanguage,
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 75.sp,
+                child: ListView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    children: [
+                      AppLanguageItem(
+                        language: 'عربي',
+                        isSelected: state.language!.languageCode == 'ar',
+                        onTap: () =>
+                            getIt<ChooseLanguageCubit>().changeLanguage('ar'),
                       ),
-                      onTap: () {
-                        RouterGenerator.chooseLanguageCubit
-                            .changeLanguage(appLanguages[index]);
-                      },
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return 16.horizontalSpace;
-                  },
-                  itemCount: appLanguages.length),
-            ),
-            50.verticalSpace,
-            Visibility(
-              maintainSize: true,
-              maintainAnimation: true,
-              maintainState: true,
-              maintainInteractivity: true,
-              maintainSemantics: true,
-              visible:
-                  RouterGenerator.chooseLanguageCubit.selectedLanguage != null,
-              child: AppTextButton(
-                buttonText: S.current.continueToNext,
-                onPressed: () => Go.offAllNamed(NamedRoutes.onBoarding),
+                      AppLanguageItem(
+                        language: 'English',
+                        isSelected: state.language!.languageCode == 'en',
+                        onTap: () =>
+                            getIt<ChooseLanguageCubit>().changeLanguage('en'),
+                      ),
+                    ].joinWith(10.horizontalSpace)),
               ),
-            ),
-          ],
+              50.verticalSpace,
+              Visibility(
+                maintainSize: true,
+                maintainAnimation: true,
+                maintainState: true,
+                maintainInteractivity: true,
+                maintainSemantics: true,
+                visible: state.language != null,
+                child: AppTextButton(
+                  buttonText: S.current.continueToNext,
+                  onPressed: () => Go.offAllNamed(NamedRoutes.onBoarding),
+                ),
+              ),
+            ],
+          ),
         );
       },
     );
   }
 }
-/* 
+/*
 Row(
         children: List.generate(
       2,

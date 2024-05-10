@@ -52,6 +52,7 @@ class CreateUnitRequestModel {
       'propertyId': propertyId,
       'ownerId': ownerId,
       'image': image,
+      'maintenanceMan':"OWNER"
     };
   }
 }

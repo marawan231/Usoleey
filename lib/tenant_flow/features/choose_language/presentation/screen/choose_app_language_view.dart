@@ -11,14 +11,13 @@ class ChooseAppLanguageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: ColorsManager.backgroundColor,
       body: Padding(
         padding: EdgeInsetsDirectional.symmetric(horizontal: 24.sp),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              S.current.chooseAppLanguage,
+              S.of(context).chooseAppLanguage,
               style: getBoldStyle(
                   fontSize: 24.sp, color: ColorsManager.primaryDark),
             ),

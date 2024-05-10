@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
@@ -10,9 +11,15 @@ import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/models/units_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/widgets/rent_time_container.dart';
-import 'package:flutter_complete_project/tenant_flow/features/invoices/presentation/widgets/invoices_item.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../../core/di/dependency_injection.dart';
+import '../../../../../core/widgets/custom_border_container.dart';
+import '../../../../../generated/l10n.dart';
+import '../../../../../property_owner_flow/features/unit_details/presentation/widgets/unit_details_widgets_imports.dart';
+import '../../../tenant_tickets/presentation/logic/cubit/tenant_tickets_cubit.dart';
+import '../logic/cubit/home_cubit.dart';
 
 class UnitDetailsView extends StatelessWidget {
   const UnitDetailsView({super.key, required this.unit});
@@ -22,22 +29,16 @@ class UnitDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: ColorsManager.white,
-      body: _buildBody(),
-    );
-  }
-
-  _buildBody() {
-    return Stack(
+        body: Stack(
       children: [
         _buildBackground(),
         _buildFloatingTicketDetails(),
-        _buildButtons(),
+        _buildButtons(context),
       ],
-    );
+    ));
   }
 
-  _buildButtons() {
+  _buildButtons(BuildContext context) {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
@@ -60,18 +61,28 @@ class UnitDetailsView extends StatelessWidget {
             Expanded(
               child: AppTextButton(
                 buttonHeight: 38.sp,
-                buttonText: 'طلب خدمة',
+                buttonText: S.current.serviceRequest,
                 textStyle: getBoldStyle(fontSize: 12.sp),
-                onPressed: () {},
+                onPressed: () {
+                  getIt<TenantTicketsCubit>().selectTicket(
+                      getIt<TenantTicketsCubit>().ticketsTypes[0]);
+                  getIt<HomeCubit>().changeSelectedUnit(unit);
+                  getIt<TenantTicketsCubit>().openTicketCreationFlow(context);
+                },
               ),
             ),
             8.horizontalSpace,
             Expanded(
               child: AppTextButton(
                 buttonHeight: 38.sp,
-                buttonText: 'ارسال شكوى',
+                buttonText: S.current.submitComplaint,
                 textStyle: getBoldStyle(fontSize: 12.sp),
-                onPressed: () {},
+                onPressed: () {
+                  getIt<TenantTicketsCubit>().selectTicket(
+                      getIt<TenantTicketsCubit>().ticketsTypes[1]);
+                  getIt<HomeCubit>().changeSelectedUnit(unit);
+                  getIt<TenantTicketsCubit>().openTicketCreationFlow(context);
+                },
               ),
             )
           ],
@@ -109,7 +120,7 @@ class UnitDetailsView extends StatelessWidget {
                   ),
                   WidgetSpan(child: 4.horizontalSpace),
                   TextSpan(
-                    text: 'ريال/شهري',
+                    text: S.current.monthSar,
                     style: getRegularStyle(
                         fontSize: 12.sp, color: ColorsManager.black),
                   ),
@@ -144,9 +155,9 @@ class UnitDetailsView extends StatelessWidget {
                   _buildUnitDetails(),
                   24.verticalSpace,
                   _buildNatiotnalAddress(),
-                  24.verticalSpace,
-                  _buildBillsInfo(),
                   100.verticalSpace,
+                  // _buildBillsInfo(),
+                  // 100.verticalSpace,
                 ],
               ),
             ),
@@ -168,43 +179,14 @@ class UnitDetailsView extends StatelessWidget {
           ),
         ),
         10.verticalSpace,
-        InvoicesItem(
-          title: 'تكلفة فاتورة المياه',
-          subtitle: '١٢٠ ريال/شهري',
-          trailing: SizedBox(),
-          // icon: AssetsManager.water,
-        ),
-        10.verticalSpace,
-        InvoicesItem(
-          title: 'رقم حساب فاتورة الكهرباء',
-          subtitle: unit.electricityAccount ?? '',
-          trailing: InkWell(
-            onTap: () {
-              Clipboard.setData(
-                  new ClipboardData(text: unit.electricityAccount ?? ''));
-              showToast(
-                  message: 'تم نسخ الرقم',
-                  color: ColorsManager.primaryLighter,
-                  textColor: ColorsManager.black);
-            },
-            child: Container(
-              width: 30.sp,
-              height: 30.sp,
-              // padding: EdgeInsetsDirectional.only(start: .sp, end: 16.sp),
-              decoration: BoxDecoration(
-                color: ColorsManager.primaryLighter,
-                borderRadius: BorderRadius.all(Radius.circular(8.sp)),
-              ),
-              child: Transform.scale(
-                scale: 0.5,
-                child: SvgPicture.asset(
-                  AssetsManager.copy,
-                ),
-              ),
-            ),
-          ),
-          icon: AssetsManager.electricity,
-        ),
+        ...unit.invoices!
+            .map((e) => InvoiceItem(
+                  invoiceModel: e,
+                  isBillDetails: true,
+                  margin: EdgeInsets.zero,
+                ))
+            .toList()
+            .joinWith(8.verticalSpace)
       ],
     );
   }
@@ -214,27 +196,51 @@ class UnitDetailsView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'عنوان العقار الوطني',
+          S.current.unitAddrss,
           style: getBoldStyle(
             fontSize: 16.sp,
             color: ColorsManager.black,
           ),
         ),
         10.verticalSpace,
-        InvoicesItem(
-          trailing: SizedBox(),
-          icon: AssetsManager.location,
-          title: 'الرياض',
-          titleStyle: getRegularStyle(
-            fontSize: 14.sp,
-            color: ColorsManager.black,
-          ),
-          subtitle: 'شقة ٤، عمارة ١٢٠، حي الخالدية، شارع عمر بن الخطاب',
-          subtitleStyle: getRegularStyle(
-            fontSize: 12.sp,
-            color: ColorsManager.greyLight,
+        CustomBorderContainer(
+          margin: EdgeInsets.zero,
+          child: Row(
+            children: [
+              CircleAvatar(
+                  minRadius: 24.sp,
+                  child: SvgPicture.asset(AssetsManager.location),
+                  backgroundColor: ColorsManager.primaryLighter),
+              8.horizontalSpace,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      unit.address ?? '',
+                      style: getBoldStyle(
+                          fontSize: 12.sp, color: ColorsManager.primaryDark),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         )
+        // InvoicesItem(
+        //   trailing: SizedBox(),
+        //   icon: AssetsManager.location,
+        //   title: 'الرياض',
+        //   titleStyle: getRegularStyle(
+        //     fontSize: 14.sp,
+        //     color: ColorsManager.black,
+        //   ),
+        //   subtitle: 'شقة ٤، عمارة ١٢٠، حي الخالدية، شارع عمر بن الخطاب',
+        //   subtitleStyle: getRegularStyle(
+        //     fontSize: 12.sp,
+        //     color: ColorsManager.greyLight,
+        //   ),
+        // )
       ],
     );
   }
@@ -244,7 +250,7 @@ class UnitDetailsView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'الفواتير القادمة',
+          S.current.nextInvoices,
           style: getBoldStyle(
             fontSize: 16.sp,
             color: ColorsManager.black,
@@ -255,14 +261,10 @@ class UnitDetailsView extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
             shrinkWrap: true,
-            itemBuilder: (context, index) => InvoicesItem(
-                  title: 'فاتورة الإيجار',
-                  subtitle: 'فبراير ١٤، ٢٠٢٣',
-                  trailing: SizedBox(),
-                  icon: AssetsManager.money,
-                ),
+            itemBuilder: (context, index) => InvoiceItem(
+                invoiceModel: unit.invoices![index], margin: EdgeInsets.zero),
             separatorBuilder: (context, index) => 8.verticalSpace,
-            itemCount: 2),
+            itemCount: unit.invoices!.length),
       ],
     );
   }
@@ -279,43 +281,40 @@ class UnitDetailsView extends StatelessWidget {
           ),
         ),
         16.verticalSpace,
-        GridView.builder(
+        GridView(
           padding: EdgeInsetsDirectional.only(top: 0.sp),
           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: 6,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 8.sp,
               mainAxisSpacing: 8.sp,
-              childAspectRatio: 2.sp),
-          itemBuilder: (context, index) => Container(
-            padding: EdgeInsetsDirectional.only(
-                start: 10.sp, end: 10.sp, top: 10.sp, bottom: 10.sp),
-            // height: 56,
-            decoration: BoxDecoration(
-              color: const Color.fromRGBO(255, 255, 255, 1),
-              border: Border.all(color: ColorsManager.grey),
-              borderRadius: BorderRadius.all(Radius.circular(8.sp)),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('المساحة',
-                    style: getRegularStyle(
-                      fontSize: 12.sp,
-                      color: ColorsManager.black,
-                    )),
-                8.verticalSpace,
-                Text('١٢٠٠ متر مربع',
-                    style: getBoldStyle(
-                      fontSize: 12.sp,
-                      color: ColorsManager.black,
-                    )),
-              ],
-            ),
-          ),
+              childAspectRatio: 2.2.sp),
+          children: [
+            PropertyDetailsItem(
+                title: S.current.space,
+                value: '${unit.space!.toString()} ${S.current.squareMeters}'),
+            PropertyDetailsItem(
+                title: S.current.rooms,
+                value: '${unit.rooms!.toString()} ${S.current.bedRooms}'),
+            PropertyDetailsItem(
+                title: S.current.lounge,
+                value: unit.lounge!
+                    ? '${S.current.there}'
+                    : '${S.current.nothing}'),
+            PropertyDetailsItem(
+                title: S.current.bathrooms,
+                value: '${unit.bathrooms.toString()} ${S.current.bathrooms}'),
+            PropertyDetailsItem(
+                title: S.current.conditioner,
+                value:
+                    '${unit.conditioners!.toString()} ${S.current.conditioners}'),
+            PropertyDetailsItem(
+                title: S.current.kitchen,
+                value: unit.kitchen!
+                    ? '${S.current.there}'
+                    : '${S.current.nothing}'),
+          ],
         ),
       ],
     );
@@ -352,6 +351,38 @@ class UnitDetailsView extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class PropertyDetailsItem extends StatelessWidget {
+  final String title, value;
+
+  const PropertyDetailsItem(
+      {super.key, required this.title, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomBorderContainer(
+      margin: EdgeInsets.zero,
+      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title,
+              style: getRegularStyle(
+                fontSize: 12.sp,
+                color: ColorsManager.black,
+              )),
+          8.verticalSpace,
+          Text(value,
+              style: getBoldStyle(
+                fontSize: 12.sp,
+                color: ColorsManager.black,
+              )),
+        ],
       ),
     );
   }
