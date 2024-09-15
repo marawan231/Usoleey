@@ -1,25 +1,17 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/extensions/validator.dart';
-import 'package:flutter_complete_project/core/navigator/named_routes.dart';
-import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
-import 'package:flutter_complete_project/core/shared_cubits/user_cubit/user_cubit.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_text_form_field.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
-import 'package:flutter_complete_project/tenant_flow/features/login/data/models/login_request_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/enums/enums.dart';
-import '../../data/models/auth_model.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -31,8 +23,8 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
-    getIt<AuthCubit>().phoneController.text = '+201093739627';
-    getIt<AuthCubit>().passwordController.text = 'jkER%43@11j';
+    getIt<AuthCubit>().phoneController.text = '0512345678';
+    getIt<AuthCubit>().passwordController.text = '123456789';
     super.initState();
   }
 

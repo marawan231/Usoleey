@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
@@ -64,8 +66,9 @@ class HomeUnitItem extends StatelessWidget {
   }
 
   _buildRentTime() {
+    // log('unit.rentCollectionDate: ${unit.rentCollectionDate}');
     return RentTimeContainer(
-      rentTime: unit.rentCollectionDate ?? '',
+      rentTime: unit.rentCollectionDate,
     );
   }
 }

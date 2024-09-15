@@ -9,7 +9,7 @@ import '../../../../../generated/l10n.dart';
 class RentTimeContainer extends StatelessWidget {
   const RentTimeContainer({super.key, required this.rentTime});
 
-  final String rentTime;
+  final String? rentTime;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class RentTimeContainer extends StatelessWidget {
           ),
           4.horizontalSpace,
           Text(
-            '${S.current.nextRentPaymentDate}${getCreatedAt(rentTime)}',
+            '${S.current.nextRentPaymentDate}${rentTime == null ? '' : getCreatedAt(rentTime!)}',
             style:
                 getBoldStyle(fontSize: 12.sp, color: ColorsManager.greenDark),
           ),

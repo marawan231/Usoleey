@@ -56,7 +56,7 @@ class DioExceptionType with _$DioExceptionType {
 
   static DioExceptionType handleResponse(Response? response) {
     GenericErrorModel errorModel = GenericErrorModel.fromJson(response?.data);
-    
+
     int statusCode = response?.statusCode ?? 0;
     String error = "";
     error = errorModel.errors == null

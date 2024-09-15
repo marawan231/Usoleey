@@ -33,7 +33,7 @@ class AppLanguageChoices extends StatelessWidget {
                     children: [
                       AppLanguageItem(
                         language: 'عربي',
-                        isSelected: state.language!.languageCode == 'ar',
+                        isSelected: state.language?.languageCode == 'ar',
                         onTap: () =>
                             getIt<ChooseLanguageCubit>().changeLanguage('ar'),
                       ),

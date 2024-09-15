@@ -74,7 +74,7 @@ class _SplashViewState extends State<SplashView>
     Go.offAllNamed(NamedRoutes.chooseAppLanguage);
 
     String? language = CacheHelper.getData(key: 'language');
-    getIt<ChooseLanguageCubit>().changeLanguage(language!);
+    getIt<ChooseLanguageCubit>().changeLanguage(language ?? 'ar');
 
     String? accessToken = CacheHelper.getData(key: 'token');
     String? userModel = CacheHelper.getData(key: 'userData');

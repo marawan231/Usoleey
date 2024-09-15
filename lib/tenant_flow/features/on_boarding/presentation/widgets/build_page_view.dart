@@ -31,7 +31,7 @@ class BuildPageView extends StatelessWidget {
 
                 //title
                 Positioned(
-                    top: 215.sp,
+                    top: 170.sp,
                     left: 37.sp,
                     right: 37.sp,
                     child: Padding(
