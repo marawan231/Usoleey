@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBM0gxxWkXn-_wsYhkJ5otYrcOqUOdpZos',
-    appId: '1:980447275018:android:f3234a339f32abc41017f3',
+    apiKey: 'AIzaSyBSttnZ84LqtEeUV08eB7v3WmuAF1EIEwE',
+    appId: '1:194046198221:android:79894681599f98bff64484',
     messagingSenderId: '194046198221',
-    projectId: 'notification-24004',
-    storageBucket: 'notification-24004.appspot.com',
+    projectId: 'usooly-31efe',
+    storageBucket: 'usooly-31efe.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBSttnZ84LqtEeUV08eB7v3WmuAF1EIEwE',
-    appId: '1:194046198221:android:79894681599f98bff64484',
-    messagingSenderId: '659155150346',
+    apiKey: 'AIzaSyA-hKjz6GregsRY2GabeBewd6BJpA31Kc8',
+    appId: '1:194046198221:ios:571a4f49c4a70c5ff64484',
+    messagingSenderId: '194046198221',
     projectId: 'usooly-31efe',
     storageBucket: 'usooly-31efe.appspot.com',
     iosBundleId: 'com.example.usooley',
   );
+
 }

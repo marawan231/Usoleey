@@ -8,13 +8,10 @@ import 'package:flutter_complete_project/core/enums/enums.dart';
 import 'package:flutter_complete_project/core/helpers/cache_helper.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';
-import 'package:flutter_complete_project/tenant_flow/features/account_info/presentation/screens/account_info_view.dart';
-import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/data/models/auth_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/data/models/login_request_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/data/repository/auth_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../../../../core/navigator/named_routes.dart';
 import '../../../../../core/navigator/navigator.dart';
 import '../../../../../core/shared_cubits/user_cubit/user_cubit.dart';
@@ -46,7 +43,7 @@ class AuthCubit extends Cubit<AuthState> {
         password: getIt<AuthCubit>().passwordController.text,
         deviceId: 'asd',
         deviceType: Platform.isAndroid ? 'android' : 'ios',
-        fcmToken: fcmToken,
+        fcmToken: fcmToken ?? '123',
         language: language);
     emit(state.copyWith(loginRequestState: RequestState.loading));
 

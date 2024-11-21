@@ -293,25 +293,24 @@ class UnitDetailsView extends StatelessWidget {
           children: [
             PropertyDetailsItem(
                 title: S.current.space,
-                value: '${unit.space!.toString()} ${S.current.squareMeters}'),
+                value: '${unit.space ?? ''} ${S.current.squareMeters}'),
             PropertyDetailsItem(
                 title: S.current.rooms,
-                value: '${unit.rooms!.toString()} ${S.current.bedRooms}'),
+                value: '${unit.rooms ?? ''} ${S.current.bedRooms}'),
             PropertyDetailsItem(
                 title: S.current.lounge,
-                value: unit.lounge!
+                value: unit.lounge ?? false
                     ? '${S.current.there}'
                     : '${S.current.nothing}'),
             PropertyDetailsItem(
                 title: S.current.bathrooms,
-                value: '${unit.bathrooms.toString()} ${S.current.bathrooms}'),
+                value: '${unit.bathrooms ?? ''} ${S.current.bathrooms}'),
             PropertyDetailsItem(
                 title: S.current.conditioner,
-                value:
-                    '${unit.conditioners!.toString()} ${S.current.conditioners}'),
+                value: '${unit.conditioners ?? ''} ${S.current.conditioners}'),
             PropertyDetailsItem(
                 title: S.current.kitchen,
-                value: unit.kitchen!
+                value: unit.kitchen ?? false
                     ? '${S.current.there}'
                     : '${S.current.nothing}'),
           ],

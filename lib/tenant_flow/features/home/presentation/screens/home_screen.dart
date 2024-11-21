@@ -28,7 +28,7 @@ import '../../../../../generated/l10n.dart';
 import '../../../../../property_owner_flow/features/my_real_estate/presentation/widgets/my_real_estate_widgets_imports.dart';
 import '../../../tenant_tickets/data/models/tickets_status_model.dart';
 
-class TenantHomeScreen extends StatelessWidget {
+class TenantHomeScreen extends StatelessWidget { 
   const TenantHomeScreen({super.key});
 
   @override
@@ -99,10 +99,10 @@ class _HomeViewState extends State<HomeView> {
                 Visibility(
                     visible: state.units.isNotEmpty, child: CustomServices()),
                 Visibility(
-                    visible: state.units.isNotEmpty,
-                    child: AdvetisementsList()),
+                    visible: state.ads.isNotEmpty, child: AdvetisementsList()),
                 Visibility(
-                    visible: state.units.isNotEmpty, child: HomeInvoicesList()),
+                    visible: state.invoices.isNotEmpty,
+                    child: HomeInvoicesList()),
                 20.verticalSpace
               ].joinWith(24.verticalSpace),
             ),

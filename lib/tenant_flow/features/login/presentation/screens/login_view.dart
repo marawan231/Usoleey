@@ -23,8 +23,10 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
-    getIt<AuthCubit>().phoneController.text = '0512345678';
-    getIt<AuthCubit>().passwordController.text = '123456789';
+    //0562584095
+    //0000000000
+    getIt<AuthCubit>().phoneController.text = '';
+    getIt<AuthCubit>().passwordController.text = '';
     super.initState();
   }
 
