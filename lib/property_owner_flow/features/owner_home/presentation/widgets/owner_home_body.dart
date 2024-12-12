@@ -8,7 +8,7 @@ class OwnerHomeBody extends StatelessWidget {
     return RefreshIndicator(
       onRefresh: () async => getIt<OwnerHomeCubit>().getHomeStats(),
       child: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
         children: [OwnerHomeStats(), 24.verticalSpace, RecentTickets()],
       ),
     );

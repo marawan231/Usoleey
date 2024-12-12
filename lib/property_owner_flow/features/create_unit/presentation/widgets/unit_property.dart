@@ -1,4 +1,4 @@
-part of'create_unit_widgets_imports.dart';
+part of 'create_unit_widgets_imports.dart';
 
 class UnitProperty extends StatelessWidget {
   const UnitProperty({super.key});
@@ -6,7 +6,7 @@ class UnitProperty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: BlocBuilder<CreateUnitCubit, CreateUnitState>(
           builder: (context, state) {
             return Column(
@@ -14,7 +14,7 @@ class UnitProperty extends StatelessWidget {
                 children: [
                   Text(S.current.property,
                       style: getBoldStyle(
-                          fontSize: 14.sp, color: ColorsManager.primary)),
+                          fontSize: 14, color: ColorsManager.primary)),
                   32.verticalSpace,
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

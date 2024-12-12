@@ -16,7 +16,7 @@ class ItemBackground extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: ColorsManager.white,
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(8),
           border: Border.all(color: ColorsManager.grey)),
       child: Stack(
         children: [
@@ -25,24 +25,23 @@ class ItemBackground extends StatelessWidget {
               ClipPath(
                   clipper: CurveClipper(),
                   child: Container(
-                    height: 90.sp,
+                    height: 90,
                     decoration: BoxDecoration(
                       color: curveColor,
-                      borderRadius: BorderRadius.circular(8.r),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   )),
               45.verticalSpace,
               Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.sp),
-                  child: child),
+                  padding: EdgeInsets.symmetric(horizontal: 16), child: child),
             ],
           ),
           Positioned(
-            top: 42.sp,
-            right: 120.sp,
+            top: 42,
+            right: 120,
             child: Container(
-                width: 85.sp,
-                height: 85.sp,
+                width: 85,
+                height: 85,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: curveColor != ColorsManager.primary
@@ -55,8 +54,9 @@ class ItemBackground extends StatelessWidget {
                     isProperty
                         ? AssetsManager.property
                         : AssetsManager.navbarHome,
-                    height: 45.sp,
-                    width: 45.sp,
+                    height: 45,
+                    width: 45,
+                    // ignore: deprecated_member_use
                     color: curveColor,
                   ),
                 )),

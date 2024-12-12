@@ -23,21 +23,20 @@ class MyRealEstatePropertyItem extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.sp),
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(address,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: getBoldStyle(
-                    fontSize: 14.sp,
+                    fontSize: 14,
                     color: ColorsManager.primaryDark,
-                    height: 1.3.sp)),
+                    height: 1.3)),
           ),
           24.verticalSpace,
           Text(
             '${unitCount} ${S.current.units}',
-            style:
-                getBoldStyle(color: ColorsManager.greyLight, fontSize: 11.sp),
+            style: getBoldStyle(color: ColorsManager.greyLight, fontSize: 11),
           ),
           8.verticalSpace,
           Rent(rent: rent.toString()),

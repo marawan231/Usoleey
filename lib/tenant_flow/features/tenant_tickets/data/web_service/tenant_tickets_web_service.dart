@@ -7,8 +7,6 @@ import 'package:retrofit/retrofit.dart';
 import '../../../../../core/network_service/base_response.dart';
 import '../../../../../core/shared_models/owner_unit_model.dart';
 import '../../../../../core/shared_models/all_tickets_model.dart';
-import '../models/create_ticket_request_model.dart';
-import '../models/create_ticket_response_model.dart';
 
 part 'tenant_tickets_web_service.g.dart';
 

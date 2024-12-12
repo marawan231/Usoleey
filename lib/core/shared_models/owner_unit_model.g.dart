@@ -23,9 +23,9 @@ Map<String, dynamic> _$OwnerUnitModelToJson(OwnerUnitModel instance) =>
     };
 
 Unit _$UnitFromJson(Map<String, dynamic> json) => Unit(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      rent: json['rent'] as int?,
+      rent: (json['rent'] as num?)?.toInt(),
       rentCollectionDate: json['rentCollectionDate'],
       address: json['address'] as String?,
     );
@@ -39,9 +39,9 @@ Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
     };
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) => Pagination(
-      page: json['page'] as int?,
-      limit: json['limit'] as int?,
-      count: json['count'] as int?,
+      page: (json['page'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt(),
+      count: (json['count'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$PaginationToJson(Pagination instance) =>

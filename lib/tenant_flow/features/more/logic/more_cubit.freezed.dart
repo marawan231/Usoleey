@@ -21,7 +21,9 @@ mixin _$MoreState<T> {
   RequestState get getContactsRequestState =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MoreState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MoreStateCopyWith<T, MoreState<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +49,8 @@ class _$MoreStateCopyWithImpl<T, $Res, $Val extends MoreState<T>>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MoreState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +91,8 @@ class __$$InitialImplCopyWithImpl<T, $Res>
       _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of MoreState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -150,7 +156,9 @@ class _$InitialImpl<T> implements _Initial<T> {
       const DeepCollectionEquality().hash(_contactsData),
       getContactsRequestState);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MoreState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<T, _$InitialImpl<T>> get copyWith =>
@@ -166,8 +174,11 @@ abstract class _Initial<T> implements MoreState<T> {
   List<ContactInfoModelData> get contactsData;
   @override
   RequestState get getContactsRequestState;
+
+  /// Create a copy of MoreState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<T, _$InitialImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

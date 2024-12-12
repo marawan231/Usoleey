@@ -1,5 +1,4 @@
-part of'unit_details_widgets_imports.dart';
-
+part of 'unit_details_widgets_imports.dart';
 
 class UnitMainInformation extends StatelessWidget {
   final UnitDetailsModel unitDetailsModel;
@@ -25,6 +24,5 @@ class UnitMainInformation extends StatelessWidget {
         ),
       ),
     );
-
   }
 }

@@ -9,8 +9,6 @@ import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/account_info/data/models/account_info.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/data/models/auth_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:http/http.dart';
 
 late List<AccountInfo> accountInfoList;
 
@@ -59,14 +57,14 @@ class _AccountInfoViewState extends State<AccountInfoView> {
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemBuilder: (context, index) => Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 16.sp),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     accountInfoList[index].title!,
                     style: getRegularStyle(
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       color: ColorsManager.greyLight,
                     ),
                   ),
@@ -74,7 +72,7 @@ class _AccountInfoViewState extends State<AccountInfoView> {
                   Text(
                     accountInfoList[index].value!,
                     style: getBoldStyle(
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       color: ColorsManager.primary,
                     ),
                   ),
@@ -91,13 +89,13 @@ class _AccountInfoViewState extends State<AccountInfoView> {
 
   _buildProfileImage() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 24.sp),
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            width: 64.sp,
-            height: 64.sp,
+            width: 64,
+            height: 64,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: ColorsManager.primaryLight,
@@ -105,11 +103,11 @@ class _AccountInfoViewState extends State<AccountInfoView> {
               // borderRadius: BorderRadius.circular(8.r),
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(32.r),
+              borderRadius: BorderRadius.circular(32),
               child: CustomCachedImage(
                 image: getIt<AuthCubit>().userModel?.photo ?? '',
-                width: 64.sp,
-                height: 64.sp,
+                width: 64,
+                height: 64,
               ),
             ),
           ),
@@ -120,7 +118,7 @@ class _AccountInfoViewState extends State<AccountInfoView> {
               S.current.changeImage,
               style: getBoldStyle(
                 color: ColorsManager.primary,
-                fontSize: 14.sp,
+                fontSize: 14,
               ),
             ),
           ),

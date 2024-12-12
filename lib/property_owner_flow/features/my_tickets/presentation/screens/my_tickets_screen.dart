@@ -19,7 +19,7 @@ class MyTicketsView extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: SharedAppBar(
-            height: 100.h,
+            height: 100,
             leading: SizedBox(),
             title: S.current.myTickets,
             bottom: TabBar(

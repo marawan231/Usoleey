@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 int selectedTab = 0;
@@ -74,10 +73,10 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   ) {
     return BottomNavigationBarItem(
       icon: Padding(
-        padding: EdgeInsets.only(bottom: 6.w),
+        padding: EdgeInsets.only(bottom: 6),
         child: SvgPicture.asset(assetName,
-            width: 20.h,
-            height: 20.h,
+            width: 20,
+            height: 20,
             // ignore: deprecated_member_use
             color: selectedTab == index
                 ? ColorsManager.primary

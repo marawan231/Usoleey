@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:tenten_pay/core/res/color_manager.dart';
 // import 'package:tenten_pay/core/res/custom_text_styles.dart';
 
@@ -49,7 +48,7 @@ class NoInternet extends StatelessWidget {
             //     )),
             Container(
                 height: 50,
-                margin: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
+                margin: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                 child: Builder(
                     builder: (context) => ElevatedButton(
                           onPressed: () {},
@@ -66,7 +65,7 @@ class NoInternet extends StatelessWidget {
                               alignment: Alignment.center,
                               child: Text('تا كد من الاتصال بالانترنت  ',
                                   style: getBoldStyle(
-                                      fontSize: 20.sp,
+                                      fontSize: 20,
                                       color: ColorsManager.white))),
                         )))
           ],

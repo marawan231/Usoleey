@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/choose_language/presentation/widgets/app_language_choices.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ChooseAppLanguageView extends StatelessWidget {
   const ChooseAppLanguageView({super.key});
@@ -12,14 +12,14 @@ class ChooseAppLanguageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsetsDirectional.symmetric(horizontal: 24.sp),
+        padding: EdgeInsetsDirectional.symmetric(horizontal: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               S.of(context).chooseAppLanguage,
-              style: getBoldStyle(
-                  fontSize: 24.sp, color: ColorsManager.primaryDark),
+              style:
+                  getBoldStyle(fontSize: 24, color: ColorsManager.primaryDark),
             ),
             24.verticalSpace,
             AppLanguageChoices(),

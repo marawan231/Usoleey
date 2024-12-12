@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../generated/l10n.dart';
 
@@ -14,13 +14,13 @@ class RentTimeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 24.sp,
-      padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
-      margin: EdgeInsetsDirectional.symmetric(horizontal: 16.sp),
+      // height: 24,
+      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      margin: EdgeInsetsDirectional.symmetric(horizontal: 16),
       // width: double.infinity,
       decoration: BoxDecoration(
         color: ColorsManager.green,
-        borderRadius: BorderRadius.circular(100.r),
+        borderRadius: BorderRadius.circular(100),
       ),
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.center,
@@ -29,13 +29,12 @@ class RentTimeContainer extends StatelessWidget {
           Icon(
             Icons.calendar_today_outlined,
             color: ColorsManager.greenDark,
-            size: 16.sp,
+            size: 16,
           ),
           4.horizontalSpace,
           Text(
             '${S.current.nextRentPaymentDate}${rentTime == null ? '' : getCreatedAt(rentTime!)}',
-            style:
-                getBoldStyle(fontSize: 12.sp, color: ColorsManager.greenDark),
+            style: getBoldStyle(fontSize: 12, color: ColorsManager.greenDark),
           ),
         ],
       ),

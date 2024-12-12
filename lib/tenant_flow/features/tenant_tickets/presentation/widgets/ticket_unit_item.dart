@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class TicketUnitItem extends StatelessWidget {
@@ -29,20 +28,19 @@ class TicketUnitItem extends StatelessWidget {
         color: selected ?? true
             ? ColorsManager.primaryLighter
             : ColorsManager.white,
-        border: Border.all(color: ColorsManager.grey, width: 1.sp),
-        borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(color: ColorsManager.grey, width: 1),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: ListTile(
-        // minVerticalPadding: 4.sp,
+        // minVerticalPadding: 4,
         selected: selected ?? true,
         tileColor: ColorsManager.red,
-        contentPadding:
-            EdgeInsets.symmetric(vertical: 10.sp, horizontal: 16.sp),
+        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
 
         leading: Container(
-            width: 50.sp,
-            height: 50.sp,
-            padding: EdgeInsets.all(12.sp),
+            width: 50,
+            height: 50,
+            padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: ColorsManager.greyLighter,
               shape: BoxShape.circle,
@@ -50,22 +48,21 @@ class TicketUnitItem extends StatelessWidget {
             child: SvgPicture.asset(
               icon ?? AssetsManager.homeUnitIcon,
               // color: ColorsManager.primary,
-              width: 20.sp,
-              height: 20.sp,
+              width: 20,
+              height: 20,
             )),
         title: Padding(
-          padding: EdgeInsets.only(bottom: 4.sp),
+          padding: EdgeInsets.only(bottom: 4),
           child: Text(
             title,
-            style:
-                getBoldStyle(fontSize: 14.sp, color: ColorsManager.primaryDark),
+            style: getBoldStyle(fontSize: 14, color: ColorsManager.primaryDark),
           ),
         ),
         subtitle: isSubtitle ?? true
             ? Text(
                 subTitle ?? '',
                 style: getRegularStyle(
-                    fontSize: 12.sp, color: ColorsManager.greyLight),
+                    fontSize: 12, color: ColorsManager.greyLight),
               )
             : null,
         onTap: onTap ?? () {},

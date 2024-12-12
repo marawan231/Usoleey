@@ -11,12 +11,12 @@ class UnitImage extends StatelessWidget {
             ? Stack(
                 children: [
                   SizedBox(
-                      height: 250.h,
+                      height: 250,
                       width: double.infinity,
                       child: Image.file(state.unitImage!, fit: BoxFit.fill)),
                   PositionedDirectional(
-                      top: 10.sp,
-                      end: 10.sp,
+                      top: 10,
+                      end: 10,
                       child: GestureDetector(
                           onTap: getIt<CreateUnitCubit>().clearUnitImage,
                           child: SvgPicture.asset(AssetsManager.close)))
@@ -24,13 +24,13 @@ class UnitImage extends StatelessWidget {
               )
             : Container(
                 color: ColorsManager.grey,
-                height: 250.h,
+                height: 250,
                 width: double.infinity,
                 child: InkWell(
                     onTap: getIt<CreateUnitCubit>().uploadUnitImage,
                     child: Center(
                       child: CircleAvatar(
-                        maxRadius: 40.r,
+                        maxRadius: 40,
                         backgroundColor: ColorsManager.greyLighter,
                         child: Icon(Icons.camera_alt_outlined, size: 40),
                       ),

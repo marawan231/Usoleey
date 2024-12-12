@@ -26,9 +26,9 @@ class TicketDetailsBody extends StatelessWidget {
                           images: state.ticketDetailsModel!.images ?? []),
                     24.verticalSpace,
                     Divider(
-                        height: 1.h,
-                        indent: 24.w,
-                        endIndent: 24.w,
+                        height: 1,
+                        indent: 24,
+                        endIndent: 24,
                         color: ColorsManager.grey),
                     24.verticalSpace,
                     TicketInformation(
@@ -60,7 +60,7 @@ class TicketInvoice extends StatelessWidget {
                     Text(
                         '${S.current.done} "${state.ticketDetailsModel!.description}" ${S.current.repaired}',
                         style: getRegularStyle(
-                            fontSize: 14.sp, color: ColorsManager.primaryDark)),
+                            fontSize: 14, color: ColorsManager.primaryDark)),
                     16.verticalSpace,
                     Row(
                       children: [
@@ -70,9 +70,9 @@ class TicketInvoice extends StatelessWidget {
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 24.w, vertical: 10.h),
+                                horizontal: 24, vertical: 10),
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100.r),
+                                borderRadius: BorderRadius.circular(100),
                                 color: ColorsManager.primary),
                             child: Row(
                               children: [
@@ -80,7 +80,7 @@ class TicketInvoice extends StatelessWidget {
                                 6.horizontalSpace,
                                 Text(S.current.viewInvoice,
                                     style: getBoldStyle(
-                                        fontSize: 12.sp,
+                                        fontSize: 12,
                                         color: ColorsManager.white))
                               ],
                             ),

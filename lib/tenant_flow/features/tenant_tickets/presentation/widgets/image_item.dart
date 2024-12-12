@@ -1,9 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
-import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ImageItem extends StatelessWidget {
@@ -19,11 +18,11 @@ class ImageItem extends StatelessWidget {
         Stack(
           children: [
             Container(
-                height: 136.h,
-                width: 181.w,
+                height: 136,
+                width: 181,
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r),
+                  borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
                       image: FileImage(imageFile!), fit: BoxFit.cover),
                 ),
@@ -52,8 +51,8 @@ class ImageItem extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Container(
-          height: 35.h,
-          width: 35.h,
+          height: 35,
+          width: 35,
           child: SvgPicture.asset(AssetsManager.removeTicketImage),
         ),
       ),

@@ -1,17 +1,15 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/models/units_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/widgets/rent_time_container.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/di/dependency_injection.dart';
@@ -42,8 +40,8 @@ class UnitDetailsView extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        height: 72.sp,
-        padding: EdgeInsetsDirectional.only(start: 16.sp, end: 16.sp),
+        height: 72,
+        padding: EdgeInsetsDirectional.only(start: 16, end: 16),
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -60,9 +58,9 @@ class UnitDetailsView extends StatelessWidget {
           children: [
             Expanded(
               child: AppTextButton(
-                buttonHeight: 38.sp,
+                buttonHeight: 38,
                 buttonText: S.current.serviceRequest,
-                textStyle: getBoldStyle(fontSize: 12.sp),
+                textStyle: getBoldStyle(fontSize: 12),
                 onPressed: () {
                   getIt<TenantTicketsCubit>().selectTicket(
                       getIt<TenantTicketsCubit>().ticketsTypes[0]);
@@ -74,9 +72,9 @@ class UnitDetailsView extends StatelessWidget {
             8.horizontalSpace,
             Expanded(
               child: AppTextButton(
-                buttonHeight: 38.sp,
+                buttonHeight: 38,
                 buttonText: S.current.submitComplaint,
-                textStyle: getBoldStyle(fontSize: 12.sp),
+                textStyle: getBoldStyle(fontSize: 12),
                 onPressed: () {
                   getIt<TenantTicketsCubit>().selectTicket(
                       getIt<TenantTicketsCubit>().ticketsTypes[1]);
@@ -95,19 +93,18 @@ class UnitDetailsView extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding:
-              EdgeInsetsDirectional.only(top: 210.sp, start: 24.sp, end: 24.sp),
+          padding: EdgeInsetsDirectional.only(top: 210, start: 24, end: 24),
           // bottom: 0,
-          // top: 133.sp,
+          // top: 133,
           child: Container(
             padding: EdgeInsetsDirectional.only(
-                start: 16.sp, end: 16.sp, top: 16.sp, bottom: 16.sp),
+                start: 16, end: 16, top: 16, bottom: 16),
             width: double.infinity,
-            // height: 120.sp,
+            // height: 120,
             decoration: BoxDecoration(
               color: ColorsManager.white,
               border: Border.all(color: ColorsManager.grey),
-              borderRadius: BorderRadius.all(Radius.circular(8.sp)),
+              borderRadius: BorderRadius.all(Radius.circular(8)),
             ),
             child: Column(
               children: [
@@ -115,14 +112,14 @@ class UnitDetailsView extends StatelessWidget {
                     text: TextSpan(children: [
                   TextSpan(
                     text: unit.rent.toString(),
-                    style: getBoldStyle(
-                        fontSize: 16.sp, color: ColorsManager.black),
+                    style:
+                        getBoldStyle(fontSize: 16, color: ColorsManager.black),
                   ),
                   WidgetSpan(child: 4.horizontalSpace),
                   TextSpan(
                     text: S.current.monthSar,
                     style: getRegularStyle(
-                        fontSize: 12.sp, color: ColorsManager.black),
+                        fontSize: 12, color: ColorsManager.black),
                   ),
                 ])),
                 16.verticalSpace,
@@ -145,7 +142,7 @@ class UnitDetailsView extends StatelessWidget {
         Expanded(
           child: Container(
             // color: ColorsManager.white,
-            padding: EdgeInsetsDirectional.only(start: 24.sp, end: 24.sp),
+            padding: EdgeInsetsDirectional.only(start: 24, end: 24),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -167,6 +164,7 @@ class UnitDetailsView extends StatelessWidget {
     );
   }
 
+  // ignore: unused_element
   _buildBillsInfo() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -174,7 +172,7 @@ class UnitDetailsView extends StatelessWidget {
         Text(
           'معلومات الفواتير',
           style: getBoldStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             color: ColorsManager.black,
           ),
         ),
@@ -198,7 +196,7 @@ class UnitDetailsView extends StatelessWidget {
         Text(
           S.current.unitAddrss,
           style: getBoldStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             color: ColorsManager.black,
           ),
         ),
@@ -208,7 +206,7 @@ class UnitDetailsView extends StatelessWidget {
           child: Row(
             children: [
               CircleAvatar(
-                  minRadius: 24.sp,
+                  minRadius: 24,
                   child: SvgPicture.asset(AssetsManager.location),
                   backgroundColor: ColorsManager.primaryLighter),
               8.horizontalSpace,
@@ -219,7 +217,7 @@ class UnitDetailsView extends StatelessWidget {
                     Text(
                       unit.address ?? '',
                       style: getBoldStyle(
-                          fontSize: 12.sp, color: ColorsManager.primaryDark),
+                          fontSize: 12, color: ColorsManager.primaryDark),
                     )
                   ],
                 ),
@@ -232,12 +230,12 @@ class UnitDetailsView extends StatelessWidget {
         //   icon: AssetsManager.location,
         //   title: 'الرياض',
         //   titleStyle: getRegularStyle(
-        //     fontSize: 14.sp,
+        //     fontSize: 14,
         //     color: ColorsManager.black,
         //   ),
         //   subtitle: 'شقة ٤، عمارة ١٢٠، حي الخالدية، شارع عمر بن الخطاب',
         //   subtitleStyle: getRegularStyle(
-        //     fontSize: 12.sp,
+        //     fontSize: 12,
         //     color: ColorsManager.greyLight,
         //   ),
         // )
@@ -252,7 +250,7 @@ class UnitDetailsView extends StatelessWidget {
         Text(
           S.current.nextInvoices,
           style: getBoldStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             color: ColorsManager.black,
           ),
         ),
@@ -276,20 +274,20 @@ class UnitDetailsView extends StatelessWidget {
         Text(
           'مواصفات العقار',
           style: getBoldStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             color: ColorsManager.black,
           ),
         ),
         16.verticalSpace,
         GridView(
-          padding: EdgeInsetsDirectional.only(top: 0.sp),
+          padding: EdgeInsetsDirectional.only(top: 0),
           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              crossAxisSpacing: 8.sp,
-              mainAxisSpacing: 8.sp,
-              childAspectRatio: 2.2.sp),
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+              childAspectRatio: 2.2),
           children: [
             PropertyDetailsItem(
                 title: S.current.space,
@@ -322,7 +320,7 @@ class UnitDetailsView extends StatelessWidget {
   _buildAppBar() {
     return Container(
       width: double.infinity,
-      height: 250.sp,
+      height: 250,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(AssetsManager.tempBuilding),
@@ -331,7 +329,7 @@ class UnitDetailsView extends StatelessWidget {
         color: ColorsManager.primary,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.only(top: 40.sp, start: 24.sp, end: 24),
+        padding: EdgeInsetsDirectional.only(top: 40, start: 24, end: 24),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -342,7 +340,7 @@ class UnitDetailsView extends StatelessWidget {
                     ? Icons.arrow_forward_ios_rounded
                     : Icons.arrow_forward,
                 color: Colors.white,
-                size: 24.sp,
+                size: 24,
               ),
               onTap: () {
                 Go.back();
@@ -365,20 +363,20 @@ class PropertyDetailsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBorderContainer(
       margin: EdgeInsets.zero,
-      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
               style: getRegularStyle(
-                fontSize: 12.sp,
+                fontSize: 12,
                 color: ColorsManager.black,
               )),
           8.verticalSpace,
           Text(value,
               style: getBoldStyle(
-                fontSize: 12.sp,
+                fontSize: 12,
                 color: ColorsManager.black,
               )),
         ],

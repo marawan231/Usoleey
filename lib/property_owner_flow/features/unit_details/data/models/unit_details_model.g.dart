@@ -8,26 +8,25 @@ part of 'unit_details_model.dart';
 
 UnitDetailsModel _$UnitDetailsModelFromJson(Map<String, dynamic> json) =>
     UnitDetailsModel(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      rent: json['rent'] as int?,
+      rent: (json['rent'] as num?)?.toInt(),
       rentCollectionDate: json['rentCollectionDate'] as String?,
       electricityAccount: json['electricityAccount'] as String?,
       waterAccount: json['waterAccount'] as String?,
       waterCost: json['waterCost'],
       address: json['address'] as String?,
-      space: json['space'] as int?,
-      rooms: json['rooms'] as int?,
-      bathrooms: json['bathrooms'] as int?,
+      rooms: (json['rooms'] as num?)?.toInt(),
+      bathrooms: (json['bathrooms'] as num?)?.toInt(),
       lounge: json['lounge'] as bool?,
-      conditioners: json['conditioners'] as int?,
+      conditioners: (json['conditioners'] as num?)?.toInt(),
       kitchen: json['kitchen'] as bool?,
       image: json['image'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
-      tenantId: json['tenantId'] as int?,
-      propertyId: json['propertyId'] as int?,
-      ownerId: json['ownerId'] as int?,
+      tenantId: (json['tenantId'] as num?)?.toInt(),
+      propertyId: (json['propertyId'] as num?)?.toInt(),
+      ownerId: (json['ownerId'] as num?)?.toInt(),
       owner: json['owner'] == null
           ? null
           : Owner.fromJson(json['owner'] as Map<String, dynamic>),
@@ -41,8 +40,9 @@ UnitDetailsModel _$UnitDetailsModelFromJson(Map<String, dynamic> json) =>
           ?.map((e) => Detail.fromJson(e as Map<String, dynamic>))
           .toList(),
     )
-      ..ticketsCount = json['ticketsCount'] as int?
-      ..invoicesCount = json['invoicesCount'] as int?
+      ..space = (json['space'] as num?)?.toInt()
+      ..ticketsCount = (json['ticketsCount'] as num?)?.toInt()
+      ..invoicesCount = (json['invoicesCount'] as num?)?.toInt()
       ..invoices = (json['invoices'] as List<dynamic>?)
           ?.map((e) => InvoiceModel.fromJson(e as Map<String, dynamic>))
           .toList()

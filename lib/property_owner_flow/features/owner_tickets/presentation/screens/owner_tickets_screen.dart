@@ -34,7 +34,7 @@ class _OwnerTicketsViewState extends State<OwnerTicketsView> {
     return Scaffold(
       appBar: SharedAppBar(title: S.current.propertyTickets),
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 24.w),
+        padding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
         child: Column(
           children: [
             TicketsTabBar(),
@@ -98,20 +98,20 @@ class TabItem extends StatelessWidget {
         return GestureDetector(
           onTap: () => getIt<OwnerTicketsCubit>().tabBarOnChange(index),
           child: Container(
-            height: 36.h,
-            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 24.w),
+            height: 36,
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 24),
             decoration: BoxDecoration(
                 color: index == state.selectedTab
                     ? ColorsManager.primary
                     : ColorsManager.white,
-                borderRadius: BorderRadius.circular(20.r),
+                borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: ColorsManager.primary)),
             child: Text(name,
                 style: getBoldStyle(
                     color: index == state.selectedTab
                         ? ColorsManager.white
                         : ColorsManager.primary,
-                    fontSize: 12.sp)),
+                    fontSize: 12)),
           ),
         );
       },

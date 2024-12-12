@@ -4,7 +4,6 @@ import 'package:flutter_complete_project/tenant_flow/features/home/data/models/a
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../../property_owner_flow/features/owner_invoices/data/models/all_invoice_model.dart';
-import '../../../../../property_owner_flow/features/unit_details/data/models/invoice_model.dart';
 import '../models/units_model.dart';
 
 part 'home_web_service.g.dart';

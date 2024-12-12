@@ -8,10 +8,10 @@ part of 'property_model.dart';
 
 PropertyModel _$PropertyModelFromJson(Map<String, dynamic> json) =>
     PropertyModel(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       address: json['address'] as String?,
-      unitsCount: json['unitsCount'] as int?,
+      unitsCount: (json['unitsCount'] as num?)?.toInt(),
       instrumentNumber: json['instrumentNumber'] as String?,
       postalCode: json['postalCode'] as String?,
       blockNumber: json['blockNumber'] as String?,
@@ -21,8 +21,8 @@ PropertyModel _$PropertyModelFromJson(Map<String, dynamic> json) =>
       image: json['image'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
-      enterpriseId: json['enterpriseId'] as int?,
-      ownerId: json['ownerId'] as int?,
+      enterpriseId: (json['enterpriseId'] as num?)?.toInt(),
+      ownerId: (json['ownerId'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$PropertyModelToJson(PropertyModel instance) =>

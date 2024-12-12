@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../tenant_flow/features/tenant_tickets/presentation/widgets/custom_drag_handler.dart';
@@ -14,13 +12,13 @@ class BottomSheetHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 37.sp,
+      height: 37,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
           CustomDragHandler(),
           PositionedDirectional(
-            top: 2.sp,
+            top: 2,
             end: 0,
             child: GestureDetector(
               onTap: Go.back,

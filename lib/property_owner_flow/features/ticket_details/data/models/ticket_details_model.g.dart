@@ -8,13 +8,13 @@ part of 'ticket_details_model.dart';
 
 TicketDetailsModel _$TicketDetailsModelFromJson(Map<String, dynamic> json) =>
     TicketDetailsModel(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       description: json['description'] as String?,
       status: json['status'] as String?,
       type: json['type'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
-      unitId: json['unitId'] as int?,
+      unitId: (json['unitId'] as num?)?.toInt(),
       unit: json['unit'] == null
           ? null
           : Unit.fromJson(json['unit'] as Map<String, dynamic>),
@@ -35,32 +35,33 @@ Map<String, dynamic> _$TicketDetailsModelToJson(TicketDetailsModel instance) =>
     };
 
 Unit _$UnitFromJson(Map<String, dynamic> json) => Unit(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      rent: json['rent'] as int?,
+      rent: (json['rent'] as num?)?.toInt(),
       electricityAccount: json['electricityAccount'] as String?,
       waterAccount: json['waterAccount'] as String?,
       address: json['address'] as String?,
-      space: json['space'] as int?,
-      rooms: json['rooms'] as int?,
-      bathrooms: json['bathrooms'] as int?,
+      rooms: (json['rooms'] as num?)?.toInt(),
+      bathrooms: (json['bathrooms'] as num?)?.toInt(),
       lounge: json['lounge'] as bool?,
-      conditioners: json['conditioners'] as int?,
+      conditioners: (json['conditioners'] as num?)?.toInt(),
       kitchen: json['kitchen'] as bool?,
       image: json['image'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
-      tenantId: json['tenantId'] as int?,
-      propertyId: json['propertyId'] as int?,
-      ownerId: json['ownerId'] as int?,
-      enterpriseId: json['enterpriseId'] as int?,
+      tenantId: (json['tenantId'] as num?)?.toInt(),
+      propertyId: (json['propertyId'] as num?)?.toInt(),
+      ownerId: (json['ownerId'] as num?)?.toInt(),
+      enterpriseId: (json['enterpriseId'] as num?)?.toInt(),
       tenant: json['tenant'] == null
           ? null
           : Tenant.fromJson(json['tenant'] as Map<String, dynamic>),
       property: json['property'] == null
           ? null
           : PropertyModel.fromJson(json['property'] as Map<String, dynamic>),
-    )..rentCollectionDate = json['rentCollectionDate'] as String?;
+    )
+      ..rentCollectionDate = json['rentCollectionDate'] as String?
+      ..space = (json['space'] as num?)?.toInt();
 
 Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
       'id': instance.id,
@@ -88,7 +89,7 @@ Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
     };
 
 Tenant _$TenantFromJson(Map<String, dynamic> json) => Tenant(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
       photo: json['photo'] as String?,
       password: json['password'] as String?,
@@ -104,7 +105,7 @@ Tenant _$TenantFromJson(Map<String, dynamic> json) => Tenant(
       language: json['language'] as String?,
       createdAt: json['created_at'] as String?,
       updatedAt: json['updated_at'] as String?,
-      enterpriseId: json['enterpriseId'] as int?,
+      enterpriseId: (json['enterpriseId'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$TenantToJson(Tenant instance) => <String, dynamic>{

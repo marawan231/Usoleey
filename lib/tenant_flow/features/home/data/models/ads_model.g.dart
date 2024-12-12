@@ -19,10 +19,10 @@ Map<String, dynamic> _$AdsModelToJson(AdsModel instance) => <String, dynamic>{
     };
 
 Ad _$AdFromJson(Map<String, dynamic> json) => Ad(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       image: json['image'] as String?,
       url: json['url'] as String?,
-      index: json['index'] as int?,
+      index: (json['index'] as num?)?.toInt(),
       title: json['title'] as String?,
       subTitle: json['subTitle'] as String?,
     );

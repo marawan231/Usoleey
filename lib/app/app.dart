@@ -12,7 +12,6 @@ import 'package:flutter_complete_project/tenant_flow/features/choose_language/lo
 
 // ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../core/internet/internet_connection_checker.dart';
 import '../generated/l10n.dart';

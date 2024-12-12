@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 
 import '../../generated/l10n.dart';
 import '../../tenant_flow/features/login/data/models/auth_model.dart';
@@ -18,8 +18,8 @@ class UserHomeAppbarContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-            width: 40.sp,
-            height: 40.sp,
+            width: 40,
+            height: 40,
             decoration: BoxDecoration(
                 color: ColorsManager.black, shape: BoxShape.circle)),
         8.horizontalSpace,
@@ -30,7 +30,7 @@ class UserHomeAppbarContent extends StatelessWidget {
             Text(
               '${S.current.welcome} ${userModel.firstName ?? ''}',
               style: getBoldStyle(
-                fontSize: 16.sp,
+                fontSize: 16,
                 color: ColorsManager.black,
               ),
             ),
@@ -39,8 +39,8 @@ class UserHomeAppbarContent extends StatelessWidget {
                 userModel.role == 'OWNER'
                     ? S.current.propertyOwner
                     : S.current.tenant,
-                style: getBoldStyle(
-                    fontSize: 11.sp, color: ColorsManager.greyLight)),
+                style:
+                    getBoldStyle(fontSize: 11, color: ColorsManager.greyLight)),
           ],
         ),
       ],

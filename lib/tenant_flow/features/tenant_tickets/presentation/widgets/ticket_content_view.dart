@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/extensions/validator.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_text_form_field.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/enums/enums.dart';
 import '../../../../../generated/l10n.dart';
@@ -36,13 +35,12 @@ class TicketContentView extends StatelessWidget {
         ),
       ],
       child: Container(
-        padding: EdgeInsets.only(
-            left: 24.sp, right: 24.sp, bottom: 24.sp, top: 15.sp),
+        padding: EdgeInsets.only(left: 24, right: 24, bottom: 24, top: 15),
         decoration: BoxDecoration(
           color: ColorsManager.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(40.sp),
-            topRight: Radius.circular(40.sp),
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
           ),
         ),
         child: SingleChildScrollView(
@@ -108,7 +106,7 @@ class TicketContentView extends StatelessWidget {
         return state.imagesFile.isEmpty
             ? SizedBox()
             : SizedBox(
-                height: 136.h,
+                height: 136,
                 child: ReorderableListView.builder(
                     shrinkWrap: true,
                     onReorder: getIt<TenantTicketsCubit>().onReorder,
@@ -139,7 +137,7 @@ class TicketContentView extends StatelessWidget {
           hintText: S.current.writeTicketContent,
           maxLines: 3,
           validator: (value) => value!.validateEmpty(),
-          height: 100.h),
+          height: 100),
     );
   }
 
@@ -152,11 +150,11 @@ class TicketContentView extends StatelessWidget {
       child: Row(
         children: [
           Icon(Icons.camera_alt_outlined,
-              color: ColorsManager.primaryDark, size: 14.sp),
+              color: ColorsManager.primaryDark, size: 14),
           5.horizontalSpace,
           Text(S.current.uploadImage,
               style: getBoldStyle(
-                fontSize: 12.sp,
+                fontSize: 12,
                 color: ColorsManager.primaryDark,
               )),
         ],

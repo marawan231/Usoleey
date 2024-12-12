@@ -44,7 +44,7 @@ class _OwnerNotificationViewState extends State<OwnerNotificationView> {
                 loadingWidget: OwnerNotificationShimmer(),
                 successWidget: state.notifications.isNotEmpty
                     ? CustomPaginationList(
-                        mainAxisSpacing: 0.h,
+                        mainAxisSpacing: 0,
                         childAspectRatio: 4.5,
                         padding: EdgeInsets.zero,
                         scrollController: scrollController,
@@ -77,19 +77,19 @@ class OwnerNotificationShimmer extends StatelessWidget {
           15,
           (index) => ListTile(
               contentPadding:
-                  EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-              horizontalTitleGap: 8.w,
-              leading: CustomShimmer(width: 50.sp, height: 50.sp, radius: 25.r),
+                  EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              horizontalTitleGap: 8,
+              leading: CustomShimmer(width: 50, height: 50, radius: 25),
               title: Padding(
-                padding: EdgeInsets.only(bottom: 6.h),
-                child: CustomShimmer(width: 50.w, height: 15),
+                padding: EdgeInsets.only(bottom: 6),
+                child: CustomShimmer(width: 50, height: 15),
               ),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomShimmer(width: 200.w, height: 10.h),
+                  CustomShimmer(width: 200, height: 10),
                   4.verticalSpace,
-                  CustomShimmer(width: 50.w, height: 10.h)
+                  CustomShimmer(width: 50, height: 10)
                 ],
               ))),
     );
@@ -114,27 +114,28 @@ class NotificationItem extends StatelessWidget {
             }
           },
           contentPadding:
-              EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-          horizontalTitleGap: 8.w,
+              EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          horizontalTitleGap: 8,
           leading: CircleAvatar(
-            radius: 25.sp,
+            radius: 25,
             backgroundColor: notification.status == 'UNSEEN'
                 ? ColorsManager.primaryLight
                 : ColorsManager.grey,
             child: SvgPicture.asset(AssetsManager.bell,
+                // ignore: deprecated_member_use
                 color: notification.status == 'UNSEEN'
                     ? null
                     : ColorsManager.greyLight),
           ),
           title: Padding(
-            padding: EdgeInsets.only(bottom: 6.h),
+            padding: EdgeInsets.only(bottom: 6),
             child: Text(notification.title ?? '',
                 style: getBoldStyle(
-                    color: ColorsManager.primaryDark, fontSize: 14.sp)),
+                    color: ColorsManager.primaryDark, fontSize: 14)),
           ),
           subtitle: Text(notification.body ?? '',
               style: getRegularStyle(
-                  color: ColorsManager.greyLight, fontSize: 12.sp))),
+                  color: ColorsManager.greyLight, fontSize: 12))),
     );
   }
 }

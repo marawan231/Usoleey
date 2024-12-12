@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppLanguageItem extends StatelessWidget {
   const AppLanguageItem(
@@ -15,9 +14,9 @@ class AppLanguageItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: 155.sp,
-        // height: 75.sp,
-        // padding: EdgeInsets.symmetric(horizontal: 61.sp, vertical: 25.sp),
+        width: 155,
+        // height: 75,
+        // padding: EdgeInsets.symmetric(horizontal: 61, vertical: 25),
         decoration: BoxDecoration(
           color: isSelected ?? false
               ? ColorsManager.primaryLight
@@ -26,13 +25,13 @@ class AppLanguageItem extends StatelessWidget {
             color: ColorsManager.grey,
             width: 1,
           ),
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
           child: Text(language,
               textAlign: TextAlign.center,
-              style: getBoldStyle(
-                  fontSize: 16.sp, color: ColorsManager.primaryDark)),
+              style:
+                  getBoldStyle(fontSize: 16, color: ColorsManager.primaryDark)),
         ),
       ),
     );

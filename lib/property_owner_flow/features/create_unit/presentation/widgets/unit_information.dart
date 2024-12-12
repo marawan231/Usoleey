@@ -6,16 +6,15 @@ class UnitInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(S.current.informationUnit,
-              style:
-                  getBoldStyle(fontSize: 14.sp, color: ColorsManager.primary)),
+              style: getBoldStyle(fontSize: 14, color: ColorsManager.primary)),
           32.verticalSpace,
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 7.5.w),
+            padding: EdgeInsets.symmetric(horizontal: 7.5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

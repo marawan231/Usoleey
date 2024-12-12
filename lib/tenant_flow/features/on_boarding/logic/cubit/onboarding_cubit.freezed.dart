@@ -84,6 +84,9 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of OnboardingState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,6 +103,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of OnboardingState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -217,6 +223,9 @@ class __$$ReachedLastOnboardingScreenLoadingImplCopyWithImpl<$Res>
       _$ReachedLastOnboardingScreenLoadingImpl _value,
       $Res Function(_$ReachedLastOnboardingScreenLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of OnboardingState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -337,6 +346,9 @@ class __$$ReachedLastOnboardingScreenLoadedImplCopyWithImpl<$Res>
       _$ReachedLastOnboardingScreenLoadedImpl _value,
       $Res Function(_$ReachedLastOnboardingScreenLoadedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of OnboardingState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

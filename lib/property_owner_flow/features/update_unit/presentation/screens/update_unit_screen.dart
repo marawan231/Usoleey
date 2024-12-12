@@ -229,7 +229,7 @@ class UpdateUnitItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       child: Row(
         children: [
           Expanded(
@@ -238,11 +238,11 @@ class UpdateUnitItem extends StatelessWidget {
               children: [
                 Text(title,
                     style: getRegularStyle(
-                        fontSize: 14.sp, color: ColorsManager.greyLight)),
+                        fontSize: 14, color: ColorsManager.greyLight)),
                 16.verticalSpace,
                 if (valueController != null)
                   SizedBox(
-                    width: 227.w,
+                    width: 227,
                     child: enabled ?? false
                         ? TextField(
                             keyboardType: textInputType ?? TextInputType.name,
@@ -252,7 +252,7 @@ class UpdateUnitItem extends StatelessWidget {
                         : Text(
                             valueController!.text,
                             style: getBoldStyle(
-                                fontSize: 14.sp,
+                                fontSize: 14,
                                 color: ColorsManager.primary,
                                 height: 1.5),
                           ),
@@ -284,7 +284,7 @@ class EditButton extends StatelessWidget {
               child: Text(
                 S.current.edit,
                 style:
-                    getBoldStyle(fontSize: 14.sp, color: ColorsManager.primary),
+                    getBoldStyle(fontSize: 14, color: ColorsManager.primary),
               ),
             ));
   }
@@ -317,10 +317,10 @@ class ItemWithCount extends StatelessWidget {
           isLoading
               ? CupertinoActivityIndicator()
               : Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 6.w),
+                  padding: EdgeInsets.symmetric(horizontal: 6),
                   child: Text(count.toString(),
                       style: getBoldStyle(
-                          fontSize: 14.sp, color: ColorsManager.primary)),
+                          fontSize: 14, color: ColorsManager.primary)),
                 ),
           IconButton(
               onPressed: increasePressed,
@@ -337,7 +337,7 @@ class UpdateUnitHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250.h,
+      height: 250,
       child: Stack(
         children: [
           BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
@@ -346,21 +346,22 @@ class UpdateUnitHeader extends StatelessWidget {
                   ? Center(
                       child: CustomCachedImage(
                           image: state.unitImage,
-                          height: 250.h,
+                          height: 250,
                           width: double.infinity),
                     )
                   : Center(child: CupertinoActivityIndicator());
             },
           ),
           PositionedDirectional(
-            bottom: 22.h,
-            start: 24.w,
+            bottom: 22,
+            start: 24,
             child: InkWell(
               onTap: getIt<UpdateUnitCubit>().updateUnitImage,
               child: CircleAvatar(
                 backgroundColor: ColorsManager.primary,
-                maxRadius: 29.sp,
+                maxRadius: 29,
                 child: SvgPicture.asset(AssetsManager.editIcon,
+                    // ignore: deprecated_member_use
                     color: ColorsManager.white),
               ),
             ),

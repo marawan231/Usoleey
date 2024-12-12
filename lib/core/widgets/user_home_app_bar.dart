@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../property_owner_flow/features/owner_home/presentation/widgets/owner_home_widgets_imports.dart';
 import '../theming/colors.dart';
@@ -11,10 +10,10 @@ class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(top: 30.h, right: 24.w, left: 24.w),
+        padding: EdgeInsets.only(top: 30, right: 24, left: 24),
         decoration: BoxDecoration(
             color: ColorsManager.white,
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(16.r))),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(16))),
         child: Row(
           children: [
             Expanded(child: const UserHomeAppbarContent()),

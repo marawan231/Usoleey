@@ -20,7 +20,9 @@ mixin _$OwnerHomeState {
   int? get notificationCount => throw _privateConstructorUsedError;
   HomeModel? get homeModel => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OwnerHomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OwnerHomeStateCopyWith<OwnerHomeState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +49,8 @@ class _$OwnerHomeStateCopyWithImpl<$Res, $Val extends OwnerHomeState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OwnerHomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,6 +97,8 @@ class __$$InitialImplCopyWithImpl<$Res>
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OwnerHomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -155,7 +161,9 @@ class _$InitialImpl implements _Initial {
   int get hashCode =>
       Object.hash(runtimeType, getHomeStatsState, notificationCount, homeModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OwnerHomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
@@ -174,8 +182,11 @@ abstract class _Initial implements OwnerHomeState {
   int? get notificationCount;
   @override
   HomeModel? get homeModel;
+
+  /// Create a copy of OwnerHomeState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

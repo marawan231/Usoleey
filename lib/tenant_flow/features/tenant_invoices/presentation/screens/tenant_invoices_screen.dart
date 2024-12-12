@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/extensions/scroll_controller_extension.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
-import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
-import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../core/res/assets_manager.dart';
@@ -14,7 +12,6 @@ import '../../../../../core/widgets/base_remote_widget.dart';
 import '../../../../../core/widgets/custom_pagination_list.dart';
 import '../../../../../core/widgets/empty_lottie.dart';
 import '../../../../../generated/l10n.dart';
-import '../../../../../property_owner_flow/features/owner_invoices/presentation/screens/owner_invoices_screens_imports.dart';
 import '../../../../../property_owner_flow/features/unit_details/presentation/widgets/unit_details_widgets_imports.dart';
 import '../../logic/tenant_invoices_cubit.dart';
 import '../widgets/tenant_invoices_widgets_imports.dart';
@@ -54,7 +51,7 @@ class _TenantInvoicesViewState extends State<TenantInvoicesView> {
       body: BlocBuilder<TenantInvoicesCubit, TenantInvoicesState>(
         builder: (context, state) {
           return Padding(
-            padding: EdgeInsets.symmetric(vertical: 24.h),
+            padding: EdgeInsets.symmetric(vertical: 24),
             child: Column(
               children: [
                 TenantInvoicesTabBar(),

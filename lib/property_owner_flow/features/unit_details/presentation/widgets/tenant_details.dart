@@ -11,11 +11,10 @@ class TenantDetails extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 24),
           child: Text(
             S.current.tenantInformation,
-            style:
-                getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16.sp),
+            style: getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16),
           ),
         ),
         10.verticalSpace,
@@ -40,16 +39,16 @@ class TenantItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             color: ColorsManager.greyLightest,
             child: Row(
               children: [
                 CircleAvatar(
-                  maxRadius: 20.sp,
+                  maxRadius: 20,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius: BorderRadius.circular(20),
                     child: CustomCachedImage(
-                      height: 40.r,
+                      height: 40,
                       image: tenantModel.photo ?? '',
                       fit: BoxFit.fill,
                     ),
@@ -60,12 +59,9 @@ class TenantItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      tenantModel.firstNameAr! +
-                          ' ' +
-                          tenantModel.lastNameAr!,
+                      tenantModel.firstNameAr! + ' ' + tenantModel.lastNameAr!,
                       style: getBoldStyle(
-                          fontSize: 14.sp,
-                          color: ColorsManager.primaryDark),
+                          fontSize: 14, color: ColorsManager.primaryDark),
                     ),
                     8.verticalSpace,
                     Text(
@@ -73,8 +69,7 @@ class TenantItem extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: getRegularStyle(
-                          fontSize: 12.sp,
-                          color: ColorsManager.primaryDark),
+                          fontSize: 12, color: ColorsManager.primaryDark),
                     ),
                     10.verticalSpace,
                   ],
@@ -91,7 +86,7 @@ class TenantItem extends StatelessWidget {
                 launchTel(phoneNumber: tenantModel.phoneNumber ?? ''),
           ),
           22.verticalSpace,
-          Divider(indent: 20.w, endIndent: 20.w),
+          Divider(indent: 20, endIndent: 20),
           22.verticalSpace,
           TenantRowItem(
             value: 'example@domain.com',

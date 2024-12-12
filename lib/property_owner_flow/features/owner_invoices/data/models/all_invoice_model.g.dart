@@ -23,12 +23,12 @@ Map<String, dynamic> _$AllInvoiceModelToJson(AllInvoiceModel instance) =>
     };
 
 Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
-      id: json['id'] as int?,
-      amount: json['amount'] as int?,
+      id: (json['id'] as num?)?.toInt(),
+      amount: (json['amount'] as num?)?.toInt(),
       file: json['file'] as String?,
       dueDate: json['dueDate'] as String?,
       type: json['type'] as String?,
-      unitId: json['unitId'] as int?,
+      unitId: (json['unitId'] as num?)?.toInt(),
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );
@@ -45,9 +45,9 @@ Map<String, dynamic> _$InvoiceToJson(Invoice instance) => <String, dynamic>{
     };
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) => Pagination(
-      page: json['page'] as int?,
-      limit: json['limit'] as int?,
-      count: json['count'] as int?,
+      page: (json['page'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt(),
+      count: (json['count'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$PaginationToJson(Pagination instance) =>

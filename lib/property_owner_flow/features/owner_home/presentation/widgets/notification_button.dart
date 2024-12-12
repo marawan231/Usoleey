@@ -13,12 +13,12 @@ class NotificationButton extends StatelessWidget {
               return InkWell(
                 onTap: () => Go.toNamed(NamedRoutes.ownerNotification),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-                  width: 37.sp,
-                  height: 37.sp,
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  width: 37,
+                  height: 37,
                   decoration: BoxDecoration(
                       color: ColorsManager.primaryLighter,
-                      borderRadius: BorderRadius.circular(8.r)),
+                      borderRadius: BorderRadius.circular(8)),
                   child: badges.Badge(
                     badgeContent: count != null &&
                             state.getHomeStatsState != RequestState.loading
@@ -40,15 +40,16 @@ class NotificationButton extends StatelessWidget {
               return InkWell(
                 onTap: () => Go.toNamed(NamedRoutes.ownerNotification),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-                  width: 37.sp,
-                  height: 37.sp,
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  width: 37,
+                  height: 37,
                   decoration: BoxDecoration(
                       color: ColorsManager.primaryLighter,
-                      borderRadius: BorderRadius.circular(8.r)),
+                      borderRadius: BorderRadius.circular(8)),
                   child: badges.Badge(
                     badgeContent: count != null &&
-                            state.getNotificationCountRequestState != RequestState.loading
+                            state.getNotificationCountRequestState !=
+                                RequestState.loading
                         ? Text(state.notificationCount.toString(),
                             style:
                                 getBoldStyle(fontSize: 11, color: Colors.white))

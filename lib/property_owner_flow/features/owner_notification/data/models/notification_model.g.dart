@@ -29,8 +29,8 @@ OwnerNotificationItem _$OwnerNotificationItemFromJson(
       status: json['status'] as String?,
       title: json['title'] as String?,
       body: json['body'] as String?,
-      ticketId: json['ticketId'] as int?,
-      invoiceId: json['invoiceId'] as int?,
+      ticketId: (json['ticketId'] as num?)?.toInt(),
+      invoiceId: (json['invoiceId'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$OwnerNotificationItemToJson(
@@ -44,9 +44,9 @@ Map<String, dynamic> _$OwnerNotificationItemToJson(
     };
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) => Pagination(
-      page: json['page'] as int?,
-      limit: json['limit'] as int?,
-      count: json['count'] as int?,
+      page: (json['page'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt(),
+      count: (json['count'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$PaginationToJson(Pagination instance) =>

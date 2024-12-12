@@ -124,8 +124,7 @@ class RouterGenerator {
         return _pageRouter.build(const AboutAppView(), settings: settings);
       //terms and conditions
       case NamedRoutes.termsAndConditions:
-        return _pageRouter.build(const TermsAndConditionView(),
-            settings: settings);
+        return _pageRouter.build(TermsAndConditionView(), settings: settings);
       //help and support
       case NamedRoutes.helpAndSupport:
         return _pageRouter.build(const HelpAndSupportView(),

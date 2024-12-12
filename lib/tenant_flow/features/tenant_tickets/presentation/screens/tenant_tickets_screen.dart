@@ -35,12 +35,12 @@ class _TicketsViewState extends State<TicketsView> {
       appBar: SharedAppBar(
           title: S.current.myTickets,
           leading: IconButton(
-            icon: Icon(Icons.add, size: 24.sp),
+            icon: Icon(Icons.add, size: 24),
             onPressed: () =>
                 getIt<TenantTicketsCubit>().openTicketCreationFlow(context),
           )),
       body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 24.w),
+          padding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -79,7 +79,7 @@ class Unit {
       this.waterAccount,
       this.waterCost,
       this.address,
-      this.space,
+      thisace,
       this.rooms,
       this.bathrooms,
       this.lounge,

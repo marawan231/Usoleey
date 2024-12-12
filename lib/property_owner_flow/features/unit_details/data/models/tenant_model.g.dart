@@ -7,7 +7,7 @@ part of 'tenant_model.dart';
 // **************************************************************************
 
 TenantModel _$TenantModelFromJson(Map<String, dynamic> json) => TenantModel(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
       photo: json['photo'] as String?,
       firstNameEn: json['firstNameEn'] as String?,

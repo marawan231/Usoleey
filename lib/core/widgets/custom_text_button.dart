@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextButton extends StatelessWidget {
   final double? width;
@@ -56,8 +55,8 @@ class CustomTextButton extends StatelessWidget {
           style: TextButton.styleFrom(
             shape: RoundedRectangleBorder(
                 side: BorderSide(color: ColorsManager.primary, width: 1.5),
-                borderRadius: borderRadius ?? BorderRadius.circular(30.r)),
-            textStyle: titleStyle ?? getBoldStyle(fontSize: fontSize ?? 12.sp),
+                borderRadius: borderRadius ?? BorderRadius.circular(30)),
+            textStyle: titleStyle ?? getBoldStyle(fontSize: fontSize ?? 12),
             foregroundColor: titleColor ?? ColorsManager.primary,
             backgroundColor: backgroundColor ?? ColorsManager.white,
           ),
@@ -94,6 +93,7 @@ class _CustomTextButtonWithIconChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: deprecated_member_use
     final double scale = MediaQuery.textScalerOf(context).textScaleFactor;
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;

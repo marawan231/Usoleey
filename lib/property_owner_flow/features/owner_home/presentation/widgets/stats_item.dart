@@ -18,7 +18,7 @@ class StatsItem extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: ColorsManager.white,
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(8),
           border: Border.all(color: ColorsManager.grey)),
       child: Stack(
         alignment: Alignment.center,
@@ -28,35 +28,34 @@ class StatsItem extends StatelessWidget {
               ClipPath(
                   clipper: HomeItemCurveClipper(),
                   child: Container(
-                    height: 56.sp,
+                    height: 56,
                     decoration: BoxDecoration(
                       color: ColorsManager.primary,
-                      borderRadius: BorderRadius.circular(8.r),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   )),
               35.verticalSpace,
               Text(title,
                   style: getBoldStyle(
-                      color: ColorsManager.greyLight, fontSize: 11.sp)),
+                      color: ColorsManager.greyLight, fontSize: 11)),
               10.verticalSpace,
               requestState != RequestState.loading
                   ? Text(value.toString(),
                       style: getBoldStyle(
-                          color: ColorsManager.primaryDark, fontSize: 22.sp))
+                          color: ColorsManager.primaryDark, fontSize: 22))
                   : CupertinoActivityIndicator(),
             ],
           ),
           Positioned(
-            top: 27.h,
+            top: 27,
             child: Container(
-                width: 49.sp,
-                height: 49.sp,
+                width: 49,
+                height: 49,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle, color: ColorsManager.primaryLight),
                 child: ScaleTransition(
                     scale: AlwaysStoppedAnimation(0.6),
-                    child:
-                        SvgPicture.asset(icon, height: 20.sp, width: 20.sp))),
+                    child: SvgPicture.asset(icon, height: 20, width: 20))),
           ),
         ],
       ),

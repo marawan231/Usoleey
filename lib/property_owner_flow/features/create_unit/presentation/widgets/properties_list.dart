@@ -21,21 +21,21 @@ class PropertiesList extends StatelessWidget {
         slivers: <Widget>[
           SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 4.5, crossAxisCount: 1, mainAxisSpacing: 8.h),
+                childAspectRatio: 4.5, crossAxisCount: 1, mainAxisSpacing: 8),
             delegate: SliverChildBuilderDelegate((context, index) {
               return InkWell(
                 onTap: () => propertyOnChange!(properties[index]),
                 child: Container(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                  height: 56.h,
+                      EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  height: 56,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       color: selectedProperty != null &&
                               properties.indexOf(selectedProperty!) == index
                           ? ColorsManager.primaryLighter
                           : null,
-                      borderRadius: BorderRadius.circular(8.r),
+                      borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: ColorsManager.grey)),
                   child: Row(
                     children: [
@@ -46,7 +46,7 @@ class PropertiesList extends StatelessWidget {
                             '${properties[index].name!} , ${properties[index].district!} , ${properties[index].street!}',
                             overflow: TextOverflow.ellipsis,
                             style: getBoldStyle(
-                                fontSize: 14.sp,
+                                fontSize: 14,
                                 color: ColorsManager.primary,
                                 height: 1.5)),
                       ),

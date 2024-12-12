@@ -10,7 +10,7 @@ class RecentTicketsShimmer extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomShimmer(height: 20.h, width: 100.w),
+        CustomShimmer(height: 20, width: 100),
         16.verticalSpace,
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,

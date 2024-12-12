@@ -28,7 +28,9 @@ mixin _$MyTicketsState {
   int get processingPage => throw _privateConstructorUsedError;
   int get solvedPage => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MyTicketsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MyTicketsStateCopyWith<MyTicketsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,6 +63,8 @@ class _$MyTicketsStateCopyWithImpl<$Res, $Val extends MyTicketsState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MyTicketsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,6 +147,8 @@ class __$$InitialImplCopyWithImpl<$Res>
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MyTicketsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -307,7 +313,9 @@ class _$InitialImpl implements _Initial {
       processingPage,
       solvedPage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MyTicketsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
@@ -344,8 +352,11 @@ abstract class _Initial implements MyTicketsState {
   int get processingPage;
   @override
   int get solvedPage;
+
+  /// Create a copy of MyTicketsState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

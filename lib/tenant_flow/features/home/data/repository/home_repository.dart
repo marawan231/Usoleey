@@ -1,6 +1,5 @@
 import 'package:flutter_complete_project/core/network_service/api_result.dart';
 import 'package:flutter_complete_project/core/network_service/network_exceptions.dart';
-import 'package:flutter_complete_project/property_owner_flow/features/owner_invoices/data/models/all_invoice_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/models/ads_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/models/units_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/web_service/home_web_service.dart';

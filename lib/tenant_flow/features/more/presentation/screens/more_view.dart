@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_complete_project/core/constants/values.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/shared_cubits/user_cubit/user_cubit.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/more/logic/more_cubit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/navigator/named_routes.dart';
@@ -135,7 +134,7 @@ class _MoreViewState extends State<MoreView> {
                 clipper: CurveClipper(),
                 child: Container(
                   color: ColorsManager.primary,
-                  height: 100.sp,
+                  height: 100,
                 ),
               ),
               _buildBody(),
@@ -149,7 +148,7 @@ class _MoreViewState extends State<MoreView> {
 
   _buildBody() {
     return Padding(
-      padding: EdgeInsetsDirectional.only(top: 150.sp),
+      padding: EdgeInsetsDirectional.only(top: 150),
       child: ListView(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
@@ -222,7 +221,7 @@ class _MoreViewState extends State<MoreView> {
   _buildProfileImage() {
     final userModel = getIt<UserCubit>().state.userModel;
     return Positioned(
-      top: 50.sp,
+      top: 50,
       left: 0,
       right: 0,
       child: Column(
@@ -233,7 +232,7 @@ class _MoreViewState extends State<MoreView> {
           Text(
             '${userModel?.firstName ?? ''} ${userModel?.lastName ?? ''}',
             style: TextStyle(
-              fontSize: 24.sp,
+              fontSize: 24,
               fontWeight: FontWeight.bold,
               color: ColorsManager.primaryDark,
             ),
@@ -244,7 +243,7 @@ class _MoreViewState extends State<MoreView> {
                 ? S.of(context).propertyOwner
                 : S.of(context).tenant,
             style: getRegularStyle(
-              fontSize: 16.sp,
+              fontSize: 16,
               color: ColorsManager.primary,
             ),
           ),
@@ -256,20 +255,20 @@ class _MoreViewState extends State<MoreView> {
   _buildImage() {
     return Center(
       child: Container(
-        width: 100.sp,
-        height: 100.sp,
+        width: 100,
+        height: 100,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Color(0xff3D6A98),
         ),
         child: Padding(
-          padding: EdgeInsets.all(8.r),
+          padding: EdgeInsets.all(8),
           child: ClipRRect(
-              borderRadius: BorderRadius.circular(50.r),
+              borderRadius: BorderRadius.circular(50),
               child: CustomCachedImage(
                 image: getIt<AuthCubit>().userModel?.photo ?? '',
-                width: 100.sp,
-                height: 100.sp,
+                width: 100,
+                height: 100,
               )
               // child:
               ),
@@ -323,7 +322,7 @@ class MoreItem extends StatelessWidget {
         onTap: onTap,
         title: Text(
           title,
-          style: getBoldStyle(fontSize: 14.sp, color: color),
+          style: getBoldStyle(fontSize: 14, color: color),
         ),
         leading: SvgPicture.asset(
           icon,

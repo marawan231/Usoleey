@@ -20,7 +20,9 @@ mixin _$PropertyDetailsState {
       throw _privateConstructorUsedError;
   dynamic get getProperyDetailsState => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PropertyDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PropertyDetailsStateCopyWith<PropertyDetailsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +49,8 @@ class _$PropertyDetailsStateCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PropertyDetailsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +91,8 @@ class __$$InitialImplCopyWithImpl<$Res>
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PropertyDetailsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,7 +144,9 @@ class _$InitialImpl implements _Initial {
   int get hashCode => Object.hash(runtimeType, propertDetailsModel,
       const DeepCollectionEquality().hash(getProperyDetailsState));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PropertyDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
@@ -154,8 +162,11 @@ abstract class _Initial implements PropertyDetailsState {
   PropertDetailsModel? get propertDetailsModel;
   @override
   dynamic get getProperyDetailsState;
+
+  /// Create a copy of PropertyDetailsState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -18,7 +18,7 @@ class InvoiceItem extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-              minRadius: 24.sp,
+              minRadius: 24,
               child: SvgPicture.asset(getInvoiceTypeProperties(
                       InvoiceTypeExtension.fromString(invoiceModel.type!))
                   .image),
@@ -33,7 +33,7 @@ class InvoiceItem extends StatelessWidget {
                       ? 'تكلفة الفاتورة'
                       : '${S.current.invoice} ${getInvoiceTypeProperties(InvoiceTypeExtension.fromString(invoiceModel.type!)).text}',
                   style: getRegularStyle(
-                      fontSize: 12.sp, color: ColorsManager.greyLight),
+                      fontSize: 12, color: ColorsManager.greyLight),
                 ),
                 8.verticalSpace,
                 Text(
@@ -41,7 +41,7 @@ class InvoiceItem extends StatelessWidget {
                       ? '${invoiceModel.amount?.toString()} ${S.current.monthSar}'
                       : formatDate(invoiceModel.createdAt!),
                   style: getBoldStyle(
-                      fontSize: 16.sp, color: ColorsManager.primaryDark),
+                      fontSize: 16, color: ColorsManager.primaryDark),
                 )
               ],
             ),
@@ -50,14 +50,14 @@ class InvoiceItem extends StatelessWidget {
             SvgPicture.asset(AssetsManager.pdf)
           else
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
                   color: ColorsManager.greyLighter,
                   borderRadius: BorderRadius.circular(15)),
               child: Text(
                 S.current.service,
-                style: getBoldStyle(
-                    color: ColorsManager.greyLight, fontSize: 11.sp),
+                style:
+                    getBoldStyle(color: ColorsManager.greyLight, fontSize: 11),
               ),
             )
         ],
@@ -74,15 +74,15 @@ class InvoiceShimmerItem extends StatelessWidget {
     return CustomBorderContainer(
       child: Row(
         children: [
-          CustomShimmer(height: 48.r, width: 48.r, radius: 24.sp),
+          CustomShimmer(height: 48, width: 48, radius: 24),
           8.horizontalSpace,
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomShimmer(width: 100.w, height: 15.h),
+                CustomShimmer(width: 100, height: 15),
                 8.verticalSpace,
-                CustomShimmer(width: 150.w, height: 15.h),
+                CustomShimmer(width: 150, height: 15),
               ],
             ),
           ),

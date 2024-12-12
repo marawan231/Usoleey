@@ -24,7 +24,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
     final selectedIndex =
         context.select((TenantHomeLayoutCubit cubit) => cubit.state.index);
     return Container(
-      height: 85.sp,
+      height: 85,
       decoration: BoxDecoration(
           border: Border(
               top: BorderSide(
@@ -34,9 +34,9 @@ class _CustomNavBarState extends State<CustomNavBar> {
         showUnselectedLabels: true,
         currentIndex: selectedIndex,
         selectedLabelStyle:
-            getBoldStyle(fontSize: 12.sp, color: ColorsManager.primary),
+            getBoldStyle(fontSize: 12, color: ColorsManager.primary),
         unselectedLabelStyle:
-            getBoldStyle(fontSize: 12.sp, color: ColorsManager.greyLight),
+            getBoldStyle(fontSize: 12, color: ColorsManager.greyLight),
         selectedItemColor: ColorsManager.primary,
         unselectedItemColor: ColorsManager.greyLight,
         onTap: (index) =>
@@ -47,10 +47,10 @@ class _CustomNavBarState extends State<CustomNavBar> {
               : ColorsManager.greyLight;
           return BottomNavigationBarItem(
               icon: Padding(
-                  padding: EdgeInsets.only(bottom: 6.w),
+                  padding: EdgeInsets.only(bottom: 6),
                   child: SvgPicture.asset(e.value.icon,
-                      width: 20.h,
-                      height: 20.h,
+                      width: 20,
+                      height: 20,
                       // ignore: deprecated_member_use
                       color: color)),
               label: e.value.title);

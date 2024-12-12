@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 class EmptyLottie extends StatelessWidget {
@@ -29,42 +29,42 @@ class EmptyLottie extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 126.sp,
-            height: 126.sp,
-            padding: EdgeInsets.all(16.sp),
+            width: 126,
+            height: 126,
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: ColorsManager.white,
-              borderRadius: BorderRadius.circular(100.r),
+              borderRadius: BorderRadius.circular(100),
             ),
             child: Container(
-                width: 98.sp,
-                height: 98.sp,
-                padding: EdgeInsets.all(padding ?? 16.sp),
+                width: 98,
+                height: 98,
+                padding: EdgeInsets.all(padding ?? 16),
                 decoration: BoxDecoration(
                   color: ColorsManager.primaryLighter,
-                  borderRadius: BorderRadius.circular(100.r),
+                  borderRadius: BorderRadius.circular(100),
                 ),
-                child: Lottie.asset(lottiePath, width: 48.sp, height: 48.sp)),
+                child: Lottie.asset(lottiePath, width: 48, height: 48)),
           ),
           40.verticalSpace,
           Text(
             title,
-            style: getBoldStyle(fontSize: 16.sp, color: ColorsManager.primary),
+            style: getBoldStyle(fontSize: 16, color: ColorsManager.primary),
           ),
           8.verticalSpace,
           Text(subTitle,
               style: getRegularStyle(
-                  fontSize: 14.sp, color: ColorsManager.greyLight)),
+                  fontSize: 14, color: ColorsManager.greyLight)),
           40.verticalSpace,
           isButtonVisible
               ? GestureDetector(
                   onTap: onPressed,
                   child: Container(
-                    width: 125.sp,
-                    height: 35.sp,
+                    width: 125,
+                    height: 35,
                     decoration: BoxDecoration(
                       color: ColorsManager.primary,
-                      borderRadius: BorderRadius.circular(100.r),
+                      borderRadius: BorderRadius.circular(100),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -72,13 +72,13 @@ class EmptyLottie extends StatelessWidget {
                         Icon(
                           Icons.add,
                           color: ColorsManager.white,
-                          size: 16.sp,
+                          size: 16,
                         ),
                         6.horizontalSpace,
                         Text(
                           buttonText ?? '',
                           style: getBoldStyle(
-                              fontSize: 12.sp, color: ColorsManager.white),
+                              fontSize: 12, color: ColorsManager.white),
                         ),
                       ],
                     ),

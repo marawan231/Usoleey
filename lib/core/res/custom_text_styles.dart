@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'font_manager.dart';
 
@@ -9,7 +8,7 @@ TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color? color, do
       fontFamily: FontManager.fontFamily,
       color: color,
       fontWeight: fontWeight,
-      height: height ?? 1.h);
+      height: height ?? 1);
 }
 
 // regular style

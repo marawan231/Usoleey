@@ -19,7 +19,9 @@ mixin _$UnitDetailsState {
   RequestState get getUnitDetailsState => throw _privateConstructorUsedError;
   UnitDetailsModel? get unitDetailsModel => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UnitDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UnitDetailsStateCopyWith<UnitDetailsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -44,6 +46,8 @@ class _$UnitDetailsStateCopyWithImpl<$Res, $Val extends UnitDetailsState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UnitDetailsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,6 +87,8 @@ class __$$InitialImplCopyWithImpl<$Res>
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UnitDetailsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -134,7 +140,9 @@ class _$InitialImpl implements _Initial {
   int get hashCode =>
       Object.hash(runtimeType, getUnitDetailsState, unitDetailsModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UnitDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
@@ -150,8 +158,11 @@ abstract class _Initial implements UnitDetailsState {
   RequestState get getUnitDetailsState;
   @override
   UnitDetailsModel? get unitDetailsModel;
+
+  /// Create a copy of UnitDetailsState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

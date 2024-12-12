@@ -5,10 +5,8 @@ import 'package:flutter_complete_project/property_owner_flow/features/unit_detai
 import 'package:flutter_complete_project/tenant_flow/features/home/data/models/ads_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/models/units_model.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/data/repository/home_repository.dart';
-import 'package:flutter_complete_project/tenant_flow/features/tenant_home_layout/presentation/logic/cubit/tenant_home_layout_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tenant_tickets/presentation/logic/cubit/tenant_tickets_cubit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:http/http.dart';
 
 import '../../../../../../core/di/dependency_injection.dart';
 
@@ -69,7 +67,7 @@ class HomeCubit extends Cubit<HomeState> {
             ads: response.data!, getAdsRequestState: RequestState.success));
       },
       failure: (networkExceptions) {
-        final error = DioExceptionType.getErrorMessage(networkExceptions);
+        DioExceptionType.getErrorMessage(networkExceptions);
         emit(state.copyWith(getAdsRequestState: RequestState.error));
       },
     );

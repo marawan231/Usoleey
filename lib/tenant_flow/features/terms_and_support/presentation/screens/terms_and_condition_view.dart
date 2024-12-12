@@ -1,32 +1,85 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
-import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
-import 'package:flutter_complete_project/generated/l10n.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TermsAndConditionView extends StatelessWidget {
-  const TermsAndConditionView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: SharedAppBar(
-          title: S.current.termsAndConditions,
-        ),
-        body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 16.sp),
-          padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 16.sp),
-          // width: double.infinity,
-          // height: double.infinity,
-          decoration: BoxDecoration(
-              color: ColorsManager.white,
-              border: Border.all(color: ColorsManager.grey),
-              borderRadius: BorderRadius.circular(8.r)),
-          child: Text(
-            '.موسبيإ ميرول صن نم خسن ىلع اًضيأ توح يتلاو ركيام جياب سودلأ لثم ينورتكلإلا رشنلا جمارب روهظ عم اَرخؤم ىرخأ ةرم رشتنيل داعو ،صنلا اذه نم عطاقم يوحت ةيكيتسالبلا تيسارتيل قئاقر رادصإ عم نرقلا اذه تايّنيتس يف ريبك لكشب رشتنا. ينورتكلإلا ديضنتلاو ةعابطلا يف يلصألا هلكشبو اًمدختسم راص ىتح هنا لب ،صنلا اذه ىلع يضقت مل نمزلا نم نورق ةسمخ. فرحألا هذهل يلكش عجرم وأ ليلد ةباثمب بيّتك نوّكتل ،صن نم اهتذخأ يئاوشع لكشب فرحألا نم ةعومجم صرب ةلوهجم ةعبطم تماق امدنع رشع سماخلا نرقلا ذنم يلكشلا صنلل رايعملا لازيالو موسبيإ ميرول ناك. رشنلا رودو عباطملا تاعانص يف مدختسيُو) ىوتحملا سيلو لكشلا يه ةياغلا نأ ىنعمب (يلكش صن ةطاسبب وه موسبيإ ميرول      .موسبيإ ميرول صن نم خسن ىلع اًضيأ توح يتلاو ركيام جياب سودلأ لثم ينورتكلإلا رشنلا جمارب روهظ عم اَرخؤم ىرخأ ةرم رشتنيل داعو ،صنلا اذه نم عطاقم يوحت ةيكيتسالبلا تيسارتيل قئاقر رادصإ عم نرقلا اذه تايّنيتس يف ريبك لكشب رشتنا. ينورتكلإلا ديضنتلاو ةعابطلا يف يلصألا هلكشبو اًمدختسم راص ىتح هنا لب ،صنلا اذه ىلع يضقت مل نمزلا نم نورق ةسمخ. فرحألا هذهل يلكش عجرم وأ ليلد ةباثمب بيّتك نوّكتل ،صن نم اهتذخأ يئاوشع لكشب فرحألا نم ةعومجم صرب ةلوهجم ةعبطم تماق امدنع رشع سماخلا نرقلا ذنم يلكشلا صنلل رايعملا لازيالو موسبيإ ميرول ناك. رشنلا رودو عباطملا تاعانص يف مدختسيُو) ىوتحملا سيلو لكشلا يه ةياغلا نأ ىنعمب (يلكش صن ةطاسبب وه موسبيإ ميرول asdksamdkakdas,mdskdnasndklasdjhkdhadsjahsjaslkdjnaksdhaksdhaksdjadksj ',
-            style: getRegularStyle(fontSize: 14.sp, height: 1.2.sp),
+      appBar: AppBar(
+        title: Text('شروط وأحكام تطبيق اصولي'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '## **شروط وأحكام تطبيق اصولي**',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**قبول الاتفاقية**\n'
+                'يُعد دخولك واستخدامك لتطبيق "اصولي" موافقةً دون قيد أو شرط على بنود وشروط الاستخدام هذه، بالإضافة إلى القوانين المعمول بها في المملكة العربية السعودية. تسري هذه الشروط من أول استخدام لك للتطبيق، وأي تعديل عليها يعد نافذًا فور إعلانه. استمرارك في استخدام التطبيق بعد إعلان أي تعديل يُعتبر قبولًا تامًا لذلك التعديل.',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**القيود على الاستخدام**\n'
+                'باستخدامك لتطبيق "اصولي"، فإنك توافق على عدم:',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '* تحميل أو مشاركة أي محتوى غير قانوني أو ضار.\n'
+                '* استخدام التطبيق لأي غرض غير مشروع أو مخالف للقانون.\n'
+                '* القيام بأي عمل يضر بالتطبيق أو يؤثر على أدائه.\n'
+                '* استخدام أي أداة أو برنامج للتأثير على عمل التطبيق.\n'
+                '* تحميل التطبيق بأعباء غير معقولة.\n'
+                '* نشر أو توزيع أي محتوى مسيء أو غير لائق.',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**حقوق الملكية**\n'
+                'جميع الحقوق في هذا التطبيق مملوكة لتطبيق "اصولي". لا يجوز لك نسخ، تعديل، توزيع، أو استخدام أي جزء من التطبيق أو محتواه دون الحصول على موافقة خطية مسبقة من "اصولي".',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**إخلاء المسؤولية**\n'
+                'استخدامك لتطبيق "اصولي" على مسؤوليتك الخاصة. نحن في "اصولي" لسنا مسؤولين عن أي خسارة أو ضرر قد تتعرض له نتيجة استخدامك للتطبيق.',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**سياسة الخصوصية**\n'
+                'باستخدامك لتطبيق "اصولي"، فإنك توافق على جمع ومعالجة واستخدام معلوماتك الشخصية وفقًا لسياسة الخصوصية الخاصة بنا.',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**رسوم الخدمات**\n'
+                '[أدخل تفاصيل رسوم الخدمات وسياسة الاسترداد هنا]',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**إنهاء الاستخدام**\n'
+                'نحتفظ بحق إنهاء أو تعليق حسابك دون إشعار مسبق في حال مخالفتك لشروط الاستخدام أو لأي سبب آخر.',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**تعديل الشروط**\n'
+                'نحتفظ بحق تعديل شروط الاستخدام في أي وقت. سنقوم بإعلامك بأي تغييرات جوهرية.',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**اتصل بنا**\n'
+                '[أدخل معلومات الاتصال الخاصة بك]',
+              ),
+              SizedBox(height: 10),
+              Text(
+                '**ملاحظة:**\n'
+                'يجب مراجعة هذه الشروط والأحكام بشكل دوري للتأكد من فهمك لأي تغييرات.',
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

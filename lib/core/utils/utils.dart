@@ -12,7 +12,6 @@ import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/shared_cubits/user_cubit/user_cubit.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
@@ -41,16 +40,16 @@ Future<void> showIosDialog(
       builder: (context) {
         return CupertinoAlertDialog(
           title: Padding(
-            padding: EdgeInsets.only(bottom: 8.sp),
-            child: Text(title ?? '', style: getBoldStyle(fontSize: 16.sp)),
+            padding: EdgeInsets.only(bottom: 8),
+            child: Text(title ?? '', style: getBoldStyle(fontSize: 16)),
           ),
-          content: Text(content ?? '', style: getRegularStyle(fontSize: 12.sp)),
+          content: Text(content ?? '', style: getRegularStyle(fontSize: 12)),
           actions: <Widget>[
             CupertinoDialogAction(
               child: Text(
                 cancelText ?? '',
                 style: getRegularStyle(
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   color: ColorsManager.primary,
                 ),
               ),
@@ -62,7 +61,7 @@ Future<void> showIosDialog(
             CupertinoDialogAction(
               child: Text(
                 okText ?? '',
-                style: getBoldStyle(fontSize: 16.sp, color: ColorsManager.red),
+                style: getBoldStyle(fontSize: 16, color: ColorsManager.red),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -102,7 +101,7 @@ void showSnackBar({
       content: Text(
         message,
         style: getRegularStyle(
-          fontSize: 14.sp,
+          fontSize: 14,
           color: Colors.white,
         ),
       ),

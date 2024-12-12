@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
@@ -11,7 +11,6 @@ import 'package:flutter_complete_project/core/widgets/base_remote_widget.dart';
 import 'package:flutter_complete_project/core/widgets/custom_shimmer.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
 import 'package:flutter_complete_project/tenant_flow/features/offers/presentation/widgets/offers_item.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../generated/l10n.dart';
 
@@ -34,15 +33,15 @@ class AdvetisementsList extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomShimmer(width: 200.sp, height: 15.sp),
-                        CustomShimmer(width: 50.sp, height: 10.sp),
+                        CustomShimmer(width: 200, height: 15),
+                        CustomShimmer(width: 50, height: 10),
                       ],
                     ),
                     16.verticalSpace,
                     Row(
                       children: [
-                        CustomShimmer(width: 284.sp, height: 120.sp),
-                        CustomShimmer(width: 284.sp, height: 120.sp),
+                        CustomShimmer(width: 284, height: 120),
+                        CustomShimmer(width: 284, height: 120),
                       ].joinWith(10.horizontalSpace),
                     ),
                   ],
@@ -52,13 +51,13 @@ class AdvetisementsList extends StatelessWidget {
                 HomeOffersHeader(),
                 16.verticalSpace,
                 SizedBox(
-                  height: 180.sp,
+                  height: 180,
                   child: ListView.separated(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: getCount(state.ads.length),
                       itemBuilder: (context, index) => OffersItem(
-                          ads: state.ads[index], width: 284.sp, height: 120.sp),
+                          ads: state.ads[index], width: 284, height: 120),
                       separatorBuilder: (context, index) => 16.horizontalSpace),
                 )
               ]))
@@ -80,7 +79,7 @@ class HomeOffersHeader extends StatelessWidget {
       children: [
         Text(
           S.current.explorelatestRentalOffers,
-          style: getBoldStyle(fontSize: 16.sp),
+          style: getBoldStyle(fontSize: 16),
         ),
         InkWell(
           onTap: () {
@@ -88,8 +87,7 @@ class HomeOffersHeader extends StatelessWidget {
           },
           child: Text(
             S.current.more,
-            style:
-                getBoldStyle(fontSize: 12.sp, color: ColorsManager.primaryDark),
+            style: getBoldStyle(fontSize: 12, color: ColorsManager.primaryDark),
           ),
         ),
       ],

@@ -65,7 +65,7 @@ class MyRealEsateShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 30.h),
+        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
         children: List.generate(
           3,
           (index) => ItemBackground(
@@ -75,15 +75,15 @@ class MyRealEsateShimmer extends StatelessWidget {
               children: [
                 10.verticalSpace,
                 Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                    child: CustomShimmer(width: double.infinity, height: 15.h)),
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: CustomShimmer(width: double.infinity, height: 15)),
                 24.verticalSpace,
-                CustomShimmer(width: 120.w, height: 15.h),
+                CustomShimmer(width: 120, height: 15),
                 14.verticalSpace,
-                CustomShimmer(width: 220.w, height: 15.h),
+                CustomShimmer(width: 220, height: 15),
                 20.verticalSpace,
                 Center(
-                    child: CustomShimmer(height: 36.h, width: double.infinity)),
+                    child: CustomShimmer(height: 36, width: double.infinity)),
                 30.verticalSpace
               ],
             ),

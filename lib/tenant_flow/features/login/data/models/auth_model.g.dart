@@ -24,7 +24,7 @@ AuthModelData _$AuthModelDataFromJson(Map<String, dynamic> json) =>
           ? null
           : UserModel.fromJson(json['user'] as Map<String, dynamic>),
       accessToken: json['accessToken'] as String?,
-      expiresIn: json['expiresIn'] as int?,
+      expiresIn: (json['expiresIn'] as num?)?.toInt(),
       stats: json['stats'] == null
           ? null
           : Stats.fromJson(json['stats'] as Map<String, dynamic>),
@@ -39,7 +39,7 @@ Map<String, dynamic> _$AuthModelDataToJson(AuthModelData instance) =>
     };
 
 UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
       photo: json['photo'] as String?,
       email: json['email'] as String?,
@@ -69,10 +69,10 @@ Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
     };
 
 Stats _$StatsFromJson(Map<String, dynamic> json) => Stats(
-      openTickets: json['openTickets'] as int?,
-      totalRents: json['totalRents'] as int?,
-      tenantsCount: json['tenantsCount'] as int?,
-      unitsCount: json['unitsCount'] as int?,
+      openTickets: (json['openTickets'] as num?)?.toInt(),
+      totalRents: (json['totalRents'] as num?)?.toInt(),
+      tenantsCount: (json['tenantsCount'] as num?)?.toInt(),
+      unitsCount: (json['unitsCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$StatsToJson(Stats instance) => <String, dynamic>{

@@ -23,7 +23,7 @@ Map<String, dynamic> _$ContactInfoModelToJson(ContactInfoModel instance) =>
 ContactInfoModelData _$ContactInfoModelDataFromJson(
         Map<String, dynamic> json) =>
     ContactInfoModelData(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       phonNumber: json['phonNumber'] as String?,
       email: json['email'] as String?,
     );

@@ -7,7 +7,7 @@ class TicketDetailsBottomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final String? role = getIt<UserCubit>().state.userModel?.role;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 40),
       child: BlocBuilder<TicketDetailsCubit, TicketDetailsState>(
           builder: (context, state) {
         return state.getTicketDetailsState != RequestState.loading
@@ -55,7 +55,7 @@ Widget getTenantTicketDetailsButton(
     // widget = AppTextButton(
     //     backgroundColor: ColorsManager.backgroundColor,
     //     textStyle:
-    //         getBoldStyle(fontSize: 16.sp, color: ColorsManager.primary),
+    //         getBoldStyle(fontSize: 16, color: ColorsManager.primary),
     //     buttonText: S.current.cancelTicket,
     //     onPressed: () => _showCancelAlertDialog());
 
@@ -70,7 +70,7 @@ void _showMenuSheet(TicketDetailsModel ticketDetailsModel) {
     context: Go.navigatorKey.currentContext!,
     builder: (BuildContext context) => CupertinoActionSheet(
       message: Text(S.current.chooseFromlist,
-          style: getBoldStyle(fontSize: 12.sp, color: ColorsManager.greyLight)),
+          style: getBoldStyle(fontSize: 12, color: ColorsManager.greyLight)),
       actions: <CupertinoActionSheetAction>[
         CupertinoActionSheetAction(
           onPressed: () {
@@ -79,8 +79,8 @@ void _showMenuSheet(TicketDetailsModel ticketDetailsModel) {
                 ticketDetailsModel.unit?.tenant?.phoneNumber ?? '');
           },
           child: Text(S.current.contactTenant,
-              style: getRegularStyle(
-                  fontSize: 16.sp, color: ColorsManager.primary)),
+              style:
+                  getRegularStyle(fontSize: 16, color: ColorsManager.primary)),
         ),
         CupertinoActionSheetAction(
           onPressed: () {
@@ -88,8 +88,8 @@ void _showMenuSheet(TicketDetailsModel ticketDetailsModel) {
             getIt<TicketDetailsCubit>().uploadInvoice();
           },
           child: Text(S.current.uploadInvoice,
-              style: getRegularStyle(
-                  fontSize: 16.sp, color: ColorsManager.primary)),
+              style:
+                  getRegularStyle(fontSize: 16, color: ColorsManager.primary)),
         ),
         CupertinoActionSheetAction(
           onPressed: () {
@@ -97,16 +97,15 @@ void _showMenuSheet(TicketDetailsModel ticketDetailsModel) {
             _showAlertDialog();
           },
           child: Text(S.current.changeStatusResolved,
-              style: getRegularStyle(
-                  fontSize: 16.sp, color: ColorsManager.primary)),
+              style:
+                  getRegularStyle(fontSize: 16, color: ColorsManager.primary)),
         ),
       ],
       cancelButton: CupertinoActionSheetAction(
           onPressed: Go.back,
           child: Text(
             S.current.cancel,
-            style:
-                getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16.sp),
+            style: getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16),
           )),
     ),
   );
@@ -124,14 +123,14 @@ void _showRateDialog() {
       builder: (_) {
         return Container(
           padding: EdgeInsets.only(
-              right: 24.w,
-              left: 24.r,
-              top: 24.h,
+              right: 24,
+              left: 24,
+              top: 24,
               bottom: MediaQuery.of(
                 Go.navigatorKey.currentContext!,
               ).viewInsets.bottom),
           child: BlocProvider.value(
-            value:  getIt<TicketDetailsCubit>(),
+            value: getIt<TicketDetailsCubit>(),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -142,15 +141,15 @@ void _showRateDialog() {
                   32.verticalSpace,
                   Text(S.current.evaluationExperience,
                       style: getRegularStyle(
-                          fontSize: 12.sp, color: ColorsManager.greyLight)),
+                          fontSize: 12, color: ColorsManager.greyLight)),
                   10.verticalSpace,
                   Text(S.current.shareRating,
                       style: getRegularStyle(
-                          fontSize: 22.sp, color: ColorsManager.primaryDark)),
+                          fontSize: 22, color: ColorsManager.primaryDark)),
                   10.verticalSpace,
                   Text(S.current.shareRatingDescription,
                       style: getRegularStyle(
-                          fontSize: 14.sp, color: ColorsManager.greyLight),
+                          fontSize: 14, color: ColorsManager.greyLight),
                       textAlign: TextAlign.center),
                   32.verticalSpace,
                   Directionality(
@@ -176,7 +175,7 @@ void _showRateDialog() {
                         hintText: S.current.writeYourOption,
                         maxLines: 3,
                         validator: (value) => value!.validateEmpty(),
-                        height: 100.h),
+                        height: 100),
                   ),
                   24.verticalSpace,
                   BlocBuilder<TicketDetailsCubit, TicketDetailsState>(
@@ -208,16 +207,15 @@ void _showContactTenantSheet(String phoneNumber) {
         CupertinoActionSheetAction(
           onPressed: () {},
           child: Text(phoneNumber,
-              style: getRegularStyle(
-                  fontSize: 22.sp, color: ColorsManager.primary)),
+              style:
+                  getRegularStyle(fontSize: 22, color: ColorsManager.primary)),
         ),
       ],
       cancelButton: CupertinoActionSheetAction(
           onPressed: () => launchTel(phoneNumber: phoneNumber),
           child: Text(
             S.current.conatct,
-            style:
-                getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16.sp),
+            style: getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16),
           )),
     ),
   );
@@ -234,28 +232,28 @@ void _showAlertDialog() {
             ignoring: state.updateTicketStatus == RequestState.loading,
             child: CupertinoAlertDialog(
               title: Padding(
-                padding: EdgeInsets.only(bottom: 8.0.h),
+                padding: EdgeInsets.only(bottom: 8.0),
                 child: Text(
                   S.current.solvedAlertTitle,
                   style: getBoldStyle(
-                      fontSize: 16.sp, color: ColorsManager.black, height: 1.5),
+                      fontSize: 16, color: ColorsManager.black, height: 1.5),
                 ),
               ),
               content: Text(
                 S.current.solvedAlertSubtitle,
                 style: getRegularStyle(
-                    fontSize: 12.sp, color: ColorsManager.black, height: 1.5),
+                    fontSize: 12, color: ColorsManager.black, height: 1.5),
               ),
               actions: <CupertinoDialogAction>[
                 CupertinoDialogAction(
                     textStyle: getRegularStyle(
-                        color: ColorsManager.primary, fontSize: 16.sp),
+                        color: ColorsManager.primary, fontSize: 16),
                     isDefaultAction: true,
                     onPressed: Go.back,
                     child: Text(S.current.solvedAlertCancel)),
                 CupertinoDialogAction(
-                  textStyle: getBoldStyle(
-                      color: ColorsManager.primary, fontSize: 16.sp),
+                  textStyle:
+                      getBoldStyle(color: ColorsManager.primary, fontSize: 16),
                   isDestructiveAction: true,
                   onPressed: () => getIt<TicketDetailsCubit>()
                       .updateTicket(status: 'SOLVED'),
@@ -272,6 +270,7 @@ void _showAlertDialog() {
   );
 }
 
+// ignore: unused_element
 void _showCancelAlertDialog() {
   showCupertinoModalPopup<void>(
     context: Go.navigatorKey.currentContext!,
@@ -283,28 +282,28 @@ void _showCancelAlertDialog() {
             ignoring: state.updateTicketStatus == RequestState.loading,
             child: CupertinoAlertDialog(
               title: Padding(
-                padding: EdgeInsets.only(bottom: 8.0.h),
+                padding: EdgeInsets.only(bottom: 8.0),
                 child: Text(
                   S.current.cancelTicketTitle,
                   style: getBoldStyle(
-                      fontSize: 16.sp, color: ColorsManager.black, height: 1.5),
+                      fontSize: 16, color: ColorsManager.black, height: 1.5),
                 ),
               ),
               content: Text(
                 S.current.cancelTicketSubtitle,
                 style: getRegularStyle(
-                    fontSize: 12.sp, color: ColorsManager.black, height: 1.5),
+                    fontSize: 12, color: ColorsManager.black, height: 1.5),
               ),
               actions: <CupertinoDialogAction>[
                 CupertinoDialogAction(
                     textStyle: getRegularStyle(
-                        color: ColorsManager.primary, fontSize: 16.sp),
+                        color: ColorsManager.primary, fontSize: 16),
                     isDefaultAction: true,
                     onPressed: Go.back,
                     child: Text(S.current.solvedAlertCancel)),
                 CupertinoDialogAction(
-                  textStyle: getBoldStyle(
-                      color: ColorsManager.primary, fontSize: 16.sp),
+                  textStyle:
+                      getBoldStyle(color: ColorsManager.primary, fontSize: 16),
                   isDestructiveAction: true,
                   onPressed: () => getIt<TicketDetailsCubit>()
                       .updateTicket(status: 'CLOSED'),

@@ -30,7 +30,7 @@ class MoreCubit extends Cubit<MoreState> {
             contactsData: response.data!));
       },
       failure: (networkExceptions) {
-        final error = DioExceptionType.getErrorMessage(networkExceptions);
+        DioExceptionType.getErrorMessage(networkExceptions);
         emit(state.copyWith(getContactsRequestState: RequestState.error));
       },
     );

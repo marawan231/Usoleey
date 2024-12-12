@@ -46,7 +46,9 @@ mixin _$UpdateUnitState {
   int get page => throw _privateConstructorUsedError;
   PropertyModel? get selectedProperty => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateUnitState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UpdateUnitStateCopyWith<UpdateUnitState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -98,6 +100,8 @@ class _$UpdateUnitStateCopyWithImpl<$Res, $Val extends UpdateUnitState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UpdateUnitState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -294,6 +298,8 @@ class __$$InitialImplCopyWithImpl<$Res>
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateUnitState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -665,7 +671,9 @@ class _$InitialImpl implements _Initial {
         selectedProperty
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateUnitState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
@@ -759,8 +767,11 @@ abstract class _Initial implements UpdateUnitState {
   int get page;
   @override
   PropertyModel? get selectedProperty;
+
+  /// Create a copy of UpdateUnitState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

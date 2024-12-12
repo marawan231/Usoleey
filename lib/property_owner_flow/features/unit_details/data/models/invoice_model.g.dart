@@ -7,12 +7,12 @@ part of 'invoice_model.dart';
 // **************************************************************************
 
 InvoiceModel _$InvoiceModelFromJson(Map<String, dynamic> json) => InvoiceModel(
-      id: json['id'] as int?,
-      amount: json['amount'] as int?,
+      id: (json['id'] as num?)?.toInt(),
+      amount: (json['amount'] as num?)?.toInt(),
       file: json['file'] as String?,
       dueDate: json['dueDate'] as String?,
       type: json['type'] as String?,
-      unitId: json['unitId'] as int?,
+      unitId: (json['unitId'] as num?)?.toInt(),
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );

@@ -11,10 +11,10 @@ class AddUnitItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
             border: Border.all(color: ColorsManager.grey),
-            borderRadius: BorderRadius.circular(8.r)),
+            borderRadius: BorderRadius.circular(8)),
         child: Row(
           children: [
             SvgPicture.asset(AssetsManager.addUnit),

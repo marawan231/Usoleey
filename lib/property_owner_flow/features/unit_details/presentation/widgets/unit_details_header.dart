@@ -11,13 +11,13 @@ class UnitDetailsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 320.h,
+      height: 320,
       child: Stack(
         children: [
           CustomCachedImage(
               image: '${unitDetailsModel.image ?? ''}',
               width: double.infinity,
-              height: 250.h),
+              height: 250),
           PositionedDirectional(
             end: 0,
             child: IconButton(
@@ -41,12 +41,12 @@ class UnitDetailsHeader extends StatelessWidget {
                     style: getBoldStyle(
                         height: 1.5,
                         color: ColorsManager.primaryDark,
-                        fontSize: 16.sp),
+                        fontSize: 16),
                   ),
                   12.verticalSpace,
                   CustomTextButton.icon(
                       icon: SvgPicture.asset(AssetsManager.editIcon),
-                      margin: EdgeInsets.symmetric(horizontal: 40.w),
+                      margin: EdgeInsets.symmetric(horizontal: 40),
                       onPressed: () {
                         Go.toNamed(NamedRoutes.updateUnit,
                             arguments: UpdateUnitScreen(

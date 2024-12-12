@@ -19,7 +19,7 @@ class MyRealEstateView extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: SharedAppBar(
-            height: 100.h,
+            height: 100,
             title: S.current.myRealEstate,
             leading: IconButton(
                 icon: Icon(Icons.add_rounded, size: 30),
@@ -44,7 +44,7 @@ class MyRealEstateView extends StatelessWidget {
 
   void addUnitBottomSheet() {
     customBottomSheetDialog(
-      height: 300.h,
+      height: 300,
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

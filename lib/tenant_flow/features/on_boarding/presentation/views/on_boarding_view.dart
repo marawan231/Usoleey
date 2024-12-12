@@ -20,14 +20,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-          padding: EdgeInsetsDirectional.only(top: 150.sp),
+          padding: EdgeInsetsDirectional.only(top: 150),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 // Text('', textAlign: TextAlign.center),
                 Container(
-                    height: 140.sp,
+                    height: 140,
                     width: double.infinity,
                     child: BuildPageView(pageController: pageController)),
                 // 24.verticalSpace,

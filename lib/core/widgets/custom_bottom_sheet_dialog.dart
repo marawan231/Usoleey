@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../navigator/navigator.dart';
 import '../theming/colors.dart';
@@ -14,18 +13,18 @@ customBottomSheetDialog(
       clipBehavior: Clip.antiAliasWithSaveLayer,
       backgroundColor: Colors.white,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(40.r))),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(40))),
       builder: (context) {
         return Container(
           height: height,
           decoration: BoxDecoration(
               color: ColorsManager.white,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(40.r))),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(40))),
           padding: EdgeInsets.only(
-              left: 24.sp,
-              right: 24.sp,
+              left: 24,
+              right: 24,
               bottom: MediaQuery.of(context).viewInsets.bottom,
-              top: 15.sp),
+              top: 15),
           width: double.infinity,
           child: Column(
             children: [Expanded(child: body)],

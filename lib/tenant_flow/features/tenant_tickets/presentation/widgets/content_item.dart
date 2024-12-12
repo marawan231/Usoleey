@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../generated/l10n.dart';
 
@@ -14,12 +13,12 @@ class ContetntItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40.sp,
-      padding: EdgeInsets.symmetric(horizontal: 16.sp),
+      height: 40,
+      padding: EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         color: ColorsManager.primaryLighter,
         // border: Border.all(color: Colors.grey, width: 1),
-        borderRadius: BorderRadius.circular(100.r),
+        borderRadius: BorderRadius.circular(100),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,14 +27,14 @@ class ContetntItem extends StatelessWidget {
             child: Text(label ?? '',
                 overflow: TextOverflow.ellipsis,
                 style: getBoldStyle(
-                    fontSize: 12.sp, color: ColorsManager.primaryDark)),
+                    fontSize: 12, color: ColorsManager.primaryDark)),
           ),
           TextButton(
               onPressed: onPressed,
               child: Text(
                 S.current.change,
                 style: getBoldStyle(
-                    fontSize: 12.sp, color: ColorsManager.primaryDark),
+                    fontSize: 12, color: ColorsManager.primaryDark),
               )),
         ],
       ),

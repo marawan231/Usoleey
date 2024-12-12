@@ -1,21 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tenant_tickets/data/models/create_ticket_request_model.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../../../../../../core/di/dependency_injection.dart';
 import '../../../../../../core/enums/enums.dart';
-import '../../../../../../core/res/assets_manager.dart';
 import '../../../../../../core/shared_models/owner_unit_model.dart';
 import '../../../../../../core/utils/utils.dart';
-import '../../../../../../generated/l10n.dart';
 import '../../../../../../property_owner_flow/features/owner_home/data/models/home_model.dart';
 import '../../../../home/presentation/logic/cubit/home_cubit.dart';
 import '../../../data/models/get_tenant_tickets_filter_model.dart';
@@ -188,7 +181,7 @@ class TenantTicketsCubit extends Cubit<TenantTicketsState> {
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20.r), topRight: Radius.circular(20.r)),
+              topLeft: Radius.circular(20), topRight: Radius.circular(20)),
         ),
         builder: (context) {
           return Padding(

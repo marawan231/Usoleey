@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
@@ -18,7 +19,6 @@ import 'package:flutter_complete_project/tenant_flow/features/home/presentation/
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/widgets/list_of_invoices.dart';
 import 'package:flutter_complete_project/tenant_flow/features/on_boarding/presentation/widgets/on_boarding_widgets_imports.dart';
 import 'package:flutter_complete_project/tenant_flow/features/tenant_tickets/presentation/logic/cubit/tenant_tickets_cubit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/enums/enums.dart';
 import '../../../../../core/res/assets_manager.dart';
@@ -28,7 +28,7 @@ import '../../../../../generated/l10n.dart';
 import '../../../../../property_owner_flow/features/my_real_estate/presentation/widgets/my_real_estate_widgets_imports.dart';
 import '../../../tenant_tickets/data/models/tickets_status_model.dart';
 
-class TenantHomeScreen extends StatelessWidget { 
+class TenantHomeScreen extends StatelessWidget {
   const TenantHomeScreen({super.key});
 
   @override
@@ -89,8 +89,7 @@ class _HomeViewState extends State<HomeView> {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return Padding(
-          padding:
-              EdgeInsetsDirectional.only(start: 16.sp, end: 16.sp, top: 19.sp),
+          padding: EdgeInsetsDirectional.only(start: 16, end: 16, top: 19),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,6 +111,7 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 
+  // ignore: unused_element
   _buildIndicators(int length) {
     return length == 1
         ? SizedBox.shrink()
@@ -139,7 +139,7 @@ class TenantHomeUnits extends StatelessWidget {
                 : Column(
                     children: [
                       SizedBox(
-                        height: 300.h,
+                        height: 300,
                         child: ExpandablePageView(
                           pageController: pageController,
                           children: List.generate(
@@ -178,7 +178,7 @@ class TenantLoadingShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 20.h),
+      padding: EdgeInsets.only(bottom: 20),
       child: ItemBackground(
         isProperty: false,
         curveColor: ColorsManager.grey,
@@ -186,14 +186,14 @@ class TenantLoadingShimmer extends StatelessWidget {
           children: [
             10.verticalSpace,
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                child: CustomShimmer(width: double.infinity, height: 15.h)),
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: CustomShimmer(width: double.infinity, height: 15)),
             10.verticalSpace,
-            CustomShimmer(width: 120.w, height: 15.h),
+            CustomShimmer(width: 120, height: 15),
             8.verticalSpace,
-            CustomShimmer(width: 220.w, height: 15.h),
+            CustomShimmer(width: 220, height: 15),
             16.verticalSpace,
-            Center(child: CustomShimmer(height: 30.h, width: double.infinity)),
+            Center(child: CustomShimmer(height: 30, width: double.infinity)),
             20.verticalSpace
           ],
         ),
@@ -211,8 +211,7 @@ class EmptyTenantUnits extends StatelessWidget {
       child: Column(
         children: [
           Text(S.current.emptyTenantUnitTitle,
-              style:
-                  getBoldStyle(fontSize: 14.sp, color: ColorsManager.greyLight),
+              style: getBoldStyle(fontSize: 14, color: ColorsManager.greyLight),
               textAlign: TextAlign.center),
           16.verticalSpace,
           HomeCustomButton(

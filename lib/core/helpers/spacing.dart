@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-SizedBox verticalSpace(double height) => SizedBox(
-      height: height.h,
-    );
-
-SizedBox horizontalSpace(double width) => SizedBox(
-      width: width.w,
-    );
+extension SpacingExtensions on int {
+  SizedBox get verticalSpace => SizedBox(height: toDouble());
+  SizedBox get horizontalSpace => SizedBox(width: toDouble());
+}

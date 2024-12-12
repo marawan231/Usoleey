@@ -36,18 +36,17 @@ Map<String, dynamic> _$UnitDataModelToJson(UnitDataModel instance) =>
     };
 
 Units _$UnitsFromJson(Map<String, dynamic> json) => Units(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      rent: json['rent'] as int?,
+      rent: (json['rent'] as num?)?.toInt(),
       rentCollectionDate: json['rentCollectionDate'] as String?,
       electricityAccount: json['electricityAccount'] as String?,
       waterAccount: json['waterAccount'] as String?,
       address: json['address'] as String?,
-      space: json['space'] as int?,
-      rooms: json['rooms'] as int?,
-      bathrooms: json['bathrooms'] as int?,
+      rooms: (json['rooms'] as num?)?.toInt(),
+      bathrooms: (json['bathrooms'] as num?)?.toInt(),
       lounge: json['lounge'] as bool?,
-      conditioners: json['conditioners'] as int?,
+      conditioners: (json['conditioners'] as num?)?.toInt(),
       kitchen: json['kitchen'] as bool?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
@@ -61,7 +60,7 @@ Units _$UnitsFromJson(Map<String, dynamic> json) => Units(
           ?.map((e) => InvoiceModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       isSelected: json['isSelected'] as bool? ?? false,
-    );
+    )..space = (json['space'] as num?)?.toInt();
 
 Map<String, dynamic> _$UnitsToJson(Units instance) => <String, dynamic>{
       'id': instance.id,
@@ -86,10 +85,10 @@ Map<String, dynamic> _$UnitsToJson(Units instance) => <String, dynamic>{
     };
 
 Property _$PropertyFromJson(Map<String, dynamic> json) => Property(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       address: json['address'] as String?,
-      unitsCount: json['unitsCount'] as int?,
+      unitsCount: (json['unitsCount'] as num?)?.toInt(),
       instrumentNumber: json['instrumentNumber'] as String?,
       postalCode: json['postalCode'] as String?,
       blockNumber: json['blockNumber'] as String?,
@@ -116,9 +115,9 @@ Map<String, dynamic> _$PropertyToJson(Property instance) => <String, dynamic>{
     };
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) => Pagination(
-      page: json['page'] as int?,
-      limit: json['limit'] as int?,
-      count: json['count'] as int?,
+      page: (json['page'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt(),
+      count: (json['count'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$PaginationToJson(Pagination instance) =>
@@ -129,7 +128,7 @@ Map<String, dynamic> _$PaginationToJson(Pagination instance) =>
     };
 
 Owner _$OwnerFromJson(Map<String, dynamic> json) => Owner(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       phoneNumber: json['phoneNumber'] as String?,
       photo: json['photo'] as String?,
       email: json['email'] as String?,

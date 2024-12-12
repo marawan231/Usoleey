@@ -1,4 +1,4 @@
-part of'ticket_details_widget_imports.dart';
+part of 'ticket_details_widget_imports.dart';
 
 class TicketImages extends StatelessWidget {
   final List<String> images;
@@ -8,25 +8,25 @@ class TicketImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(S.current.attachments,
-              style: getBoldStyle(
-                  fontSize: 14.sp, color: ColorsManager.primaryDark)),
+              style:
+                  getBoldStyle(fontSize: 14, color: ColorsManager.primaryDark)),
           8.verticalSpace,
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: images
                   .map((e) => Container(
-                width: 181.w,
-                height: 136.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.r)),
-                child: CustomCachedImage(image: e),
-              ))
+                        width: 181,
+                        height: 136,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8)),
+                        child: CustomCachedImage(image: e),
+                      ))
                   .toList()
                   .joinWith(16.horizontalSpace),
             ),

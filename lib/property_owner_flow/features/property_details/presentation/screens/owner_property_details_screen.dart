@@ -63,10 +63,10 @@ class PropertyDetailsBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                padding: EdgeInsets.symmetric(horizontal: 24),
                 child: Text(S.current.units,
                     style: getBoldStyle(
-                        color: ColorsManager.primaryDark, fontSize: 16.sp)),
+                        color: ColorsManager.primaryDark, fontSize: 16)),
               ),
               10.verticalSpace,
               ListView.separated(
@@ -76,10 +76,11 @@ class PropertyDetailsBody extends StatelessWidget {
                           child: Row(
                         children: [
                           CircleAvatar(
-                            maxRadius: 25.r,
+                            maxRadius: 25,
                             backgroundColor: ColorsManager.greyLighter,
                             child: SvgPicture.asset(
                               AssetsManager.navbarHome,
+                              // ignore: deprecated_member_use
                               color: index.isEven
                                   ? ColorsManager.primary
                                   : ColorsManager.brown,
@@ -90,8 +91,7 @@ class PropertyDetailsBody extends StatelessWidget {
                               child: Text(
                             propertDetailsModel.units?[index].address ?? '',
                             style: getBoldStyle(
-                                color: ColorsManager.primaryDark,
-                                fontSize: 14.sp),
+                                color: ColorsManager.primaryDark, fontSize: 14),
                           ))
                         ],
                       )),
@@ -105,10 +105,10 @@ class PropertyDetailsBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  padding: EdgeInsets.symmetric(horizontal: 24),
                   child: Text(S.current.tenantInformation,
                       style: getBoldStyle(
-                          color: ColorsManager.primaryDark, fontSize: 16.sp))),
+                          color: ColorsManager.primaryDark, fontSize: 16))),
               ListView.separated(
                   itemBuilder: (context, index) => TenantItem(
                       tenantModel: propertDetailsModel.tenants![index]),
@@ -133,13 +133,13 @@ class PropertyDetailsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 320.h,
+      height: 320,
       child: Stack(
         children: [
           CustomCachedImage(
               image: '${propertDetailsModel.image ?? ''}',
               width: double.infinity,
-              height: 250.h),
+              height: 250),
           PositionedDirectional(
             end: 0,
             child: IconButton(
@@ -163,12 +163,12 @@ class PropertyDetailsHeader extends StatelessWidget {
                     style: getBoldStyle(
                         height: 1.5,
                         color: ColorsManager.primaryDark,
-                        fontSize: 16.sp),
+                        fontSize: 16),
                   ),
                   12.verticalSpace,
                   CustomTextButton.icon(
                       icon: SvgPicture.asset(AssetsManager.editIcon),
-                      margin: EdgeInsets.symmetric(horizontal: 40.w),
+                      margin: EdgeInsets.symmetric(horizontal: 40),
                       onPressed: () {
                         Go.toNamed(NamedRoutes.updateProperty,
                             arguments: UpdatePropertyScreen(
@@ -223,11 +223,11 @@ class PropertyMainInformationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Text(title,
-          style: getBoldStyle(color: ColorsManager.greyLight, fontSize: 11.sp)),
+          style: getBoldStyle(color: ColorsManager.greyLight, fontSize: 11)),
       14.verticalSpace,
       Text(value,
-          style: getRegularStyle(
-              color: ColorsManager.primaryDark, fontSize: 14.sp))
+          style:
+              getRegularStyle(color: ColorsManager.primaryDark, fontSize: 14))
     ]);
   }
 }

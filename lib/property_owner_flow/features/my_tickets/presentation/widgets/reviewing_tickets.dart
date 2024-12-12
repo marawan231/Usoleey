@@ -55,7 +55,7 @@ class TicketsListShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 30.h),
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
       children: List.generate(10, (index) => TicketShimmerItem())
           .joinWith(8.verticalSpace),
     );

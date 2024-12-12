@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/enums/enums.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
@@ -12,7 +13,6 @@ import 'package:flutter_complete_project/core/widgets/custom_cached_image.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/unit_details/data/models/unit_details_model.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/update_unit/presentation/logic/cubit/update_unit_cubit.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/update_unit/presentation/utils/update_unit_utils.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../generated/l10n.dart';

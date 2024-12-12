@@ -10,25 +10,25 @@ class TicketHeader extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 200.h,
+          height: 200,
           child: Stack(
             children: [
               Container(
-                height: 133.h,
+                height: 133,
                 decoration: BoxDecoration(
                     color: ColorsManager.primary,
                     borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(30.r))),
+                        BorderRadius.vertical(top: Radius.circular(30))),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       S.current.ticketDetails,
                       style: getBoldStyle(
-                          fontSize: 16.sp, color: ColorsManager.white),
+                          fontSize: 16, color: ColorsManager.white),
                     ),
                     IconButton(
                         onPressed: Go.back,
@@ -48,7 +48,7 @@ class TicketHeader extends StatelessWidget {
                       Text(
                         '${S.current.ticketId}: ${ticketDetailsModel.id}#',
                         style: getBoldStyle(
-                            color: ColorsManager.primaryDark, fontSize: 22.sp),
+                            color: ColorsManager.primaryDark, fontSize: 22),
                       ),
                       8.verticalSpace,
                       Text(
@@ -56,7 +56,7 @@ class TicketHeader extends StatelessWidget {
                         style: getRegularStyle(
                             height: 1.5,
                             color: ColorsManager.greyLight,
-                            fontSize: 14.sp),
+                            fontSize: 14),
                       ),
                       8.verticalSpace,
                       Row(

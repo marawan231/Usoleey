@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/extensions/validator.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
@@ -9,7 +10,6 @@ import 'package:flutter_complete_project/core/widgets/app_custom_text_form_field
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
 import 'package:flutter_complete_project/tenant_flow/features/login/logic/cubit/auth_cubit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/enums/enums.dart';
 
@@ -25,8 +25,8 @@ class _LoginViewState extends State<LoginView> {
   void initState() {
     //0562584095
     //0000000000
-    getIt<AuthCubit>().phoneController.text = '';
-    getIt<AuthCubit>().passwordController.text = '';
+    getIt<AuthCubit>().phoneController.text = '0562584095';
+    getIt<AuthCubit>().passwordController.text = '0000000000';
     super.initState();
   }
 
@@ -35,7 +35,7 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       backgroundColor: ColorsManager.backgroundColor,
       body: Stack(
-        // fit: StackFit.expand,
+        fit: StackFit.expand,
         children: [
           _buildBackground(),
           _buildContent(context),
@@ -58,12 +58,12 @@ class _LoginViewState extends State<LoginView> {
   _buildContent(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.only(top: 250.sp),
+      margin: EdgeInsets.only(top: 250),
       decoration: BoxDecoration(
         color: ColorsManager.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(32.r),
-          topRight: Radius.circular(30.r),
+          topLeft: Radius.circular(32),
+          topRight: Radius.circular(30),
         ),
       ),
       child: _buildBody(context),
@@ -75,8 +75,7 @@ class _LoginViewState extends State<LoginView> {
       key: getIt<AuthCubit>().formKey,
       child: SingleChildScrollView(
         child: Padding(
-          padding:
-              EdgeInsetsDirectional.only(start: 24.sp, end: 24.sp, top: 24.sp),
+          padding: EdgeInsetsDirectional.only(start: 24, end: 24, top: 24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,7 +102,7 @@ class _LoginViewState extends State<LoginView> {
         Text(
           S.current.login,
           style: getBoldStyle(
-            fontSize: 24.sp,
+            fontSize: 24,
             color: ColorsManager.black,
           ),
         ),
@@ -112,7 +111,7 @@ class _LoginViewState extends State<LoginView> {
           S.current.enterYourMobileNumber,
           textAlign: TextAlign.start,
           style: getRegularStyle(
-            fontSize: 14.sp,
+            fontSize: 14,
             color: ColorsManager.greyLight,
           ),
         ),
@@ -168,22 +167,21 @@ class _LoginViewState extends State<LoginView> {
 
   Widget _buildNumberPrefix() {
     return Container(
-      width: 63.sp,
-      height: 56.sp,
+      width: 63,
+      height: 56,
       // padding: EdgeInsets.all(8.r),
       decoration: BoxDecoration(
         color: ColorsManager.greyLighter,
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          width: 1.sp,
+          width: 1,
           color: ColorsManager.grey,
         ),
       ),
       child: Center(
         child: Text(
           '966+',
-          style:
-              getRegularStyle(fontSize: 14.sp, color: ColorsManager.greyLight),
+          style: getRegularStyle(fontSize: 14, color: ColorsManager.greyLight),
         ),
       ),
     );

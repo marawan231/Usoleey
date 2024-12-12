@@ -22,8 +22,7 @@ class BuildButtons extends StatelessWidget {
 
   _buildLastButton() {
     return Padding(
-      padding:
-          EdgeInsetsDirectional.only(bottom: 50.sp, start: 24.sp, end: 24.sp),
+      padding: EdgeInsetsDirectional.only(bottom: 50, start: 24, end: 24),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -33,8 +32,8 @@ class BuildButtons extends StatelessWidget {
           10.verticalSpace,
           AppTextButton(
               backgroundColor: ColorsManager.backgroundColor,
-              textStyle: getBoldStyle(
-                  color: ColorsManager.primaryDark, fontSize: 16.sp),
+              textStyle:
+                  getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16),
               onPressed: () => Go.toNamed(NamedRoutes.login),
               buttonText: S.current.skip),
         ],
@@ -44,8 +43,7 @@ class BuildButtons extends StatelessWidget {
 
   _buildRegularButtons() {
     return Padding(
-      padding:
-          EdgeInsetsDirectional.only(bottom: 100.sp, start: 24.sp, end: 24.sp),
+      padding: EdgeInsetsDirectional.only(bottom: 100, start: 24, end: 24),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -63,7 +61,7 @@ class BuildButtons extends StatelessWidget {
             child: AppTextButton(
                 backgroundColor: ColorsManager.transparent,
                 textStyle: getBoldStyle(
-                    color: ColorsManager.primaryDark, fontSize: 16.sp),
+                    color: ColorsManager.primaryDark, fontSize: 16),
                 onPressed: () {
                   // getIt<C>
                   // CacheHelper.removeAll();

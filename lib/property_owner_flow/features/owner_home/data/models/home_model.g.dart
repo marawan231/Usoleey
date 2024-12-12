@@ -10,7 +10,7 @@ HomeModel _$HomeModelFromJson(Map<String, dynamic> json) => HomeModel(
       stats: json['stats'] == null
           ? null
           : Stats.fromJson(json['stats'] as Map<String, dynamic>),
-      notificationsCount: json['notificationsCount'] as int?,
+      notificationsCount: (json['notificationsCount'] as num?)?.toInt(),
       recentTickets: (json['recentTickets'] as List<dynamic>?)
           ?.map((e) => TicketModel.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -23,10 +23,10 @@ Map<String, dynamic> _$HomeModelToJson(HomeModel instance) => <String, dynamic>{
     };
 
 Stats _$StatsFromJson(Map<String, dynamic> json) => Stats(
-      openTickets: json['openTickets'] as int?,
-      totalRents: json['totalRents'] as int?,
-      tenantsCount: json['tenantsCount'] as int?,
-      unitsCount: json['unitsCount'] as int?,
+      openTickets: (json['openTickets'] as num?)?.toInt(),
+      totalRents: (json['totalRents'] as num?)?.toInt(),
+      tenantsCount: (json['tenantsCount'] as num?)?.toInt(),
+      unitsCount: (json['unitsCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$StatsToJson(Stats instance) => <String, dynamic>{
@@ -37,13 +37,13 @@ Map<String, dynamic> _$StatsToJson(Stats instance) => <String, dynamic>{
     };
 
 TicketModel _$TicketModelFromJson(Map<String, dynamic> json) => TicketModel(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       description: json['description'] as String?,
       status: json['status'] as String?,
       type: json['type'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
-      unitId: json['unitId'] as int?,
+      unitId: (json['unitId'] as num?)?.toInt(),
     )..unit = json['unit'] == null
         ? null
         : Unit.fromJson(json['unit'] as Map<String, dynamic>);

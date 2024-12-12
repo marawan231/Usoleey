@@ -60,7 +60,7 @@ class Units {
       this.electricityAccount,
       this.waterAccount,
       this.address,
-      this.space,
+      thisace,
       this.rooms,
       this.bathrooms,
       this.lounge,

@@ -24,12 +24,12 @@ class SelectProperty extends StatelessWidget {
                 },
               ))),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-        height: 56.h,
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        height: 56,
         alignment: AlignmentDirectional.centerStart,
         width: double.infinity,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.r),
+            borderRadius: BorderRadius.circular(8),
             border: Border.all(color: ColorsManager.grey)),
         child: Row(
           children: [
@@ -40,7 +40,7 @@ class SelectProperty extends StatelessWidget {
                       : S.current.chooseProperty,
                   overflow: TextOverflow.ellipsis,
                   style: getRegularStyle(
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       color: property != null
                           ? ColorsManager.primary
                           : ColorsManager.greyMedium)),

@@ -8,14 +8,13 @@ class RecentTickets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             S.current.latestPropertyTickets,
-            style:
-                getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16.sp),
+            style: getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16),
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -26,8 +25,8 @@ class RecentTickets extends StatelessWidget {
                     .joinWith(8.horizontalSpace)),
           ),
           CustomTextButton.icon(
-              height: 48.h,
-              fontSize: 16.sp,
+              height: 48,
+              fontSize: 16,
               onPressed: () {
                 Go.toNamed(NamedRoutes.ownerTikcets,
                     arguments: OwnerTicketsScreen(tickets: tickets));

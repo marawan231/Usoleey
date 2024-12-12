@@ -17,9 +17,8 @@ class RecentTickets extends StatelessWidget {
                       children: [
                         Text(S.current.recentTickets,
                             style: getBoldStyle(
-                              color: ColorsManager.primaryDark,
-                              fontSize: 16.sp,
-                            )),
+                                color: ColorsManager.primaryDark,
+                                fontSize: 16)),
                         16.verticalSpace,
                         SingleChildScrollView(
                           scrollDirection: Axis.horizontal,

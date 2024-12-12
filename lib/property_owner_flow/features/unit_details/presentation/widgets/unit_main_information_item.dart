@@ -1,4 +1,4 @@
-part of'unit_details_widgets_imports.dart';
+part of 'unit_details_widgets_imports.dart';
 
 class UnitMainInformationItem extends StatelessWidget {
   final String title, value;
@@ -10,11 +10,11 @@ class UnitMainInformationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Text(title,
-          style: getBoldStyle(color: ColorsManager.greyLight, fontSize: 11.sp)),
+          style: getBoldStyle(color: ColorsManager.greyLight, fontSize: 11)),
       14.verticalSpace,
       Text(value,
-          style: getRegularStyle(
-              color: ColorsManager.primaryDark, fontSize: 14.sp))
+          style:
+              getRegularStyle(color: ColorsManager.primaryDark, fontSize: 14))
     ]);
   }
 }

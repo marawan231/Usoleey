@@ -4,7 +4,6 @@ import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_custom_navbar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
   const SharedAppBar(
@@ -25,9 +24,9 @@ class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   _buildTitle() {
     return Padding(
-        padding: EdgeInsetsDirectional.only(start: 12.sp),
+        padding: EdgeInsetsDirectional.only(start: 12),
         child: Text(title ?? '',
-            style: getBoldStyle(color: Colors.black, fontSize: 16.sp)));
+            style: getBoldStyle(color: Colors.black, fontSize: 16)));
   }
 
   @override
@@ -56,11 +55,11 @@ class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
       ],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(withBottomRounded ? 16.r : 0)),
+            bottom: Radius.circular(withBottomRounded ? 16 : 0)),
       ),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(height ?? 56.sp);
+  Size get preferredSize => Size.fromHeight(height ?? 56);
 }

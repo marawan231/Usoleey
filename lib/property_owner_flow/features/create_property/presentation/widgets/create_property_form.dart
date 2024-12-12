@@ -24,7 +24,7 @@ class _CreatePropertyFormState extends State<CreatePropertyForm> {
           Center(
               child: Text(S.current.addBuilding,
                   style: getBoldStyle(
-                      color: ColorsManager.primary, fontSize: 16.sp))),
+                      color: ColorsManager.primary, fontSize: 16))),
           8.verticalSpace,
           PropertyImage(),
           AppCustomTextFormField(
@@ -46,8 +46,7 @@ class _CreatePropertyFormState extends State<CreatePropertyForm> {
               keyboardType: TextInputType.number),
           8.verticalSpace,
           Text(S.current.unitAddress,
-              style:
-                  getBoldStyle(color: ColorsManager.primary, fontSize: 16.sp)),
+              style: getBoldStyle(color: ColorsManager.primary, fontSize: 16)),
           8.verticalSpace,
           AppCustomTextFormField(
               controller: CreatePropertyUtils.createPropertyControllers['city'],

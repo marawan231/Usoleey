@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
-import 'package:flutter_complete_project/core/extensions/ticket_type_extention.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
@@ -9,8 +9,6 @@ import 'package:flutter_complete_project/core/widgets/custom_shimmer.dart';
 import 'package:flutter_complete_project/core/widgets/ticket_item.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/owner_home/data/models/home_model.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/ticket_details/presentation/screens/ticket_details_screen_imports.dart';
-
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/extensions/ticket_status_extention.dart';
 import '../../../../../core/utils/utils.dart';
@@ -29,8 +27,8 @@ class TenantTicketItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             color: ColorsManager.white,
-            border: Border.all(color: ColorsManager.grey, width: 1.sp),
-            borderRadius: BorderRadius.circular(8.r)),
+            border: Border.all(color: ColorsManager.grey, width: 1),
+            borderRadius: BorderRadius.circular(8)),
         child: Row(
           children: [
             TicketColorWidget(status: ticket.status ?? ''),
@@ -52,7 +50,7 @@ class TicketBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsetsDirectional.all(10.sp),
+        padding: EdgeInsetsDirectional.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -62,12 +60,12 @@ class TicketBody extends StatelessWidget {
               ticket.description ?? '',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: getBoldStyle(fontSize: 14.sp, color: ColorsManager.black),
+              style: getBoldStyle(fontSize: 14, color: ColorsManager.black),
             ),
             Text(
                 '${S.current.createdAt}: ${formatCreatedAtAgo(ticket.createdAt ?? '')}',
                 style: getBoldStyle(
-                  fontSize: 11.sp,
+                  fontSize: 11,
                   color: ColorsManager.greyMedium,
                 )),
           ].joinWith(10.verticalSpace),
@@ -86,13 +84,13 @@ class TicketColorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
-      width: 8.sp,
+      width: 8,
       decoration: BoxDecoration(
         color:
             getTicketStatusProperties(TicketStatusExtension.fromString(status))
                 .color,
         borderRadius: BorderRadiusDirectional.only(
-            topStart: Radius.circular(8.r), bottomStart: Radius.circular(8.r)),
+            topStart: Radius.circular(8), bottomStart: Radius.circular(8)),
       ),
     );
   }
@@ -117,7 +115,7 @@ class TenantTicketHeader extends StatelessWidget {
         ),
         Text('${S.current.ticketId}: #${ticket.id}',
             style: getBoldStyle(
-              fontSize: 12.sp,
+              fontSize: 12,
               color: const Color.fromRGBO(179, 182, 189, 1),
             ))
       ],
@@ -133,27 +131,27 @@ class TenantTicketItemShimmer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: ColorsManager.white,
-          border: Border.all(color: ColorsManager.grey, width: 1.sp),
-          borderRadius: BorderRadius.circular(8.r)),
+          border: Border.all(color: ColorsManager.grey, width: 1),
+          borderRadius: BorderRadius.circular(8)),
       child: Row(
         children: [
-          Container(width: 8.sp),
+          Container(width: 8),
           Expanded(
             child: Padding(
-              padding: EdgeInsetsDirectional.all(10.sp),
+              padding: EdgeInsetsDirectional.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      CustomShimmer(height: 15.h, width: 80.w),
-                      Expanded(child: CustomShimmer(height: 15.h, width: 60.w)),
-                      CustomShimmer(height: 20.h, width: 120.w)
+                      CustomShimmer(height: 15, width: 80),
+                      Expanded(child: CustomShimmer(height: 15, width: 60)),
+                      CustomShimmer(height: 20, width: 120)
                     ].joinWith(8.horizontalSpace),
                   ),
-                  CustomShimmer(height: 20.h, width: 250.w),
-                  CustomShimmer(height: 15.h, width: 200.w)
+                  CustomShimmer(height: 20, width: 250),
+                  CustomShimmer(height: 15, width: 200)
                 ].joinWith(10.verticalSpace),
               ),
             ),

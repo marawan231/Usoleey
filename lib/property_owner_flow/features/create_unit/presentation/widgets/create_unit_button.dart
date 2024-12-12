@@ -6,7 +6,7 @@ class CreateUnitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 24),
       child: BlocBuilder<CreateUnitCubit, CreateUnitState>(
         builder: (context, state) {
           return AppTextButton(

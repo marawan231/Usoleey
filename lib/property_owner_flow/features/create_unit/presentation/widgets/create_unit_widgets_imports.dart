@@ -7,6 +7,7 @@ import 'package:flutter_complete_project/core/enums/enums.dart';
 import 'package:flutter_complete_project/core/extensions/scroll_controller_extension.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
 import 'package:flutter_complete_project/core/extensions/validator.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/shared_models/property_model.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
@@ -19,7 +20,6 @@ import 'package:flutter_complete_project/core/widgets/custom_bottom_sheet_dialog
 import 'package:flutter_complete_project/core/widgets/custom_date_picker.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/create_unit/presentation/logic/cubit/create_unit_cubit.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/create_unit/presentation/utils/create_unit_utils.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/navigator/navigator.dart';

@@ -9,12 +9,14 @@ class CustomNavBar extends StatefulWidget {
 
 class _CustomNavBarState extends State<CustomNavBar> {
   List<NavigationItem> get navigationItems => [
-        NavigationItem(icon: AssetsManager.navbarHome, title: S.of(context).main),
+        NavigationItem(
+            icon: AssetsManager.navbarHome, title: S.of(context).main),
         NavigationItem(
             icon: AssetsManager.realState, title: S.of(context).myRealEstate),
         NavigationItem(
             icon: AssetsManager.navbarTickets, title: S.of(context).tickets),
-        NavigationItem(icon: AssetsManager.navbarMore, title: S.of(context).more)
+        NavigationItem(
+            icon: AssetsManager.navbarMore, title: S.of(context).more)
       ];
 
   @override
@@ -22,7 +24,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
     final selectedIndex =
         context.select((OwnerHomeLayoutCubit cubit) => cubit.state.index);
     return Container(
-      height: 80.h,
+      height: 80,
       decoration: BoxDecoration(
           border: Border(
               top: BorderSide(
@@ -31,8 +33,10 @@ class _CustomNavBarState extends State<CustomNavBar> {
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         currentIndex: selectedIndex,
-        selectedLabelStyle: getBoldStyle(fontSize: 12.sp,color: ColorsManager.primary),
-        unselectedLabelStyle: getBoldStyle(fontSize: 12.sp,color: ColorsManager.greyLight),
+        selectedLabelStyle:
+            getBoldStyle(fontSize: 12, color: ColorsManager.primary),
+        unselectedLabelStyle:
+            getBoldStyle(fontSize: 12, color: ColorsManager.greyLight),
         selectedItemColor: ColorsManager.primary,
         unselectedItemColor: ColorsManager.greyLight,
         onTap: (index) =>
@@ -43,10 +47,10 @@ class _CustomNavBarState extends State<CustomNavBar> {
               : ColorsManager.greyLight;
           return BottomNavigationBarItem(
               icon: Padding(
-                  padding: EdgeInsets.only(bottom: 6.w),
+                  padding: EdgeInsets.only(bottom: 6),
                   child: SvgPicture.asset(e.value.icon,
-                      width: 20.h,
-                      height: 20.h,
+                      width: 20,
+                      height: 20,
                       // ignore: deprecated_member_use
                       color: color)),
               label: e.value.title);

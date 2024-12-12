@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomPaginationList<T> extends StatelessWidget {
   const CustomPaginationList(
@@ -23,7 +22,7 @@ class CustomPaginationList<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          padding ?? EdgeInsets.symmetric(horizontal: 24.w, vertical: 30.h),
+          padding ?? EdgeInsets.symmetric(horizontal: 24, vertical: 30),
       child: CustomScrollView(
         controller: scrollController,
         slivers: <Widget>[
@@ -31,7 +30,7 @@ class CustomPaginationList<T> extends StatelessWidget {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 childAspectRatio: childAspectRatio ?? 2.2,
                 crossAxisCount: 1,
-                mainAxisSpacing: mainAxisSpacing ?? 8.h),
+                mainAxisSpacing: mainAxisSpacing ?? 8),
             delegate: SliverChildBuilderDelegate(
                 (context, index) => itemBuilder(index),
                 childCount: paginationList.length,
@@ -42,7 +41,7 @@ class CustomPaginationList<T> extends StatelessWidget {
           if (paginationList.length < allListCount)
             SliverToBoxAdapter(
                 child: Padding(
-                    padding: EdgeInsets.only(top: 30.h, bottom: 16.h),
+                    padding: EdgeInsets.only(top: 30, bottom: 16),
                     child: CupertinoActivityIndicator()))
         ],
       ),

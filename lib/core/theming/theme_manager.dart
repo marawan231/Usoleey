@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData get appTheme => ThemeData(
     scaffoldBackgroundColor: ColorsManager.backgroundColor,
@@ -15,13 +14,13 @@ ThemeData get appTheme => ThemeData(
         const TextSelectionThemeData(cursorColor: ColorsManager.primary),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(100.r))),
+                  borderRadius: BorderRadius.circular(100))),
           foregroundColor:
-              MaterialStateProperty.all<Color>(ColorsManager.white),
+              WidgetStateProperty.all<Color>(ColorsManager.white),
           backgroundColor:
-              MaterialStateProperty.all<Color>(ColorsManager.primary)),
+              WidgetStateProperty.all<Color>(ColorsManager.primary)),
     ),);
     // inputDecorationTheme: InputDecorationTheme(
     //   border: OutlineInputBorder(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_shared_appbar.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HelpAndSupportView extends StatelessWidget {
   const HelpAndSupportView({super.key});
@@ -20,12 +20,11 @@ class HelpAndSupportView extends StatelessWidget {
 
   _buildBody() {
     return ListView.separated(
-        padding:
-            EdgeInsetsDirectional.symmetric(horizontal: 24.sp, vertical: 16.sp),
+        padding: EdgeInsetsDirectional.symmetric(horizontal: 24, vertical: 16),
         itemBuilder: (context, index) => ListTile(
               //border color
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.r),
+                borderRadius: BorderRadius.circular(8),
                 side: BorderSide(
                   color: ColorsManager.grey,
                 ),
@@ -34,16 +33,16 @@ class HelpAndSupportView extends StatelessWidget {
               tileColor: ColorsManager.white,
               // minVerticalPadding: 2,
               // minLeadingWidth: 4,
-              horizontalTitleGap: 8.sp,
+              horizontalTitleGap: 8,
               contentPadding: EdgeInsetsDirectional.only(
-                start: 16.sp,
-                end: 16.sp,
-                top: 8.sp,
-                bottom: 8.sp,
+                start: 16,
+                end: 16,
+                top: 8,
+                bottom: 8,
               ),
               leading: Container(
-                  width: 50.sp,
-                  height: 50.sp,
+                  width: 50,
+                  height: 50,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: ColorsManager.primaryLighter,
@@ -53,11 +52,11 @@ class HelpAndSupportView extends StatelessWidget {
                     color: ColorsManager.primary,
                   )),
               title: Padding(
-                padding: EdgeInsets.only(bottom: 4.sp),
+                padding: EdgeInsets.only(bottom: 4),
                 child: Text(
                   supportList[index].title!,
                   style: getRegularStyle(
-                    fontSize: 12.sp,
+                    fontSize: 12,
                     color: ColorsManager.greyLight,
                   ),
                 ),
@@ -65,7 +64,7 @@ class HelpAndSupportView extends StatelessWidget {
               subtitle: Text(
                 supportList[index].subtitle!,
                 style: getBoldStyle(
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   color: ColorsManager.primaryDark,
                 ),
               ),

@@ -32,8 +32,7 @@ class CreateUnitRequestModel {
       required this.kitchen,
       required this.propertyId,
       required this.ownerId,
-      required this.image
-      });
+      required this.image});
 
   Map<String, dynamic> toJson() {
     return {
@@ -52,7 +51,7 @@ class CreateUnitRequestModel {
       'propertyId': propertyId,
       'ownerId': ownerId,
       'image': image,
-      'maintenanceMan':"OWNER"
+      'maintenanceMan': "OWNER"
     };
   }
 }

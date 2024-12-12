@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 
 import '../widgets/on_boarding_widgets_imports.dart';
 

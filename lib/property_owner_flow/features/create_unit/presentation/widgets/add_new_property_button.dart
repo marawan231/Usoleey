@@ -7,7 +7,7 @@ class AddNewPropertyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 8.h),
+        padding: EdgeInsets.symmetric(vertical: 8),
         child: GestureDetector(
           onTap: () {
             customBottomSheetDialog(
@@ -16,16 +16,16 @@ class AddNewPropertyButton extends StatelessWidget {
           },
           child: DottedBorder(
               borderType: BorderType.RRect,
-              radius: Radius.circular(8.r),
+              radius: Radius.circular(8),
               color: ColorsManager.primary,
               dashPattern: const [10, 10, 10, 10],
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
+                padding: EdgeInsets.symmetric(vertical: 10),
                 child: Row(
                   children: [
                     16.horizontalSpace,
                     CircleAvatar(
-                      minRadius: 25.sp,
+                      minRadius: 25,
                       backgroundColor: ColorsManager.greyLighter,
                       child: Icon(
                         Icons.add_rounded,
@@ -37,7 +37,7 @@ class AddNewPropertyButton extends StatelessWidget {
                     Text(
                       S.current.addNewProperty,
                       style: getBoldStyle(
-                          fontSize: 14.sp, color: ColorsManager.primaryDark),
+                          fontSize: 14, color: ColorsManager.primaryDark),
                     )
                   ],
                 ),

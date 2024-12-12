@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/widgets/app_text_button.dart';
 import 'package:flutter_complete_project/tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../generated/l10n.dart';
 import '../logic/cubit/tenant_tickets_cubit.dart';
@@ -27,13 +27,12 @@ class TicketChooseUnitView extends StatelessWidget {
     return BlocProvider.value(
       value: getIt<HomeCubit>(),
       child: Container(
-          padding: EdgeInsets.only(
-              left: 24.sp, right: 24.sp, bottom: 24.sp, top: 15.sp),
+          padding: EdgeInsets.only(left: 24, right: 24, bottom: 24, top: 15),
           decoration: BoxDecoration(
             color: ColorsManager.white,
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(40.sp),
-              topRight: Radius.circular(40.sp),
+              topLeft: Radius.circular(40),
+              topRight: Radius.circular(40),
             ),
           ),
           child: SingleChildScrollView(

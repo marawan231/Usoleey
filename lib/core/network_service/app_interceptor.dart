@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_complete_project/core/navigator/named_routes.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
-import 'dio_setup.dart';
 
 class AppInterceptors extends Interceptor {
   @override

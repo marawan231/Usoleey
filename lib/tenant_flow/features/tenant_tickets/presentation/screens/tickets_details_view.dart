@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/navigator/navigator.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/core/utils/utils.dart';
 import 'package:flutter_complete_project/generated/l10n.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TicketDetailsView extends StatelessWidget {
   const TicketDetailsView({super.key});
@@ -36,19 +36,18 @@ class TicketDetailsView extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding:
-              EdgeInsetsDirectional.only(top: 100.sp, start: 24.sp, end: 24.sp),
+          padding: EdgeInsetsDirectional.only(top: 100, start: 24, end: 24),
           // bottom: 0,
-          // top: 133.sp,
+          // top: 133,
           child: Container(
             padding: EdgeInsetsDirectional.only(
-                start: 16.sp, end: 16.sp, top: 16.sp, bottom: 16.sp),
+                start: 16, end: 16, top: 16, bottom: 16),
             width: double.infinity,
-            // height: 120.sp,
+            // height: 120,
             decoration: BoxDecoration(
               color: ColorsManager.white,
               border: Border.all(color: ColorsManager.grey),
-              borderRadius: BorderRadius.all(Radius.circular(8.sp)),
+              borderRadius: BorderRadius.all(Radius.circular(8)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +55,7 @@ class TicketDetailsView extends StatelessWidget {
                 Text(
                   'رقم التذكرة: 123#',
                   style: getBoldStyle(
-                    fontSize: 22.sp,
+                    fontSize: 22,
                     color: Colors.black,
                   ),
                 ),
@@ -64,7 +63,7 @@ class TicketDetailsView extends StatelessWidget {
                 Text(
                   'شقة ٤، عمارة ١٢٠، حي الخالدية، شارع عمر بن الخطاب',
                   style: getRegularStyle(
-                    fontSize: 13.sp,
+                    fontSize: 13,
                     color: ColorsManager.greyLight,
                   ),
                 ),
@@ -90,44 +89,42 @@ class TicketDetailsView extends StatelessWidget {
         Expanded(
           child: Container(
             color: ColorsManager.white,
-            padding: EdgeInsetsDirectional.only(start: 24.sp, end: 24.sp),
+            padding: EdgeInsetsDirectional.only(start: 24, end: 24),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(S.current.ticketContent,
                       style: getBoldStyle(
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         color: ColorsManager.black,
                       )),
                   8.verticalSpace,
                   Container(
-                    height: 130.sp,
+                    height: 130,
                     width: double.infinity,
                     padding: EdgeInsetsDirectional.only(
-                        start: 16.sp, end: 16.sp, top: 16.sp, bottom: 16.sp),
+                        start: 16, end: 16, top: 16, bottom: 16),
                     decoration: BoxDecoration(
                       color: ColorsManager.greyLightest,
                       border: Border.all(color: ColorsManager.grey),
-                      borderRadius: BorderRadius.all(Radius.circular(8.sp)),
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
                     ),
                     child: Text(
                       S.current.ticketContentDescription,
                       style: getRegularStyle(
-                          fontSize: 13.sp,
-                          color: Color(0xff001833),
-                          height: 1.2.sp),
+                          fontSize: 13, color: Color(0xff001833), height: 1.2),
                     ),
                   ),
                   24.verticalSpace,
                   Text(S.current.attachments,
                       style: getBoldStyle(
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         color: ColorsManager.black,
                       )),
                   8.verticalSpace,
                   Container(
-                    height: 136.sp,
+                    height: 136,
                     child: ListView.separated(
                         shrinkWrap: true,
                         // physics: NeverScrollableScrollPhysics(),
@@ -166,7 +163,7 @@ class TicketDetailsView extends StatelessWidget {
                     child: Text(
                       'إلغاء التذكرة',
                       style: getBoldStyle(
-                          fontSize: 16.sp, color: ColorsManager.primary),
+                          fontSize: 16, color: ColorsManager.primary),
                     ),
                   ))
                 ],
@@ -184,13 +181,12 @@ class TicketDetailsView extends StatelessWidget {
       children: [
         Text(
           title ?? '',
-          style:
-              getRegularStyle(fontSize: 14.sp, color: ColorsManager.greyLight),
+          style: getRegularStyle(fontSize: 14, color: ColorsManager.greyLight),
         ),
         // 8.horizontalSpace,
         Text(
           value ?? '',
-          style: getBoldStyle(fontSize: 14.sp, color: ColorsManager.black),
+          style: getBoldStyle(fontSize: 14, color: ColorsManager.black),
         ),
       ],
     );
@@ -199,12 +195,12 @@ class TicketDetailsView extends StatelessWidget {
   _buildAppBar() {
     return Container(
       width: double.infinity,
-      height: 133.sp,
+      height: 133,
       decoration: BoxDecoration(
         color: ColorsManager.primary,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.only(top: 40.sp, start: 24.sp, end: 24),
+        padding: EdgeInsetsDirectional.only(top: 40, start: 24, end: 24),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -212,7 +208,7 @@ class TicketDetailsView extends StatelessWidget {
             Text(S.current.ticketDetails,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 )),
             InkWell(
@@ -221,7 +217,7 @@ class TicketDetailsView extends StatelessWidget {
                     ? Icons.arrow_forward_ios_rounded
                     : Icons.arrow_forward,
                 color: Colors.white,
-                size: 24.sp,
+                size: 24,
               ),
               onTap: () {
                 Go.back();

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../theming/colors.dart';
 
@@ -35,12 +34,12 @@ class AppTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-        elevation: MaterialStateProperty.all(0),
-        backgroundColor: MaterialStatePropertyAll(
+        elevation: WidgetStateProperty.all(0),
+        backgroundColor: WidgetStatePropertyAll(
           backgroundColor ?? ColorsManager.primary,
         ),
-        fixedSize: MaterialStateProperty.all(
-          Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 50.h),
+        fixedSize: WidgetStateProperty.all(
+          Size(buttonWidth ?? double.maxFinite, buttonHeight ?? 50),
         ),
       ),
       onPressed: isLoading ? null : onPressed,
@@ -49,7 +48,7 @@ class AppTextButton extends StatelessWidget {
           : Text(buttonText,
               style: textStyle ??
                   getBoldStyle(
-                    fontSize: 16.sp,
+                    fontSize: 16,
                     // fontWeight: FontWeight.w700,
                     color: ColorsManager.white,
                   )),

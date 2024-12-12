@@ -7,7 +7,7 @@ class PropertiesLoadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-          padding: EdgeInsets.only(top: 30.h, bottom: 16.h),
+          padding: EdgeInsets.only(top: 30, bottom: 16),
           child: CupertinoActivityIndicator()),
     );
   }

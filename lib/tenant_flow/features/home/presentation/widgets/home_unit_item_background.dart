@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/res/assets_manager.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
 import 'package:flutter_complete_project/tenant_flow/features/more/presentation/screens/more_view.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeUnitItemBackGround extends StatelessWidget {
@@ -11,10 +11,10 @@ class HomeUnitItemBackGround extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       decoration: BoxDecoration(
         color: ColorsManager.white,
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(8),
         border: Border.all(color: ColorsManager.grey),
       ),
       child: Stack(
@@ -24,15 +24,15 @@ class HomeUnitItemBackGround extends StatelessWidget {
               ClipPath(
                   clipper: CurveClipper(),
                   child: Container(
-                    height: 90.sp,
+                    height: 90,
                     decoration: BoxDecoration(
                       color: ColorsManager.primary,
-                      borderRadius: BorderRadius.circular(8.r),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   )),
               45.verticalSpace,
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.sp),
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 child: child,
               ),
             ],
@@ -41,20 +41,18 @@ class HomeUnitItemBackGround extends StatelessWidget {
         ],
       ),
     );
-
-
   }
 
   _buildHomeIcon() {
     return Positioned(
       //centre
-      top: 42.sp,
+      top: 42,
       // bottom: 0,
       // left: 0,
-      right: 120.sp,
+      right: 120,
       child: Container(
-          width: 85.sp,
-          height: 85.sp,
+          width: 85,
+          height: 85,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: ColorsManager.primaryLight,
@@ -64,8 +62,8 @@ class HomeUnitItemBackGround extends StatelessWidget {
             scale: AlwaysStoppedAnimation(0.6),
             child: SvgPicture.asset(
               AssetsManager.navbarHome,
-              height: 45.sp,
-              width: 45.sp,
+              height: 45,
+              width: 45,
             ),
           )),
     );

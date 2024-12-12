@@ -75,7 +75,7 @@ class UnitDetailsModel {
       this.waterAccount,
       this.waterCost,
       this.address,
-      this.space,
+      thisace,
       this.rooms,
       this.bathrooms,
       this.lounge,
@@ -128,7 +128,6 @@ class Owner {
 
   Map<String, dynamic> toJson() => _$OwnerToJson(this);
 }
-
 
 @JsonSerializable(ignoreUnannotated: false)
 class Detail {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/res/custom_text_styles.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppCustomTextFormField extends StatelessWidget {
   const AppCustomTextFormField(
@@ -20,7 +19,8 @@ class AppCustomTextFormField extends StatelessWidget {
       this.maxLines,
       this.textInputAction,
       this.focusNode,
-      this.readOnly, this.height});
+      this.readOnly,
+      this.height});
 
   final String? hintText;
   final TextInputType? keyboardType;
@@ -44,9 +44,9 @@ class AppCustomTextFormField extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height:height?? 56.h,
+          height: height ?? 56,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
               border: Border.all(color: ColorsManager.grey)),
         ),
         TextFormField(
@@ -64,13 +64,13 @@ class AppCustomTextFormField extends StatelessWidget {
           keyboardType: keyboardType ?? TextInputType.phone,
           decoration: InputDecoration(
             contentPadding:
-                EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                EdgeInsets.symmetric(horizontal: 16, vertical: 6),
             border: InputBorder.none,
             labelText: hintText,
             floatingLabelStyle:
-                getRegularStyle(fontSize: 16.sp, color: ColorsManager.primary),
-            labelStyle: getRegularStyle(
-                fontSize: 16.sp, color: ColorsManager.greyMedium),
+                getRegularStyle(fontSize: 16, color: ColorsManager.primary),
+            labelStyle:
+                getRegularStyle(fontSize: 16, color: ColorsManager.greyMedium),
           ),
         )
       ],

@@ -101,10 +101,10 @@ class _UpdatePropertyViewState extends State<UpdatePropertyView> {
               ),
               8.verticalSpace,
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                padding: EdgeInsets.symmetric(horizontal: 24),
                 child: Text(S.current.unitAddress,
                     style: getBoldStyle(
-                        color: ColorsManager.primary, fontSize: 16.sp)),
+                        color: ColorsManager.primary, fontSize: 16)),
               ),
               8.verticalSpace,
               BlocBuilder<UpdatePropertyCubit, UpdatePropertyState>(
@@ -227,7 +227,7 @@ class UpdatePropertyHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250.h,
+      height: 250,
       child: Stack(
         children: [
           BlocBuilder<UpdatePropertyCubit, UpdatePropertyState>(
@@ -236,21 +236,22 @@ class UpdatePropertyHeader extends StatelessWidget {
                   ? Center(
                       child: CustomCachedImage(
                           image: state.propertyImage,
-                          height: 250.h,
+                          height: 250,
                           width: double.infinity),
                     )
                   : Center(child: CupertinoActivityIndicator());
             },
           ),
           PositionedDirectional(
-            bottom: 22.h,
-            start: 24.w,
+            bottom: 22,
+            start: 24,
             child: InkWell(
               onTap: getIt<UpdatePropertyCubit>().updatePropertyImage,
               child: CircleAvatar(
                 backgroundColor: ColorsManager.primary,
-                maxRadius: 29.sp,
+                maxRadius: 29,
                 child: SvgPicture.asset(AssetsManager.editIcon,
+                    // ignore: deprecated_member_use
                     color: ColorsManager.white),
               ),
             ),
@@ -285,7 +286,7 @@ class UpdatePropertyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       child: Row(
         children: [
           Expanded(
@@ -294,11 +295,11 @@ class UpdatePropertyItem extends StatelessWidget {
               children: [
                 Text(title,
                     style: getRegularStyle(
-                        fontSize: 14.sp, color: ColorsManager.greyLight)),
+                        fontSize: 14, color: ColorsManager.greyLight)),
                 16.verticalSpace,
                 if (valueController != null)
                   SizedBox(
-                    width: 227.w,
+                    width: 227,
                     child: enabled ?? false
                         ? TextField(
                             keyboardType: textInputType ?? TextInputType.name,
@@ -308,7 +309,7 @@ class UpdatePropertyItem extends StatelessWidget {
                         : Text(
                             valueController!.text,
                             style: getBoldStyle(
-                                fontSize: 14.sp,
+                                fontSize: 14,
                                 color: ColorsManager.primary,
                                 height: 1.5),
                           ),
@@ -339,8 +340,7 @@ class EditButton extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 S.current.edit,
-                style:
-                    getBoldStyle(fontSize: 14.sp, color: ColorsManager.primary),
+                style: getBoldStyle(fontSize: 14, color: ColorsManager.primary),
               ),
             ));
   }

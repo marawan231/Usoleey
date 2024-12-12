@@ -1,4 +1,4 @@
-part of'ticket_details_widget_imports.dart';
+part of 'ticket_details_widget_imports.dart';
 
 class TicketContent extends StatelessWidget {
   final String description;
@@ -11,17 +11,17 @@ class TicketContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 24),
           child: Text(S.current.ticketContent,
-              style: getBoldStyle(
-                  fontSize: 14.sp, color: ColorsManager.primaryDark)),
+              style:
+                  getBoldStyle(fontSize: 14, color: ColorsManager.primaryDark)),
         ),
         8.verticalSpace,
         CustomBorderContainer(
             color: ColorsManager.grey99,
             child: Text(description,
                 style: getRegularStyle(
-                    fontSize: 14.sp, color: ColorsManager.primaryDark)))
+                    fontSize: 14, color: ColorsManager.primaryDark)))
       ],
     );
   }

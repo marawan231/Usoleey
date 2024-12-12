@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 
 import '../../../../../core/res/assets_manager.dart';
 import '../../../../../core/res/custom_text_styles.dart';

@@ -39,7 +39,7 @@ class _MyPropertiesState extends State<MyProperties> {
             BottomSheetHeader(),
             Text(S.current.chooseProperty,
                 style: getBoldStyle(
-                    color: ColorsManager.primaryDark, fontSize: 16.sp)),
+                    color: ColorsManager.primaryDark, fontSize: 16)),
             24.verticalSpace,
             PropertiesList(
                 propertyOnChange: widget.propertyOnChange,
@@ -51,7 +51,7 @@ class _MyPropertiesState extends State<MyProperties> {
                 buttonText: S.current.save,
                 onPressed: () {
                   if (widget.propertyModel != null) {
-                    widget.saveProperty??();
+                    widget.saveProperty ?? ();
                     Go.back();
                   } else {
                     showToast(message: 'please choose property');

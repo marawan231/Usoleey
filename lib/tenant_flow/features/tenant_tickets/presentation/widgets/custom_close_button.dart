@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/navigator/navigator.dart';
 
@@ -11,12 +10,13 @@ class CustomCloseButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:onTap?? () {
-        Go.back();
-      },
+      onTap: onTap ??
+          () {
+            Go.back();
+          },
       child: Container(
-        width: 30.sp,
-        height: 30.sp,
+        width: 30,
+        height: 30,
         decoration: BoxDecoration(
           color: ColorsManager.backgroundColor,
           shape: BoxShape.circle,
@@ -24,7 +24,7 @@ class CustomCloseButton extends StatelessWidget {
         child: Icon(
           Icons.close,
           color: ColorsManager.primary,
-          size: 16.sp,
+          size: 16,
         ),
       ),
     );

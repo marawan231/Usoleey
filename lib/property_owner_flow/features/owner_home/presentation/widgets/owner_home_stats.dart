@@ -1,4 +1,4 @@
-part of'owner_home_widgets_imports.dart';
+part of 'owner_home_widgets_imports.dart';
 
 class OwnerHomeStats extends StatelessWidget {
   const OwnerHomeStats({super.key});
@@ -10,7 +10,7 @@ class OwnerHomeStats extends StatelessWidget {
         return GridView(
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 8.sp, mainAxisSpacing: 8.sp),
+              crossAxisCount: 2, crossAxisSpacing: 8, mainAxisSpacing: 8),
           children: [
             StatsItem(
                 icon: AssetsManager.navbarHome,

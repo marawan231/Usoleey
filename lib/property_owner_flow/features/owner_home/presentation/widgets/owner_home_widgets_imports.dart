@@ -5,11 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/di/dependency_injection.dart';
 import 'package:flutter_complete_project/core/enums/enums.dart';
 import 'package:flutter_complete_project/core/extensions/seperator_helper.dart';
+import 'package:flutter_complete_project/core/helpers/spacing.dart';
 import 'package:flutter_complete_project/core/shared_cubits/user_cubit/user_cubit.dart';
 import 'package:flutter_complete_project/core/widgets/base_remote_widget.dart';
 import 'package:flutter_complete_project/core/widgets/custom_shimmer.dart';
 import 'package:flutter_complete_project/property_owner_flow/features/owner_home/presentation/logic/cubit/owner_home_cubit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/navigator/named_routes.dart';
@@ -21,7 +21,6 @@ import '../../../../../core/widgets/ticket_item.dart';
 import '../../../../../core/widgets/ticket_shimmer_item.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../../tenant_flow/features/home/presentation/logic/cubit/home_cubit.dart';
-import '../../../../../tenant_flow/features/login/data/models/auth_model.dart';
 
 part 'home_item_curve_clipper.dart';
 part 'notification_button.dart';

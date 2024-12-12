@@ -19,19 +19,18 @@ class TenantRowItem extends StatelessWidget {
         8.horizontalSpace,
         Text(value,
             style: getRegularStyle(
-                color: ColorsManager.primaryDark, fontSize: 14.sp)),
+                color: ColorsManager.primaryDark, fontSize: 14)),
         Spacer(),
         InkWell(
           onTap: buttonOnTap,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
             decoration: BoxDecoration(
                 color: ColorsManager.primaryLighter,
-                borderRadius: BorderRadius.circular(16.r)),
+                borderRadius: BorderRadius.circular(16)),
             child: Text(
               buttonTitle,
-              style:
-                  getBoldStyle(color: ColorsManager.primary, fontSize: 16.sp),
+              style: getBoldStyle(color: ColorsManager.primary, fontSize: 16),
             ),
           ),
         )

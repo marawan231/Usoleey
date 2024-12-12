@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_project/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CustomShimmer extends StatelessWidget {
@@ -22,6 +21,6 @@ class CustomShimmer extends StatelessWidget {
             decoration: BoxDecoration(
                 color: ColorsManager.greyLighter,
                 borderRadius:
-                    BorderRadius.all(Radius.circular(radius ?? 10.r)))));
+                    BorderRadius.all(Radius.circular(radius ?? 10)))));
   }
 }
