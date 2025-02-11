@@ -39,14 +39,15 @@ class _MyUnitsState extends State<MyUnits> {
                           monthRent: state.units[index].rent.toString(),
                           rentDate:
                               '${S.current.rentDate}:  ${state.units[index].rentCollectionDate != null ? formatDate(state.units[index].rentCollectionDate) : 'لم يحدد بعد'}',
-                          address: '${state.units[index].address!}',
+                          address:
+                              '${state.units[index].tenant?.firstNameAr ?? ''} ${state.units[index].tenant?.lastNameAr ?? ''}',
                         ),
                     allListCount:
                         getIt<MyRealEstateCubit>().unitsPaginationCount,
                     paginationList: state.units)
                 : EmptyLottie(
                     lottiePath: AssetsManager.emptyTickets,
-                    title: S.current.noTicketsProcess,
+                    title: S.current.noUnits,
                     subTitle: '',
                     isButtonVisible: false,
                     padding: 0),

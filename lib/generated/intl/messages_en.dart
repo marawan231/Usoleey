@@ -154,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "You have no tickets pending review"),
         "noTicketsSolved":
             MessageLookupByLibrary.simpleMessage("You have no tickets solved"),
+        "noUnits": MessageLookupByLibrary.simpleMessage("You have no units"),
         "nothing": MessageLookupByLibrary.simpleMessage("Unavailable"),
         "notifications": MessageLookupByLibrary.simpleMessage("notifications"),
         "offers": MessageLookupByLibrary.simpleMessage("offers"),

@@ -23,6 +23,7 @@ PropertyModel _$PropertyModelFromJson(Map<String, dynamic> json) =>
       updatedAt: json['updatedAt'] as String?,
       enterpriseId: (json['enterpriseId'] as num?)?.toInt(),
       ownerId: (json['ownerId'] as num?)?.toInt(),
+      totalRent: json['totalRent'] as num?,
     );
 
 Map<String, dynamic> _$PropertyModelToJson(PropertyModel instance) =>
@@ -42,4 +43,5 @@ Map<String, dynamic> _$PropertyModelToJson(PropertyModel instance) =>
       'updatedAt': instance.updatedAt,
       'enterpriseId': instance.enterpriseId,
       'ownerId': instance.ownerId,
+      'totalRent': instance.totalRent,
     };

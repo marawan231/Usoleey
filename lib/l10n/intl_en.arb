@@ -189,5 +189,6 @@
   "evaluationExperience": "evaluation of experience",
   "shareRating": "Share your rating with us",
   "shareRatingDescription": "Sharing your evaluation gives us the opportunity to develop and improve our services",
-  "writeYourOption": "Write us your opinion (optional)"
+  "writeYourOption": "Write us your opinion (optional)",
+  "noUnits": "You have no units"
 }

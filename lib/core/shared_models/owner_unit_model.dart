@@ -29,8 +29,17 @@ class Unit {
   dynamic rentCollectionDate;
   @JsonKey(name: 'address')
   String? address;
+  //tenant
+  @JsonKey(name: 'tenant')
+  Tenant? tenant;
 
-  Unit({this.id, this.name, this.rent, this.rentCollectionDate, this.address});
+  Unit(
+      {this.id,
+      this.name,
+      this.rent,
+      this.rentCollectionDate,
+      this.address,
+      this.tenant});
 
   factory Unit.fromJson(Map<String, dynamic> json) => _$UnitFromJson(json);
 
@@ -52,4 +61,29 @@ class Pagination {
       _$PaginationFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaginationToJson(this);
+}
+
+@JsonSerializable(ignoreUnannotated: false)
+class Tenant {
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'firstNameEn')
+  String? firstNameEn;
+  @JsonKey(name: 'lastNameEn')
+  String? lastNameEn;
+  @JsonKey(name: 'firstNameAr')
+  String? firstNameAr;
+  @JsonKey(name: 'lastNameAr')
+  String? lastNameAr;
+
+  Tenant(
+      {this.id,
+      this.firstNameEn,
+      this.lastNameEn,
+      this.firstNameAr,
+      this.lastNameAr});
+
+  factory Tenant.fromJson(Map<String, dynamic> json) => _$TenantFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TenantToJson(this);
 }

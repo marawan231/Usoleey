@@ -20,5 +20,3 @@ abstract class MyRealEstateWebServices {
   Future<BaseResponse<OwnerUnitModel>> getMyUnits(
       @Query('limit') int limit, @Query('page') int page);
 }
-
-

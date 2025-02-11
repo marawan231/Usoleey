@@ -151,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "لايوجد لديك تذاكر في انتظار المراجعة"),
         "noTicketsSolved":
             MessageLookupByLibrary.simpleMessage("لايوجد لديك تذاكر محلولة"),
+        "noUnits": MessageLookupByLibrary.simpleMessage("لايوجد لديك وحدات"),
         "nothing": MessageLookupByLibrary.simpleMessage("لايوجد"),
         "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "offers": MessageLookupByLibrary.simpleMessage("العروض"),

@@ -38,11 +38,12 @@ class _MyPropertiesState extends State<MyProperties> {
                               ? ColorsManager.primary
                               : ColorsManager.brown,
                           rent:
-                              '${S.current.totalRent}: ${state.properties[index].district} ${S.current.sar}',
+                              '${S.current.totalRent}: ${state.properties[index].totalRent ?? 0} ${S.current.sar}',
                           address:
                               '${state.properties[index].name!} , ${state.properties[index].district!} , ${state.properties[index].street!}',
                           unitCount:
-                              state.properties[index].unitsCount!.toString(),
+                              state.properties[index].unitsCount?.toString() ??
+                                  '0',
                         ),
                     allListCount:
                         getIt<MyRealEstateCubit>().propertiesPaginationCount,

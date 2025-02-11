@@ -28,6 +28,9 @@ Unit _$UnitFromJson(Map<String, dynamic> json) => Unit(
       rent: (json['rent'] as num?)?.toInt(),
       rentCollectionDate: json['rentCollectionDate'],
       address: json['address'] as String?,
+      tenant: json['tenant'] == null
+          ? null
+          : Tenant.fromJson(json['tenant'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
@@ -36,6 +39,7 @@ Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
       'rent': instance.rent,
       'rentCollectionDate': instance.rentCollectionDate,
       'address': instance.address,
+      'tenant': instance.tenant,
     };
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) => Pagination(
@@ -49,4 +53,20 @@ Map<String, dynamic> _$PaginationToJson(Pagination instance) =>
       'page': instance.page,
       'limit': instance.limit,
       'count': instance.count,
+    };
+
+Tenant _$TenantFromJson(Map<String, dynamic> json) => Tenant(
+      id: (json['id'] as num?)?.toInt(),
+      firstNameEn: json['firstNameEn'] as String?,
+      lastNameEn: json['lastNameEn'] as String?,
+      firstNameAr: json['firstNameAr'] as String?,
+      lastNameAr: json['lastNameAr'] as String?,
+    );
+
+Map<String, dynamic> _$TenantToJson(Tenant instance) => <String, dynamic>{
+      'id': instance.id,
+      'firstNameEn': instance.firstNameEn,
+      'lastNameEn': instance.lastNameEn,
+      'firstNameAr': instance.firstNameAr,
+      'lastNameAr': instance.lastNameAr,
     };

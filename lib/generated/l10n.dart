@@ -1959,6 +1959,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You have no units`
+  String get noUnits {
+    return Intl.message(
+      'You have no units',
+      name: 'noUnits',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

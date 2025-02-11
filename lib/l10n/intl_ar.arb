@@ -189,6 +189,7 @@
   "evaluationExperience": "تقييم التجربة",
   "shareRating": "شاركنا تقييمك",
   "shareRatingDescription": "مشاركة تقييمك تمنحنا الفرصة لتطوير وتحسين خدماتنا",
-  "writeYourOption": "اكتب لنا رأيك (اختياري)"
+  "writeYourOption": "اكتب لنا رأيك (اختياري)",
+  "noUnits": "لايوجد لديك وحدات"
 
 }

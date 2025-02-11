@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 part 'property_model.g.dart';
+
 @JsonSerializable(ignoreUnannotated: false)
 class PropertyModel {
   @JsonKey(name: 'id')
@@ -33,23 +34,26 @@ class PropertyModel {
   int? enterpriseId;
   @JsonKey(name: 'ownerId')
   int? ownerId;
+  @JsonKey(name: 'totalRent')
+  num? totalRent;
 
   PropertyModel(
       {this.id,
-        this.name,
-        this.address,
-        this.unitsCount,
-        this.instrumentNumber,
-        this.postalCode,
-        this.blockNumber,
-        this.street,
-        this.district,
-        this.city,
-        this.image,
-        this.createdAt,
-        this.updatedAt,
-        this.enterpriseId,
-        this.ownerId});
+      this.name,
+      this.address,
+      this.unitsCount,
+      this.instrumentNumber,
+      this.postalCode,
+      this.blockNumber,
+      this.street,
+      this.district,
+      this.city,
+      this.image,
+      this.createdAt,
+      this.updatedAt,
+      this.enterpriseId,
+      this.ownerId,
+      this.totalRent});
 
   factory PropertyModel.fromJson(Map<String, dynamic> json) =>
       _$PropertyModelFromJson(json);
