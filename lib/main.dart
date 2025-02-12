@@ -12,9 +12,7 @@ import 'firebase_options.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform, name: 'Usooly');
-  // await ScreenUtil.ensureScreenSize();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   await setupGetIt();
   // await setupDio();

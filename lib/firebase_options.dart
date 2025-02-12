@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:194046198221:android:79894681599f98bff64484',
     messagingSenderId: '194046198221',
     projectId: 'usooly-31efe',
-    storageBucket: 'usooly-31efe.appspot.com',
+    storageBucket: 'usooly-31efe.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -62,7 +62,7 @@ class DefaultFirebaseOptions {
     appId: '1:194046198221:ios:571a4f49c4a70c5ff64484',
     messagingSenderId: '194046198221',
     projectId: 'usooly-31efe',
-    storageBucket: 'usooly-31efe.appspot.com',
+    storageBucket: 'usooly-31efe.firebasestorage.app',
     iosBundleId: 'com.example.usooley',
   );
 

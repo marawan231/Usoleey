@@ -25,8 +25,8 @@ class _LoginViewState extends State<LoginView> {
   void initState() {
     //0562584095
     //0000000000
-    getIt<AuthCubit>().phoneController.text = '0562584095';
-    getIt<AuthCubit>().passwordController.text = '0000000000';
+    // getIt<AuthCubit>().phoneController.text = '';
+    // getIt<AuthCubit>().passwordController.text = '';
     super.initState();
   }
 
