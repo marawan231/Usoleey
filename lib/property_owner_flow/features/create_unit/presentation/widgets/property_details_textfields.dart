@@ -18,7 +18,7 @@ class PropertyDetailsTextFields extends StatelessWidget {
             keyboardType: TextInputType.text),
         AppCustomTextFormField(
             controller: TextEditingController(text: property.street),
-            hintText: S.current.sreet,
+            hintText: S.current.street,
             readOnly: true,
             validator: (value) => value!.validateEmpty(),
             keyboardType: TextInputType.text),

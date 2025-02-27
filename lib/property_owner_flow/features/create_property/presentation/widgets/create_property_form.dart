@@ -62,7 +62,7 @@ class _CreatePropertyFormState extends State<CreatePropertyForm> {
           AppCustomTextFormField(
               controller:
                   CreatePropertyUtils.createPropertyControllers['street'],
-              hintText: S.current.sreet,
+              hintText: S.current.street,
               validator: (value) => value!.validateEmpty(),
               keyboardType: TextInputType.text),
           AppCustomTextFormField(

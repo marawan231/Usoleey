@@ -24,7 +24,6 @@ class _CustomNavBarState extends State<CustomNavBar> {
     final selectedIndex =
         context.select((OwnerHomeLayoutCubit cubit) => cubit.state.index);
     return Container(
-      height: 80,
       decoration: BoxDecoration(
           border: Border(
               top: BorderSide(

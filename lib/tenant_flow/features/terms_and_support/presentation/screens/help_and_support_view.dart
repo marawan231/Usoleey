@@ -62,7 +62,7 @@ class HelpAndSupportView extends StatelessWidget {
                 ),
               ),
               subtitle: Text(
-                supportList[index].subtitle!,
+                supportList[index].subtitle ?? '',
                 style: getBoldStyle(
                   fontSize: 16,
                   color: ColorsManager.primaryDark,
@@ -89,16 +89,16 @@ class SupportModel {
 List<SupportModel> supportList = [
   SupportModel(
     title: S.current.contactUsWithMobile,
-    subtitle: '',
+    subtitle: '+966 507570527',
     icon: Icons.phone_in_talk_outlined,
   ),
   SupportModel(
-    title: S.current.contactUsWithEmial,
-    subtitle: '',
+    title: S.current.contactUsWithEmail,
+    subtitle: 'superadmin@usooly.com',
     icon: Icons.alternate_email_outlined,
   ),
   SupportModel(
-    title: S.current.SendUsUsingApp,
+    title: S.current.sendUsUsingApp,
     subtitle: 'ارسال رسالة',
     icon: Icons.email_outlined,
   ),

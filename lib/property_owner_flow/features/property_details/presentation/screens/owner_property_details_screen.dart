@@ -158,7 +158,7 @@ class PropertyDetailsHeader extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '${propertDetailsModel.name!} , ${propertDetailsModel.district!} , ${propertDetailsModel.street!}',
+                    '${propertDetailsModel.name ?? ''} , ${propertDetailsModel.district ?? ''} , ${propertDetailsModel.street ?? ''}',
                     textAlign: TextAlign.center,
                     style: getBoldStyle(
                         height: 1.5,
@@ -174,7 +174,7 @@ class PropertyDetailsHeader extends StatelessWidget {
                             arguments: UpdatePropertyScreen(
                                 propertDetailsModel: propertDetailsModel));
                       },
-                      title: S.current.unitInfromationEdit)
+                      title: S.current.unitInformationEdit)
                 ],
               ),
             ),
@@ -205,7 +205,7 @@ class PropertyMainInformation extends StatelessWidget {
                 value: (propertDetailsModel.tenants?.length ?? 0).toString()),
             PropertyMainInformationItem(
                 title: S.current.units,
-                value: propertDetailsModel.unitsCount.toString()),
+                value: propertDetailsModel.units?.length.toString() ?? '0'),
           ].joinWith(VerticalDivider()),
         ),
       ),

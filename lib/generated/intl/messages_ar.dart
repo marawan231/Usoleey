@@ -22,8 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "SendUsUsingApp":
-            MessageLookupByLibrary.simpleMessage("تواصل معنا عبر التطبيق"),
         "aboutApp": MessageLookupByLibrary.simpleMessage("عن التطبيق"),
         "accountInfo": MessageLookupByLibrary.simpleMessage("معلومات الحساب"),
         "active": MessageLookupByLibrary.simpleMessage("نشطة"),
@@ -45,7 +43,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "bathroomsCount":
             MessageLookupByLibrary.simpleMessage("عدد دورات المياه"),
         "bedRooms": MessageLookupByLibrary.simpleMessage("غرف نوم"),
-        "biils": MessageLookupByLibrary.simpleMessage("الفواتير"),
         "bills": MessageLookupByLibrary.simpleMessage("فواتيري"),
         "call": MessageLookupByLibrary.simpleMessage("اتصال"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
@@ -61,8 +58,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "تغيير حالة التذكرة إلى ‘تم الحل’"),
         "chooseAppLanguage":
             MessageLookupByLibrary.simpleMessage("قم بإختيار لغة التطبيق"),
-        "chooseFromlist":
-            MessageLookupByLibrary.simpleMessage("اختر من القائمة التالية"),
         "chooseProperty": MessageLookupByLibrary.simpleMessage("اختر بناية"),
         "chooseSpecificUnit": MessageLookupByLibrary.simpleMessage(
             "حدد العقار الذي تود فتح تذكرة بخصوصه"),
@@ -75,15 +70,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "complain": MessageLookupByLibrary.simpleMessage("شكوى"),
         "complainDescription": MessageLookupByLibrary.simpleMessage(
             "قم بإرسال الشكوى التي تواجهك وسيتم الرد عليها خلال ٢٤ ساعة"),
-        "conatct": MessageLookupByLibrary.simpleMessage("اتصال"),
         "conditioner": MessageLookupByLibrary.simpleMessage("المكيف"),
         "conditioners": MessageLookupByLibrary.simpleMessage("مكيفات"),
         "conditionersCount":
             MessageLookupByLibrary.simpleMessage("عدد التكييفات"),
         "contactTenant":
             MessageLookupByLibrary.simpleMessage("تواصل مع المستأجر"),
-        "contactUsWithEmial": MessageLookupByLibrary.simpleMessage(
-            "تواصل معنا عبر البريد الإلكتروني"),
         "contactUsWithMobile":
             MessageLookupByLibrary.simpleMessage("تواصل معنا عبر الجوال"),
         "continueToNext": MessageLookupByLibrary.simpleMessage("متابعة"),
@@ -113,8 +105,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "evaluationExperience":
             MessageLookupByLibrary.simpleMessage("تقييم التجربة"),
         "exit": MessageLookupByLibrary.simpleMessage("خروج"),
-        "explorelatestRentalOffers":
-            MessageLookupByLibrary.simpleMessage("اكتشف أحدث عروض الإيجار"),
         "fillField": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "filterBy": MessageLookupByLibrary.simpleMessage("فرز حسب"),
         "helpAndSupport":
@@ -219,7 +209,6 @@ class MessageLookup extends MessageLookupByLibrary {
             " هل أنت متأكد من أنك تريد تغيير حالة التذكرة إلى \'تم الحل\'؟"),
         "space": MessageLookupByLibrary.simpleMessage("المساحة"),
         "squareMeters": MessageLookupByLibrary.simpleMessage("متر مربع"),
-        "sreet": MessageLookupByLibrary.simpleMessage("الشارع"),
         "subNumber": MessageLookupByLibrary.simpleMessage("الرقم الفرعي"),
         "submitComplaint": MessageLookupByLibrary.simpleMessage("إرسال شكوى"),
         "tenant": MessageLookupByLibrary.simpleMessage("مستأجر"),
@@ -229,8 +218,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
         "there": MessageLookupByLibrary.simpleMessage("يوجد"),
-        "thereIsKitchecn": MessageLookupByLibrary.simpleMessage("يوجد مطبخ"),
-        "thereIsLoungue": MessageLookupByLibrary.simpleMessage("يوجد صالة"),
         "ticketContent": MessageLookupByLibrary.simpleMessage("محتوى التذكرة"),
         "ticketContentDescription": MessageLookupByLibrary.simpleMessage(
             "قم بكتابة محتوى التذكرة وإضافة الصور"),
@@ -250,12 +237,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "totalRent": MessageLookupByLibrary.simpleMessage("إجمالي الإيجار"),
         "unitAddress":
             MessageLookupByLibrary.simpleMessage("عنوان البناية الوطني"),
-        "unitAddrss":
-            MessageLookupByLibrary.simpleMessage("عنوان العقار الوطني"),
         "unitDate":
             MessageLookupByLibrary.simpleMessage("تاريخ بدأ تحصيل الإيجار"),
-        "unitInfromationEdit":
-            MessageLookupByLibrary.simpleMessage("تعديل معلومات الوحدة"),
         "unitName": MessageLookupByLibrary.simpleMessage("اسم الوحدة"),
         "unitNumber": MessageLookupByLibrary.simpleMessage("رقم الوحدة"),
         "unitRent": MessageLookupByLibrary.simpleMessage("إيجار الوحدة الشهري"),
@@ -278,8 +261,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا"),
         "writeTicketContent":
             MessageLookupByLibrary.simpleMessage("قم بكتابة محتوى التذكرة"),
-        "writeYourOption":
-            MessageLookupByLibrary.simpleMessage("اكتب لنا رأيك (اختياري)"),
+        "yearSar": MessageLookupByLibrary.simpleMessage("ر.س/سنوي"),
         "yes": MessageLookupByLibrary.simpleMessage("نعم"),
         "yourNextInvoices":
             MessageLookupByLibrary.simpleMessage("فواتيرك القادمة")

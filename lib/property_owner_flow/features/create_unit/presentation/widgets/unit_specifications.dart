@@ -46,7 +46,7 @@ class UnitSpecifications extends StatelessWidget {
                     BlocBuilder<CreateUnitCubit, CreateUnitState>(
                       builder: (context, state) {
                         return Switcher(
-                            title: S.current.thereIsLoungue,
+                            title: S.current.thereIsLounge,
                             value: state.lounge,
                             onChanged: getIt<CreateUnitCubit>().loungeOnChage);
                       },
@@ -54,7 +54,7 @@ class UnitSpecifications extends StatelessWidget {
                     BlocBuilder<CreateUnitCubit, CreateUnitState>(
                       builder: (context, state) {
                         return Switcher(
-                            title: S.current.thereIsKitchecn,
+                            title: S.current.thereIsKitchen,
                             value: state.kitchen,
                             onChanged: getIt<CreateUnitCubit>().kitchenOnChage);
                       },

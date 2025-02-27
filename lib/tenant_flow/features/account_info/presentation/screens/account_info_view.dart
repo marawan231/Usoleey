@@ -29,7 +29,7 @@ class _AccountInfoViewState extends State<AccountInfoView> {
           value: '${userModel?.firstName} ${userModel?.lastName}'),
       AccountInfo(title: S.current.email, value: userModel?.email),
       AccountInfo(title: S.current.mobileNumber, value: userModel?.phoneNumber),
-      AccountInfo(title: S.current.password, value: S.current.change),
+      // AccountInfo(title: S.current.password, value: S.current.change),
     ];
     super.initState();
   }
@@ -51,7 +51,7 @@ class _AccountInfoViewState extends State<AccountInfoView> {
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         children: [
-          _buildProfileImage(),
+          // _buildProfileImage(),
           Divider(),
           ListView.separated(
             physics: NeverScrollableScrollPhysics(),
@@ -113,7 +113,9 @@ class _AccountInfoViewState extends State<AccountInfoView> {
           ),
           //change image
           InkWell(
-            onTap: () {},
+            onTap: () {
+              // Go.toNamed(NamedRoutes.updateProfile);
+            },
             child: Text(
               S.current.changeImage,
               style: getBoldStyle(

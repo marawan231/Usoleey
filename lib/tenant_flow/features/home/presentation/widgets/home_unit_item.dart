@@ -53,7 +53,9 @@ class HomeUnitItem extends StatelessWidget {
 
   _buildRentValue() {
     return Text(
-      '${unit.rent} ${S.current.monthSar}',
+      unit.rentCollectionRate == 'YEARLY'
+          ? '${unit.rent} ${S.current.yearSar}'
+          : '${unit.rent} ${S.current.monthSar}',
       textAlign: TextAlign.center,
       maxLines: 2,
       overflow: TextOverflow.ellipsis,

@@ -215,7 +215,7 @@ class EmptyTenantUnits extends StatelessWidget {
               textAlign: TextAlign.center),
           16.verticalSpace,
           HomeCustomButton(
-            text: S.current.explorelatestRentalOffers,
+            text: S.current.exploreLatestRentalOffers,
             onTap: () => Go.toNamed(NamedRoutes.offers),
           ),
           16.verticalSpace,

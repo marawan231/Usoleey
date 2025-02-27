@@ -48,6 +48,7 @@ class Units {
   bool? kitchen;
   String? createdAt;
   String? updatedAt;
+  String? rentCollectionRate;
   Property? property;
   Owner? owner;
   List<InvoiceModel>? invoices;
@@ -71,7 +72,8 @@ class Units {
       this.property,
       this.owner,
       this.invoices,
-      this.isSelected = false});
+      this.isSelected = false,
+      this.rentCollectionRate});
 
   factory Units.fromJson(Map<String, dynamic> json) => _$UnitsFromJson(json);
 

@@ -60,6 +60,7 @@ Units _$UnitsFromJson(Map<String, dynamic> json) => Units(
           ?.map((e) => InvoiceModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       isSelected: json['isSelected'] as bool? ?? false,
+      rentCollectionRate: json['rentCollectionRate'] as String?,
     )..space = (json['space'] as num?)?.toInt();
 
 Map<String, dynamic> _$UnitsToJson(Units instance) => <String, dynamic>{
@@ -79,6 +80,7 @@ Map<String, dynamic> _$UnitsToJson(Units instance) => <String, dynamic>{
       'kitchen': instance.kitchen,
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
+      'rentCollectionRate': instance.rentCollectionRate,
       'property': instance.property?.toJson(),
       'owner': instance.owner?.toJson(),
       'invoices': instance.invoices?.map((e) => e.toJson()).toList(),

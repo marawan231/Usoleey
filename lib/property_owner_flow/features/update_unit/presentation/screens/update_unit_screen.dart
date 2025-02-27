@@ -165,7 +165,7 @@ class _UpdateUnitViewState extends State<UpdateUnitView> {
                     },
                   )),
               UpdateUnitItem(
-                  title: S.current.thereIsKitchecn,
+                  title: S.current.thereIsKitchen,
                   leadingWidget: BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
                     builder: (context, state) {
                       return CupertinoSwitch(
@@ -175,7 +175,7 @@ class _UpdateUnitViewState extends State<UpdateUnitView> {
                     },
                   )),
               UpdateUnitItem(
-                  title: S.current.thereIsLoungue,
+                  title: S.current.thereIsLounge,
                   leadingWidget: BlocBuilder<UpdateUnitCubit, UpdateUnitState>(
                     builder: (context, state) {
                       return CupertinoSwitch(

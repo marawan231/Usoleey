@@ -52,7 +52,7 @@ class UnitDetailsHeader extends StatelessWidget {
                             arguments: UpdateUnitScreen(
                                 unitDetailsModel: unitDetailsModel));
                       },
-                      title: S.current.unitInfromationEdit)
+                      title: S.current.unitInformationEdit)
                 ],
               ),
             ),

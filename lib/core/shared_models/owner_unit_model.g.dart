@@ -31,6 +31,7 @@ Unit _$UnitFromJson(Map<String, dynamic> json) => Unit(
       tenant: json['tenant'] == null
           ? null
           : Tenant.fromJson(json['tenant'] as Map<String, dynamic>),
+      rentCollectionRate: json['rentCollectionRate'] as String?,
     );
 
 Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
@@ -40,6 +41,7 @@ Map<String, dynamic> _$UnitToJson(Unit instance) => <String, dynamic>{
       'rentCollectionDate': instance.rentCollectionDate,
       'address': instance.address,
       'tenant': instance.tenant,
+      'rentCollectionRate': instance.rentCollectionRate,
     };
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) => Pagination(

@@ -32,6 +32,8 @@ class Unit {
   //tenant
   @JsonKey(name: 'tenant')
   Tenant? tenant;
+  @JsonKey(name: 'rentCollectionRate')
+  String? rentCollectionRate;
 
   Unit(
       {this.id,
@@ -39,7 +41,8 @@ class Unit {
       this.rent,
       this.rentCollectionDate,
       this.address,
-      this.tenant});
+      this.tenant,
+      this.rentCollectionRate});
 
   factory Unit.fromJson(Map<String, dynamic> json) => _$UnitFromJson(json);
 

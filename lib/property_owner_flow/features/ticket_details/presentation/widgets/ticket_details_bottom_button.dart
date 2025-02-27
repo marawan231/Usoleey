@@ -69,7 +69,7 @@ void _showMenuSheet(TicketDetailsModel ticketDetailsModel) {
   showCupertinoModalPopup<void>(
     context: Go.navigatorKey.currentContext!,
     builder: (BuildContext context) => CupertinoActionSheet(
-      message: Text(S.current.chooseFromlist,
+      message: Text(S.current.chooseFromList,
           style: getBoldStyle(fontSize: 12, color: ColorsManager.greyLight)),
       actions: <CupertinoActionSheetAction>[
         CupertinoActionSheetAction(
@@ -172,7 +172,7 @@ void _showRateDialog() {
                     child: AppCustomTextFormField(
                         controller: controller,
                         keyboardType: TextInputType.multiline,
-                        hintText: S.current.writeYourOption,
+                        hintText: S.current.writeYourOpinion,
                         maxLines: 3,
                         validator: (value) => value!.validateEmpty(),
                         height: 100),
@@ -214,7 +214,7 @@ void _showContactTenantSheet(String phoneNumber) {
       cancelButton: CupertinoActionSheetAction(
           onPressed: () => launchTel(phoneNumber: phoneNumber),
           child: Text(
-            S.current.conatct,
+            S.current.contact,
             style: getBoldStyle(color: ColorsManager.primaryDark, fontSize: 16),
           )),
     ),

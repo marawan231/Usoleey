@@ -36,8 +36,8 @@ class UpdateUnitCubit extends Cubit<UpdateUnitState> {
         roomsCount: unitDetailsModel.rooms ?? 0,
         bathroomsCount: unitDetailsModel.bathrooms ?? 0,
         conditionersCount: unitDetailsModel.conditioners ?? 0,
-        lounge: unitDetailsModel.lounge!,
-        kitchen: unitDetailsModel.kitchen!,
+        lounge: unitDetailsModel.lounge ?? false,
+        kitchen: unitDetailsModel.kitchen ?? false,
         propertyId: unitDetailsModel.propertyId,
         unitImage: unitDetailsModel.image ?? '',
         selectedProperty: unitDetailsModel.property));

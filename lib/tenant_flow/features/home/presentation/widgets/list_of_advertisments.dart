@@ -78,7 +78,7 @@ class HomeOffersHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          S.current.explorelatestRentalOffers,
+          S.current.exploreLatestRentalOffers,
           style: getBoldStyle(fontSize: 16),
         ),
         InkWell(

@@ -33,6 +33,8 @@ class _MyUnitsState extends State<MyUnits> {
                     scrollController: scrollController,
                     itemBuilder: (index) => MyRealEstateUnitItem(
                           id: state.units[index].id ?? 0,
+                          rentCollectionRate:
+                              state.units[index].rentCollectionRate ?? '',
                           curveColor: index.isEven
                               ? ColorsManager.primary
                               : ColorsManager.brown,

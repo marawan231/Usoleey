@@ -6,6 +6,7 @@ class MyRealEstateUnitItem extends StatelessWidget {
   final String monthRent;
   final String rentDate;
   final int id;
+  final String rentCollectionRate;
 
   const MyRealEstateUnitItem(
       {super.key,
@@ -13,7 +14,8 @@ class MyRealEstateUnitItem extends StatelessWidget {
       required this.address,
       required this.monthRent,
       required this.rentDate,
-      required this.id});
+      required this.id,
+      required this.rentCollectionRate});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class MyRealEstateUnitItem extends StatelessWidget {
           ),
           24.verticalSpace,
           Text(
-            '${monthRent} ${S.current.monthSar}',
+            '${monthRent} ${rentCollectionRate == 'YEARLY' ? S.current.yearSar : S.current.monthSar}',
             style: getBoldStyle(color: ColorsManager.greyLight, fontSize: 11),
           ),
           8.verticalSpace,

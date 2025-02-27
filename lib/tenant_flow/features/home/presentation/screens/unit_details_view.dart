@@ -194,7 +194,7 @@ class UnitDetailsView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          S.current.unitAddrss,
+          S.current.unitAddress,
           style: getBoldStyle(
             fontSize: 16,
             color: ColorsManager.black,

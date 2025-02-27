@@ -22,10 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "SendUsUsingApp":
-            MessageLookupByLibrary.simpleMessage("send us using app"),
-        "aboutApp": MessageLookupByLibrary.simpleMessage("about application"),
-        "accountInfo": MessageLookupByLibrary.simpleMessage("account info"),
+        "aboutApp": MessageLookupByLibrary.simpleMessage("About application"),
+        "accountInfo": MessageLookupByLibrary.simpleMessage("Account Info"),
         "active": MessageLookupByLibrary.simpleMessage("Active"),
         "addBuilding": MessageLookupByLibrary.simpleMessage("Add building"),
         "addNewProperty":
@@ -39,29 +37,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "approve": MessageLookupByLibrary.simpleMessage("Approve"),
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "areYouWantToLogout": MessageLookupByLibrary.simpleMessage(
-            "are you want to logout from the app"),
+            "Are you sure you want to logout from the app?"),
         "attachments": MessageLookupByLibrary.simpleMessage("Attachments"),
         "bathrooms": MessageLookupByLibrary.simpleMessage("Bathrooms"),
         "bathroomsCount":
             MessageLookupByLibrary.simpleMessage("Number of Bathrooms"),
-        "bedRooms": MessageLookupByLibrary.simpleMessage("Bed rooms"),
-        "biils": MessageLookupByLibrary.simpleMessage("Bills"),
-        "bills": MessageLookupByLibrary.simpleMessage("My invoices"),
+        "bedRooms": MessageLookupByLibrary.simpleMessage("Bedrooms"),
+        "bills": MessageLookupByLibrary.simpleMessage("Bills"),
         "call": MessageLookupByLibrary.simpleMessage("Call"),
-        "cancel": MessageLookupByLibrary.simpleMessage("cancel"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelTicket": MessageLookupByLibrary.simpleMessage("Cancel ticket"),
         "cancelTicketSubtitle": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to cancel the ticket?"),
         "cancelTicketTitle": MessageLookupByLibrary.simpleMessage(
             "Do you want to cancel the ticket?"),
-        "canceled": MessageLookupByLibrary.simpleMessage("canceled"),
-        "change": MessageLookupByLibrary.simpleMessage("change"),
-        "changeImage": MessageLookupByLibrary.simpleMessage("change image"),
+        "canceled": MessageLookupByLibrary.simpleMessage("Canceled"),
+        "change": MessageLookupByLibrary.simpleMessage("Change"),
+        "changeImage": MessageLookupByLibrary.simpleMessage("Change image"),
         "changeStatusResolved": MessageLookupByLibrary.simpleMessage(
             "Change ticket status to \'Resolved\'"),
         "chooseAppLanguage":
             MessageLookupByLibrary.simpleMessage("Choose your language"),
-        "chooseFromlist": MessageLookupByLibrary.simpleMessage(
+        "chooseFromList": MessageLookupByLibrary.simpleMessage(
             "Choose from the following list"),
         "chooseProperty":
             MessageLookupByLibrary.simpleMessage("Choose property"),
@@ -73,31 +70,31 @@ class MessageLookup extends MessageLookupByLibrary {
             "Choose the type of ticket you would like to create based on what your order will include."),
         "chooseUnit": MessageLookupByLibrary.simpleMessage("Choose Unit"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
-        "complain": MessageLookupByLibrary.simpleMessage("complain"),
+        "complain": MessageLookupByLibrary.simpleMessage("Complain"),
         "complainDescription": MessageLookupByLibrary.simpleMessage(
             "Send the complaint you are facing and it will be answered within 24 hours"),
-        "conatct": MessageLookupByLibrary.simpleMessage("Conatct"),
         "conditioner": MessageLookupByLibrary.simpleMessage("Conditioner"),
         "conditioners": MessageLookupByLibrary.simpleMessage("Conditioners"),
         "conditionersCount":
             MessageLookupByLibrary.simpleMessage("Number of Air Conditioners"),
+        "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "contactTenant":
             MessageLookupByLibrary.simpleMessage("Contact the tenant"),
-        "contactUsWithEmial":
-            MessageLookupByLibrary.simpleMessage("contact us with email"),
+        "contactUsWithEmail":
+            MessageLookupByLibrary.simpleMessage("Contact us with email"),
         "contactUsWithMobile":
-            MessageLookupByLibrary.simpleMessage("contact us with mobile"),
+            MessageLookupByLibrary.simpleMessage("Contact us with mobile"),
         "continueToNext": MessageLookupByLibrary.simpleMessage("Continue"),
         "createUnit": MessageLookupByLibrary.simpleMessage("Create unit"),
         "createdAt": MessageLookupByLibrary.simpleMessage("Created At"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteAll": MessageLookupByLibrary.simpleMessage("Delete All"),
         "district": MessageLookupByLibrary.simpleMessage("District"),
-        "done": MessageLookupByLibrary.simpleMessage("done"),
+        "done": MessageLookupByLibrary.simpleMessage("Done"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "electricityAccount": MessageLookupByLibrary.simpleMessage(
             "Electricity Bill Account Number"),
-        "email": MessageLookupByLibrary.simpleMessage("email"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emptyInvoices":
             MessageLookupByLibrary.simpleMessage("You have no invoices"),
         "emptyInvoicesSubTitle": MessageLookupByLibrary.simpleMessage(
@@ -112,40 +109,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterYourMobileNumber":
             MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
         "evaluationExperience":
-            MessageLookupByLibrary.simpleMessage("evaluation of experience"),
-        "exit": MessageLookupByLibrary.simpleMessage("exit"),
-        "explorelatestRentalOffers": MessageLookupByLibrary.simpleMessage(
+            MessageLookupByLibrary.simpleMessage("Evaluation of experience"),
+        "exit": MessageLookupByLibrary.simpleMessage("Exit"),
+        "exploreLatestRentalOffers": MessageLookupByLibrary.simpleMessage(
             "Explore the latest rental offers"),
         "fillField":
             MessageLookupByLibrary.simpleMessage("This field is required"),
-        "filterBy": MessageLookupByLibrary.simpleMessage("filter by"),
+        "filterBy": MessageLookupByLibrary.simpleMessage("Filter by"),
         "helpAndSupport":
-            MessageLookupByLibrary.simpleMessage("help and support"),
+            MessageLookupByLibrary.simpleMessage("Help and support"),
         "informationUnit":
             MessageLookupByLibrary.simpleMessage("Unit Information"),
         "instrumentNumber":
             MessageLookupByLibrary.simpleMessage("Instrument Number"),
         "invoice": MessageLookupByLibrary.simpleMessage("Invoice"),
         "kitchen": MessageLookupByLibrary.simpleMessage("Kitchen"),
-        "language": MessageLookupByLibrary.simpleMessage("language"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "latestPropertyTickets":
             MessageLookupByLibrary.simpleMessage("Latest property tickets"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
-        "logout": MessageLookupByLibrary.simpleMessage("logout"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "lounge": MessageLookupByLibrary.simpleMessage("Lounge"),
         "main": MessageLookupByLibrary.simpleMessage("Main"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
-        "mobileNumber": MessageLookupByLibrary.simpleMessage("mobile number"),
+        "mobileNumber": MessageLookupByLibrary.simpleMessage("Mobile number"),
         "monthSar": MessageLookupByLibrary.simpleMessage("SAR/Month"),
-        "more": MessageLookupByLibrary.simpleMessage("more"),
-        "myRealEstate": MessageLookupByLibrary.simpleMessage("Ny Real Estate"),
+        "more": MessageLookupByLibrary.simpleMessage("More"),
+        "myRealEstate": MessageLookupByLibrary.simpleMessage("My Real Estate"),
         "myTickets": MessageLookupByLibrary.simpleMessage("My tickets"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "nextInvoices": MessageLookupByLibrary.simpleMessage("Next invoices"),
         "nextRentPaymentDate":
             MessageLookupByLibrary.simpleMessage("Next rent payment date: "),
-        "no": MessageLookupByLibrary.simpleMessage("no"),
+        "no": MessageLookupByLibrary.simpleMessage("No"),
         "noTickets":
             MessageLookupByLibrary.simpleMessage("You have no tickets"),
         "noTicketsProcess": MessageLookupByLibrary.simpleMessage(
@@ -156,8 +153,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You have no tickets solved"),
         "noUnits": MessageLookupByLibrary.simpleMessage("You have no units"),
         "nothing": MessageLookupByLibrary.simpleMessage("Unavailable"),
-        "notifications": MessageLookupByLibrary.simpleMessage("notifications"),
-        "offers": MessageLookupByLibrary.simpleMessage("offers"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "offers": MessageLookupByLibrary.simpleMessage("Offers"),
         "onBoardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "Whether you\'re a property owner or a tenant, you can now efficiently and transparently track all financial transactions."),
         "onBoardingSubtitle2": MessageLookupByLibrary.simpleMessage(
@@ -171,7 +168,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onBoardingTitle3": MessageLookupByLibrary.simpleMessage(
             "Enhancing Communication between Owners and Tenants"),
         "openTickets": MessageLookupByLibrary.simpleMessage("Open tickets"),
-        "other": MessageLookupByLibrary.simpleMessage("other"),
+        "other": MessageLookupByLibrary.simpleMessage("Other"),
         "otherDescription": MessageLookupByLibrary.simpleMessage(
             "Contact us and we will respond to you within 24 hours"),
         "passValidation": MessageLookupByLibrary.simpleMessage(
@@ -180,7 +177,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneValidation": MessageLookupByLibrary.simpleMessage(
             "Please enter a valid mobile number"),
         "postalCode": MessageLookupByLibrary.simpleMessage("Postal Code"),
-        "processing": MessageLookupByLibrary.simpleMessage("processing"),
+        "processing": MessageLookupByLibrary.simpleMessage("Processing"),
         "property": MessageLookupByLibrary.simpleMessage("Property"),
         "propertyInvoices":
             MessageLookupByLibrary.simpleMessage("Property invoices"),
@@ -188,20 +185,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "propertyTickets":
             MessageLookupByLibrary.simpleMessage("Property tickets"),
         "rate": MessageLookupByLibrary.simpleMessage("Rate"),
-        "rateApp": MessageLookupByLibrary.simpleMessage("rate application"),
+        "rateApp": MessageLookupByLibrary.simpleMessage("Rate application"),
         "recentTickets": MessageLookupByLibrary.simpleMessage("Recent tickets"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "rentDate":
             MessageLookupByLibrary.simpleMessage("Next rent collection date"),
         "repaired": MessageLookupByLibrary.simpleMessage("Repaired"),
-        "reviewing": MessageLookupByLibrary.simpleMessage("reviewing"),
+        "reviewing": MessageLookupByLibrary.simpleMessage("Reviewing"),
         "rooms": MessageLookupByLibrary.simpleMessage("Rooms"),
         "roomsCount": MessageLookupByLibrary.simpleMessage("Number of Rooms"),
         "sar": MessageLookupByLibrary.simpleMessage("SAR"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "sendMail": MessageLookupByLibrary.simpleMessage("Send Mail"),
-        "service": MessageLookupByLibrary.simpleMessage("service"),
+        "sendUsUsingApp":
+            MessageLookupByLibrary.simpleMessage("Send us using app"),
+        "service": MessageLookupByLibrary.simpleMessage("Service"),
         "serviceDescription": MessageLookupByLibrary.simpleMessage(
             "Describe the service you would like to request and one of our representatives will respond to you within 24 hours."),
         "serviceRequest":
@@ -213,19 +212,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "showAllInvoices":
             MessageLookupByLibrary.simpleMessage("Show all invoices"),
         "showAllTickets":
-            MessageLookupByLibrary.simpleMessage("Show all tikcets"),
+            MessageLookupByLibrary.simpleMessage("Show all tickets"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Show details"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
-        "solved": MessageLookupByLibrary.simpleMessage("solved"),
+        "solved": MessageLookupByLibrary.simpleMessage("Solved"),
         "solvedAlertCancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "solvedAlertOk": MessageLookupByLibrary.simpleMessage("Solved"),
         "solvedAlertSubtitle": MessageLookupByLibrary.simpleMessage(
             "Once you confirm that a ticket is resolved, you will not be able to make any edits or updates to its contents."),
         "solvedAlertTitle": MessageLookupByLibrary.simpleMessage(
-            "Are you sure you want to change the remember status to \'Resolved\'?"),
+            "Are you sure you want to change the ticket status to \'Resolved\'?"),
         "space": MessageLookupByLibrary.simpleMessage("Space"),
         "squareMeters": MessageLookupByLibrary.simpleMessage("Square meters"),
-        "sreet": MessageLookupByLibrary.simpleMessage("Street"),
+        "street": MessageLookupByLibrary.simpleMessage("Street"),
         "subNumber": MessageLookupByLibrary.simpleMessage("Subnumber"),
         "submitComplaint":
             MessageLookupByLibrary.simpleMessage("Submit Complaint"),
@@ -234,19 +233,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tenant information"),
         "tenantsCount": MessageLookupByLibrary.simpleMessage("Tenants count"),
         "termsAndConditions":
-            MessageLookupByLibrary.simpleMessage("terms and conditions"),
+            MessageLookupByLibrary.simpleMessage("Terms and conditions"),
         "there": MessageLookupByLibrary.simpleMessage("Available"),
-        "thereIsKitchecn":
-            MessageLookupByLibrary.simpleMessage("Has a Kitchen"),
-        "thereIsLoungue":
+        "thereIsKitchen": MessageLookupByLibrary.simpleMessage("Has a Kitchen"),
+        "thereIsLounge":
             MessageLookupByLibrary.simpleMessage("Has a Living Room"),
         "ticketContent": MessageLookupByLibrary.simpleMessage("Ticket content"),
         "ticketContentDescription": MessageLookupByLibrary.simpleMessage(
             "Write the ticket content and add photos"),
         "ticketCreatedDate":
             MessageLookupByLibrary.simpleMessage("Date the ticket was created"),
-        "ticketDetails": MessageLookupByLibrary.simpleMessage("ticket details"),
-        "ticketId": MessageLookupByLibrary.simpleMessage("Ticket id"),
+        "ticketDetails": MessageLookupByLibrary.simpleMessage("Ticket details"),
+        "ticketId": MessageLookupByLibrary.simpleMessage("Ticket ID"),
         "ticketSentSuccessfullySubtitle": MessageLookupByLibrary.simpleMessage(
             "One of our representatives will respond to you as soon as possible"),
         "ticketSentSuccessfullyTitle":
@@ -255,16 +253,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "ticketType": MessageLookupByLibrary.simpleMessage("Ticket type"),
         "ticketUpdatedDate":
             MessageLookupByLibrary.simpleMessage("Date of last update"),
-        "tickets": MessageLookupByLibrary.simpleMessage("tickets"),
+        "tickets": MessageLookupByLibrary.simpleMessage("Tickets"),
         "totalRent": MessageLookupByLibrary.simpleMessage("Total rent"),
-        "unitAddress":
-            MessageLookupByLibrary.simpleMessage("Unit Building Address"),
-        "unitAddrss": MessageLookupByLibrary.simpleMessage(
+        "unitAddress": MessageLookupByLibrary.simpleMessage(
             "National real estate address"),
         "unitDate":
             MessageLookupByLibrary.simpleMessage("Rent Commencement Date"),
-        "unitInfromationEdit":
-            MessageLookupByLibrary.simpleMessage("update unit information"),
+        "unitInformationEdit":
+            MessageLookupByLibrary.simpleMessage("Update unit information"),
         "unitName": MessageLookupByLibrary.simpleMessage("Unit Name"),
         "unitNumber": MessageLookupByLibrary.simpleMessage("Unit Number"),
         "unitRent": MessageLookupByLibrary.simpleMessage("Monthly Unit Rent"),
@@ -274,10 +270,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Unit Specifications"),
         "units": MessageLookupByLibrary.simpleMessage("Units"),
         "unitsCount": MessageLookupByLibrary.simpleMessage("Units count"),
-        "uploadImage": MessageLookupByLibrary.simpleMessage("Uplaod Image"),
+        "uploadImage": MessageLookupByLibrary.simpleMessage("Upload Image"),
         "uploadInvoice":
-            MessageLookupByLibrary.simpleMessage(" Upload the invoice"),
-        "userName": MessageLookupByLibrary.simpleMessage("user name"),
+            MessageLookupByLibrary.simpleMessage("Upload the invoice"),
+        "userName": MessageLookupByLibrary.simpleMessage("User name"),
         "validateEmptyMessage":
             MessageLookupByLibrary.simpleMessage("This field is required"),
         "viewInvoice": MessageLookupByLibrary.simpleMessage("View invoice"),
@@ -288,9 +284,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "writeTicketContent": MessageLookupByLibrary.simpleMessage(
             "Write the content of the ticket"),
-        "writeYourOption": MessageLookupByLibrary.simpleMessage(
+        "writeYourOpinion": MessageLookupByLibrary.simpleMessage(
             "Write us your opinion (optional)"),
-        "yes": MessageLookupByLibrary.simpleMessage("yes"),
+        "yearSar": MessageLookupByLibrary.simpleMessage("SAR/Year"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "yourNextInvoices":
             MessageLookupByLibrary.simpleMessage("Your Next Invoices")
       };

@@ -146,7 +146,7 @@ class _UpdatePropertyViewState extends State<UpdatePropertyView> {
                   return IgnorePointer(
                     ignoring: state.updateStreetState == RequestState.loading,
                     child: UpdatePropertyItem(
-                        title: S.current.sreet,
+                        title: S.current.street,
                         valueController: UpdatePropertyUtils
                             .updatePropertyControllers['street'],
                         enabled: state.streetEnabled,
